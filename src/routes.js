@@ -3,7 +3,7 @@ import Menu from '~/pages/Menu';
 import Login from '~/pages/Login';
 
 export const publicRoute = [
-    { path: 'Home', component: Home },
+    { path: '', component: Home },
     { path: 'Menu', component: Menu },
     { path: 'Login', component: Login, layout: null },
 ];

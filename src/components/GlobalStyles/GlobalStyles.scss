@@ -1,4 +1,4 @@
-@import 'normalize.css';
+// @import 'normalize.css';
 
 :root {
     // --primary: #82aae3;
@@ -31,7 +31,7 @@
 
 body {
     font-size: 1rem;
-    font-family: "Roboto",sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.5;
     text-rendering: optimizespeed;
     overflow-y: overlay;
@@ -90,6 +90,6 @@ body {
 }
 
 // Tailwind
-// @tailwind base;
-// @tailwind components;
-// @tailwind utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
