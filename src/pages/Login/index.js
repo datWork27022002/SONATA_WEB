@@ -1,5 +1,8 @@
+import { useTranslation } from 'react-i18next';
+
 function Login() {
-    return <h2>Login Page</h2>;
+    const { t } = useTranslation('translation', { keyPrefix: 'login' });
+    return <h2 className="text-5xl">{t('login')}</h2>;
 }
 
 export default Login;
