@@ -5,6 +5,6 @@ import Login from '~/pages/Login';
 export const publicRoute = [
     { path: 'Home', component: Home },
     { path: 'Menu', component: Menu },
-    { path: 'Login', component: Login },
+    { path: 'Login', component: Login, layout: null },
 ];
 export const privateRoute = [];
