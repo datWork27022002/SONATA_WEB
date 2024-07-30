@@ -4,6 +4,7 @@ import { initReactI18next } from 'react-i18next';
 
 import translationEN from '~/locales/translationEN.json';
 import translationVI from '~/locales/translationVI.json';
+import translationKO from '~/locales/translationKO.json';
 
 // the translations
 const resources = {
@@ -13,6 +14,9 @@ const resources = {
     vi: {
         translation: translationVI,
     },
+    ko: {
+        translation: translationKO,
+    },
 };
 
 i18n.use(Backend)
@@ -20,7 +24,7 @@ i18n.use(Backend)
     .init({
         resources,
         fallbackLng: 'vi',
-        debug: true,
+        debug: false,
         interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
         },
