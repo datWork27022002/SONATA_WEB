@@ -1,1 +1,9 @@
-{ "login": { "login": "Login" } }
+{
+    "login": {
+        "login": "LOGIN",
+        "SaveUserInfo": "Save User Info",
+        "StoreID": "Store ID",
+        "UserID": "User ID",
+        "Password": "Password"
+    }
+}

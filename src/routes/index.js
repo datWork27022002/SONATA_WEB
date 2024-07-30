@@ -1,10 +1,14 @@
+import config from '~/config';
+
 import Home from '~/pages/Home';
 import Menu from '~/pages/Menu';
 import Login from '~/pages/Login';
 
+const { routes } = config;
+
 export const publicRoute = [
-    { path: '', component: Home },
+    { path: routes.HOME, component: Home },
     { path: 'Menu', component: Menu },
-    { path: 'Login', component: Login, layout: null },
+    { path: routes.LOGIN, component: Login, layout: null },
 ];
 export const privateRoute = [];
