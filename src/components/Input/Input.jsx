@@ -33,7 +33,7 @@ const Input = forwardRef(({ label, type, textArea, className, errolMesseage, ...
 });
 
 Input.propTypes = {
-    label: PropTypes.object,
+    label: PropTypes.func,
     textArea: PropTypes.bool,
     type: PropTypes.string,
     className: PropTypes.string,

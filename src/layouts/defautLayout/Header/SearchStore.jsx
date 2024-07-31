@@ -71,7 +71,9 @@ function SearchStore() {
             >
                 <div onClick={openPopupChooseStore} className={cx('item-card', 'card-left')}>
                     <IconCustom icon={FaStore} />
-                    <span className={cx('ml-1', 'max-md:hidden')}> {`Select Store(${store})`}</span>
+                    <span className={cx('max-md:hidden')}>{'Select Store('}</span>
+                    <span className={cx('ml-1')}> {`${store}`}</span>
+                    <span className={cx('max-md:hidden')}>{')'}</span>
                 </div>
             </Tippy>
         </div>

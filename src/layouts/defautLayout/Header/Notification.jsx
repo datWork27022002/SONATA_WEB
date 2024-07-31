@@ -32,7 +32,7 @@ function Notification() {
     );
 
     return (
-        <div>
+        <div className={cx('max-sm:hidden')}>
             <Tippy
                 render={RenderNotification}
                 interactive
