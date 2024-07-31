@@ -1,13 +1,12 @@
 import classNames from 'classnames/bind';
 import { useTranslation } from 'react-i18next';
-import { faStore, faKey, faUser, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import { FaStore, FaKey, FaUser, FaRightToBracket } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
 import styles from './Login.module.scss';
 import Input from '~/components/Input';
 import config from '~/config';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // eslint-disable-next-line no-unused-vars
 const cx = classNames.bind(styles);
@@ -38,11 +37,11 @@ function Login() {
 
     return (
         <div className={cx('bg-[#eff0f2] flex justify-center items-center w-screen h-screen')}>
-            <div className={cx('flex bg-white overflow-hidden rounded-lg relative w-[800px]')}>
+            <div className={cx('flex flex-wrap  bg-white overflow-hidden rounded-lg relative w-[800px]')}>
                 {/* img login */}
                 <img src={require('~/assets/img/bgLogin.png')} alt="" />
                 {/* form login */}
-                <div className={cx('flex-1')}>
+                <div className={cx('flex-1 min-w-[300px]')}>
                     {/* change language */}
                     <select
                         className={cx('absolute top-6 right-8  bg-blue-100 p-2 rounded-md')}
@@ -59,7 +58,7 @@ function Login() {
                         <label className={cx('text-[#797979] text-3xl mb-10')}>{t('login')}</label>
                         <Input
                             placeholder={t('StoreID')}
-                            label={faStore}
+                            label={FaStore}
                             className={cx('w-[90%]')}
                             name={'StoreID'}
                             {...register('StoreID')}
@@ -67,7 +66,7 @@ function Login() {
                         />
                         <Input
                             placeholder={t('UserID')}
-                            label={faUser}
+                            label={FaUser}
                             className={cx('w-[90%]')}
                             name={'UserID'}
                             {...register('UserID')}
@@ -75,7 +74,7 @@ function Login() {
                         />
                         <Input
                             placeholder={t('Password')}
-                            label={faKey}
+                            label={FaKey}
                             className={cx('w-[90%]')}
                             name={'Password'}
                             type="password"
@@ -87,8 +86,13 @@ function Login() {
                             <label htmlFor="saveInfo"> {t('SaveUserInfo')}</label>
                         </div>
 
-                        <button className={cx('w-[90%] bg-[#403e43] mt-6 p-4 text-white  rounded-full font-semibold')}>
-                            <FontAwesomeIcon icon={faRightToBracket} />
+                        <button
+                            className={cx(
+                                'w-[90%] bg-[#403e43] mt-6 p-4 text-white  rounded-full font-semibold ',
+                                'flex items-center justify-center',
+                            )}
+                        >
+                            <FaRightToBracket />
                             {t('login')}
                         </button>
                     </form>

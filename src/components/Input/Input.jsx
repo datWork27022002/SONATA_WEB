@@ -1,6 +1,5 @@
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { forwardRef } from 'react';
 import styles from './Input.module.scss';
@@ -10,14 +9,15 @@ const cx = classNames.bind(styles);
 const Input = forwardRef(({ label, type, textArea, className, errolMesseage, ...passProps }, ref) => {
     const Props = { ...passProps };
 
+    const Icon = label;
+
     const classes = cx('flex items-center mb-8', {
         [className]: className,
     });
 
     return (
         <div className={classes}>
-            {label && <FontAwesomeIcon icon={label} color="#333333" className={cx('text-sm mr-2')} />}
-
+            {label && <Icon color="#333333" className={cx('text-sm mr-2')} />}
             <input
                 className={cx(
                     'w-full px-1 ',
