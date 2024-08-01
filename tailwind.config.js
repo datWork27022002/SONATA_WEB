@@ -5,8 +5,13 @@ module.exports = {
         extend: {
             colors: {
                 'primary-color': 'var(--primary)',
+                'secondnary-color': 'var(--secondnary)',
+                'third-color': 'var(--third)',
+                'fourth-color': 'var(--fourth)',
+                'fifth-color': 'var(--fifth)',
                 'text-color': 'var(--text-color)',
                 'text-color-secondnary': 'var(--text-color-secondnary)',
+                'text-color-third': 'var(--text-color-third)',
                 'text-color-link': 'var(--text-color-link)',
                 'text-color-link-hightlight': 'var(--text-color-link-hightlight)',
                 'background-color': 'var(--background-color)',

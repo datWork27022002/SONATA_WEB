@@ -8,7 +8,7 @@ import styles from './Header.module.scss';
 
 const cx = classNames.bind(styles);
 
-const listColor = ['#4d9ce9', '#19bd9a', '#96c92c', '#6cacec', '#f3764a'];
+const listColor = ['#4aa9f9', '#19bd9a', '#96c92c', '#6cacec', '#f3764a'];
 
 function ChooseColor() {
     const [visibleColor, setVisibleColor] = useState(false);
@@ -25,7 +25,7 @@ function ChooseColor() {
     const RenderChooseColor = () => (
         <div
             className={cx(
-                ' border-primary-color text-text-color border-solid border-[1px] flex mt-2 rounded overflow-hidden',
+                'mt-2 flex overflow-hidden rounded border-[1px] border-solid border-primary-color text-text-color',
             )}
         >
             {listColor.map((value, index) => {
@@ -34,7 +34,7 @@ function ChooseColor() {
                     <div
                         key={index}
                         style={stylesColor}
-                        className={cx(`h-8 w-8  m-1`)}
+                        className={cx(`m-1 h-8 w-8`)}
                         onClick={() => handleChooseColor(value)}
                     ></div>
                 );

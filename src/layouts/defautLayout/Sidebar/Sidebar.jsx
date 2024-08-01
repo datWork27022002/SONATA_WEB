@@ -29,10 +29,11 @@ function Sidebar() {
     return (
         <div
             className={cx(
-                'min-w-[70px] sm:h-screen bg-[#36474e] text-text-color-secondnary ',
-                'flex flex-col items-center z-10',
+                'bg-fifth-color min-w-[70px] text-text-color-secondnary sm:h-screen',
+                'z-10 flex flex-col items-center',
                 'transition duration-1000',
-                'max-sm:absolute max-sm:top-10 max-sm:w-screen ',
+                'max-sm:absolute max-sm:top-10 max-sm:w-screen',
+                'max-lg:mix-w[150px]',
                 !visibleSidebar && 'max-sm:translate-x-[-125%]',
             )}
         >
@@ -46,14 +47,14 @@ function Sidebar() {
             </Link>
 
             {/* infor User */}
-            <div className={cx('pt-9 flex flex-col items-center', 'max-sm:hidden')}>
+            <div className={cx('flex flex-col items-center pt-9', 'max-sm:hidden')}>
                 <img
                     src={require('~/assets/img/avatar.jpg')}
                     alt=""
                     className={cx(
                         'cursor-pointer',
-                        'border-primary-color border-solid border-2',
-                        shrinkSidebar ? 'w-14' : 'w-24 h-24 ',
+                        'border-2 border-solid border-primary-color',
+                        shrinkSidebar ? 'w-14' : 'h-24 w-24',
                     )}
                 />
                 {!shrinkSidebar && (
@@ -70,7 +71,7 @@ function Sidebar() {
                     <li key={index}>
                         <Link
                             className={cx(
-                                'flex py-3 px-2 items-center ',
+                                'flex items-center px-2 py-3',
                                 'hover:bg-background-color hover:text-primary-color',
                                 shrinkSidebar && 'justify-center',
                             )}
