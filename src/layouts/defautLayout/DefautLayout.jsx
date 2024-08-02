@@ -11,9 +11,9 @@ function DefaultLayout({ children }) {
     return (
         <div className={cx('flex')}>
             <Sidebar />
-            <div className={cx('flex-1 relative')}>
+            <div className={cx('relative flex-1')}>
                 <Header />
-                <div className={cx(' bg-blue-50')}>{children}</div>
+                <div className={cx('bg-blue-50', 'max-md:mt-10')}>{children}</div>
             </div>
         </div>
     );

@@ -31,7 +31,7 @@ function Sidebar() {
             className={cx(
                 'bg-fifth-color min-w-[70px] text-text-color-secondnary sm:h-screen',
                 'z-10 flex flex-col items-center',
-                'transition duration-1000',
+                'transition duration-300',
                 'max-sm:absolute max-sm:top-10 max-sm:w-screen',
                 'max-lg:mix-w[150px]',
                 !visibleSidebar && 'max-sm:translate-x-[-125%]',
@@ -74,6 +74,7 @@ function Sidebar() {
                                 'flex items-center px-2 py-3',
                                 'hover:bg-background-color hover:text-primary-color',
                                 shrinkSidebar && 'justify-center',
+                                'max-md:border-b-[1px] max-md:border-solid max-md:border-b-white',
                             )}
                         >
                             <IconCustom icon={item.icon} size={22} className={cx('mr-2')} />

@@ -25,7 +25,7 @@ function Header() {
         dispatch(updateVisibleSidebar());
     };
     return (
-        <div className={cx('bg-primary-color w-full h-10 flex justify-between text-xs !z-20')}>
+        <div className={cx('!z-20 flex h-10 w-full justify-between bg-primary-color text-xs', 'max-md:fixed')}>
             <div className={cx('flex')}>
                 {/* Home */}
                 <div className={cx('item-card', 'card-left', '!hidden', 'max-sm:!flex')} to={config.routes.HOME}>

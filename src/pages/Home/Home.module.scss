@@ -1,36 +1,36 @@
 @keyframes fadeInSummarySale {
     from {
-        transform: translateX(-100%);
+        transform: translateY(300%);
     }
     to {
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
 @keyframes fadeInDaySaleDetail {
     from {
-        transform: translateX(-100%);
+        transform: translateY(300%);
     }
     to {
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
 @keyframes fadeInChartWeekly {
     from {
-        transform: translateX(-100%);
+        transform: translateY(300%);
     }
     to {
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
 @keyframes fadeInTableMonthlyGross {
     from {
-        transform: translateX(100%);
+        transform: translateY(300%);
     }
     to {
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
