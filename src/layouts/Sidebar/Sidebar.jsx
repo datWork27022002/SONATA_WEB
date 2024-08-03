@@ -13,9 +13,12 @@ import config from '~/config';
 import { Fragment } from 'react';
 
 const cx = classNames.bind(styles);
+
+const { routes } = config;
+
 const menus = [
     { to: '', name: 'Bookmark', icon: FaBookBookmark },
-    { to: '', name: 'Basic Settings', icon: FaScrewdriverWrench },
+    { to: routes.BasicSettings.BASICSETTINGS, name: 'Basic Settings', icon: FaScrewdriverWrench },
     { to: '', name: 'Manager Function', icon: PiProjectorScreenChartFill },
     { to: '', name: 'Customer', icon: FaUser },
     { to: '', name: 'Operation Reports', icon: TbReport },
@@ -29,7 +32,7 @@ function Sidebar() {
     return (
         <div
             className={cx(
-                'bg-fifth-color min-w-[70px] text-text-color-secondnary sm:h-screen',
+                'min-w-[70px] bg-fifth-color text-text-color-secondnary sm:h-screen',
                 'z-10 flex flex-col items-center',
                 'transition duration-300',
                 'max-sm:absolute max-sm:top-10 max-sm:w-screen',
@@ -70,6 +73,7 @@ function Sidebar() {
                 {menus.map((item, index) => (
                     <li key={index}>
                         <Link
+                            to={item.to}
                             className={cx(
                                 'flex items-center px-2 py-3',
                                 'hover:bg-background-color hover:text-primary-color',
