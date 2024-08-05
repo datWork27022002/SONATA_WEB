@@ -15,7 +15,7 @@ function BreadcrumbLayout({ children }) {
             <div className={cx('relative flex-1')}>
                 <Header />
                 <Breadcrumb />
-                <div className={cx('bg-red-600', 'max-md:mt-10')}>{children}</div>
+                <div className={cx('max-w-[950px] px-3', 'max-md:mt-10')}>{children}</div>
             </div>
         </div>
     );
