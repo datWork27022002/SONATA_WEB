@@ -5,6 +5,7 @@ import {
     BsCalendar2MonthFill,
     BsCalendar2DayFill,
     BsCalendar2WeekFill,
+    BsReceipt,
 } from 'react-icons/bs';
 import {
     FaStore,
@@ -16,13 +17,18 @@ import {
     FaUserCog,
     FaFilePowerpoint,
     FaCalendar,
+    FaChartPie,
+    FaUserCheck,
+    FaIdCard,
+    FaUserSecret,
+    FaNewspaper,
 } from 'react-icons/fa';
-import { FaWarehouse, FaChalkboardUser } from 'react-icons/fa6';
-import { GiHamburger } from 'react-icons/gi';
-import { IoIosCash } from 'react-icons/io';
-import { IoReceiptOutline, IoIdCardOutline } from 'react-icons/io5';
+import { FaWarehouse, FaChalkboardUser, FaCalendarDay, FaCashRegister } from 'react-icons/fa6';
+import { GiHamburger, GiPaperBagOpen, GiCash } from 'react-icons/gi';
+import { IoIosCash, IoMdDocument } from 'react-icons/io';
+import { IoReceiptOutline, IoIdCardOutline, IoAnalytics, IoReceipt } from 'react-icons/io5';
 import { RiDiscountPercentFill, RiUserSearchFill, RiMenuSearchFill } from 'react-icons/ri';
-import { TbHomeSearch, TbFileReport, TbClockHour10Filled } from 'react-icons/tb';
+import { TbHomeSearch, TbFileReport, TbClockHour10Filled, TbCategoryFilled } from 'react-icons/tb';
 import { VscLayoutMenubar } from 'react-icons/vsc';
 import {
     MdOutlineContentPasteSearch,
@@ -35,9 +41,11 @@ import {
 } from 'react-icons/md';
 import { LiaReceiptSolid, LiaCcAmazonPay } from 'react-icons/lia';
 import { AiOutlineFileSearch } from 'react-icons/ai';
-import { CiEdit, CiLink } from 'react-icons/ci';
+import { CiEdit, CiLink, CiCreditCard1, CiCalendarDate } from 'react-icons/ci';
 import { TfiAnnouncement } from 'react-icons/tfi';
-import { GrDocumentStore } from 'react-icons/gr';
+import { GrDocumentStore, GrDocumentText } from 'react-icons/gr';
+import { PiRanking, PiReceiptX, PiNewspaperClippingLight } from 'react-icons/pi';
+import { BiDetail, BiSolidDiscount } from 'react-icons/bi';
 
 const menuStructure = {
     BASICSETTINGS: {
@@ -110,6 +118,53 @@ const menuStructure = {
             { name: 'Sales amount by Store', icon: FaStore, to: '', mark: false },
             { name: 'Monthly Sales amount by Store', icon: BsCalendar2MonthFill, to: '', mark: false },
             { name: 'Store Monthly Sales amount', icon: BsCalendar2MonthFill, to: '', mark: false },
+        ],
+    },
+    SALEREPORTS: {
+        'Sale Reports': [
+            { name: 'Daily Sales Report', icon: BsCalendar2DayFill, to: '', mark: false },
+            { name: 'Daily Sales Summary', icon: FaCalendarDay, to: '', mark: false },
+            { name: 'Sales Summary', icon: IoMdDocument, to: '', mark: false },
+            { name: 'Detailed Sales List', icon: GrDocumentText, to: '', mark: false },
+            { name: 'Sales By Receipt', icon: FaReceipt, to: '', mark: false },
+            { name: 'Sales By Receipt Detail', icon: BsReceipt, to: '', mark: false },
+            { name: 'CashReceipt Approval/Cancelation Report', icon: IoReceipt, to: '', mark: false },
+            { name: 'CreditCard Approval/Cancelation Report', icon: CiCreditCard1, to: '', mark: false },
+            { name: 'Sales Report by Card Type Detail', icon: FaIdCard, to: '', mark: false },
+            { name: 'Sales Record by Employee', icon: FaUserSecret, to: '', mark: false },
+            { name: 'Sales Record by Employee Date', icon: CiCalendarDate, to: '', mark: false },
+            { name: 'Employee Commission', icon: FaUserCheck, to: '', mark: false },
+        ],
+        'Sales Analysis': [
+            { name: 'Total Sales Report', icon: FaChartPie, to: '', mark: false },
+            { name: 'Simplified Sales Total', icon: FaChartPie, to: '', mark: false },
+            { name: 'Aggregate revenue items by category', icon: TbCategoryFilled, to: '', mark: false },
+            { name: 'Hourly Sales', icon: TbClockHour10Filled, to: '', mark: false },
+            { name: 'Time of Day Sales Report', icon: BsCalendar2DayFill, to: '', mark: false },
+            { name: 'Sales Report by Payment Type', icon: FaChartPie, to: '', mark: false },
+            { name: 'Sales Report by Card Type', icon: FaChartPie, to: '', mark: false },
+            { name: 'Sales Ranking', icon: PiRanking, to: '', mark: false },
+            { name: 'Sales Analysis Report(Item)', icon: IoAnalytics, to: '', mark: false },
+            { name: 'Total Sales Report', icon: FaChartPie, to: '', mark: false },
+            { name: 'Employee Sales Analysis', icon: FaUserCheck, to: '', mark: false },
+        ],
+        'Void / Return': [
+            { name: 'Order Cancelation Report', icon: PiReceiptX, to: '', mark: false },
+            { name: 'Void Summary', icon: FaReceipt, to: '', mark: false },
+            { name: 'Void Detail', icon: BiDetail, to: '', mark: false },
+        ],
+        'Discount Status': [
+            { name: 'Sales Discount Report', icon: RiDiscountPercentFill, to: '', mark: false },
+            { name: 'Sales Discount Summary', icon: BiSolidDiscount, to: '', mark: false },
+        ],
+        TAX: [
+            { name: 'No Tax Sale Report', icon: PiNewspaperClippingLight, to: '', mark: false },
+            { name: 'Tax Detail', icon: FaNewspaper, to: '', mark: false },
+            { name: 'Tax Summary', icon: GiPaperBagOpen, to: '', mark: false },
+        ],
+        'EOD Report': [
+            { name: 'Sales Cash In Out', icon: GiCash, to: '', mark: false },
+            { name: 'Cash In/Out', icon: FaCashRegister, to: '', mark: false },
         ],
     },
 };
