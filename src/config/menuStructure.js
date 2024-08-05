@@ -1,4 +1,11 @@
-import { BsFillHousesFill, BsFilePostFill, BsFillInfoSquareFill } from 'react-icons/bs';
+import {
+    BsFillHousesFill,
+    BsFilePostFill,
+    BsFillInfoSquareFill,
+    BsCalendar2MonthFill,
+    BsCalendar2DayFill,
+    BsCalendar2WeekFill,
+} from 'react-icons/bs';
 import {
     FaStore,
     FaUsers,
@@ -8,13 +15,14 @@ import {
     FaLaptopHouse,
     FaUserCog,
     FaFilePowerpoint,
+    FaCalendar,
 } from 'react-icons/fa';
 import { FaWarehouse, FaChalkboardUser } from 'react-icons/fa6';
 import { GiHamburger } from 'react-icons/gi';
 import { IoIosCash } from 'react-icons/io';
 import { IoReceiptOutline, IoIdCardOutline } from 'react-icons/io5';
 import { RiDiscountPercentFill, RiUserSearchFill, RiMenuSearchFill } from 'react-icons/ri';
-import { TbHomeSearch, TbFileReport } from 'react-icons/tb';
+import { TbHomeSearch, TbFileReport, TbClockHour10Filled } from 'react-icons/tb';
 import { VscLayoutMenubar } from 'react-icons/vsc';
 import {
     MdOutlineContentPasteSearch,
@@ -23,11 +31,13 @@ import {
     MdSoupKitchen,
     MdOutlineGroups2,
     MdRememberMe,
+    MdCalendarMonth,
 } from 'react-icons/md';
 import { LiaReceiptSolid, LiaCcAmazonPay } from 'react-icons/lia';
 import { AiOutlineFileSearch } from 'react-icons/ai';
 import { CiEdit, CiLink } from 'react-icons/ci';
 import { TfiAnnouncement } from 'react-icons/tfi';
+import { GrDocumentStore } from 'react-icons/gr';
 
 const menuStructure = {
     BASICSETTINGS: {
@@ -80,6 +90,26 @@ const menuStructure = {
             { name: 'Customer Sales Total', icon: FaChalkboardUser, to: '', mark: false },
             { name: 'Customer Detailed Sales Report', icon: TbFileReport, to: '', mark: false },
             { name: 'Point Report', icon: FaFilePowerpoint, to: '', mark: false },
+        ],
+    },
+    OPERATIONREPORTS: {
+        noFilter: [
+            { name: 'Monthly Comparison', icon: MdCalendarMonth, to: '', mark: false },
+            { name: 'Yearly Comparison', icon: FaCalendar, to: '', mark: false },
+            { name: 'Total Category Sales By Store', icon: FaStore, to: '', mark: false },
+            { name: 'Total Item Sales By Store', icon: FaStore, to: '', mark: false },
+            { name: 'Total Store Sales By Category', icon: FaStore, to: '', mark: false },
+            { name: 'Total Sales Summary (By Item)', icon: GrDocumentStore, to: '', mark: false },
+            { name: 'Total Store Sales By Item', icon: FaStore, to: '', mark: false },
+            { name: 'Total Sales Week By Item', icon: BsCalendar2WeekFill, to: '', mark: false },
+            { name: 'Daily Sales By Item', icon: BsCalendar2DayFill, to: '', mark: false },
+            { name: 'Total Sales Hour By Item', icon: GrDocumentStore, to: '', mark: false },
+            { name: 'Total Sales Item By Week', icon: BsCalendar2WeekFill, to: '', mark: false },
+            { name: 'Total Sales Item By Hour', icon: TbClockHour10Filled, to: '', mark: false },
+            { name: 'Total Store Sales By Supplier', icon: FaStore, to: '', mark: false },
+            { name: 'Sales amount by Store', icon: FaStore, to: '', mark: false },
+            { name: 'Monthly Sales amount by Store', icon: BsCalendar2MonthFill, to: '', mark: false },
+            { name: 'Store Monthly Sales amount', icon: BsCalendar2MonthFill, to: '', mark: false },
         ],
     },
 };

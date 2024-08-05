@@ -6,6 +6,7 @@ import Login from '~/pages/Login';
 import BasicSettings from '~/pages/BasicSettings';
 import ManagerFunction from '~/pages/ManagerFunction';
 import Customer from '~/pages/Customer';
+import OperationReports from '~/pages/OperationReports';
 
 const { routes } = config;
 
@@ -15,7 +16,7 @@ export const publicRoute = [
     { path: routes.BasicSettings.BASICSETTINGS, component: BasicSettings, layout: BreadcrumbLayout },
     { path: routes.ManagerFunction.MANAGERFUNCTION, component: ManagerFunction, layout: BreadcrumbLayout },
     { path: routes.Customer.CUSTOMER, component: Customer, layout: BreadcrumbLayout },
-    { path: routes.OperationReports.OPERATIONREPORTS, component: ManagerFunction, layout: BreadcrumbLayout },
+    { path: routes.OperationReports.OPERATIONREPORTS, component: OperationReports, layout: BreadcrumbLayout },
     { path: routes.SaleReports.SALEREPORTS, component: ManagerFunction, layout: BreadcrumbLayout },
     { path: routes.PurchaseOrder.PURCHASEORDER, component: ManagerFunction, layout: BreadcrumbLayout },
     { path: routes.Settings.SETTINGS, component: ManagerFunction, layout: BreadcrumbLayout },
