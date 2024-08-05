@@ -1,16 +1,17 @@
-import { BsFillHousesFill, BsFilePostFill } from 'react-icons/bs';
+import { BsFillHousesFill, BsFilePostFill, BsFillInfoSquareFill } from 'react-icons/bs';
 import { FaStore, FaUsers, FaUserEdit, FaReceipt, FaWrench, FaLaptopHouse } from 'react-icons/fa';
 import { FaWarehouse } from 'react-icons/fa6';
 import { GiHamburger } from 'react-icons/gi';
 import { IoIosCash } from 'react-icons/io';
-import { IoReceiptOutline } from 'react-icons/io5';
+import { IoReceiptOutline, IoIdCardOutline } from 'react-icons/io5';
 import { RiDiscountPercentFill, RiUserSearchFill, RiMenuSearchFill } from 'react-icons/ri';
 import { TbHomeSearch } from 'react-icons/tb';
 import { VscLayoutMenubar } from 'react-icons/vsc';
 import { MdOutlineContentPasteSearch, MdOutlineScreenSearchDesktop, MdKitchen, MdSoupKitchen } from 'react-icons/md';
-import { LiaReceiptSolid } from 'react-icons/lia';
+import { LiaReceiptSolid, LiaCcAmazonPay } from 'react-icons/lia';
 import { AiOutlineFileSearch } from 'react-icons/ai';
 import { CiEdit, CiLink } from 'react-icons/ci';
+import { TfiAnnouncement } from 'react-icons/tfi';
 
 const menuStructure = {
     BASICSETTINGS: {
@@ -46,6 +47,14 @@ const menuStructure = {
             { name: 'Item linked code management', icon: CiLink, to: '', mark: false },
         ],
         'POS Screen Layout': [{ name: 'Employee Group', icon: '' }],
+    },
+    MANAGERFUNCTION: {
+        noFilter: [
+            { name: 'Announcement', icon: TfiAnnouncement, to: '', mark: false },
+            { name: 'Payroll', icon: LiaCcAmazonPay, to: '', mark: false },
+            { name: 'Time Card', icon: IoIdCardOutline, to: '', mark: false },
+            { name: 'List of information by force', icon: BsFillInfoSquareFill, to: '', mark: false },
+        ],
     },
 };
 

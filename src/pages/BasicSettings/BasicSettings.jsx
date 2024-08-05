@@ -1,5 +1,4 @@
 import classNames from 'classnames/bind';
-import { useTranslation } from 'react-i18next';
 
 import styles from './BasicSettings.module.scss';
 import InnerLayout from '~/components/InnerLayout';
@@ -9,12 +8,9 @@ import config from '~/config';
 const cx = classNames.bind(styles);
 
 function BasicSettings() {
-    // eslint-disable-next-line no-unused-vars
-    const { t } = useTranslation('translation', { keyPrefix: 'login' });
+    const menuStructure = config.menuStructure.BASICSETTINGS;
 
-    const menuCategories = Object.keys(config.menuStructure.BASICSETTINGS);
-
-    return <InnerLayout menuCategories={menuCategories} title={'Basic Settings'} />;
+    return <InnerLayout menuStructure={menuStructure} title={'Basic Settings'} />;
 }
 
 export default BasicSettings;

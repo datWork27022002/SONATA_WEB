@@ -4,6 +4,9 @@ const routes = {
     BasicSettings: {
         BASICSETTINGS: '/BasicSettings',
     },
+    ManagerFunction: {
+        MANAGERFUNCTION: '/ManagerFunction',
+    },
 };
 
 export default routes;

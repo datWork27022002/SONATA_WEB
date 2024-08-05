@@ -19,7 +19,7 @@ const { routes } = config;
 const menus = [
     { to: '', name: 'Bookmark', icon: FaBookBookmark },
     { to: routes.BasicSettings.BASICSETTINGS, name: 'Basic Settings', icon: FaScrewdriverWrench },
-    { to: '', name: 'Manager Function', icon: PiProjectorScreenChartFill },
+    { to: routes.ManagerFunction.MANAGERFUNCTION, name: 'Manager Function', icon: PiProjectorScreenChartFill },
     { to: '', name: 'Customer', icon: FaUser },
     { to: '', name: 'Operation Reports', icon: TbReport },
     { to: '', name: 'Sale Reports', icon: FaChartBar },
