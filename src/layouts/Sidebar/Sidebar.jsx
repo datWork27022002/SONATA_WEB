@@ -20,12 +20,12 @@ const menus = [
     { to: '', name: 'Bookmark', icon: FaBookBookmark },
     { to: routes.BasicSettings.BASICSETTINGS, name: 'Basic Settings', icon: FaScrewdriverWrench },
     { to: routes.ManagerFunction.MANAGERFUNCTION, name: 'Manager Function', icon: PiProjectorScreenChartFill },
-    { to: '', name: 'Customer', icon: FaUser },
-    { to: '', name: 'Operation Reports', icon: TbReport },
-    { to: '', name: 'Sale Reports', icon: FaChartBar },
-    { to: '', name: 'Purchase Order', icon: BiSolidFoodMenu },
-    { to: '', name: 'Settings', icon: TbSettings },
-    { to: '', name: 'BIZ SMS', icon: FaCommentSms },
+    { to: routes.Customer.CUSTOMER, name: 'Customer', icon: FaUser },
+    { to: routes.OperationReports.OPERATIONREPORTS, name: 'Operation Reports', icon: TbReport },
+    { to: routes.SaleReports.SALEREPORTS, name: 'Sale Reports', icon: FaChartBar },
+    { to: routes.PurchaseOrder.PURCHASEORDER, name: 'Purchase Order', icon: BiSolidFoodMenu },
+    { to: routes.Settings.SETTINGS, name: 'Settings', icon: TbSettings },
+    { to: routes.BIZSMS.BIZSMS, name: 'BIZ SMS', icon: FaCommentSms },
 ];
 function Sidebar() {
     const { shrinkSidebar, visibleSidebar } = useSelector((state) => state.theme);

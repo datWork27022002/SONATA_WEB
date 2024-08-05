@@ -1,13 +1,29 @@
 import { BsFillHousesFill, BsFilePostFill, BsFillInfoSquareFill } from 'react-icons/bs';
-import { FaStore, FaUsers, FaUserEdit, FaReceipt, FaWrench, FaLaptopHouse } from 'react-icons/fa';
-import { FaWarehouse } from 'react-icons/fa6';
+import {
+    FaStore,
+    FaUsers,
+    FaUserEdit,
+    FaReceipt,
+    FaWrench,
+    FaLaptopHouse,
+    FaUserCog,
+    FaFilePowerpoint,
+} from 'react-icons/fa';
+import { FaWarehouse, FaChalkboardUser } from 'react-icons/fa6';
 import { GiHamburger } from 'react-icons/gi';
 import { IoIosCash } from 'react-icons/io';
 import { IoReceiptOutline, IoIdCardOutline } from 'react-icons/io5';
 import { RiDiscountPercentFill, RiUserSearchFill, RiMenuSearchFill } from 'react-icons/ri';
-import { TbHomeSearch } from 'react-icons/tb';
+import { TbHomeSearch, TbFileReport } from 'react-icons/tb';
 import { VscLayoutMenubar } from 'react-icons/vsc';
-import { MdOutlineContentPasteSearch, MdOutlineScreenSearchDesktop, MdKitchen, MdSoupKitchen } from 'react-icons/md';
+import {
+    MdOutlineContentPasteSearch,
+    MdOutlineScreenSearchDesktop,
+    MdKitchen,
+    MdSoupKitchen,
+    MdOutlineGroups2,
+    MdRememberMe,
+} from 'react-icons/md';
 import { LiaReceiptSolid, LiaCcAmazonPay } from 'react-icons/lia';
 import { AiOutlineFileSearch } from 'react-icons/ai';
 import { CiEdit, CiLink } from 'react-icons/ci';
@@ -54,6 +70,16 @@ const menuStructure = {
             { name: 'Payroll', icon: LiaCcAmazonPay, to: '', mark: false },
             { name: 'Time Card', icon: IoIdCardOutline, to: '', mark: false },
             { name: 'List of information by force', icon: BsFillInfoSquareFill, to: '', mark: false },
+        ],
+    },
+    CUSTOMER: {
+        noFilter: [
+            { name: 'Customer Group', icon: MdOutlineGroups2, to: '', mark: false },
+            { name: 'Customer Management', icon: FaUserCog, to: '', mark: false },
+            { name: 'Membership List', icon: MdRememberMe, to: '', mark: false },
+            { name: 'Customer Sales Total', icon: FaChalkboardUser, to: '', mark: false },
+            { name: 'Customer Detailed Sales Report', icon: TbFileReport, to: '', mark: false },
+            { name: 'Point Report', icon: FaFilePowerpoint, to: '', mark: false },
         ],
     },
 };
