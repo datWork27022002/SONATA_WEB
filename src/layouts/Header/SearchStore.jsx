@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import { useState } from 'react';
 import { FaStore } from 'react-icons/fa6';
+import { IoIosArrowDown } from 'react-icons/io';
 import Tippy from '@tippyjs/react/headless';
 
 import styles from './Header.module.scss';
@@ -35,22 +36,22 @@ function SearchStore() {
     const RenderSearchStore = () => (
         <div
             className={cx(
-                'min-w-[150px] bg-background-color text-text-color p-2  rounded overflow-hidden',
-                'border-primary-color border-solid border-[1px]',
+                'min-w-[150px] overflow-hidden rounded bg-background-color p-2 text-text-color',
+                'border-[1px] border-solid border-primary-color',
             )}
         >
             <input
                 placeholder="Search..."
                 name="store"
-                className={cx('border-primary-color border-solid border-[1px] p-1')}
+                className={cx('border-[1px] border-solid border-primary-color p-1')}
                 value={value}
                 onChange={handleChange}
             />
-            <ul className={cx('overflow-y-auto max-h-32')}>
+            <ul className={cx('max-h-32 overflow-y-auto')}>
                 {listStore.map((item, index) => (
                     <li
                         key={index}
-                        className={cx('p-2 cursor-pointer hover:bg-primary-color')}
+                        className={cx('cursor-pointer p-2 hover:bg-primary-color')}
                         onClick={() => handleClickStore(item)}
                     >
                         {item}
@@ -74,6 +75,7 @@ function SearchStore() {
                     <span className={cx('max-md:hidden')}>{'Select Store('}</span>
                     <span className={cx('ml-1')}> {`${store}`}</span>
                     <span className={cx('max-md:hidden')}>{')'}</span>
+                    <IconCustom icon={IoIosArrowDown} />
                 </div>
             </Tippy>
         </div>

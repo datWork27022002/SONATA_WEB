@@ -25,7 +25,7 @@ function ChooseColor() {
     const RenderChooseColor = () => (
         <div
             className={cx(
-                'mt-2 flex overflow-hidden rounded border-[1px] border-solid border-primary-color text-text-color',
+                'mt-2 flex overflow-hidden rounded border-[1px] border-solid border-primary-color bg-white text-text-color',
             )}
         >
             {listColor.map((value, index) => {
