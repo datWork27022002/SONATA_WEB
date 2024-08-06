@@ -1,6 +1,8 @@
 const routes = {
     LOGIN: '/login',
     HOME: '/',
+    WEBLOGIN: '/WebLogin',
+    BOOKMARK: '/Bookmark',
     BasicSettings: {
         BASICSETTINGS: '/BasicSettings',
     },

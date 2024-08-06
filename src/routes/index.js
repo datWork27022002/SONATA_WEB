@@ -11,6 +11,8 @@ import SaleReports from '~/pages/SaleReports';
 import PurchaseOrder from '~/pages/PurchaseOrder';
 import Settings from '~/pages/Settings';
 import BIZSMS from '~/pages/BIZSMS';
+import WebLogin from '~/pages/WebLogin';
+import Bookmark from '~/pages/Bookmark';
 
 const { routes } = config;
 
@@ -25,5 +27,7 @@ export const publicRoute = [
     { path: routes.PurchaseOrder.PURCHASEORDER, component: PurchaseOrder, layout: BreadcrumbLayout },
     { path: routes.Settings.SETTINGS, component: Settings, layout: BreadcrumbLayout },
     { path: routes.BIZSMS.BIZSMS, component: BIZSMS, layout: BreadcrumbLayout },
+    { path: routes.WEBLOGIN, component: WebLogin, layout: BreadcrumbLayout },
+    { path: routes.BOOKMARK, component: Bookmark, layout: BreadcrumbLayout },
 ];
 export const privateRoute = [];

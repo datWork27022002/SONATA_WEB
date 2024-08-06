@@ -38,6 +38,7 @@ import {
     FaClipboardList,
     FaUserLock,
     FaUserTie,
+    FaLevelUpAlt,
 } from 'react-icons/fa';
 import {
     MdOutlineContentPasteSearch,
@@ -57,6 +58,7 @@ import {
     MdTouchApp,
     MdAddCall,
     MdVideoStable,
+    MdScreenLockLandscape,
 } from 'react-icons/md';
 import {
     PiRanking,
@@ -99,7 +101,14 @@ import { LiaReceiptSolid, LiaCcAmazonPay } from 'react-icons/lia';
 import { AiOutlineFileSearch } from 'react-icons/ai';
 import { CiEdit, CiLink, CiCreditCard1, CiCalendarDate, CiBarcode, CiDeliveryTruck } from 'react-icons/ci';
 import { TfiAnnouncement } from 'react-icons/tfi';
-import { GrDocumentStore, GrDocumentText, GrDocumentTransfer, GrDrawer, GrUserSettings } from 'react-icons/gr';
+import {
+    GrDocumentStore,
+    GrDocumentText,
+    GrDocumentTransfer,
+    GrDrawer,
+    GrUserSettings,
+    GrDocumentLocked,
+} from 'react-icons/gr';
 import { BiDetail, BiSolidDiscount } from 'react-icons/bi';
 import { HiReceiptRefund } from 'react-icons/hi';
 import { HiDocumentPlus, HiMiniDocumentMinus } from 'react-icons/hi2';
@@ -313,6 +322,14 @@ const menuStructure = {
         noFilter: [
             { name: 'BIZ SMS Setting', icon: FaUserCog, to: '', mark: false },
             { name: 'User Guide', icon: FaUserTie, to: '', mark: false },
+        ],
+    },
+    WEBLOGIN: {
+        noFilter: [
+            { name: 'Web Login', icon: MdScreenLockLandscape, to: '', mark: false },
+            { name: 'Use Security Function by Tasks', icon: GrDocumentLocked, to: '', mark: false },
+            { name: 'Employee Security', icon: FaUserLock, to: '', mark: false },
+            { name: 'Security Level', icon: FaLevelUpAlt, to: '', mark: false },
         ],
     },
 };

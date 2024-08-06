@@ -12,6 +12,14 @@ const cx = classNames.bind(styles);
 
 const breadcrumbNameMap = {
     BasicSettings: 'Basic Settings',
+    ManagerFunction: 'Manager Function',
+    Customer: 'Customer',
+    OperationReports: 'Operation Reports',
+    SaleReports: 'Sale Reports',
+    PurchaseOrder: 'Purchase Order',
+    Settings: 'Settings',
+    BIZSMS: 'BIZ SMS',
+    WebLogin: 'Web Login',
 };
 
 function Breadcrumb() {

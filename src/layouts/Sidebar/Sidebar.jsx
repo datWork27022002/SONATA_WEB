@@ -17,7 +17,7 @@ const cx = classNames.bind(styles);
 const { routes } = config;
 
 const menus = [
-    { to: '', name: 'Bookmark', icon: FaBookBookmark },
+    { to: routes.BOOKMARK, name: 'Bookmark', icon: FaBookBookmark },
     { to: routes.BasicSettings.BASICSETTINGS, name: 'Basic Settings', icon: FaScrewdriverWrench },
     { to: routes.ManagerFunction.MANAGERFUNCTION, name: 'Manager Function', icon: PiProjectorScreenChartFill },
     { to: routes.Customer.CUSTOMER, name: 'Customer', icon: FaUser },

@@ -42,10 +42,10 @@ function Header() {
                 <SearchStore />
 
                 {/* web login */}
-                <div className={cx('item-card', 'card-left', 'max-sm:!hidden')}>
+                <Link className={cx('item-card', 'card-left', 'max-sm:!hidden')} to={config.routes.WEBLOGIN}>
                     <IconCustom icon={FaUserGear} />
-                    <Link className={cx('ml-1', 'max-md:hidden')}> Web login</Link>
-                </div>
+                    <div className={cx('ml-1', 'max-md:hidden')}> Web login</div>
+                </Link>
             </div>
 
             <div className={cx('flex')}>
