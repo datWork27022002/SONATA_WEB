@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { IoMdArrowDropdown } from 'react-icons/io';
@@ -10,6 +11,7 @@ import { BiSolidFoodMenu } from 'react-icons/bi';
 import styles from './Sidebar.module.scss';
 import IconCustom from '~/components/IconCustom';
 import config from '~/config';
+import { updateVisibleSidebar } from '~/redux/themeSlice';
 import { Fragment } from 'react';
 
 const cx = classNames.bind(styles);
@@ -28,14 +30,19 @@ const menus = [
     { to: routes.BIZSMS.BIZSMS, name: 'BIZ SMS', icon: FaCommentSms },
 ];
 function Sidebar() {
+    const dispatch = useDispatch();
     const { shrinkSidebar, visibleSidebar } = useSelector((state) => state.theme);
+
+    const hideSideBar = () => {
+        dispatch(updateVisibleSidebar());
+    };
     return (
         <div
             className={cx(
                 'min-w-[70px] bg-fifth-color text-text-color-secondnary sm:h-screen',
                 'z-10 flex flex-col items-center',
                 'transition duration-300',
-                'max-sm:absolute max-sm:top-10 max-sm:w-screen',
+                'max-sm:fixed max-sm:top-10 max-sm:w-screen',
                 'max-lg:mix-w[150px]',
                 !visibleSidebar && 'max-sm:translate-x-[-125%]',
             )}
@@ -73,6 +80,7 @@ function Sidebar() {
                 {menus.map((item, index) => (
                     <li key={index}>
                         <Link
+                            onClick={hideSideBar}
                             to={item.to}
                             className={cx(
                                 'flex items-center px-2 py-3',
