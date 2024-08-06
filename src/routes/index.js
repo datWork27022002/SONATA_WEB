@@ -9,6 +9,7 @@ import Customer from '~/pages/Customer';
 import OperationReports from '~/pages/OperationReports';
 import SaleReports from '~/pages/SaleReports';
 import PurchaseOrder from '~/pages/PurchaseOrder';
+import Settings from '~/pages/Settings';
 
 const { routes } = config;
 
@@ -21,7 +22,7 @@ export const publicRoute = [
     { path: routes.OperationReports.OPERATIONREPORTS, component: OperationReports, layout: BreadcrumbLayout },
     { path: routes.SaleReports.SALEREPORTS, component: SaleReports, layout: BreadcrumbLayout },
     { path: routes.PurchaseOrder.PURCHASEORDER, component: PurchaseOrder, layout: BreadcrumbLayout },
-    { path: routes.Settings.SETTINGS, component: ManagerFunction, layout: BreadcrumbLayout },
+    { path: routes.Settings.SETTINGS, component: Settings, layout: BreadcrumbLayout },
     { path: routes.BIZSMS.BIZSMS, component: ManagerFunction, layout: BreadcrumbLayout },
 ];
 export const privateRoute = [];

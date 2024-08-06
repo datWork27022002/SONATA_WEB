@@ -17,6 +17,7 @@ const CardItem = ({ item }) => {
             className={cx(
                 'mb-3 mr-3 h-[110px] w-[135px] cursor-pointer border-2 border-solid border-primary-color',
                 'relative flex flex-col hover:translate-y-[-1px] hover:opacity-80',
+                'CardItem',
             )}
         >
             <IconCustom

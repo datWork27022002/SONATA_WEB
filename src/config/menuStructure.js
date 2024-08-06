@@ -6,6 +6,7 @@ import {
     BsCalendar2DayFill,
     BsCalendar2WeekFill,
     BsReceipt,
+    BsFilePost,
 } from 'react-icons/bs';
 import {
     FaStore,
@@ -24,14 +25,19 @@ import {
     FaNewspaper,
     FaAdjust,
     FaSortAmountUp,
+    FaWindowClose,
+    FaInfoCircle,
+    FaPager,
+    FaWindows,
+    FaSdCard,
+    FaQrcode,
+    FaDatabase,
+    FaBarcode,
+    FaBoxTissue,
+    FaExchangeAlt,
+    FaClipboardList,
+    FaUserLock,
 } from 'react-icons/fa';
-import { FaWarehouse, FaChalkboardUser, FaCalendarDay, FaCashRegister, FaTable } from 'react-icons/fa6';
-import { GiHamburger, GiPaperBagOpen, GiCash, GiBuyCard } from 'react-icons/gi';
-import { IoIosCash, IoMdDocument } from 'react-icons/io';
-import { IoReceiptOutline, IoIdCardOutline, IoAnalytics, IoReceipt } from 'react-icons/io5';
-import { RiDiscountPercentFill, RiUserSearchFill, RiMenuSearchFill } from 'react-icons/ri';
-import { TbHomeSearch, TbFileReport, TbClockHour10Filled, TbCategoryFilled } from 'react-icons/tb';
-import { VscLayoutMenubar } from 'react-icons/vsc';
 import {
     MdOutlineContentPasteSearch,
     MdOutlineScreenSearchDesktop,
@@ -43,15 +49,60 @@ import {
     MdInventory,
     MdSubdirectoryArrowLeft,
     MdSubdirectoryArrowRight,
+    MdStore,
+    MdLanguage,
+    MdLocalPrintshop,
+    MdOutlinePermDataSetting,
+    MdTouchApp,
+    MdAddCall,
+    MdVideoStable,
 } from 'react-icons/md';
+import {
+    PiRanking,
+    PiReceiptX,
+    PiNewspaperClippingLight,
+    PiStorefrontFill,
+    PiMathOperationsFill,
+} from 'react-icons/pi';
+import {
+    FaWarehouse,
+    FaChalkboardUser,
+    FaCalendarDay,
+    FaCashRegister,
+    FaTable,
+    FaPrint,
+    FaPhone,
+    FaTableCellsRowLock,
+} from 'react-icons/fa6';
+import {
+    TbHomeSearch,
+    TbFileReport,
+    TbClockHour10Filled,
+    TbCategoryFilled,
+    TbCircleNumber2Filled,
+    TbDeviceIpadCancel,
+} from 'react-icons/tb';
+import { GiHamburger, GiPaperBagOpen, GiCash, GiBuyCard, GiWeight } from 'react-icons/gi';
+import { IoIosCash, IoMdDocument, IoIosOptions, IoMdOptions, IoIosNotifications, IoIosMail } from 'react-icons/io';
+import {
+    IoReceiptOutline,
+    IoIdCardOutline,
+    IoAnalytics,
+    IoReceipt,
+    IoPhonePortrait,
+    IoTimerSharp,
+} from 'react-icons/io5';
+import { RiDiscountPercentFill, RiUserSearchFill, RiMenuSearchFill, RiBillLine, RiCoinFill } from 'react-icons/ri';
+import { VscLayoutMenubar } from 'react-icons/vsc';
 import { LiaReceiptSolid, LiaCcAmazonPay } from 'react-icons/lia';
 import { AiOutlineFileSearch } from 'react-icons/ai';
-import { CiEdit, CiLink, CiCreditCard1, CiCalendarDate } from 'react-icons/ci';
+import { CiEdit, CiLink, CiCreditCard1, CiCalendarDate, CiBarcode, CiDeliveryTruck } from 'react-icons/ci';
 import { TfiAnnouncement } from 'react-icons/tfi';
-import { GrDocumentStore, GrDocumentText, GrDocumentTransfer } from 'react-icons/gr';
-import { PiRanking, PiReceiptX, PiNewspaperClippingLight, PiStorefrontFill } from 'react-icons/pi';
+import { GrDocumentStore, GrDocumentText, GrDocumentTransfer, GrDrawer, GrUserSettings } from 'react-icons/gr';
 import { BiDetail, BiSolidDiscount } from 'react-icons/bi';
+import { HiReceiptRefund } from 'react-icons/hi';
 import { HiDocumentPlus, HiMiniDocumentMinus } from 'react-icons/hi2';
+import { TiPrinter } from 'react-icons/ti';
 const menuStructure = {
     BASICSETTINGS: {
         'Store Management': [
@@ -191,6 +242,71 @@ const menuStructure = {
             { name: 'Supplier Setting', icon: FaSortAmountUp, to: '', mark: false },
             { name: 'Amount', icon: PiStorefrontFill, to: '', mark: false },
         ],
+    },
+    SETTINGS: {
+        Store: [
+            { name: 'Store Operations', icon: FaStore, to: '', mark: false },
+            { name: 'Store Detail Setting', icon: MdStore, to: '', mark: false },
+            { name: 'Cash Drawer', icon: FaCashRegister, to: '', mark: false },
+            { name: 'Tax', icon: RiBillLine, to: '', mark: false },
+            { name: 'Operations Management', icon: PiMathOperationsFill, to: '', mark: false },
+            { name: 'Order POS Cancel Function Option', icon: IoIosOptions, to: '', mark: false },
+            { name: 'Printer Language Setting', icon: MdLanguage, to: '', mark: false },
+            { name: 'Auto Close Popup Option', icon: FaWindowClose, to: '', mark: false },
+        ],
+        POS: [
+            { name: 'POS Information', icon: FaInfoCircle, to: '', mark: false },
+            { name: 'Printer Setting', icon: FaPrint, to: '', mark: false },
+            { name: 'Label Print Setting', icon: MdLocalPrintshop, to: '', mark: false },
+            { name: 'Guest Pager', icon: FaPager, to: '', mark: false },
+            { name: 'Pos Display Setting', icon: BsFilePost, to: '', mark: false },
+            { name: 'CID Device', icon: FaPhone, to: '', mark: false },
+            { name: 'Print Option By Pos', icon: FaInfoCircle, to: '', mark: false },
+            { name: 'Windows Kiosk Options', icon: FaWindows, to: '', mark: false },
+            { name: 'MSR Setting', icon: FaSdCard, to: '', mark: false },
+            { name: 'MSR Port Setting', icon: IoPhonePortrait, to: '', mark: false },
+            { name: 'ECR Setting', icon: MdOutlinePermDataSetting, to: '', mark: false },
+        ],
+        'Option setting': [
+            { name: 'StoreInfo(TAX Receipt)', icon: FaReceipt, to: '', mark: false },
+            { name: 'Setting QR code', icon: FaQrcode, to: '', mark: false },
+            { name: 'Show additional data in EOD printout', icon: FaDatabase, to: '', mark: false },
+            { name: 'One Touch Option', icon: MdTouchApp, to: '', mark: false },
+            { name: 'Barcode Unregisterd Item Option', icon: FaBarcode, to: '', mark: false },
+            { name: 'Caller identification Receive Action', icon: MdAddCall, to: '', mark: false },
+            { name: 'Cash drawer open option', icon: GrDrawer, to: '', mark: false },
+            { name: 'Clear Table Setting', icon: MdVideoStable, to: '', mark: false },
+            { name: 'Enter number of customer Setting', icon: TbCircleNumber2Filled, to: '', mark: false },
+            { name: 'Select Employee Setting', icon: MdRememberMe, to: '', mark: false },
+            { name: 'Discount Order Option', icon: RiDiscountPercentFill, to: '', mark: false },
+            { name: 'Show item barcode option', icon: CiBarcode, to: '', mark: false },
+            { name: 'Rebate Issue', icon: FaBoxTissue, to: '', mark: false },
+            { name: 'Weight Barcode Option', icon: GiWeight, to: '', mark: false },
+            { name: 'Tender method when making refund receipt', icon: HiReceiptRefund, to: '', mark: false },
+            { name: 'Cash drawer open timing', icon: IoTimerSharp, to: '', mark: false },
+            { name: 'Prepayment function button Setting', icon: GrUserSettings, to: '', mark: false },
+            { name: 'Prepaid order Retention options', icon: IoMdOptions, to: '', mark: false },
+            { name: 'Delivery Settings', icon: FaWindows, to: '', mark: false },
+            { name: 'Delivery order', icon: CiDeliveryTruck, to: '', mark: false },
+            { name: 'Change weight control', icon: IoPhonePortrait, to: '', mark: false },
+            { name: 'Discount Option', icon: RiDiscountPercentFill, to: '', mark: false },
+            { name: 'Payment options immediately', icon: GiWeight, to: '', mark: false },
+            { name: 'Notice popup option', icon: IoIosNotifications, to: '', mark: false },
+            { name: 'Set all cancellation type', icon: TbDeviceIpadCancel, to: '', mark: false },
+            { name: 'Currency Change Option', icon: FaExchangeAlt, to: '', mark: false },
+            { name: 'Enable Keep Unit Change', icon: RiCoinFill, to: '', mark: false },
+        ],
+        'Print Options': [
+            { name: 'Receipt', icon: FaReceipt, to: '', mark: false },
+            { name: 'Customer Order Print', icon: FaPrint, to: '', mark: false },
+            { name: 'Kitchen Order Print', icon: TiPrinter, to: '', mark: false },
+            { name: 'Waiting List Tag', icon: FaClipboardList, to: '', mark: false },
+        ],
+        Security: [
+            { name: 'Use Security Function by Tasks', icon: FaTableCellsRowLock, to: '', mark: false },
+            { name: 'Security Group', icon: FaUserLock, to: '', mark: false },
+        ],
+        'Network Server': [{ name: 'Email Server', icon: IoIosMail, to: '', mark: false }],
     },
 };
 
