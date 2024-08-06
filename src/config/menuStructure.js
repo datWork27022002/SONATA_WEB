@@ -37,6 +37,7 @@ import {
     FaExchangeAlt,
     FaClipboardList,
     FaUserLock,
+    FaUserTie,
 } from 'react-icons/fa';
 import {
     MdOutlineContentPasteSearch,
@@ -307,6 +308,12 @@ const menuStructure = {
             { name: 'Security Group', icon: FaUserLock, to: '', mark: false },
         ],
         'Network Server': [{ name: 'Email Server', icon: IoIosMail, to: '', mark: false }],
+    },
+    BIZSMS: {
+        noFilter: [
+            { name: 'BIZ SMS Setting', icon: FaUserCog, to: '', mark: false },
+            { name: 'User Guide', icon: FaUserTie, to: '', mark: false },
+        ],
     },
 };
 
