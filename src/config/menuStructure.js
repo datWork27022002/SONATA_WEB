@@ -22,9 +22,11 @@ import {
     FaIdCard,
     FaUserSecret,
     FaNewspaper,
+    FaAdjust,
+    FaSortAmountUp,
 } from 'react-icons/fa';
-import { FaWarehouse, FaChalkboardUser, FaCalendarDay, FaCashRegister } from 'react-icons/fa6';
-import { GiHamburger, GiPaperBagOpen, GiCash } from 'react-icons/gi';
+import { FaWarehouse, FaChalkboardUser, FaCalendarDay, FaCashRegister, FaTable } from 'react-icons/fa6';
+import { GiHamburger, GiPaperBagOpen, GiCash, GiBuyCard } from 'react-icons/gi';
 import { IoIosCash, IoMdDocument } from 'react-icons/io';
 import { IoReceiptOutline, IoIdCardOutline, IoAnalytics, IoReceipt } from 'react-icons/io5';
 import { RiDiscountPercentFill, RiUserSearchFill, RiMenuSearchFill } from 'react-icons/ri';
@@ -38,15 +40,18 @@ import {
     MdOutlineGroups2,
     MdRememberMe,
     MdCalendarMonth,
+    MdInventory,
+    MdSubdirectoryArrowLeft,
+    MdSubdirectoryArrowRight,
 } from 'react-icons/md';
 import { LiaReceiptSolid, LiaCcAmazonPay } from 'react-icons/lia';
 import { AiOutlineFileSearch } from 'react-icons/ai';
 import { CiEdit, CiLink, CiCreditCard1, CiCalendarDate } from 'react-icons/ci';
 import { TfiAnnouncement } from 'react-icons/tfi';
-import { GrDocumentStore, GrDocumentText } from 'react-icons/gr';
-import { PiRanking, PiReceiptX, PiNewspaperClippingLight } from 'react-icons/pi';
+import { GrDocumentStore, GrDocumentText, GrDocumentTransfer } from 'react-icons/gr';
+import { PiRanking, PiReceiptX, PiNewspaperClippingLight, PiStorefrontFill } from 'react-icons/pi';
 import { BiDetail, BiSolidDiscount } from 'react-icons/bi';
-
+import { HiDocumentPlus, HiMiniDocumentMinus } from 'react-icons/hi2';
 const menuStructure = {
     BASICSETTINGS: {
         'Store Management': [
@@ -165,6 +170,26 @@ const menuStructure = {
         'EOD Report': [
             { name: 'Sales Cash In Out', icon: GiCash, to: '', mark: false },
             { name: 'Cash In/Out', icon: FaCashRegister, to: '', mark: false },
+        ],
+    },
+    PURCHASEORDER: {
+        Inventory: [
+            { name: 'Inventory Look Up', icon: MdInventory, to: '', mark: false },
+            { name: 'Inventory Adjustments', icon: FaAdjust, to: '', mark: false },
+            { name: 'Inventory Transfer', icon: GrDocumentTransfer, to: '', mark: false },
+            { name: 'IV Management Table', icon: FaTable, to: '', mark: false },
+        ],
+        Accounting: [
+            { name: 'Customer Purchase', icon: GiBuyCard, to: '', mark: false },
+            { name: 'Customer Sale β', icon: GiBuyCard, to: '', mark: false },
+            { name: 'Supplier Ledger', icon: HiDocumentPlus, to: '', mark: false },
+            { name: 'Customer Ledger', icon: HiMiniDocumentMinus, to: '', mark: false },
+            { name: 'Payable Report', icon: MdSubdirectoryArrowRight, to: '', mark: false },
+            { name: 'Receivable Report', icon: MdSubdirectoryArrowLeft, to: '', mark: false },
+        ],
+        Supplier: [
+            { name: 'Supplier Setting', icon: FaSortAmountUp, to: '', mark: false },
+            { name: 'Amount', icon: PiStorefrontFill, to: '', mark: false },
         ],
     },
 };

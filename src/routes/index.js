@@ -8,6 +8,7 @@ import ManagerFunction from '~/pages/ManagerFunction';
 import Customer from '~/pages/Customer';
 import OperationReports from '~/pages/OperationReports';
 import SaleReports from '~/pages/SaleReports';
+import PurchaseOrder from '~/pages/PurchaseOrder';
 
 const { routes } = config;
 
@@ -19,7 +20,7 @@ export const publicRoute = [
     { path: routes.Customer.CUSTOMER, component: Customer, layout: BreadcrumbLayout },
     { path: routes.OperationReports.OPERATIONREPORTS, component: OperationReports, layout: BreadcrumbLayout },
     { path: routes.SaleReports.SALEREPORTS, component: SaleReports, layout: BreadcrumbLayout },
-    { path: routes.PurchaseOrder.PURCHASEORDER, component: ManagerFunction, layout: BreadcrumbLayout },
+    { path: routes.PurchaseOrder.PURCHASEORDER, component: PurchaseOrder, layout: BreadcrumbLayout },
     { path: routes.Settings.SETTINGS, component: ManagerFunction, layout: BreadcrumbLayout },
     { path: routes.BIZSMS.BIZSMS, component: ManagerFunction, layout: BreadcrumbLayout },
 ];
