@@ -1,0 +1,26 @@
+.item-card {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color-secondnary);
+    font-size: 12px;
+    padding: 0 20px 0 20px;
+    cursor: pointer;
+    &:hover {
+        background-color: var(--background-color);
+        color: var(--primary);
+    }
+}
+
+.card-left {
+    border-right: 1px;
+    border-color: var(--text-color-secondnary);
+    border-style: solid;
+}
+
+.card-right {
+    border-left: 1px;
+    border-color: var(--text-color-secondnary);
+    border-style: solid;
+}

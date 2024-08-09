@@ -1,13 +1,12 @@
 import classNames from 'classnames/bind';
 import { useTranslation } from 'react-i18next';
-import { faStore, faKey, faUser, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import { FaStore, FaKey, FaUser, FaRightToBracket } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
 import styles from './Login.module.scss';
 import Input from '~/components/Input';
 import config from '~/config';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // eslint-disable-next-line no-unused-vars
 const cx = classNames.bind(styles);
@@ -37,15 +36,21 @@ function Login() {
     };
 
     return (
-        <div className={cx('bg-[#eff0f2] flex justify-center items-center w-screen h-screen')}>
-            <div className={cx('flex bg-white overflow-hidden rounded-lg relative w-[800px]')}>
+        <div className={cx('flex h-screen w-screen items-center justify-center bg-[#eff0f2]')}>
+            <div
+                className={cx(
+                    'relative flex w-[800px] flex-wrap overflow-hidden rounded-lg bg-white',
+                    'max-md:h-screen',
+                )}
+            >
                 {/* img login */}
-                <img src={require('~/assets/img/bgLogin.png')} alt="" />
+                <img src={require('~/assets/img/bgLogin.png')} alt="" className={cx('max-md:hidden')} />
+                <img src={require('~/assets/img/logo.png')} alt="" className={cx('mt-12 md:hidden')} />
                 {/* form login */}
-                <div className={cx('flex-1')}>
+                <div className={cx('min-w-[300px] flex-1')}>
                     {/* change language */}
                     <select
-                        className={cx('absolute top-6 right-8  bg-blue-100 p-2 rounded-md')}
+                        className={cx('absolute right-8 top-6 rounded-md bg-blue-100 p-2')}
                         name="language"
                         onChange={(e) => handleChangeLauage(e)}
                     >
@@ -55,11 +60,11 @@ function Login() {
                             </option>
                         ))}
                     </select>
-                    <form className={cx('flex flex-col px-10 py-20')} onSubmit={handleSubmit(onSubmit)}>
-                        <label className={cx('text-[#797979] text-3xl mb-10')}>{t('login')}</label>
+                    <form className={cx('flex flex-col items-center px-10 py-20')} onSubmit={handleSubmit(onSubmit)}>
+                        <label className={cx('mb-10 text-3xl text-[#797979]')}>{t('login')}</label>
                         <Input
                             placeholder={t('StoreID')}
-                            label={faStore}
+                            label={FaStore}
                             className={cx('w-[90%]')}
                             name={'StoreID'}
                             {...register('StoreID')}
@@ -67,7 +72,7 @@ function Login() {
                         />
                         <Input
                             placeholder={t('UserID')}
-                            label={faUser}
+                            label={FaUser}
                             className={cx('w-[90%]')}
                             name={'UserID'}
                             {...register('UserID')}
@@ -75,20 +80,25 @@ function Login() {
                         />
                         <Input
                             placeholder={t('Password')}
-                            label={faKey}
+                            label={FaKey}
                             className={cx('w-[90%]')}
                             name={'Password'}
                             type="password"
                             {...register('Password')}
                             errolMesseage={errors.Password?.message}
                         />
-                        <div className={cx('text-[13px] flex space-x-2')}>
+                        <div className={cx('flex space-x-2 text-[13px]')}>
                             <input type="checkbox" name="saveInfo" value={true} />
                             <label htmlFor="saveInfo"> {t('SaveUserInfo')}</label>
                         </div>
 
-                        <button className={cx('w-[90%] bg-[#403e43] mt-6 p-4 text-white  rounded-full font-semibold')}>
-                            <FontAwesomeIcon icon={faRightToBracket} />
+                        <button
+                            className={cx(
+                                'mt-6 w-[90%] rounded-full bg-[#403e43] p-4 font-semibold text-white',
+                                'flex items-center justify-center',
+                            )}
+                        >
+                            <FaRightToBracket />
                             {t('login')}
                         </button>
                     </form>
