@@ -59,12 +59,7 @@ function Settings() {
             {category === 'POS' && <ChoosePos />}
 
             {/* Menu Card */}
-            <ul
-                className={cx(
-                    'mt-6 flex max-h-[480px] flex-wrap overflow-y-auto text-primary-color',
-                    'max-md:justify-center',
-                )}
-            >
+            <ul className={cx('mt-6 flex flex-wrap text-primary-color', 'max-md:justify-center')}>
                 {listItem.map((value, index) => (
                     <CardItem key={index} item={value} />
                 ))}

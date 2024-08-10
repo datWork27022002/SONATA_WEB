@@ -1,20 +1,23 @@
 import classNames from 'classnames/bind';
+import { useSelector } from 'react-redux';
+
+import styles from './DefaultLayout.module.scss';
 import Header from '../Header';
 import Sidebar from '../Sidebar';
 import Language from '../Language';
-
-import styles from './DefaultLayout.module.scss';
 
 // eslint-disable-next-line no-unused-vars
 const cx = classNames.bind(styles);
 
 function DefaultLayout({ children }) {
+    const { shrinkSidebar } = useSelector((state) => state.theme);
+
     return (
         <div className={cx('relative flex')}>
             <Sidebar />
-            <div className={cx('relative flex-1')}>
+            <div className={cx('relative flex-1', shrinkSidebar ? 'sm:ml-[70px]' : 'sm:ml-[150px]')}>
                 <Header />
-                <div className={cx('bg-blue-50', 'max-md:mt-10')}>{children}</div>
+                <div className={cx('')}>{children}</div>
             </div>
             <Language />
         </div>

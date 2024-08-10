@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import React, { useState, useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import { FaBookBookmark, FaScrewdriverWrench, FaUser, FaChartBar, FaCommentSms } from 'react-icons/fa6';
@@ -30,16 +30,35 @@ const menus = [
     { to: routes.BIZSMS.BIZSMS, name: 'BIZ SMS', icon: FaCommentSms },
 ];
 function Sidebar() {
+    const [avatar, setAvatar] = useState(null);
+
     const dispatch = useDispatch();
     const { shrinkSidebar, visibleSidebar } = useSelector((state) => state.theme);
+    const fileInputRef = useRef(null);
 
     const hideSideBar = () => {
         dispatch(updateVisibleSidebar());
     };
+
+    const handleChangeAvatar = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setAvatar(reader.result);
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+
+    const handleImageClick = () => {
+        fileInputRef.current.click();
+    };
+
     return (
         <div
             className={cx(
-                'min-w-[70px] bg-fifth-color text-text-color-secondnary sm:h-screen',
+                'fixed min-w-[70px] bg-fifth-color text-text-color-secondnary sm:h-screen',
                 'z-10 flex flex-col items-center',
                 'transition duration-300',
                 'max-sm:fixed max-sm:top-10 max-sm:w-screen',
@@ -58,14 +77,22 @@ function Sidebar() {
 
             {/* infor User */}
             <div className={cx('flex flex-col items-center pt-9', 'max-sm:hidden')}>
+                <input
+                    type="file"
+                    accept="image/*"
+                    style={{ display: 'none' }} // Ẩn phần tử input
+                    ref={fileInputRef}
+                    onChange={handleChangeAvatar}
+                />
                 <img
-                    src={require('~/assets/img/avatar.jpg')}
+                    src={avatar || require('~/assets/img/avatar.jpg')}
                     alt=""
                     className={cx(
                         'cursor-pointer',
                         'border-2 border-solid border-primary-color',
-                        shrinkSidebar ? 'w-14' : 'h-24 w-24',
+                        shrinkSidebar ? 'h-14 w-14' : 'h-24 w-24',
                     )}
+                    onClick={handleImageClick}
                 />
                 {!shrinkSidebar && (
                     <Fragment>
