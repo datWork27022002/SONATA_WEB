@@ -64,24 +64,27 @@ function Login() {
                         <label className={cx('mb-10 text-3xl text-[#797979]')}>{t('login')}</label>
                         <Input
                             placeholder={t('StoreID')}
-                            label={FaStore}
-                            className={cx('w-[90%]')}
+                            icon={FaStore}
+                            borderBottom
+                            className={cx('mb-2 w-[90%]')}
                             name={'StoreID'}
                             {...register('StoreID')}
                             errolMesseage={errors.username?.message}
                         />
                         <Input
                             placeholder={t('UserID')}
-                            label={FaUser}
-                            className={cx('w-[90%]')}
+                            icon={FaUser}
+                            borderBottom
+                            className={cx('mb-2 w-[90%]')}
                             name={'UserID'}
                             {...register('UserID')}
                             errolMesseage={errors.UserID?.message}
                         />
                         <Input
                             placeholder={t('Password')}
-                            label={FaKey}
-                            className={cx('w-[90%]')}
+                            icon={FaKey}
+                            borderBottom
+                            className={cx('mb-2 w-[90%]')}
                             name={'Password'}
                             type="password"
                             {...register('Password')}
