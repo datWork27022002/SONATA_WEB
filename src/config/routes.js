@@ -1,31 +1,35 @@
+import nameMap from './nameMap';
+
+const { itemLevel1 } = nameMap;
+
 const routes = {
     LOGIN: '/login',
     HOME: '/',
     WEBLOGIN: '/WebLogin',
     BOOKMARK: '/Bookmark',
     BasicSettings: {
-        BASICSETTINGS: '/BasicSettings',
+        BASICSETTINGS: `/${itemLevel1.BASICSETTINGS.pathKey}`,
     },
     ManagerFunction: {
-        MANAGERFUNCTION: '/ManagerFunction',
+        MANAGERFUNCTION: `/${itemLevel1.MANAGERFUNCTION.pathKey}`,
     },
     Customer: {
-        CUSTOMER: '/Customer',
+        CUSTOMER: `/${itemLevel1.CUSTOMER.pathKey}`,
     },
     OperationReports: {
-        OPERATIONREPORTS: '/OperationReports',
+        OPERATIONREPORTS: `/${itemLevel1.OPERATIONREPORTS.pathKey}`,
     },
     SaleReports: {
-        SALEREPORTS: '/SaleReports',
+        SALEREPORTS: `/${itemLevel1.SALEREPORTS.pathKey}`,
     },
     PurchaseOrder: {
-        PURCHASEORDER: '/PurchaseOrder',
+        PURCHASEORDER: `/${itemLevel1.PURCHASEORDER.pathKey}`,
     },
     Settings: {
-        SETTINGS: '/Settings',
+        SETTINGS: `/${itemLevel1.SETTINGS.pathKey}`,
     },
     BIZSMS: {
-        BIZSMS: '/BIZSMS',
+        BIZSMS: `/${itemLevel1.BIZSMS.pathKey}`,
     },
 };
 

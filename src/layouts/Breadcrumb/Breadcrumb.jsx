@@ -29,7 +29,7 @@ function Breadcrumb() {
     return (
         <nav className={cx('bg-sixth-color px-1 py-2')}>
             <ol className={cx('flex')}>
-                <li>
+                <li className={cx('hover:text-primary-color')}>
                     <Link to="/">
                         <IconCustom icon={FaHouse} className={cx('mx-2 text-third-color')} />
                     </Link>
@@ -38,7 +38,7 @@ function Breadcrumb() {
                     const to = `/${pathnames.slice(0, index + 1).join('/')}`;
 
                     return (
-                        <li key={to} className={cx('flex !text-[#8b8b8b]')}>
+                        <li key={to} className={cx('flex !text-[#8b8b8b] hover:!text-primary-color')}>
                             <IconCustom icon={RxSlash} />
                             <Link className={cx('px-1')} to={to}>
                                 {breadcrumbNameMap[value] || value}
