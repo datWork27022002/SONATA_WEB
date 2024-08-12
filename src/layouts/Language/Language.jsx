@@ -30,7 +30,7 @@ function Language() {
                         <li
                             key={index}
                             className={cx(
-                                'border-[1px] border-solid border-primary-color text-white',
+                                'rounded border-[1px] border-solid border-primary-color text-white',
                                 'mr-[0.5px] px-[2px] text-[10px]',
                                 'cursor-pointer hover:bg-primary-color',
                                 selected === index && 'bg-primary-color',

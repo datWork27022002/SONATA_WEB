@@ -12,8 +12,8 @@ import ChangeCloudPassword from './ChangeCloudPassword';
 const cx = classNames.bind(styles);
 
 function ModalInformationUser({ avatar, modalUser, setModalUser }) {
-    const [modalChangePosPassword, setModalChangePosPassword] = useState(true);
-    const [modalChangeCloudPassword, setModalChangeCloudPassword] = useState(true);
+    const [modalChangePosPassword, setModalChangePosPassword] = useState(false);
+    const [modalChangeCloudPassword, setModalChangeCloudPassword] = useState(false);
 
     const OpenModalChangePosPassword = () => {
         setModalChangePosPassword(true);
