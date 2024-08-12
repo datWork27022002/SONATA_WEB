@@ -7,7 +7,7 @@ import IconCustom from '~/components/IconCustom';
 
 const cx = classNames.bind(styles);
 
-const Modal = ({ children, onClose = () => {}, visibleModal, setVisibleModal }) => {
+const Modal = ({ children, onClose = () => {}, visibleModal, setVisibleModal, title }) => {
     const handleClose = () => {
         onClose();
         setVisibleModal(!visibleModal);
@@ -23,7 +23,7 @@ const Modal = ({ children, onClose = () => {}, visibleModal, setVisibleModal }) 
             <div
                 className={cx(
                     'max-h-[90%] min-h-36 min-w-72 max-w-[60%] rounded-lg bg-background-color',
-                    'border-t-4 border-solid border-t-primary-color',
+                    'border-[1px] border-solid border-primary-color',
                     !visibleModal && 'translate-y-[-60px] opacity-0',
                     'duration-400 transition',
                 )}
@@ -34,7 +34,7 @@ const Modal = ({ children, onClose = () => {}, visibleModal, setVisibleModal }) 
                         'border-b-[1px] border-solid border-b-primary-color',
                     )}
                 >
-                    <span className={cx('text-primary-color')}> User Information</span>
+                    <span className={cx('font-semibold text-primary-color')}> {title}</span>
                     <span className={cx('cursor-pointer rounded p-2 hover:bg-red-400')} onClick={handleClose}>
                         <IconCustom icon={IoMdClose} />
                     </span>

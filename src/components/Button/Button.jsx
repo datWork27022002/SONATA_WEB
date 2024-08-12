@@ -7,7 +7,20 @@ import IconCustom from '../IconCustom';
 
 const cx = classNames.bind(styles);
 
-function Button({ children, primary, blue, teal, rounded, leftIcon, rightIcon, className, to, href, ...passProps }) {
+function Button({
+    children,
+    primary,
+    blue,
+    teal,
+    green,
+    rounded,
+    leftIcon,
+    rightIcon,
+    className,
+    to,
+    href,
+    ...passProps
+}) {
     let Comp = 'button';
 
     let Props = {
@@ -28,8 +41,9 @@ function Button({ children, primary, blue, teal, rounded, leftIcon, rightIcon, c
                 'min-h-[30px] min-w-[80px] text-text-color',
                 'flex items-center justify-center rounded border-0 py-1 font-semibold',
                 'bg-primary-color hover:text-text-color-secondnary',
-                blue && 'bg-blue-200 hover:bg-blue-400',
-                teal && 'bg-teal-200 hover:bg-teal-400',
+                blue && 'bg-blue-300 hover:bg-blue-400',
+                teal && 'bg-teal-300 hover:bg-teal-400',
+                green && 'bg-green-300 hover:bg-green-400',
 
                 { [className]: className },
             )}

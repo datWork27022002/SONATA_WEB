@@ -14,7 +14,7 @@ const Input = forwardRef(({ label, type, errolMesseage, className, disabled, ...
             <label className={cx('w-32')}>{label}</label>
             <input
                 className={cx(
-                    'min-w-32 flex-1 p-1',
+                    'min-w-32 flex-1 rounded p-1',
                     'border-[1px] border-solid border-slate-400',
                     disabled && 'bg-slate-100',
                     {

@@ -95,7 +95,7 @@ function Sidebar() {
                         src={avatar || require('~/assets/img/avatar.jpg')}
                         alt=""
                         className={cx(
-                            'cursor-pointer',
+                            'cursor-pointer overflow-hidden rounded',
                             'border-2 border-solid border-primary-color',
                             shrinkSidebar ? 'h-14 w-14' : 'h-24 w-24',
                         )}
