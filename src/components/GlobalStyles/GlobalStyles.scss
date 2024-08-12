@@ -1,5 +1,3 @@
-// @import 'normalize.css';
-
 :root {
     --primary: #6cacec;
     --secondnary: #96c92c;
@@ -7,26 +5,12 @@
     --fourth: #f3764a;
     --fifth: #393939;
     --sixth: #f6f5f3;
-    // --font-family: Arial, Helvetica, sans-serif;
 
-    // //defaut layout
-    // --default-layout-header-height: 60px;
-    // --default-layout-width: 1360px;
-    // --default-layout-horizontal-spacer: 24px;
-
-    // --height-chatAI: calc(100vh-var(--default-layout-header-height));
-
-    // // --width-search: 500px;
     --text-color: rgb(22, 24, 35);
     --text-color-secondnary: #ffffff;
     --text-color-third: #6b6b6b;
     --text-color-fourth: #2e2e2e;
-    // --text-color-link: #82aae3;
-    // --text-color-link-hightlight: #b799ff;
     --background-color: #ffffff;
-    // --background-color-secondnary: #eafdfc;
-    // --background-button: #bfeaf5;
-    // --background-button-red: rgba(239, 98, 98, 0.6);
 }
 
 * {

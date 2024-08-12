@@ -6,25 +6,22 @@ import styles from './Input.module.scss';
 
 const cx = classNames.bind(styles);
 
-const Input = forwardRef(({ label, type, textArea, className, errolMesseage, ...passProps }, ref) => {
+const Input = forwardRef(({ label, type, errolMesseage, className, disabled, ...passProps }, ref) => {
     const Props = { ...passProps };
 
-    const Icon = label;
-
-    const classes = cx('flex items-center mb-8', {
-        [className]: className,
-    });
-
     return (
-        <div className={classes}>
-            {label && <Icon color="#333333" className={cx('text-sm mr-2')} />}
+        <div className={cx('flex items-center py-2 text-[13px]')}>
+            <label className={cx('w-32')}>{label}</label>
             <input
                 className={cx(
-                    'w-full px-1 ',
-                    'border-b-2 border-b-[#a8a8a8] border-solid border-t-0 border-l-0 border-r-0 ',
+                    'min-w-32 flex-1 p-1',
+                    'border-[1px] border-solid border-slate-400',
+                    disabled && 'bg-slate-100',
+                    {
+                        [className]: className,
+                    },
                 )}
-                type={type || 'text'}
-                ref={ref}
+                disabled={disabled}
                 {...Props}
             />
             {errolMesseage && <span className={cx('text-sm text-red-600')}>{errolMesseage}</span>}
@@ -33,12 +30,11 @@ const Input = forwardRef(({ label, type, textArea, className, errolMesseage, ...
 });
 
 Input.propTypes = {
-    label: PropTypes.func,
-    textArea: PropTypes.bool,
+    label: PropTypes.string,
     type: PropTypes.string,
     className: PropTypes.string,
-    data: PropTypes.string,
-    setData: PropTypes.func,
+    errolMesseage: PropTypes.string,
+    disabled: PropTypes.bool,
 };
 
 export default Input;
