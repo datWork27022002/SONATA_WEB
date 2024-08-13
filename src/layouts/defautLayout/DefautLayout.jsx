@@ -17,7 +17,7 @@ function DefaultLayout({ children }) {
             <Sidebar />
             <div className={cx('relative flex-1', shrinkSidebar ? 'sm:ml-[70px]' : 'sm:ml-[150px]')}>
                 <Header />
-                <div className={cx('')}>{children}</div>
+                <div className={cx('max-lg:mb-4')}>{children}</div>
             </div>
             <Language />
         </div>

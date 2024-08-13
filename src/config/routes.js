@@ -9,7 +9,7 @@ const routes = {
     BOOKMARK: '/Bookmark',
     BasicSettings: {
         BASICSETTINGS: `/${itemLevel1.BASICSETTINGS.pathKey}`,
-        GROUPMANAGEMENT: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.GROUPMANAGEMENT.pathKey}`,
+        GROUPMANAGEMENT: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.GROUP_MANAGEMENT.pathKey}`,
     },
     ManagerFunction: {
         MANAGERFUNCTION: `/${itemLevel1.MANAGERFUNCTION.pathKey}`,

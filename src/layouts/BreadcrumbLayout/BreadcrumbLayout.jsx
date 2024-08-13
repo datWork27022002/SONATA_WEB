@@ -11,7 +11,7 @@ function BreadcrumbLayout({ children }) {
     return (
         <DefautLayout>
             <Breadcrumb />
-            <div className={cx('max-w-[950px] px-3')}> {children}</div>
+            <div className={cx('px-3')}> {children}</div>
         </DefautLayout>
     );
 }

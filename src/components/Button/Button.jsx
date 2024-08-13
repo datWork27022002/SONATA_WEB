@@ -13,6 +13,7 @@ function Button({
     blue,
     teal,
     green,
+    orange,
     rounded,
     leftIcon,
     rightIcon,
@@ -44,6 +45,7 @@ function Button({
                 blue && '!bg-blue-300 hover:!bg-blue-500',
                 teal && '!bg-teal-300 hover:!bg-teal-500',
                 green && '!bg-green-300 hover:!bg-green-500',
+                orange && '!bg-orange-300 hover:!bg-orange-500',
 
                 { [className]: className },
             )}
@@ -60,6 +62,10 @@ Button.propTypes = {
     children: PropTypes.node.isRequired,
     primary: PropTypes.bool,
     red: PropTypes.bool,
+    blue: PropTypes.bool,
+    teal: PropTypes.bool,
+    green: PropTypes.bool,
+    orange: PropTypes.bool,
     rounded: PropTypes.bool,
     leftIcon: PropTypes.object,
     rightIcon: PropTypes.object,
