@@ -33,8 +33,8 @@ function ChangePosPassword({ isModal, setIsModal }) {
 }
 
 ChangePosPassword.propTypes = {
-    modalUser: PropTypes.bool.isRequired,
-    setModalUser: PropTypes.func.isRequired,
+    isModal: PropTypes.bool.isRequired,
+    setIsModal: PropTypes.func.isRequired,
 };
 
 export default ChangePosPassword;

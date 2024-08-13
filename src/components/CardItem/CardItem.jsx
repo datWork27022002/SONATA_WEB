@@ -5,6 +5,7 @@ import { FaHouse } from 'react-icons/fa6';
 
 import styles from './CardItem.module.scss';
 import IconCustom from '~/components/IconCustom';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -13,12 +14,13 @@ const CardItem = ({ item }) => {
         e.stopPropagation(); // Ngăn không cho sự kiện nổi lên thẻ bên ngoài
     };
     return (
-        <li
+        <Link
             className={cx(
                 'mb-3 mr-3 h-[110px] w-[135px] cursor-pointer border-2 border-solid border-primary-color',
                 'relative flex flex-col overflow-hidden rounded hover:translate-y-[-1px] hover:opacity-80',
                 'CardItem',
             )}
+            to={item.to}
         >
             <IconCustom
                 icon={CiStar}
@@ -37,7 +39,7 @@ const CardItem = ({ item }) => {
             >
                 {item.name}
             </div>
-        </li>
+        </Link>
     );
 };
 

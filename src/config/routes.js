@@ -1,6 +1,6 @@
 import nameMap from './nameMap';
 
-const { itemLevel1 } = nameMap;
+const { itemLevel1, itemLevel3 } = nameMap;
 
 const routes = {
     LOGIN: '/login',
@@ -9,6 +9,7 @@ const routes = {
     BOOKMARK: '/Bookmark',
     BasicSettings: {
         BASICSETTINGS: `/${itemLevel1.BASICSETTINGS.pathKey}`,
+        GROUPMANAGEMENT: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.GROUPMANAGEMENT.pathKey}`,
     },
     ManagerFunction: {
         MANAGERFUNCTION: `/${itemLevel1.MANAGERFUNCTION.pathKey}`,

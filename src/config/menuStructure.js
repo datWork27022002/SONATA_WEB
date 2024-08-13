@@ -7,6 +7,7 @@ import {
     BsCalendar2WeekFill,
     BsReceipt,
     BsFilePost,
+    BsFillGrid3X3GapFill,
 } from 'react-icons/bs';
 import {
     FaStore,
@@ -39,6 +40,7 @@ import {
     FaUserLock,
     FaUserTie,
     FaLevelUpAlt,
+    FaImage,
 } from 'react-icons/fa';
 import {
     MdOutlineContentPasteSearch,
@@ -59,6 +61,9 @@ import {
     MdAddCall,
     MdVideoStable,
     MdScreenLockLandscape,
+    MdTableRestaurant,
+    MdPhonelinkSetup,
+    MdPayments,
 } from 'react-icons/md';
 import {
     PiRanking,
@@ -76,6 +81,7 @@ import {
     FaPrint,
     FaPhone,
     FaTableCellsRowLock,
+    FaRegImages,
 } from 'react-icons/fa6';
 import {
     TbHomeSearch,
@@ -86,7 +92,15 @@ import {
     TbDeviceIpadCancel,
 } from 'react-icons/tb';
 import { GiHamburger, GiPaperBagOpen, GiCash, GiBuyCard, GiWeight } from 'react-icons/gi';
-import { IoIosCash, IoMdDocument, IoIosOptions, IoMdOptions, IoIosNotifications, IoIosMail } from 'react-icons/io';
+import {
+    IoIosCash,
+    IoMdDocument,
+    IoIosOptions,
+    IoMdOptions,
+    IoIosNotifications,
+    IoIosMail,
+    IoMdRadioButtonOn,
+} from 'react-icons/io';
 import {
     IoReceiptOutline,
     IoIdCardOutline,
@@ -113,10 +127,16 @@ import { BiDetail, BiSolidDiscount } from 'react-icons/bi';
 import { HiReceiptRefund } from 'react-icons/hi';
 import { HiDocumentPlus, HiMiniDocumentMinus } from 'react-icons/hi2';
 import { TiPrinter } from 'react-icons/ti';
+import { CgArrangeBack } from 'react-icons/cg';
+
+import routes from './routes';
+
+const { BasicSettings } = routes;
+
 const menuStructure = {
     BASICSETTINGS: {
         'Store Management': [
-            { name: 'Group Management', icon: BsFillHousesFill, to: '', mark: false },
+            { name: 'Group Management', icon: BsFillHousesFill, to: BasicSettings.GROUPMANAGEMENT, mark: false },
             { name: 'Store Info', icon: FaStore, to: '', mark: false },
             { name: 'Store List', icon: TbHomeSearch, to: '', mark: false },
             { name: 'Warehouse Management', icon: FaWarehouse, to: '', mark: false },
@@ -146,7 +166,16 @@ const menuStructure = {
             { name: 'Change of multilingual name', icon: CiEdit, to: '', mark: false },
             { name: 'Item linked code management', icon: CiLink, to: '', mark: false },
         ],
-        'POS Screen Layout': [{ name: 'Employee Group', icon: '' }],
+        'POS Screen Layout': [
+            { name: 'Main Menu Setting', icon: BsFillGrid3X3GapFill, to: '', mark: false },
+            { name: 'Table Location Manager', icon: CgArrangeBack, to: '', mark: false },
+            { name: 'Table Design Setting', icon: MdTableRestaurant, to: '', mark: false },
+            { name: 'Menu Setup', icon: MdPhonelinkSetup, to: '', mark: false },
+            { name: 'POS Favorite Function Button', icon: IoMdRadioButtonOn, to: '', mark: false },
+            { name: 'Payment Button Setting', icon: MdPayments, to: '', mark: false },
+            { name: 'Kiosk Image Settings', icon: FaImage, to: '', mark: false },
+            { name: 'UP Order Image Settings', icon: FaRegImages, to: '', mark: false },
+        ],
     },
     MANAGERFUNCTION: {
         noFilter: [

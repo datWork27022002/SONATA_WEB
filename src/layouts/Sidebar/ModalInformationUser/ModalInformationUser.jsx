@@ -67,7 +67,7 @@ function ModalInformationUser({ avatar, modalUser, setModalUser }) {
 }
 
 ModalInformationUser.propTypes = {
-    avatar: PropTypes.object.isRequired,
+    avatar: PropTypes.object,
     modalUser: PropTypes.bool.isRequired,
     setModalUser: PropTypes.func.isRequired,
 };
