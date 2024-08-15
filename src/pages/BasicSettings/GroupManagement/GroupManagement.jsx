@@ -12,23 +12,11 @@ import Button from '~/components/Button';
 const cx = classNames.bind(styles);
 
 function GroupManagement() {
+    const listHide = ['YES', 'NO'];
     const [selectedRow, setSelectedRow] = useState(null);
-    const [hideList, setHideList] = useState(true);
+    const [hideList, setHideList] = useState(listHide[0]);
 
-    const dataTable = [
-        { groupCode: '1000', groupName: 'HQ' },
-        { groupCode: '1001', groupName: 'HA' },
-        { groupCode: '1002', groupName: 'HB' },
-        { groupCode: '1003', groupName: 'HC' },
-        { groupCode: '1003', groupName: 'HC' },
-        { groupCode: '1003', groupName: 'HC' },
-        { groupCode: '1003', groupName: 'HC' },
-        { groupCode: '1003', groupName: 'HC' },
-        { groupCode: '1003', groupName: 'HC' },
-        { groupCode: '1003', groupName: 'HC' },
-        { groupCode: '1003', groupName: 'HC' },
-        { groupCode: '1003', groupName: 'HC' },
-    ];
+    const dataTable = [{ groupCode: '1000', groupName: 'HQ' }];
 
     const columns = [
         {
@@ -54,7 +42,7 @@ function GroupManagement() {
                 {/* table */}
                 <div className={cx('w-[45%] pr-4 max-lg:!w-full max-lg:pr-0')}>
                     <TableCustom
-                        small
+                        className={cx('mb-4 h-[500px]')}
                         columns={columns}
                         data={data}
                         showHideList
@@ -64,15 +52,19 @@ function GroupManagement() {
                 </div>
                 {/* form */}
                 <div className={cx('flex-1')}>
-                    <div>
-                        <Input label="Group Name" required />
-                        <Input label="Hide" yesNoOptions seletedRadio={hideList} setSeletedRadio={setHideList} />
-                        <div className={cx('mt-8 flex')}>
-                            <Button orange className={cx('mr-4')}>
-                                New
-                            </Button>
-                            <Button teal>Save</Button>
-                        </div>
+                    <Input label="Group Name" required />
+                    <Input
+                        label="Hide"
+                        radioInput
+                        listOptions={listHide}
+                        seletedValue={hideList}
+                        setSeletedValue={setHideList}
+                    />
+                    <div className={cx('mt-8 flex')}>
+                        <Button orange className={cx('mr-4')}>
+                            New
+                        </Button>
+                        <Button teal>Save</Button>
                     </div>
                 </div>
                 <div className={cx('flex-1')}></div>

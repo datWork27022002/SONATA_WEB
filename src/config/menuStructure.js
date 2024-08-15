@@ -136,8 +136,8 @@ const { BasicSettings } = routes;
 const menuStructure = {
     BASICSETTINGS: {
         'Store Management': [
-            { name: 'Group Management', icon: BsFillHousesFill, to: BasicSettings.GROUPMANAGEMENT, mark: false },
-            { name: 'Store Info', icon: FaStore, to: '', mark: false },
+            { name: 'Group Management', icon: BsFillHousesFill, to: BasicSettings.GROUP_MANAGEMENT, mark: false },
+            { name: 'Store Info', icon: FaStore, to: BasicSettings.STORE_INFO, mark: false },
             { name: 'Store List', icon: TbHomeSearch, to: '', mark: false },
             { name: 'Warehouse Management', icon: FaWarehouse, to: '', mark: false },
             { name: 'Cash Drawer', icon: IoIosCash, to: '', mark: false },

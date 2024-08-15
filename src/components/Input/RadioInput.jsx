@@ -5,32 +5,31 @@ import styles from './Input.module.scss';
 
 const cx = classNames.bind(styles);
 
-const RadioInput = ({ seletedRadio, setSeletedRadio }) => {
+const RadioInput = ({ seletedRadio, setSeletedRadio, listOptions }) => {
     return (
         <div className={cx('flex h-8 flex-1 cursor-pointer rounded', 'border-[1px] border-solid border-primary-color')}>
-            <span
-                onClick={() => {
-                    setSeletedRadio(true);
-                }}
-                className={cx(seletedRadio === true && 'bg-primary-color', 'flex flex-1 items-center justify-center')}
-            >
-                YES
-            </span>
-            <span
-                onClick={() => {
-                    setSeletedRadio(false);
-                }}
-                className={cx(seletedRadio === false && 'bg-primary-color', 'flex flex-1 items-center justify-center')}
-            >
-                NO
-            </span>
+            {listOptions.map((value, index) => (
+                <span
+                    onClick={() => {
+                        setSeletedRadio(value);
+                    }}
+                    className={cx(
+                        seletedRadio === value && 'bg-primary-color',
+                        'flex flex-1 items-center justify-center',
+                    )}
+                    key={index}
+                >
+                    {value}
+                </span>
+            ))}
         </div>
     );
 };
 
 RadioInput.propTypes = {
-    seletedRadio: PropTypes.bool,
+    seletedRadio: PropTypes.string,
     setSeletedRadio: PropTypes.func,
+    listOptions: PropTypes.array,
 };
 
 export default RadioInput;

@@ -39,9 +39,9 @@ function Button({
     return (
         <Comp
             className={cx(
-                'min-h-[30px] min-w-[80px] text-text-color',
+                'min-h-[30px] min-w-[80px] px-2 text-[13px] text-text-color',
                 'flex items-center justify-center rounded border-0 py-1 font-semibold',
-                'bg-primary-color hover:text-text-color-secondnary',
+                'bg-gray-200 text-text-color hover:bg-primary-color hover:text-text-color-secondnary',
                 blue && '!bg-blue-300 hover:!bg-blue-500',
                 teal && '!bg-teal-300 hover:!bg-teal-500',
                 green && '!bg-green-300 hover:!bg-green-500',

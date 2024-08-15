@@ -7,7 +7,8 @@ import styles from './TableCustom.module.scss';
 
 const cx = classNames.bind(styles);
 
-const TableCustom = ({ data, columns, small = false, selectedRow, setSelectedRow, showHideList }) => {
+const TableCustom = ({ data, columns, selectedRow, setSelectedRow, showHideList, className }) => {
+    const dataEdited = data.length === 0 ? [{}] : data;
     const customStyles = {
         headRow: {
             style: {
@@ -64,11 +65,13 @@ const TableCustom = ({ data, columns, small = false, selectedRow, setSelectedRow
         <Fragment>
             <DataTable
                 columns={columns}
-                data={data}
+                data={dataEdited}
                 onRowClicked={handleRowClicked}
                 customStyles={customStyles}
                 conditionalRowStyles={conditionalRowStyles}
-                className={cx('overflow-hidden rounded border-[1px] border-solid border-[#ddd]', small && 'h-[500px]')}
+                className={cx('overflow-hidden rounded border-[1px] border-solid border-[#ddd]', {
+                    [className]: className,
+                })}
                 fixedHeader
             />
             {showHideList && (
@@ -83,10 +86,10 @@ const TableCustom = ({ data, columns, small = false, selectedRow, setSelectedRow
 TableCustom.propTypes = {
     data: PropTypes.array,
     columns: PropTypes.array,
-    small: PropTypes.bool,
     selectedRow: PropTypes.number,
     setSelectedRow: PropTypes.func,
     showHideList: PropTypes.bool,
+    className: PropTypes.string,
 };
 
 export default TableCustom;

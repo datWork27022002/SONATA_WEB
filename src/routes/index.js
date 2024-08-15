@@ -14,6 +14,7 @@ import BIZSMS from '~/pages/BIZSMS';
 import WebLogin from '~/pages/WebLogin';
 import Bookmark from '~/pages/Bookmark';
 import GroupManagement from '~/pages/BasicSettings/GroupManagement';
+import StoreInfo from '~/pages/BasicSettings/StoreInfo';
 
 const { routes } = config;
 
@@ -21,7 +22,8 @@ export const publicRoute = [
     { path: routes.HOME, component: Home },
     { path: routes.LOGIN, component: Login, layout: null },
     { path: routes.BasicSettings.BASICSETTINGS, component: BasicSettings, layout: BreadcrumbLayout },
-    { path: routes.BasicSettings.GROUPMANAGEMENT, component: GroupManagement, layout: BreadcrumbLayout },
+    { path: routes.BasicSettings.GROUP_MANAGEMENT, component: GroupManagement, layout: BreadcrumbLayout },
+    { path: routes.BasicSettings.STORE_INFO, component: StoreInfo, layout: BreadcrumbLayout },
     { path: routes.ManagerFunction.MANAGERFUNCTION, component: ManagerFunction, layout: BreadcrumbLayout },
     { path: routes.Customer.CUSTOMER, component: Customer, layout: BreadcrumbLayout },
     { path: routes.OperationReports.OPERATIONREPORTS, component: OperationReports, layout: BreadcrumbLayout },
