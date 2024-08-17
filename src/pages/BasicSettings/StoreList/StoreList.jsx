@@ -43,8 +43,8 @@ function StoreList() {
     return (
         <TitleLayout title={config.nameMap.itemLevel3.STORE_LIST.Visiblename}>
             {/* form */}
-            <div className={cx('flex justify-between')}>
-                <div className={cx('flex')}>
+            <div className={cx('mb-2 flex flex-wrap justify-between')}>
+                <div className={cx('flex flex-wrap')}>
                     <Input
                         label="Type"
                         paddingLabel
