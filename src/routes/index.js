@@ -3,7 +3,7 @@ import { BreadcrumbLayout } from '~/layouts';
 
 import Home from '~/pages/Home';
 import Login from '~/pages/Login';
-import BasicSettings from '~/pages/BasicSettings';
+import BasicSettings, { GroupManagement, StoreInfo, StoreList, WarehouseManagement } from '~/pages/BasicSettings';
 import ManagerFunction from '~/pages/ManagerFunction';
 import Customer from '~/pages/Customer';
 import OperationReports from '~/pages/OperationReports';
@@ -13,9 +13,6 @@ import Settings from '~/pages/Settings';
 import BIZSMS from '~/pages/BIZSMS';
 import WebLogin from '~/pages/WebLogin';
 import Bookmark from '~/pages/Bookmark';
-import GroupManagement from '~/pages/BasicSettings/GroupManagement';
-import StoreInfo from '~/pages/BasicSettings/StoreInfo';
-import StoreList from '~/pages/BasicSettings/StoreList';
 
 const { routes } = config;
 
@@ -26,6 +23,7 @@ export const publicRoute = [
     { path: routes.BasicSettings.GROUP_MANAGEMENT, component: GroupManagement, layout: BreadcrumbLayout },
     { path: routes.BasicSettings.STORE_INFO, component: StoreInfo, layout: BreadcrumbLayout },
     { path: routes.BasicSettings.STORE_LIST, component: StoreList, layout: BreadcrumbLayout },
+    { path: routes.BasicSettings.WAREHOUSE_MANAGEMENT, component: WarehouseManagement, layout: BreadcrumbLayout },
     { path: routes.ManagerFunction.MANAGERFUNCTION, component: ManagerFunction, layout: BreadcrumbLayout },
     { path: routes.Customer.CUSTOMER, component: Customer, layout: BreadcrumbLayout },
     { path: routes.OperationReports.OPERATIONREPORTS, component: OperationReports, layout: BreadcrumbLayout },

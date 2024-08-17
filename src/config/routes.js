@@ -12,6 +12,7 @@ const routes = {
         GROUP_MANAGEMENT: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.GROUP_MANAGEMENT.pathKey}`,
         STORE_INFO: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.STORE_INFO.pathKey}`,
         STORE_LIST: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.STORE_LIST.pathKey}`,
+        WAREHOUSE_MANAGEMENT: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.WAREHOUSE_MANAGEMENT.pathKey}`,
     },
     ManagerFunction: {
         MANAGERFUNCTION: `/${itemLevel1.MANAGERFUNCTION.pathKey}`,

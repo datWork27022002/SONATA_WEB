@@ -90,7 +90,7 @@ const TableCustom = ({ data, columns, selectedRow, setSelectedRow, showHideList,
                             style={{ width: value.width }}
                             className={cx(
                                 'h-10 flex-shrink-0 bg-[#6b6b6b] p-[8px] text-[13px] text-text-color-secondnary',
-                                'inline-flex items-center',
+                                'flex items-center justify-center',
                                 'border border-solid border-[#fff]',
                                 !value.width && 'flex-1',
                             )}

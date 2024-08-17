@@ -139,7 +139,7 @@ const menuStructure = {
             { name: 'Group Management', icon: BsFillHousesFill, to: BasicSettings.GROUP_MANAGEMENT, mark: false },
             { name: 'Store Info', icon: FaStore, to: BasicSettings.STORE_INFO, mark: false },
             { name: 'Store List', icon: TbHomeSearch, to: BasicSettings.STORE_LIST, mark: false },
-            { name: 'Warehouse Management', icon: FaWarehouse, to: '', mark: false },
+            { name: 'Warehouse Management', icon: FaWarehouse, to: BasicSettings.WAREHOUSE_MANAGEMENT, mark: false },
             { name: 'Cash Drawer', icon: IoIosCash, to: '', mark: false },
             { name: 'Discount', icon: RiDiscountPercentFill, to: '', mark: true },
         ],
