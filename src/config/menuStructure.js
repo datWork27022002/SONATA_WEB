@@ -141,7 +141,7 @@ const menuStructure = {
             { name: 'Store List', icon: TbHomeSearch, to: BasicSettings.STORE_LIST, mark: false },
             { name: 'Warehouse Management', icon: FaWarehouse, to: BasicSettings.WAREHOUSE_MANAGEMENT, mark: false },
             { name: 'Cash Drawer', icon: IoIosCash, to: BasicSettings.CASH_DRAWER, mark: false },
-            { name: 'Discount', icon: RiDiscountPercentFill, to: '', mark: true },
+            { name: 'Discount', icon: RiDiscountPercentFill, to: BasicSettings.DISCOUNT, mark: true },
         ],
         'Employee Management': [
             { name: 'Employee Group', icon: FaUsers, to: '', mark: false },

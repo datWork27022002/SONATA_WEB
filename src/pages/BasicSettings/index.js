@@ -3,6 +3,7 @@ import StoreInfo from './StoreInfo';
 import StoreList from './StoreList';
 import WarehouseManagement from './WarehouseManagement';
 import CashDrawer from './CashDrawer';
+import Discount from './Discount';
 export { default } from './BasicSettings';
 
-export { GroupManagement, StoreInfo, StoreList, WarehouseManagement, CashDrawer };
+export { GroupManagement, StoreInfo, StoreList, WarehouseManagement, CashDrawer, Discount };

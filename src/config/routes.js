@@ -14,6 +14,7 @@ const routes = {
         STORE_LIST: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.STORE_LIST.pathKey}`,
         WAREHOUSE_MANAGEMENT: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.WAREHOUSE_MANAGEMENT.pathKey}`,
         CASH_DRAWER: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.CASH_DRAWER.pathKey}`,
+        DISCOUNT: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.DISCOUNT.pathKey}`,
     },
     ManagerFunction: {
         MANAGERFUNCTION: `/${itemLevel1.MANAGERFUNCTION.pathKey}`,
