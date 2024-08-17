@@ -61,7 +61,7 @@ function Discount() {
                     <Input label="Discount Rate" />
                     <Input label="Discount Amount" />
                     <Input
-                        label="Hide"
+                        label="Apply Type"
                         radioInput
                         listOptions={listApplyType}
                         seletedValue={applyType}

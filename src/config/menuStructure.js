@@ -144,7 +144,7 @@ const menuStructure = {
             { name: 'Discount', icon: RiDiscountPercentFill, to: BasicSettings.DISCOUNT, mark: true },
         ],
         'Employee Management': [
-            { name: 'Employee Group', icon: FaUsers, to: '', mark: false },
+            { name: 'Employee Group', icon: FaUsers, to: BasicSettings.EMPLOYEE_GROUP, mark: false },
             { name: 'Employee Info', icon: FaUserEdit, to: '', mark: false },
             { name: 'Employee List', icon: RiUserSearchFill, to: '', mark: false },
         ],
