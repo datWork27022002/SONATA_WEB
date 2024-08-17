@@ -68,7 +68,7 @@ function Breadcrumb() {
     };
 
     return (
-        <nav className={cx('bg-sixth-color px-1 py-2')}>
+        <div className={cx('sticky top-10 z-10 bg-sixth-color px-1 py-2 shadow-md')}>
             <ol className={cx('flex')}>
                 <li className={cx('hover:text-primary-color')}>
                     <Link to="/">
@@ -78,7 +78,7 @@ function Breadcrumb() {
                 <RenderPath1 />
                 <RenderPath2 />
             </ol>
-        </nav>
+        </div>
     );
 }
 

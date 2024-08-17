@@ -21,8 +21,12 @@ function FormGeneral({ className }) {
     const [gpsService, setGpsService] = useState(listOptionsGpsServices[0]);
 
     return (
-        <div className={cx('mt-2 flex overflow-hidden transition-all duration-300', { [className]: className })}>
-            <div className={cx('flex-1 border-r-[1px] border-solid border-r-gray-300 pr-4')}>
+        <div
+            className={cx('mt-2 flex flex-wrap overflow-hidden transition-all duration-300', {
+                [className]: className,
+            })}
+        >
+            <div className={cx('flex-1 border-solid border-r-gray-300 pr-4 lg:border-r')}>
                 <Input
                     label="Group Management"
                     dropDown
@@ -46,7 +50,7 @@ function FormGeneral({ className }) {
                 <Input label="Fax" />
                 <Input label="E-mail" />
             </div>
-            <div className={cx('ml-4 flex-1')}>
+            <div className={cx('flex-1 lg:ml-4')}>
                 <Input label="Website" />
                 <Input label="ZIP Code" iconRightInput={FaSearch} />
                 <Input label="Address" />

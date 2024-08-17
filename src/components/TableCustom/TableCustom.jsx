@@ -8,7 +8,6 @@ import styles from './TableCustom.module.scss';
 const cx = classNames.bind(styles);
 
 const TableCustom = ({ data, columns, selectedRow, setSelectedRow, showHideList, className }) => {
-    const dataEdited = data.length === 0 ? [{}] : data;
     const customStyles = {
         headRow: {
             style: {
@@ -23,13 +22,13 @@ const TableCustom = ({ data, columns, selectedRow, setSelectedRow, showHideList,
                 padding: '8px',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center',
                 border: '1px solid #fff',
             },
         },
         rows: {
             style: {
                 minHeight: '30px',
+                borderBottom: '.5px solid #ddd',
                 '&:nth-child(even)': {
                     backgroundColor: '#f2f2f2',
                 },
@@ -63,17 +62,45 @@ const TableCustom = ({ data, columns, selectedRow, setSelectedRow, showHideList,
 
     return (
         <Fragment>
-            <DataTable
-                columns={columns}
-                data={dataEdited}
-                onRowClicked={handleRowClicked}
-                customStyles={customStyles}
-                conditionalRowStyles={conditionalRowStyles}
-                className={cx('overflow-hidden rounded border-[1px] border-solid border-[#ddd]', {
-                    [className]: className,
-                })}
-                fixedHeader
-            />
+            {data.length !== 0 ? (
+                <DataTable
+                    columns={columns}
+                    data={data}
+                    onRowClicked={handleRowClicked}
+                    customStyles={customStyles}
+                    conditionalRowStyles={conditionalRowStyles}
+                    className={cx('overflow-hidden rounded border-[1px] border-solid border-[#ddd]', {
+                        [className]: className,
+                    })}
+                    fixedHeader
+                />
+            ) : (
+                <div
+                    className={cx(
+                        'flex min-h-[30px] w-full justify-start overflow-auto',
+                        'border border-solid border-[#ddd]',
+                        {
+                            [className]: className,
+                        },
+                    )}
+                >
+                    {columns.map((value, index) => (
+                        <div
+                            key={index}
+                            style={{ width: value.width }}
+                            className={cx(
+                                'h-10 flex-shrink-0 bg-[#6b6b6b] p-[8px] text-[13px] text-text-color-secondnary',
+                                'inline-flex items-center',
+                                'border border-solid border-[#fff]',
+                                !value.width && 'flex-1',
+                            )}
+                        >
+                            <div className={cx('overflow-hidden text-ellipsis text-nowrap')}>{value.name}</div>
+                        </div>
+                    ))}
+                </div>
+            )}
+
             {showHideList && (
                 <div className={cx('mt-2 flex justify-end')}>
                     <label className={cx('mr-1 text-[13px]')}>Show Hide List</label> <input type="checkbox" />

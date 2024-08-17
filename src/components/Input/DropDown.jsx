@@ -47,7 +47,7 @@ function Dropdown({ listOptions, seletedValue, setSeletedValue }) {
                 className={cx(
                     isOpen ? 'scale-y-100' : 'scale-y-0',
                     'absolute left-0 w-full origin-top-left overflow-hidden rounded transition-all duration-300',
-                    'z-20 border border-solid border-primary-color bg-white',
+                    'z-20 border border-solid border-primary-color bg-white shadow-lg',
                 )}
             >
                 <ul className="py-1">

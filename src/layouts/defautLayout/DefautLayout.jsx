@@ -13,9 +13,9 @@ function DefaultLayout({ children }) {
     const { shrinkSidebar } = useSelector((state) => state.theme);
 
     return (
-        <div className={cx('relative flex')}>
+        <div className={cx('relative')}>
             <Sidebar />
-            <div className={cx('relative flex-1', shrinkSidebar ? 'sm:ml-[70px]' : 'sm:ml-[150px]')}>
+            <div className={cx('relative', shrinkSidebar ? 'sm:ml-[70px]' : 'sm:ml-[150px]')}>
                 <Header />
                 <div className={cx('max-lg:mb-4')}>{children}</div>
             </div>

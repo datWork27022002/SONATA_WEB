@@ -14,7 +14,6 @@
         "classnames": "^2.5.1",
         "i18next": "^23.12.2",
         "i18next-http-backend": "^2.5.2",
-        "normalize.css": "^8.0.1",
         "prop-types": "^15.8.1",
         "react": "^18.3.1",
         "react-chartjs-2": "^5.2.0",
@@ -34,7 +33,7 @@
     },
     "scripts": {
         "start": "react-app-rewired start",
-        "build": "react-app-rewired build",
+        "build": "react-app-rewired --max_old_space_size=8192 build",
         "test": "react-app-rewired test",
         "eject": "react-app-rewired eject"
     },

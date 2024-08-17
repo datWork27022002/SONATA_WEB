@@ -11,7 +11,7 @@ function BreadcrumbLayout({ children }) {
     return (
         <DefautLayout>
             <Breadcrumb />
-            <div className={cx('px-3')}> {children}</div>
+            <div className={cx('overflow-hidden px-3')}> {children}</div>
         </DefautLayout>
     );
 }

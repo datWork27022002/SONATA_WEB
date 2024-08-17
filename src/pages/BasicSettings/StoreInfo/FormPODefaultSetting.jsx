@@ -33,7 +33,7 @@ function FormPODefaultSetting({ className }) {
                     Save
                 </Button>
             </div>
-            <div className={cx('flex-1')}></div>
+            <div className={cx('lg:flex-1')}></div>
         </div>
     );
 }

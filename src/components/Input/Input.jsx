@@ -17,6 +17,9 @@ const Input = forwardRef(
             icon,
             iconRightInput,
             borderBottom,
+            paddingLabel,
+            boldLabel,
+            widthInput,
             type,
             className,
             disabled,
@@ -39,13 +42,24 @@ const Input = forwardRef(
                 })}
             >
                 {icon && <IconCustom icon={icon} className={cx('mr-2 text-sm')} />}
-                {label && <label className={cx('w-32', required && 'font-semibold text-red-600')}>{label}</label>}
+                {label && (
+                    <label
+                        className={cx(
+                            paddingLabel ? 'pr-2' : 'w-32',
+                            required && 'font-semibold text-red-600',
+                            boldLabel && 'font-semibold',
+                        )}
+                    >
+                        {label}
+                    </label>
+                )}
                 {!radioInput && !dropDown && (
                     <div className={cx('flex flex-1 items-center')}>
                         <input
+                            style={{ width: widthInput }}
                             ref={ref}
                             className={cx(
-                                'min-w-32 flex-1 p-1',
+                                'flex-1 p-1',
                                 borderBottom
                                     ? 'border-b-2 border-l-0 border-r-0 border-t-0 border-solid border-b-[#a8a8a8]'
                                     : 'rounded border-[1px] border-solid border-slate-400',
@@ -58,7 +72,7 @@ const Input = forwardRef(
                         {iconRightInput && (
                             <div
                                 className={cx(
-                                    'z-10 ml-[-3px] h-[29px] w-[29px] rounded-r bg-gray-200',
+                                    'z-10 ml-[-3px] h-[29px] w-[29px] rounded-r bg-gray-300',
                                     'flex items-center justify-center',
                                     'cursor-pointer hover:bg-primary-color',
                                 )}

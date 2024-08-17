@@ -138,7 +138,7 @@ const menuStructure = {
         'Store Management': [
             { name: 'Group Management', icon: BsFillHousesFill, to: BasicSettings.GROUP_MANAGEMENT, mark: false },
             { name: 'Store Info', icon: FaStore, to: BasicSettings.STORE_INFO, mark: false },
-            { name: 'Store List', icon: TbHomeSearch, to: '', mark: false },
+            { name: 'Store List', icon: TbHomeSearch, to: BasicSettings.STORE_LIST, mark: false },
             { name: 'Warehouse Management', icon: FaWarehouse, to: '', mark: false },
             { name: 'Cash Drawer', icon: IoIosCash, to: '', mark: false },
             { name: 'Discount', icon: RiDiscountPercentFill, to: '', mark: true },
@@ -351,6 +351,38 @@ const menuStructure = {
         noFilter: [
             { name: 'BIZ SMS Setting', icon: FaUserCog, to: '', mark: false },
             { name: 'User Guide', icon: FaUserTie, to: '', mark: false },
+        ],
+    },
+    SMART_ORDER: {
+        'Store Management': [
+            { name: 'Store Info', icon: MdScreenLockLandscape, to: '', mark: false },
+            { name: 'Tax', icon: GrDocumentLocked, to: '', mark: false },
+            { name: 'UP-SmartOrder QR Printing', icon: FaUserLock, to: '', mark: false },
+            { name: 'Up TableOrder QR Printing', icon: FaLevelUpAlt, to: '', mark: false },
+        ],
+        Settings: [
+            { name: 'UP-SmartOrder Settings', icon: MdScreenLockLandscape, to: '', mark: false },
+            { name: 'UP-TableOrder Settings', icon: GrDocumentLocked, to: '', mark: false },
+            { name: 'UP-Order Settings', icon: FaUserLock, to: '', mark: false },
+            { name: 'UP Order Image Settings', icon: FaLevelUpAlt, to: '', mark: false },
+            { name: 'Call message', icon: FaLevelUpAlt, to: '', mark: false },
+            { name: 'Robowide Settings', icon: FaLevelUpAlt, to: '', mark: false },
+        ],
+        'Menu Management': [
+            { name: 'Menu Setup', icon: MdScreenLockLandscape, to: '', mark: false },
+            { name: 'Item Recipe Management', icon: GrDocumentLocked, to: '', mark: false },
+            { name: 'Item Recipe Manager', icon: FaUserLock, to: '', mark: false },
+            { name: 'Modifier', icon: FaLevelUpAlt, to: '', mark: false },
+            { name: 'Sub Menu', icon: FaLevelUpAlt, to: '', mark: false },
+            { name: 'Item Management By Strore', icon: FaLevelUpAlt, to: '', mark: false },
+            { name: 'Item Description Image URL', icon: FaLevelUpAlt, to: '', mark: false },
+        ],
+        'Sales Reports': [
+            { name: 'Daily Sales Report', icon: MdScreenLockLandscape, to: '', mark: false },
+            { name: 'Breakdown of sales by month', icon: GrDocumentLocked, to: '', mark: false },
+            { name: 'Sales By Receipt', icon: FaUserLock, to: '', mark: false },
+            { name: 'Sales By Receipt Detail', icon: FaLevelUpAlt, to: '', mark: false },
+            { name: 'Sales Ranking', icon: FaLevelUpAlt, to: '', mark: false },
         ],
     },
     WEBLOGIN: {
