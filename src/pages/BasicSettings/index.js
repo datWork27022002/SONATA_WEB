@@ -6,7 +6,8 @@ import CashDrawer from './CashDrawer';
 import Discount from './Discount';
 import EmployeeGroup from './EmployeeGroup';
 import EmployeeInfo from './EmployeeInfo';
+import EmployeeList from './EmployeeList';
 export { default } from './BasicSettings';
 
 export { GroupManagement, StoreInfo, StoreList, WarehouseManagement, CashDrawer, Discount, EmployeeGroup };
-export { EmployeeInfo };
+export { EmployeeInfo, EmployeeList };

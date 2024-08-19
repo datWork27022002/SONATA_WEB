@@ -146,7 +146,7 @@ const menuStructure = {
         'Employee Management': [
             { name: 'Employee Group', icon: FaUsers, to: BasicSettings.EMPLOYEE_GROUP, mark: false },
             { name: 'Employee Info', icon: FaUserEdit, to: BasicSettings.EMPLOYEE_INFO, mark: false },
-            { name: 'Employee List', icon: RiUserSearchFill, to: '', mark: false },
+            { name: 'Employee List', icon: RiUserSearchFill, to: BasicSettings.EMPLOYEE_LIST, mark: false },
         ],
         'Menu Management': [
             { name: 'Menu Setup', icon: VscLayoutMenubar, to: '', mark: false },

@@ -4,7 +4,7 @@ import { BreadcrumbLayout } from '~/layouts';
 import Home from '~/pages/Home';
 import Login from '~/pages/Login';
 import BasicSettings, { GroupManagement, StoreInfo, StoreList, WarehouseManagement } from '~/pages/BasicSettings';
-import { CashDrawer, Discount, EmployeeGroup, EmployeeInfo } from '~/pages/BasicSettings';
+import { CashDrawer, Discount, EmployeeGroup, EmployeeInfo, EmployeeList } from '~/pages/BasicSettings';
 import ManagerFunction from '~/pages/ManagerFunction';
 import Customer from '~/pages/Customer';
 import OperationReports from '~/pages/OperationReports';
@@ -29,6 +29,7 @@ export const publicRoute = [
     { path: routes.BasicSettings.DISCOUNT, component: Discount, layout: BreadcrumbLayout },
     { path: routes.BasicSettings.EMPLOYEE_GROUP, component: EmployeeGroup, layout: BreadcrumbLayout },
     { path: routes.BasicSettings.EMPLOYEE_INFO, component: EmployeeInfo, layout: BreadcrumbLayout },
+    { path: routes.BasicSettings.EMPLOYEE_LIST, component: EmployeeList, layout: BreadcrumbLayout },
     { path: routes.ManagerFunction.MANAGERFUNCTION, component: ManagerFunction, layout: BreadcrumbLayout },
     { path: routes.Customer.CUSTOMER, component: Customer, layout: BreadcrumbLayout },
     { path: routes.OperationReports.OPERATIONREPORTS, component: OperationReports, layout: BreadcrumbLayout },

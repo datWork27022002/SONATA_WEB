@@ -88,18 +88,26 @@ const Input = forwardRef(
                         )}
                     </div>
                 )}
-                {radioInput && (
-                    <RadioInput
-                        seletedRadio={seletedValue}
-                        setSeletedRadio={setSeletedValue}
-                        listOptions={listOptions}
-                    />
-                )}
-                {dropDown && (
-                    <Dropdown listOptions={listOptions} seletedValue={seletedValue} setSeletedValue={setSeletedValue} />
+                {(radioInput || dropDown || rangeTime) && (
+                    <div className={cx('flex flex-1 items-center')} style={{ width: widthInput }}>
+                        {radioInput && (
+                            <RadioInput
+                                seletedRadio={seletedValue}
+                                setSeletedRadio={setSeletedValue}
+                                listOptions={listOptions}
+                            />
+                        )}
+                        {dropDown && (
+                            <Dropdown
+                                listOptions={listOptions}
+                                seletedValue={seletedValue}
+                                setSeletedValue={setSeletedValue}
+                            />
+                        )}
+                        {rangeTime && <RangeTime seletedValue={seletedValue} setSeletedValue={setSeletedValue} />}
+                    </div>
                 )}
 
-                {rangeTime && <RangeTime seletedValue={seletedValue} setSeletedValue={setSeletedValue} />}
                 {errolMesseage && <span className={cx('text-sm text-red-600')}>{errolMesseage}</span>}
             </div>
         );
