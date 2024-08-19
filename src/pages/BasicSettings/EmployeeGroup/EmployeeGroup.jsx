@@ -11,7 +11,7 @@ import Button from '~/components/Button';
 // eslint-disable-next-line no-unused-vars
 const cx = classNames.bind(styles);
 
-function Discount() {
+function EmployeeGroup() {
     const listHide = ['YES', 'NO'];
     const listPayBasic = ['Time Pay'];
     const listPOSSecurityLevel = ['Cashier', 'Manager', 'Owner', 'Server'];
@@ -98,4 +98,4 @@ function Discount() {
     );
 }
 
-export default Discount;
+export default EmployeeGroup;

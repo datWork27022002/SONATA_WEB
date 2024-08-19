@@ -6,6 +6,7 @@ import styles from './Input.module.scss';
 import IconCustom from '../IconCustom';
 import RadioInput from './RadioInput';
 import Dropdown from './DropDown';
+import RangeTime from './RangeTime';
 
 const cx = classNames.bind(styles);
 
@@ -20,12 +21,14 @@ const Input = forwardRef(
             paddingLabel,
             boldLabel,
             widthInput,
-            type,
+            type = 'text',
+            textarea,
             className,
             disabled,
             required,
             radioInput,
             dropDown,
+            rangeTime,
             listOptions,
             seletedValue,
             setSeletedValue,
@@ -34,6 +37,8 @@ const Input = forwardRef(
         ref,
     ) => {
         const Props = { ...passProps };
+
+        const Comp = textarea ? 'textarea' : 'input';
 
         return (
             <div
@@ -53,9 +58,10 @@ const Input = forwardRef(
                         {label}
                     </label>
                 )}
-                {!radioInput && !dropDown && (
+                {!radioInput && !dropDown && !rangeTime && (
                     <div className={cx('flex flex-1 items-center')}>
-                        <input
+                        <Comp
+                            type={type}
                             style={{ width: widthInput }}
                             ref={ref}
                             className={cx(
@@ -92,6 +98,8 @@ const Input = forwardRef(
                 {dropDown && (
                     <Dropdown listOptions={listOptions} seletedValue={seletedValue} setSeletedValue={setSeletedValue} />
                 )}
+
+                {rangeTime && <RangeTime seletedValue={seletedValue} setSeletedValue={setSeletedValue} />}
                 {errolMesseage && <span className={cx('text-sm text-red-600')}>{errolMesseage}</span>}
             </div>
         );
@@ -109,8 +117,10 @@ Input.propTypes = {
     borderBottom: PropTypes.bool,
     required: PropTypes.bool,
     dropDown: PropTypes.bool,
+    rangeTime: PropTypes.bool,
     listOptions: PropTypes.array,
     setSeletedValue: PropTypes.func,
+    textarea: PropTypes.bool,
 };
 
 export default Input;
