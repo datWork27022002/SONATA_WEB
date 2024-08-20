@@ -7,7 +7,7 @@ import styles from './TableCustom.module.scss';
 
 const cx = classNames.bind(styles);
 
-const TableCustom = ({ data, columns, selectedRow, setSelectedRow, showHideList, className }) => {
+const TableCustom = ({ data, columns, selectedRow, setSelectedRow = () => {}, showHideList, className }) => {
     const customStyles = {
         headRow: {
             style: {
@@ -116,7 +116,7 @@ TableCustom.propTypes = {
     selectedRow: PropTypes.number,
     setSelectedRow: PropTypes.func,
     showHideList: PropTypes.bool,
-    className: PropTypes.string,
+    className: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 };
 
 export default TableCustom;

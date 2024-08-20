@@ -18,6 +18,7 @@ const routes = {
         EMPLOYEE_GROUP: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.EMPLOYEE_GROUP.pathKey}`,
         EMPLOYEE_INFO: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.EMPLOYEE_INFO.pathKey}`,
         EMPLOYEE_LIST: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.EMPLOYEE_LIST.pathKey}`,
+        MENU_SETUP: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.MENU_SETUP.pathKey}`,
     },
     ManagerFunction: {
         MANAGERFUNCTION: `/${itemLevel1.MANAGERFUNCTION.pathKey}`,

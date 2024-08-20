@@ -5,7 +5,7 @@ import { MdOutlineArrowDropDown } from 'react-icons/md';
 
 const cx = classNames.bind();
 
-function Dropdown({ listOptions, seletedValue, setSeletedValue }) {
+function Dropdown({ listOptions, seletedValue, setSeletedValue, className, top }) {
     const [isOpen, setIsOpen] = useState(false);
     const ref = useRef(null);
 
@@ -32,12 +32,17 @@ function Dropdown({ listOptions, seletedValue, setSeletedValue }) {
     }, []);
 
     return (
-        <div className="relative min-w-32 flex-1" ref={ref}>
+        <div
+            className={cx('relative min-w-32', {
+                [className]: className,
+            })}
+            ref={ref}
+        >
             <button
                 onClick={toggleDropdown}
                 className={cx(
-                    'flex w-full flex-1 rounded border border-solid border-slate-400 p-1',
-                    'items-center justify-between hover:border-primary-color',
+                    'flex w-full flex-1 text-ellipsis text-nowrap rounded border border-solid border-slate-400 p-1',
+                    'items-center justify-between px-1 hover:border-primary-color',
                 )}
             >
                 <span>{seletedValue}</span>
@@ -46,14 +51,15 @@ function Dropdown({ listOptions, seletedValue, setSeletedValue }) {
             <div
                 className={cx(
                     isOpen ? 'scale-y-100' : 'scale-y-0',
-                    'absolute left-0 w-full origin-top-left overflow-hidden rounded transition-all duration-300',
+                    'absolute left-0 w-full overflow-hidden rounded transition-all duration-300',
                     'z-20 border border-solid border-primary-color bg-white shadow-lg',
+                    top ? 'bottom-8 origin-bottom' : 'origin-top-left',
                 )}
             >
                 <ul className="py-1">
                     {listOptions.map((value, index) => (
                         <li
-                            className="cursor-pointer px-4 py-1 hover:bg-primary-color"
+                            className="cursor-pointer text-ellipsis text-nowrap px-1 py-1 hover:bg-primary-color"
                             key={index}
                             onClick={() => handleChange(value)}
                         >
@@ -70,6 +76,8 @@ Dropdown.propTypes = {
     seletedValue: PropTypes.string,
     setSeletedValue: PropTypes.func,
     listOptions: PropTypes.array,
+    className: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+    top: PropTypes.bool,
 };
 
 export default Dropdown;

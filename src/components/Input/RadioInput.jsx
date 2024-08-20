@@ -5,9 +5,13 @@ import styles from './Input.module.scss';
 
 const cx = classNames.bind(styles);
 
-const RadioInput = ({ seletedRadio, setSeletedRadio, listOptions }) => {
+const RadioInput = ({ seletedRadio, setSeletedRadio, listOptions, className }) => {
     return (
-        <div className={cx('flex h-8 flex-1 cursor-pointer rounded', 'border-[1px] border-solid border-primary-color')}>
+        <div
+            className={cx('flex h-8 cursor-pointer rounded', 'border-[1px] border-solid border-primary-color', {
+                [className]: className,
+            })}
+        >
             {listOptions.map((value, index) => (
                 <span
                     onClick={() => {
@@ -30,6 +34,7 @@ RadioInput.propTypes = {
     seletedRadio: PropTypes.string,
     setSeletedRadio: PropTypes.func,
     listOptions: PropTypes.array,
+    className: PropTypes.string,
 };
 
 export default RadioInput;

@@ -149,7 +149,7 @@ const menuStructure = {
             { name: 'Employee List', icon: RiUserSearchFill, to: BasicSettings.EMPLOYEE_LIST, mark: false },
         ],
         'Menu Management': [
-            { name: 'Menu Setup', icon: VscLayoutMenubar, to: '', mark: false },
+            { name: 'Menu Setup', icon: VscLayoutMenubar, to: BasicSettings.MENU_SETUP, mark: false },
             { name: 'Item Receipt Management', icon: FaReceipt, to: '', mark: false },
             { name: 'Item Receipt Manager', icon: IoReceiptOutline, to: '', mark: false },
             { name: 'Topping Settings', icon: MdSoupKitchen, to: '', mark: false },
