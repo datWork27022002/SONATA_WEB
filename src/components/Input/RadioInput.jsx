@@ -5,7 +5,7 @@ import styles from './Input.module.scss';
 
 const cx = classNames.bind(styles);
 
-const RadioInput = ({ seletedRadio, setSeletedRadio, listOptions, className }) => {
+const RadioInput = ({ seletedRadio, setSeletedRadio = () => {}, listOptions = [], className }) => {
     return (
         <div
             className={cx('flex h-8 cursor-pointer rounded', 'border-[1px] border-solid border-primary-color', {

@@ -2,23 +2,26 @@ import nameMap from './nameMap';
 
 const { itemLevel1, itemLevel3 } = nameMap;
 
+const pathBasicSettings = itemLevel1.BASICSETTINGS.pathKey;
+
 const routes = {
     LOGIN: '/login',
     HOME: '/',
     WEBLOGIN: '/WebLogin',
     BOOKMARK: '/Bookmark',
     BasicSettings: {
-        BASICSETTINGS: `/${itemLevel1.BASICSETTINGS.pathKey}`,
-        GROUP_MANAGEMENT: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.GROUP_MANAGEMENT.pathKey}`,
-        STORE_INFO: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.STORE_INFO.pathKey}`,
-        STORE_LIST: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.STORE_LIST.pathKey}`,
-        WAREHOUSE_MANAGEMENT: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.WAREHOUSE_MANAGEMENT.pathKey}`,
-        CASH_DRAWER: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.CASH_DRAWER.pathKey}`,
-        DISCOUNT: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.DISCOUNT.pathKey}`,
-        EMPLOYEE_GROUP: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.EMPLOYEE_GROUP.pathKey}`,
-        EMPLOYEE_INFO: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.EMPLOYEE_INFO.pathKey}`,
-        EMPLOYEE_LIST: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.EMPLOYEE_LIST.pathKey}`,
-        MENU_SETUP: `/${itemLevel1.BASICSETTINGS.pathKey}/${itemLevel3.MENU_SETUP.pathKey}`,
+        BASICSETTINGS: `/${pathBasicSettings}`,
+        GROUP_MANAGEMENT: `/${pathBasicSettings}/${itemLevel3.GROUP_MANAGEMENT.pathKey}`,
+        STORE_INFO: `/${pathBasicSettings}/${itemLevel3.STORE_INFO.pathKey}`,
+        STORE_LIST: `/${pathBasicSettings}/${itemLevel3.STORE_LIST.pathKey}`,
+        WAREHOUSE_MANAGEMENT: `/${pathBasicSettings}/${itemLevel3.WAREHOUSE_MANAGEMENT.pathKey}`,
+        CASH_DRAWER: `/${pathBasicSettings}/${itemLevel3.CASH_DRAWER.pathKey}`,
+        DISCOUNT: `/${pathBasicSettings}/${itemLevel3.DISCOUNT.pathKey}`,
+        EMPLOYEE_GROUP: `/${pathBasicSettings}/${itemLevel3.EMPLOYEE_GROUP.pathKey}`,
+        EMPLOYEE_INFO: `/${pathBasicSettings}/${itemLevel3.EMPLOYEE_INFO.pathKey}`,
+        EMPLOYEE_LIST: `/${pathBasicSettings}/${itemLevel3.EMPLOYEE_LIST.pathKey}`,
+        MENU_SETUP: `/${pathBasicSettings}/${itemLevel3.MENU_SETUP.pathKey}`,
+        ITEM_RECEIPT_MANAGEMENT: `/${pathBasicSettings}/${itemLevel3.ITEM_RECEIPT_MANAGEMENT.pathKey}`,
     },
     ManagerFunction: {
         MANAGERFUNCTION: `/${itemLevel1.MANAGERFUNCTION.pathKey}`,

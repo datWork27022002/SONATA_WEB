@@ -90,12 +90,14 @@ function EmployeeInfo() {
                             </Button>
                         ))}
                     </div>
-                    <FormGeneral className={cx(typeForm === 'General' ? 'opacity-100' : 'h-0 opacity-0')} />
-                    <FormSecurity className={cx(typeForm === 'Security' ? 'opacity-100' : 'h-0 opacity-0')} />
-                    <FormPayRoll className={cx(typeForm === 'Payroll' ? 'opacity-100' : 'h-0 opacity-0')} />
-                    <FormSchedule className={cx(typeForm === 'Schedule' ? 'opacity-100' : 'h-0 opacity-0')} />
-                    <FormDescription className={cx(typeForm === 'Description' ? 'opacity-100' : 'h-0 opacity-0')} />
-                    <FormCommission className={cx(typeForm === 'Commission' ? 'opacity-100' : 'h-0 opacity-0')} />
+                    <FormGeneral className={cx(typeForm === 'General' ? 'opacity-100' : 'mt-0 h-0 opacity-0')} />
+                    <FormSecurity className={cx(typeForm === 'Security' ? 'opacity-100' : 'mt-0 h-0 opacity-0')} />
+                    <FormPayRoll className={cx(typeForm === 'Payroll' ? 'opacity-100' : 'mt-0 h-0 opacity-0')} />
+                    <FormSchedule className={cx(typeForm === 'Schedule' ? 'opacity-100' : 'mt-0 h-0 opacity-0')} />
+                    <FormDescription
+                        className={cx(typeForm === 'Description' ? 'opacity-100' : 'mt-0 h-0 opacity-0')}
+                    />
+                    <FormCommission className={cx(typeForm === 'Commission' ? 'opacity-100' : 'mt-0 h-0 opacity-0')} />
                 </div>
             </div>
         </TitleLayout>

@@ -8,7 +8,8 @@ import EmployeeGroup from './EmployeeGroup';
 import EmployeeInfo from './EmployeeInfo';
 import EmployeeList from './EmployeeList';
 import MenuSetup from './MenuSetup';
+import ItemRecipeManagement from './ItemRecipeManagement';
 export { default } from './BasicSettings';
 
 export { GroupManagement, StoreInfo, StoreList, WarehouseManagement, CashDrawer, Discount, EmployeeGroup };
-export { EmployeeInfo, EmployeeList, MenuSetup };
+export { EmployeeInfo, EmployeeList, MenuSetup, ItemRecipeManagement };

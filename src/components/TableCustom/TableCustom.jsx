@@ -22,7 +22,7 @@ const TableCustom = ({ data, columns, selectedRow, setSelectedRow = () => {}, sh
                 padding: '8px',
                 display: 'flex',
                 alignItems: 'center',
-                border: '1px solid #fff',
+                //border: '1px solid #fff',
             },
         },
         rows: {
@@ -39,8 +39,8 @@ const TableCustom = ({ data, columns, selectedRow, setSelectedRow = () => {}, sh
         },
         cells: {
             style: {
-                borderLeft: '.5px solid #ddd',
-                borderRight: '.5px solid #ddd',
+                //borderLeft: '.5px solid #ddd',
+                //borderRight: '.5px solid #ddd',
                 padding: '8px',
             },
         },

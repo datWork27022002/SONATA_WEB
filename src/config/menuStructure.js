@@ -150,7 +150,12 @@ const menuStructure = {
         ],
         'Menu Management': [
             { name: 'Menu Setup', icon: VscLayoutMenubar, to: BasicSettings.MENU_SETUP, mark: false },
-            { name: 'Item Receipt Management', icon: FaReceipt, to: '', mark: false },
+            {
+                name: 'Item Receipt Management',
+                icon: FaReceipt,
+                to: BasicSettings.ITEM_RECEIPT_MANAGEMENT,
+                mark: false,
+            },
             { name: 'Item Receipt Manager', icon: IoReceiptOutline, to: '', mark: false },
             { name: 'Topping Settings', icon: MdSoupKitchen, to: '', mark: false },
             { name: 'Sub Menu', icon: GiHamburger, to: '', mark: false },

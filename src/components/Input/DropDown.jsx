@@ -41,7 +41,7 @@ function Dropdown({ listOptions, seletedValue, setSeletedValue, className, top }
             <button
                 onClick={toggleDropdown}
                 className={cx(
-                    'flex w-full flex-1 text-ellipsis text-nowrap rounded border border-solid border-slate-400 p-1',
+                    'flex w-full flex-1 rounded border border-solid border-slate-400 p-1',
                     'items-center justify-between px-1 hover:border-primary-color',
                 )}
             >

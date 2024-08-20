@@ -7,6 +7,7 @@ import IconCustom from '../IconCustom';
 import RadioInput from './RadioInput';
 import Dropdown from './DropDown';
 import RangeTime from './RangeTime';
+import CheckboxInput from './CheckboxInput';
 
 const cx = classNames.bind(styles);
 
@@ -27,7 +28,10 @@ const Input = forwardRef(
             disabled,
             required,
             radioInput,
+            checkboxInput,
             dropDown,
+            custom,
+            ComponentCustom,
             rangeTime,
             listOptions,
             seletedValue,
@@ -46,7 +50,9 @@ const Input = forwardRef(
                     [className]: className,
                 })}
             >
+                {/* icon left input */}
                 {icon && <IconCustom icon={icon} className={cx('mr-2 text-sm')} />}
+                {/* label */}
                 {label && (
                     <label
                         className={cx(
@@ -58,7 +64,7 @@ const Input = forwardRef(
                         {label}
                     </label>
                 )}
-                {!radioInput && !dropDown && !rangeTime && (
+                {!radioInput && !dropDown && !rangeTime && !custom && !checkboxInput && (
                     <div className={cx('flex flex-1 items-center')}>
                         <Comp
                             type={type}
@@ -70,6 +76,7 @@ const Input = forwardRef(
                                     ? 'border-b-2 border-l-0 border-r-0 border-t-0 border-solid border-b-[#a8a8a8]'
                                     : 'rounded border-[1px] border-solid border-slate-400',
                                 disabled && 'bg-slate-100',
+                                textarea && 'h-20',
                             )}
                             disabled={disabled}
                             {...Props}
@@ -88,13 +95,22 @@ const Input = forwardRef(
                         )}
                     </div>
                 )}
-                {(radioInput || dropDown || rangeTime) && (
+                {(radioInput || dropDown || rangeTime || custom || checkboxInput) && (
                     <div className={cx('flex flex-1 items-center')} style={{ width: widthInput }}>
                         {radioInput && (
                             <RadioInput
                                 seletedRadio={seletedValue}
                                 setSeletedRadio={setSeletedValue}
                                 listOptions={listOptions}
+                                className={cx('flex-1')}
+                            />
+                        )}
+                        {checkboxInput && (
+                            <CheckboxInput
+                                seletedValue={seletedValue}
+                                setSeletedValue={setSeletedValue}
+                                listOptions={listOptions}
+                                className={cx('flex-1')}
                             />
                         )}
                         {dropDown && (
@@ -102,9 +118,12 @@ const Input = forwardRef(
                                 listOptions={listOptions}
                                 seletedValue={seletedValue}
                                 setSeletedValue={setSeletedValue}
+                                className={cx('flex-1')}
                             />
                         )}
                         {rangeTime && <RangeTime seletedValue={seletedValue} setSeletedValue={setSeletedValue} />}
+
+                        {custom && <ComponentCustom />}
                     </div>
                 )}
 
@@ -124,11 +143,15 @@ Input.propTypes = {
     iconRightInput: PropTypes.func,
     borderBottom: PropTypes.bool,
     required: PropTypes.bool,
+    radioInput: PropTypes.bool,
+    checkboxInput: PropTypes.bool,
     dropDown: PropTypes.bool,
     rangeTime: PropTypes.bool,
     listOptions: PropTypes.array,
     setSeletedValue: PropTypes.func,
     textarea: PropTypes.bool,
+    custom: PropTypes.bool,
+    ComponentCustom: PropTypes.func,
 };
 
 export default Input;
