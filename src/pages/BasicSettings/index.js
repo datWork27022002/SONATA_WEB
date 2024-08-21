@@ -11,7 +11,9 @@ import MenuSetup from './MenuSetup';
 import ItemRecipeManagement from './ItemRecipeManagement';
 import ItemRecipeManager from './ItemRecipeManager';
 import ToppingSettings from './ToppingSettings';
+import SubMenu from './SubMenu';
 export { default } from './BasicSettings';
 
 export { GroupManagement, StoreInfo, StoreList, WarehouseManagement, CashDrawer, Discount, EmployeeGroup };
 export { EmployeeInfo, EmployeeList, MenuSetup, ItemRecipeManagement, ItemRecipeManager, ToppingSettings };
+export { SubMenu };

@@ -5,7 +5,7 @@ import Home from '~/pages/Home';
 import Login from '~/pages/Login';
 import BasicSettings, { GroupManagement, StoreInfo, StoreList, WarehouseManagement } from '~/pages/BasicSettings';
 import { CashDrawer, Discount, EmployeeGroup, EmployeeInfo, EmployeeList, MenuSetup } from '~/pages/BasicSettings';
-import { ItemRecipeManagement, ItemRecipeManager, ToppingSettings } from '~/pages/BasicSettings';
+import { ItemRecipeManagement, ItemRecipeManager, ToppingSettings, SubMenu } from '~/pages/BasicSettings';
 import ManagerFunction from '~/pages/ManagerFunction';
 import Customer from '~/pages/Customer';
 import OperationReports from '~/pages/OperationReports';
@@ -36,6 +36,7 @@ export const publicRoute = [
     { path: pathBasicSettings.ITEM_RECEIPT_MANAGEMENT, component: ItemRecipeManagement, layout: BreadcrumbLayout },
     { path: pathBasicSettings.ITEM_RECEIPT_MANAGER, component: ItemRecipeManager, layout: BreadcrumbLayout },
     { path: pathBasicSettings.TOPPING_SETTINGS, component: ToppingSettings, layout: BreadcrumbLayout },
+    { path: pathBasicSettings.SUB_MENU, component: SubMenu, layout: BreadcrumbLayout },
     { path: routes.ManagerFunction.MANAGERFUNCTION, component: ManagerFunction, layout: BreadcrumbLayout },
     { path: routes.Customer.CUSTOMER, component: Customer, layout: BreadcrumbLayout },
     { path: routes.OperationReports.OPERATIONREPORTS, component: OperationReports, layout: BreadcrumbLayout },

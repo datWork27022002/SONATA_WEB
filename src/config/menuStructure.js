@@ -163,7 +163,7 @@ const menuStructure = {
                 mark: false,
             },
             { name: 'Topping Settings', icon: MdSoupKitchen, to: BasicSettings.TOPPING_SETTINGS, mark: false },
-            { name: 'Sub Menu', icon: GiHamburger, to: '', mark: false },
+            { name: 'Sub Menu', icon: GiHamburger, to: BasicSettings.SUB_MENU, mark: false },
             { name: 'Menu Search', icon: RiMenuSearchFill, to: '', mark: true },
             { name: 'Inventory Item Search', icon: MdOutlineContentPasteSearch, to: '', mark: false },
             { name: 'Menu-Board Management', icon: MdOutlineScreenSearchDesktop, to: '', mark: false },
