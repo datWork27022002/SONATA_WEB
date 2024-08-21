@@ -23,7 +23,7 @@ function SubMenu() {
     };
 
     return (
-        <TitleLayout title={config.nameMap.itemLevel3.ITEM_RECEIPT_MANAGER.Visiblename}>
+        <TitleLayout title={config.nameMap.itemLevel3.SUB_MENU.Visiblename}>
             <div className={cx('flex max-lg:flex-col')}>
                 {/* table */}
                 <div className={cx('w-[40%] pr-4 max-lg:!w-full max-lg:pr-0 max-sm:mb-8 lg:mr-4')}>

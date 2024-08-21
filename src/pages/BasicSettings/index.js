@@ -18,9 +18,11 @@ import MenuBoardManagement from './MenuBoardManagement';
 import PosMenuBoard from './PosMenuBoard';
 import CategoryManager from './CategoryManager';
 import RecipeBuilder from './RecipeBuilder';
+import RecipeSearch from './RecipeSearch';
+import KitchenMemo from './KitchenMemo';
 export { default } from './BasicSettings';
 
 export { GroupManagement, StoreInfo, StoreList, WarehouseManagement, CashDrawer, Discount, EmployeeGroup };
 export { EmployeeInfo, EmployeeList, MenuSetup, ItemRecipeManagement, ItemRecipeManager, ToppingSettings };
 export { SubMenu, MenuSearch, InventoryItemSearch, MenuBoardManagement, PosMenuBoard, CategoryManager };
-export { RecipeBuilder };
+export { RecipeBuilder, RecipeSearch, KitchenMemo };

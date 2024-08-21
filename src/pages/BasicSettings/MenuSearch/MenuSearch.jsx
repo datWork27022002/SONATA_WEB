@@ -38,7 +38,6 @@ function MenuSearch() {
         { name: 'Cost', selector: (row) => row.groupName, sortable: true, width: '120px' },
         { name: 'Barcode', selector: (row) => row.groupName, sortable: true, width: '120px' },
     ];
-
     const data = dataTable.map((value, index) => ({ ...value, id: index + 1 }));
 
     return (
@@ -67,10 +66,8 @@ function MenuSearch() {
                     />
                     <Input label="Barcode" paddingLabel boldLabel className={cx('mr-5')} widthInput={'150px'} />
                 </div>
-                <div className={cx('flex items-center')}>
-                    <Button className={cx('mr-4')} blue>
-                        Search
-                    </Button>
+                <div className={cx('flex items-center gap-4')}>
+                    <Button blue>Search</Button>
                     <Button teal>Export Excel</Button>
                 </div>
             </div>
