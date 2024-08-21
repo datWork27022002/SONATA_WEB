@@ -39,7 +39,7 @@ const Modal = ({ children, onClose = () => {}, visibleModal, setVisibleModal, ti
                         <IconCustom icon={IoMdClose} />
                     </span>
                 </div>
-                <div className={cx('px-2 pb-4 pt-2')}>{children}</div>
+                <div className={cx('p-4')}>{children}</div>
             </div>
         </div>
     );

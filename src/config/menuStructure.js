@@ -162,7 +162,7 @@ const menuStructure = {
                 to: BasicSettings.ITEM_RECEIPT_MANAGER,
                 mark: false,
             },
-            { name: 'Topping Settings', icon: MdSoupKitchen, to: '', mark: false },
+            { name: 'Topping Settings', icon: MdSoupKitchen, to: BasicSettings.TOPPING_SETTINGS, mark: false },
             { name: 'Sub Menu', icon: GiHamburger, to: '', mark: false },
             { name: 'Menu Search', icon: RiMenuSearchFill, to: '', mark: true },
             { name: 'Inventory Item Search', icon: MdOutlineContentPasteSearch, to: '', mark: false },

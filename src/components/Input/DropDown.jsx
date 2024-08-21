@@ -42,7 +42,7 @@ function Dropdown({ listOptions, seletedValue, setSeletedValue, className, top }
                 onClick={toggleDropdown}
                 className={cx(
                     'flex w-full flex-1 rounded border border-solid border-slate-400 p-1',
-                    'items-center justify-between px-1 hover:border-primary-color',
+                    'items-center justify-between bg-white px-1 hover:border-primary-color',
                 )}
             >
                 <span>{seletedValue}</span>

@@ -7,7 +7,15 @@ import styles from './TableCustom.module.scss';
 
 const cx = classNames.bind(styles);
 
-const TableCustom = ({ data, columns, selectedRow, setSelectedRow = () => {}, showHideList, className }) => {
+const TableCustom = ({
+    data,
+    columns,
+    selectedRow,
+    setSelectedRow = () => {},
+    showHideList,
+    selectableRows,
+    className,
+}) => {
     const customStyles = {
         headRow: {
             style: {
@@ -69,10 +77,11 @@ const TableCustom = ({ data, columns, selectedRow, setSelectedRow = () => {}, sh
                     onRowClicked={handleRowClicked}
                     customStyles={customStyles}
                     conditionalRowStyles={conditionalRowStyles}
-                    className={cx('overflow-hidden rounded border-[1px] border-solid border-[#ddd]', {
+                    className={cx('overflow-hidden rounded border-[1px] border-solid border-[#ddd] bg-white', {
                         [className]: className,
                     })}
                     fixedHeader
+                    selectableRows={selectableRows}
                 />
             ) : (
                 <div
@@ -115,6 +124,7 @@ TableCustom.propTypes = {
     columns: PropTypes.array,
     selectedRow: PropTypes.number,
     setSelectedRow: PropTypes.func,
+    selectableRows: PropTypes.bool,
     showHideList: PropTypes.bool,
     className: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 };
