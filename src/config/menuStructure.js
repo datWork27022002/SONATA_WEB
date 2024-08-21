@@ -179,7 +179,7 @@ const menuStructure = {
             },
             { name: 'POS Menu-Board', icon: BsFilePostFill, to: BasicSettings.POS_MENU_BOARD, mark: false },
             { name: 'Category Manager', icon: FaWrench, to: BasicSettings.CATEGORY_MANAGER, mark: false },
-            { name: 'Recipe Builder', icon: LiaReceiptSolid, to: '', mark: false },
+            { name: 'Recipe Builder', icon: LiaReceiptSolid, to: BasicSettings.RECIPE_BUILDER, mark: false },
             { name: 'Recipe Search', icon: AiOutlineFileSearch, to: '', mark: true },
             { name: 'Kitchen Memo', icon: MdKitchen, to: '', mark: false },
             { name: 'Item Management By Strore', icon: FaLaptopHouse, to: '', mark: false },

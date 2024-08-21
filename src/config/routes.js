@@ -30,6 +30,7 @@ const routes = {
         MENU_BOARD_MANAGEMENT: `/${pathBasicSettings}/${itemLevel3.MENU_BOARD_MANAGEMENT.pathKey}`,
         POS_MENU_BOARD: `/${pathBasicSettings}/${itemLevel3.POS_MENU_BOARD.pathKey}`,
         CATEGORY_MANAGER: `/${pathBasicSettings}/${itemLevel3.CATEGORY_MANAGER.pathKey}`,
+        RECIPE_BUILDER: `/${pathBasicSettings}/${itemLevel3.RECIPE_BUILDER.pathKey}`,
     },
     ManagerFunction: {
         MANAGERFUNCTION: `/${itemLevel1.MANAGERFUNCTION.pathKey}`,
