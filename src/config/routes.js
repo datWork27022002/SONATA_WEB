@@ -25,6 +25,8 @@ const routes = {
         ITEM_RECEIPT_MANAGER: `/${pathBasicSettings}/${itemLevel3.ITEM_RECEIPT_MANAGER.pathKey}`,
         TOPPING_SETTINGS: `/${pathBasicSettings}/${itemLevel3.TOPPING_SETTINGS.pathKey}`,
         SUB_MENU: `/${pathBasicSettings}/${itemLevel3.SUB_MENU.pathKey}`,
+        MENU_SEARCH: `/${pathBasicSettings}/${itemLevel3.MENU_SEARCH.pathKey}`,
+        INVENTORY_ITEM_SEARCH: `/${pathBasicSettings}/${itemLevel3.INVENTORY_ITEM_SEARCH.pathKey}`,
     },
     ManagerFunction: {
         MANAGERFUNCTION: `/${itemLevel1.MANAGERFUNCTION.pathKey}`,
