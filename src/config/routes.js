@@ -27,6 +27,8 @@ const routes = {
         SUB_MENU: `/${pathBasicSettings}/${itemLevel3.SUB_MENU.pathKey}`,
         MENU_SEARCH: `/${pathBasicSettings}/${itemLevel3.MENU_SEARCH.pathKey}`,
         INVENTORY_ITEM_SEARCH: `/${pathBasicSettings}/${itemLevel3.INVENTORY_ITEM_SEARCH.pathKey}`,
+        MENU_BOARD_MANAGEMENT: `/${pathBasicSettings}/${itemLevel3.MENU_BOARD_MANAGEMENT.pathKey}`,
+        POS_MENU_BOARD: `/${pathBasicSettings}/${itemLevel3.POS_MENU_BOARD.pathKey}`,
     },
     ManagerFunction: {
         MANAGERFUNCTION: `/${itemLevel1.MANAGERFUNCTION.pathKey}`,

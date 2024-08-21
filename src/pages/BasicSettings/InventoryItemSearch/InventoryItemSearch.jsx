@@ -17,7 +17,7 @@ const listVendor = ['All', 'TPBank'];
 function InventoryItemSearch() {
     const [selectedRow, setSelectedRow] = useState(null);
     const [category, setCategory] = useState(listCategory[0]);
-    const [vendor, setVendor] = useState(listCategory[0]);
+    const [vendor, setVendor] = useState(listVendor[0]);
 
     const dataTable = [];
 
