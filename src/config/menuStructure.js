@@ -156,7 +156,12 @@ const menuStructure = {
                 to: BasicSettings.ITEM_RECEIPT_MANAGEMENT,
                 mark: false,
             },
-            { name: 'Item Receipt Manager', icon: IoReceiptOutline, to: '', mark: false },
+            {
+                name: 'Item Receipt Manager',
+                icon: IoReceiptOutline,
+                to: BasicSettings.ITEM_RECEIPT_MANAGER,
+                mark: false,
+            },
             { name: 'Topping Settings', icon: MdSoupKitchen, to: '', mark: false },
             { name: 'Sub Menu', icon: GiHamburger, to: '', mark: false },
             { name: 'Menu Search', icon: RiMenuSearchFill, to: '', mark: true },
