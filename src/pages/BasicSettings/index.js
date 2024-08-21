@@ -16,8 +16,9 @@ import MenuSearch from './MenuSearch';
 import InventoryItemSearch from './InventoryItemSearch';
 import MenuBoardManagement from './MenuBoardManagement';
 import PosMenuBoard from './PosMenuBoard';
+import CategoryManager from './CategoryManager';
 export { default } from './BasicSettings';
 
 export { GroupManagement, StoreInfo, StoreList, WarehouseManagement, CashDrawer, Discount, EmployeeGroup };
 export { EmployeeInfo, EmployeeList, MenuSetup, ItemRecipeManagement, ItemRecipeManager, ToppingSettings };
-export { SubMenu, MenuSearch, InventoryItemSearch, MenuBoardManagement, PosMenuBoard };
+export { SubMenu, MenuSearch, InventoryItemSearch, MenuBoardManagement, PosMenuBoard, CategoryManager };
