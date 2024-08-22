@@ -1,5 +1,5 @@
 import config from '~/config';
-import { BreadcrumbLayout } from '~/layouts';
+import { DefaultLayout } from '~/layouts';
 
 import Home from '~/pages/Home';
 import Login from '~/pages/Login';
@@ -7,7 +7,8 @@ import BasicSettings, { GroupManagement, StoreInfo, StoreList, WarehouseManageme
 import { CashDrawer, Discount, EmployeeGroup, EmployeeInfo, EmployeeList, MenuSetup } from '~/pages/BasicSettings';
 import { ItemRecipeManagement, ItemRecipeManager, ToppingSettings, SubMenu, MenuSearch } from '~/pages/BasicSettings';
 import { InventoryItemSearch, MenuBoardManagement, PosMenuBoard, CategoryManager } from '~/pages/BasicSettings';
-import { RecipeBuilder, RecipeSearch, KitchenMemo } from '~/pages/BasicSettings';
+import { RecipeBuilder, RecipeSearch, KitchenMemo, ItemManagementByStrore } from '~/pages/BasicSettings';
+import { ChangeOfMultilingualName, ItemLinkedCodeManagement } from '~/pages/BasicSettings';
 import ManagerFunction from '~/pages/ManagerFunction';
 import Customer from '~/pages/Customer';
 import OperationReports from '~/pages/OperationReports';
@@ -22,39 +23,42 @@ const { routes } = config;
 const pathBasicSettings = routes.BasicSettings;
 
 export const publicRoute = [
-    { path: routes.HOME, component: Home },
+    { path: routes.HOME, component: Home, layout: DefaultLayout },
     { path: routes.LOGIN, component: Login, layout: null },
-    { path: pathBasicSettings.BASICSETTINGS, component: BasicSettings, layout: BreadcrumbLayout },
-    { path: pathBasicSettings.GROUP_MANAGEMENT, component: GroupManagement, layout: BreadcrumbLayout },
-    { path: pathBasicSettings.STORE_INFO, component: StoreInfo, layout: BreadcrumbLayout },
-    { path: pathBasicSettings.STORE_LIST, component: StoreList, layout: BreadcrumbLayout },
-    { path: pathBasicSettings.WAREHOUSE_MANAGEMENT, component: WarehouseManagement, layout: BreadcrumbLayout },
-    { path: pathBasicSettings.CASH_DRAWER, component: CashDrawer, layout: BreadcrumbLayout },
-    { path: pathBasicSettings.DISCOUNT, component: Discount, layout: BreadcrumbLayout },
-    { path: pathBasicSettings.EMPLOYEE_GROUP, component: EmployeeGroup, layout: BreadcrumbLayout },
-    { path: pathBasicSettings.EMPLOYEE_INFO, component: EmployeeInfo, layout: BreadcrumbLayout },
-    { path: pathBasicSettings.EMPLOYEE_LIST, component: EmployeeList, layout: BreadcrumbLayout },
-    { path: pathBasicSettings.MENU_SETUP, component: MenuSetup, layout: BreadcrumbLayout },
-    { path: pathBasicSettings.ITEM_RECEIPT_MANAGEMENT, component: ItemRecipeManagement, layout: BreadcrumbLayout },
-    { path: pathBasicSettings.ITEM_RECEIPT_MANAGER, component: ItemRecipeManager, layout: BreadcrumbLayout },
-    { path: pathBasicSettings.TOPPING_SETTINGS, component: ToppingSettings, layout: BreadcrumbLayout },
-    { path: pathBasicSettings.SUB_MENU, component: SubMenu, layout: BreadcrumbLayout },
-    { path: pathBasicSettings.MENU_SEARCH, component: MenuSearch, layout: BreadcrumbLayout },
-    { path: pathBasicSettings.INVENTORY_ITEM_SEARCH, component: InventoryItemSearch, layout: BreadcrumbLayout },
-    { path: pathBasicSettings.MENU_BOARD_MANAGEMENT, component: MenuBoardManagement, layout: BreadcrumbLayout },
-    { path: pathBasicSettings.POS_MENU_BOARD, component: PosMenuBoard, layout: BreadcrumbLayout },
-    { path: pathBasicSettings.CATEGORY_MANAGER, component: CategoryManager, layout: BreadcrumbLayout },
-    { path: pathBasicSettings.RECIPE_BUILDER, component: RecipeBuilder, layout: BreadcrumbLayout },
-    { path: pathBasicSettings.RECIPE_SEARCH, component: RecipeSearch, layout: BreadcrumbLayout },
-    { path: pathBasicSettings.KITCHEN_MEMO, component: KitchenMemo, layout: BreadcrumbLayout },
-    { path: routes.ManagerFunction.MANAGERFUNCTION, component: ManagerFunction, layout: BreadcrumbLayout },
-    { path: routes.Customer.CUSTOMER, component: Customer, layout: BreadcrumbLayout },
-    { path: routes.OperationReports.OPERATIONREPORTS, component: OperationReports, layout: BreadcrumbLayout },
-    { path: routes.SaleReports.SALEREPORTS, component: SaleReports, layout: BreadcrumbLayout },
-    { path: routes.PurchaseOrder.PURCHASEORDER, component: PurchaseOrder, layout: BreadcrumbLayout },
-    { path: routes.Settings.SETTINGS, component: Settings, layout: BreadcrumbLayout },
-    { path: routes.BIZSMS.BIZSMS, component: BIZSMS, layout: BreadcrumbLayout },
-    { path: routes.WEBLOGIN, component: WebLogin, layout: BreadcrumbLayout },
-    { path: routes.BOOKMARK, component: Bookmark, layout: BreadcrumbLayout },
+    { path: pathBasicSettings.BASICSETTINGS, component: BasicSettings },
+    { path: pathBasicSettings.GROUP_MANAGEMENT, component: GroupManagement },
+    { path: pathBasicSettings.STORE_INFO, component: StoreInfo },
+    { path: pathBasicSettings.STORE_LIST, component: StoreList },
+    { path: pathBasicSettings.WAREHOUSE_MANAGEMENT, component: WarehouseManagement },
+    { path: pathBasicSettings.CASH_DRAWER, component: CashDrawer },
+    { path: pathBasicSettings.DISCOUNT, component: Discount },
+    { path: pathBasicSettings.EMPLOYEE_GROUP, component: EmployeeGroup },
+    { path: pathBasicSettings.EMPLOYEE_INFO, component: EmployeeInfo },
+    { path: pathBasicSettings.EMPLOYEE_LIST, component: EmployeeList },
+    { path: pathBasicSettings.MENU_SETUP, component: MenuSetup },
+    { path: pathBasicSettings.ITEM_RECEIPT_MANAGEMENT, component: ItemRecipeManagement },
+    { path: pathBasicSettings.ITEM_RECEIPT_MANAGER, component: ItemRecipeManager },
+    { path: pathBasicSettings.TOPPING_SETTINGS, component: ToppingSettings },
+    { path: pathBasicSettings.SUB_MENU, component: SubMenu },
+    { path: pathBasicSettings.MENU_SEARCH, component: MenuSearch },
+    { path: pathBasicSettings.INVENTORY_ITEM_SEARCH, component: InventoryItemSearch },
+    { path: pathBasicSettings.MENU_BOARD_MANAGEMENT, component: MenuBoardManagement },
+    { path: pathBasicSettings.POS_MENU_BOARD, component: PosMenuBoard },
+    { path: pathBasicSettings.CATEGORY_MANAGER, component: CategoryManager },
+    { path: pathBasicSettings.RECIPE_BUILDER, component: RecipeBuilder },
+    { path: pathBasicSettings.RECIPE_SEARCH, component: RecipeSearch },
+    { path: pathBasicSettings.KITCHEN_MEMO, component: KitchenMemo },
+    { path: pathBasicSettings.ITEM_MANAGEMENT_BY_STRORE, component: ItemManagementByStrore },
+    { path: pathBasicSettings.CHANGE_OF_MULTILINGUAL_NAME, component: ChangeOfMultilingualName },
+    { path: pathBasicSettings.ITEM_LINKED_CODE_MANAGEMENT, component: ItemLinkedCodeManagement },
+    { path: routes.ManagerFunction.MANAGERFUNCTION, component: ManagerFunction },
+    { path: routes.Customer.CUSTOMER, component: Customer },
+    { path: routes.OperationReports.OPERATIONREPORTS, component: OperationReports },
+    { path: routes.SaleReports.SALEREPORTS, component: SaleReports },
+    { path: routes.PurchaseOrder.PURCHASEORDER, component: PurchaseOrder },
+    { path: routes.Settings.SETTINGS, component: Settings },
+    { path: routes.BIZSMS.BIZSMS, component: BIZSMS },
+    { path: routes.WEBLOGIN, component: WebLogin },
+    { path: routes.BOOKMARK, component: Bookmark },
 ];
 export const privateRoute = [];

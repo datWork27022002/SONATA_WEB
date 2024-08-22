@@ -1,128 +1,34 @@
-import {
-    BsFillHousesFill,
-    BsFilePostFill,
-    BsFillInfoSquareFill,
-    BsCalendar2MonthFill,
-    BsCalendar2DayFill,
-    BsCalendar2WeekFill,
-    BsReceipt,
-    BsFilePost,
-    BsFillGrid3X3GapFill,
-} from 'react-icons/bs';
-import {
-    FaStore,
-    FaUsers,
-    FaUserEdit,
-    FaReceipt,
-    FaWrench,
-    FaLaptopHouse,
-    FaUserCog,
-    FaFilePowerpoint,
-    FaCalendar,
-    FaChartPie,
-    FaUserCheck,
-    FaIdCard,
-    FaUserSecret,
-    FaNewspaper,
-    FaAdjust,
-    FaSortAmountUp,
-    FaWindowClose,
-    FaInfoCircle,
-    FaPager,
-    FaWindows,
-    FaSdCard,
-    FaQrcode,
-    FaDatabase,
-    FaBarcode,
-    FaBoxTissue,
-    FaExchangeAlt,
-    FaClipboardList,
-    FaUserLock,
-    FaUserTie,
-    FaLevelUpAlt,
-    FaImage,
-} from 'react-icons/fa';
-import {
-    MdOutlineContentPasteSearch,
-    MdOutlineScreenSearchDesktop,
-    MdKitchen,
-    MdSoupKitchen,
-    MdOutlineGroups2,
-    MdRememberMe,
-    MdCalendarMonth,
-    MdInventory,
-    MdSubdirectoryArrowLeft,
-    MdSubdirectoryArrowRight,
-    MdStore,
-    MdLanguage,
-    MdLocalPrintshop,
-    MdOutlinePermDataSetting,
-    MdTouchApp,
-    MdAddCall,
-    MdVideoStable,
-    MdScreenLockLandscape,
-    MdTableRestaurant,
-    MdPhonelinkSetup,
-    MdPayments,
-} from 'react-icons/md';
-import {
-    PiRanking,
-    PiReceiptX,
-    PiNewspaperClippingLight,
-    PiStorefrontFill,
-    PiMathOperationsFill,
-} from 'react-icons/pi';
-import {
-    FaWarehouse,
-    FaChalkboardUser,
-    FaCalendarDay,
-    FaCashRegister,
-    FaTable,
-    FaPrint,
-    FaPhone,
-    FaTableCellsRowLock,
-    FaRegImages,
-} from 'react-icons/fa6';
-import {
-    TbHomeSearch,
-    TbFileReport,
-    TbClockHour10Filled,
-    TbCategoryFilled,
-    TbCircleNumber2Filled,
-    TbDeviceIpadCancel,
-} from 'react-icons/tb';
+import { BsFillHousesFill, BsFilePostFill, BsFillInfoSquareFill, BsCalendar2MonthFill } from 'react-icons/bs';
+import { BsCalendar2DayFill, BsCalendar2WeekFill, BsReceipt, BsFilePost, BsFillGrid3X3GapFill } from 'react-icons/bs';
+import { FaStore, FaUsers, FaUserEdit, FaReceipt, FaWrench, FaLaptopHouse, FaUserCog } from 'react-icons/fa';
+import { FaFilePowerpoint, FaCalendar, FaChartPie, FaUserCheck, FaIdCard, FaUserSecret } from 'react-icons/fa';
+import { FaAdjust, FaNewspaper, FaSortAmountUp, FaWindowClose, FaInfoCircle, FaPager, FaWindows } from 'react-icons/fa';
+import { FaSdCard, FaQrcode, FaDatabase, FaBarcode, FaBoxTissue, FaExchangeAlt, FaClipboardList } from 'react-icons/fa';
+import { FaUserLock, FaUserTie, FaLevelUpAlt, FaImage } from 'react-icons/fa';
+import { MdOutlineContentPasteSearch, MdOutlineScreenSearchDesktop, MdKitchen, MdSoupKitchen } from 'react-icons/md';
+import { MdCalendarMonth, MdInventory, MdSubdirectoryArrowLeft, MdOutlineGroups2, MdRememberMe } from 'react-icons/md';
+import { MdSubdirectoryArrowRight, MdStore, MdLanguage, MdLocalPrintshop } from 'react-icons/md';
+import { MdOutlinePermDataSetting, MdTouchApp, MdAddCall, MdVideoStable } from 'react-icons/md';
+import { MdScreenLockLandscape, MdTableRestaurant, MdPhonelinkSetup, MdPayments } from 'react-icons/md';
+import { PiRanking, PiReceiptX, PiNewspaperClippingLight } from 'react-icons/pi';
+import { PiStorefrontFill, PiMathOperationsFill } from 'react-icons/pi';
+import { FaWarehouse, FaChalkboardUser, FaCalendarDay, FaCashRegister } from 'react-icons/fa6';
+import { FaTable, FaPrint, FaPhone, FaTableCellsRowLock, FaRegImages } from 'react-icons/fa6';
+import { TbHomeSearch, TbFileReport, TbClockHour10Filled } from 'react-icons/tb';
+import { TbCategoryFilled, TbCircleNumber2Filled, TbDeviceIpadCancel } from 'react-icons/tb';
 import { GiHamburger, GiPaperBagOpen, GiCash, GiBuyCard, GiWeight } from 'react-icons/gi';
-import {
-    IoIosCash,
-    IoMdDocument,
-    IoIosOptions,
-    IoMdOptions,
-    IoIosNotifications,
-    IoIosMail,
-    IoMdRadioButtonOn,
-} from 'react-icons/io';
-import {
-    IoReceiptOutline,
-    IoIdCardOutline,
-    IoAnalytics,
-    IoReceipt,
-    IoPhonePortrait,
-    IoTimerSharp,
-} from 'react-icons/io5';
+import { IoIosCash, IoMdDocument, IoIosOptions, IoMdOptions } from 'react-icons/io';
+import { IoIosNotifications, IoIosMail, IoMdRadioButtonOn } from 'react-icons/io';
+import { IoReceiptOutline, IoIdCardOutline, IoAnalytics } from 'react-icons/io5';
+import { IoReceipt, IoPhonePortrait, IoTimerSharp } from 'react-icons/io5';
 import { RiDiscountPercentFill, RiUserSearchFill, RiMenuSearchFill, RiBillLine, RiCoinFill } from 'react-icons/ri';
 import { VscLayoutMenubar } from 'react-icons/vsc';
 import { LiaReceiptSolid, LiaCcAmazonPay } from 'react-icons/lia';
 import { AiOutlineFileSearch } from 'react-icons/ai';
 import { CiEdit, CiLink, CiCreditCard1, CiCalendarDate, CiBarcode, CiDeliveryTruck } from 'react-icons/ci';
 import { TfiAnnouncement } from 'react-icons/tfi';
-import {
-    GrDocumentStore,
-    GrDocumentText,
-    GrDocumentTransfer,
-    GrDrawer,
-    GrUserSettings,
-    GrDocumentLocked,
-} from 'react-icons/gr';
+import { GrDocumentStore, GrDocumentText, GrDocumentTransfer, GrDrawer } from 'react-icons/gr';
+import { GrUserSettings, GrDocumentLocked } from 'react-icons/gr';
 import { BiDetail, BiSolidDiscount } from 'react-icons/bi';
 import { HiReceiptRefund } from 'react-icons/hi';
 import { HiDocumentPlus, HiMiniDocumentMinus } from 'react-icons/hi2';
@@ -182,9 +88,24 @@ const menuStructure = {
             { name: 'Recipe Builder', icon: LiaReceiptSolid, to: BasicSettings.RECIPE_BUILDER, mark: false },
             { name: 'Recipe Search', icon: AiOutlineFileSearch, to: BasicSettings.RECIPE_SEARCH, mark: true },
             { name: 'Kitchen Memo', icon: MdKitchen, to: BasicSettings.KITCHEN_MEMO, mark: false },
-            { name: 'Item Management By Strore', icon: FaLaptopHouse, to: '', mark: false },
-            { name: 'Change of multilingual name', icon: CiEdit, to: '', mark: false },
-            { name: 'Item linked code management', icon: CiLink, to: '', mark: false },
+            {
+                name: 'Item Management By Strore',
+                icon: FaLaptopHouse,
+                to: BasicSettings.ITEM_MANAGEMENT_BY_STRORE,
+                mark: false,
+            },
+            {
+                name: 'Change of multilingual name',
+                icon: CiEdit,
+                to: BasicSettings.CHANGE_OF_MULTILINGUAL_NAME,
+                mark: false,
+            },
+            {
+                name: 'Item linked code management',
+                icon: CiLink,
+                to: BasicSettings.ITEM_LINKED_CODE_MANAGEMENT,
+                mark: false,
+            },
         ],
         'POS Screen Layout': [
             { name: 'Main Menu Setting', icon: BsFillGrid3X3GapFill, to: '', mark: false },

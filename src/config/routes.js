@@ -33,6 +33,9 @@ const routes = {
         RECIPE_BUILDER: `/${pathBasicSettings}/${itemLevel3.RECIPE_BUILDER.pathKey}`,
         RECIPE_SEARCH: `/${pathBasicSettings}/${itemLevel3.RECIPE_SEARCH.pathKey}`,
         KITCHEN_MEMO: `/${pathBasicSettings}/${itemLevel3.KITCHEN_MEMO.pathKey}`,
+        ITEM_MANAGEMENT_BY_STRORE: `/${pathBasicSettings}/${itemLevel3.ITEM_MANAGEMENT_BY_STRORE.pathKey}`,
+        CHANGE_OF_MULTILINGUAL_NAME: `/${pathBasicSettings}/${itemLevel3.CHANGE_OF_MULTILINGUAL_NAME.pathKey}`,
+        ITEM_LINKED_CODE_MANAGEMENT: `/${pathBasicSettings}/${itemLevel3.ITEM_LINKED_CODE_MANAGEMENT.pathKey}`,
     },
     ManagerFunction: {
         MANAGERFUNCTION: `/${itemLevel1.MANAGERFUNCTION.pathKey}`,

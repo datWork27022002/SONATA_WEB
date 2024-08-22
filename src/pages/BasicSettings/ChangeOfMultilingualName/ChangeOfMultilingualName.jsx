@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import { FaSearch } from 'react-icons/fa';
 
-import styles from './MenuSearch.module.scss';
+import styles from './ChangeOfMultilingualName.module.scss';
 import TitleLayout from '~/components/TitleLayout';
 import TableCustom from '~/components/TableCustom';
 import config from '~/config';
@@ -23,33 +23,55 @@ const listCategory = [
     '음료 Do uong TD  ',
 ];
 
-function MenuSearch() {
+const listClassification = [
+    'Item',
+    'Item Note',
+    'Menu Group',
+    'Menu-Board Group, Topping Group,Topping Name',
+    'Set Menu Group',
+    'Call Messeage',
+];
+
+function ChangeOfMultilingualName() {
     const [selectedRow, setSelectedRow] = useState(null);
     const [category, setCategory] = useState(listCategory[0]);
+    const [classification, setClassification] = useState(listClassification[0]);
 
     const dataTable = [];
 
     const columns = [
-        { name: 'No.', selector: (row) => row.groupCode, sortable: true, width: '60px' },
-        { name: 'Store Code', selector: (row) => row.groupName, sortable: true, width: '100px' },
-        { name: 'Category', selector: (row) => row.groupName, sortable: true },
-        { name: 'Item', selector: (row) => row.groupName, sortable: true },
-        { name: 'Price', selector: (row) => row.groupName, sortable: true, width: '120px' },
-        { name: 'Cost', selector: (row) => row.groupName, sortable: true, width: '120px' },
-        { name: 'Barcode', selector: (row) => row.groupName, sortable: true, width: '120px' },
+        { name: 'Classification', selector: (row) => row.groupCode, sortable: true, width: '120px' },
+        { name: 'Item Classification', selector: (row) => row.groupName, sortable: true, width: '120px' },
+        { name: 'Category', selector: (row) => row.groupName, sortable: true, width: '150px' },
+        { name: 'Barcode', selector: (row) => row.groupName, sortable: true, width: '100px' },
+        { name: 'Code', selector: (row) => row.groupName, sortable: true, width: '100px' },
+        { name: 'Name', selector: (row) => row.groupName, sortable: true, width: '120px' },
+        { name: 'Korean', selector: (row) => row.groupName, sortable: true },
+        { name: 'English', selector: (row) => row.groupName, sortable: true },
+        { name: 'Chinese', selector: (row) => row.groupName, sortable: true },
+        { name: 'Japanese', selector: (row) => row.groupName, sortable: true },
     ];
     const data = dataTable.map((value, index) => ({ ...value, id: index + 1 }));
 
     return (
-        <TitleLayout title={config.nameMap.itemLevel3.MENU_SEARCH.Visiblename}>
+        <TitleLayout title={config.nameMap.itemLevel3.CHANGE_OF_MULTILINGUAL_NAME.Visiblename}>
             {/* form */}
             <div className={cx('mb-2 flex flex-wrap justify-between')}>
                 <div className={cx('flex flex-wrap gap-x-5')}>
                     <Input
+                        label="Classification"
+                        paddingLabel
+                        boldLabel
+                        dropDown
+                        listOptions={listClassification}
+                        seletedValue={classification}
+                        setSeletedValue={setClassification}
+                    />
+                    <Input
                         label="Category"
                         paddingLabel
                         boldLabel
-                        widthInput={'300px'}
+                        widthInput={'200px'}
                         dropDown
                         listOptions={listCategory}
                         seletedValue={category}
@@ -58,9 +80,11 @@ function MenuSearch() {
                     <Input label="Item" paddingLabel boldLabel widthInput={'150px'} iconRightInput={FaSearch} />
                     <Input label="Barcode" paddingLabel boldLabel widthInput={'150px'} />
                 </div>
-                <div className={cx('flex items-center gap-4')}>
+                <div className={cx('flex w-full items-center justify-end gap-4')}>
                     <Button blue>Search</Button>
+                    <Button green>Save</Button>
                     <Button teal>Export Excel</Button>
+                    <Button lime>Excel Upload</Button>
                 </div>
             </div>
             {/* table */}
@@ -77,4 +101,4 @@ function MenuSearch() {
     );
 }
 
-export default MenuSearch;
+export default ChangeOfMultilingualName;

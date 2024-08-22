@@ -15,6 +15,7 @@ function Button({
     teal,
     green,
     orange,
+    lime,
     rounded,
     noBorderRadius,
     leftIcon,
@@ -50,6 +51,7 @@ function Button({
                 green && '!bg-green-300 hover:!bg-green-400',
                 orange && '!bg-orange-300 hover:!bg-orange-400',
                 red && '!bg-red-300 hover:!bg-red-400',
+                lime && '!bg-lime-300 hover:!bg-lime-400',
 
                 { [className]: className },
             )}
@@ -70,6 +72,7 @@ Button.propTypes = {
     teal: PropTypes.bool,
     green: PropTypes.bool,
     orange: PropTypes.bool,
+    lime: PropTypes.bool,
     rounded: PropTypes.bool,
     noBorderRadius: PropTypes.bool,
     leftIcon: PropTypes.object,

@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Fragment } from 'react';
 
 import { publicRoute } from './routes';
-import { DefaultLayout } from './layouts';
+import { BreadcrumbLayout } from './layouts';
 
 function App() {
     return (
@@ -14,7 +14,7 @@ function App() {
 
                         let Layout = route.layout;
                         if (Layout === null) Layout = Fragment;
-                        else if (Layout === undefined) Layout = DefaultLayout;
+                        else if (Layout === undefined) Layout = BreadcrumbLayout;
 
                         return (
                             <Route

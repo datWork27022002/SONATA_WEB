@@ -103,7 +103,9 @@ const TableCustom = ({
                                 !value.width && 'flex-1',
                             )}
                         >
-                            <div className={cx('overflow-hidden text-ellipsis text-nowrap')}>{value.name}</div>
+                            <div className={cx('overflow-hidden text-ellipsis text-nowrap')} title={value.name}>
+                                {value.name}
+                            </div>
                         </div>
                     ))}
                 </div>

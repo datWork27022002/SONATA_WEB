@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import { FaSearch } from 'react-icons/fa';
 
-import styles from './MenuSearch.module.scss';
+import styles from './ItemLinkedCodeManagement.module.scss';
 import TitleLayout from '~/components/TitleLayout';
 import TableCustom from '~/components/TableCustom';
 import config from '~/config';
@@ -23,44 +23,54 @@ const listCategory = [
     '음료 Do uong TD  ',
 ];
 
-function MenuSearch() {
+const listClassification = ['Menu', 'Inventory Item '];
+
+function ItemLinkedCodeManagement() {
     const [selectedRow, setSelectedRow] = useState(null);
     const [category, setCategory] = useState(listCategory[0]);
+    const [classification, setClassification] = useState(listClassification[0]);
 
     const dataTable = [];
 
     const columns = [
-        { name: 'No.', selector: (row) => row.groupCode, sortable: true, width: '60px' },
-        { name: 'Store Code', selector: (row) => row.groupName, sortable: true, width: '100px' },
-        { name: 'Category', selector: (row) => row.groupName, sortable: true },
-        { name: 'Item', selector: (row) => row.groupName, sortable: true },
-        { name: 'Price', selector: (row) => row.groupName, sortable: true, width: '120px' },
-        { name: 'Cost', selector: (row) => row.groupName, sortable: true, width: '120px' },
-        { name: 'Barcode', selector: (row) => row.groupName, sortable: true, width: '120px' },
+        { name: 'Classification', selector: (row) => row.groupCode, sortable: true, width: '200px' },
+        { name: 'Item Name', selector: (row) => row.groupName, sortable: true, width: '350px' },
+        { name: 'Ext Code', selector: (row) => row.groupName, sortable: true },
+        { name: 'Barcode', selector: (row) => row.groupName, sortable: true },
     ];
     const data = dataTable.map((value, index) => ({ ...value, id: index + 1 }));
 
     return (
-        <TitleLayout title={config.nameMap.itemLevel3.MENU_SEARCH.Visiblename}>
+        <TitleLayout title={config.nameMap.itemLevel3.ITEM_LINKED_CODE_MANAGEMENT.Visiblename}>
             {/* form */}
             <div className={cx('mb-2 flex flex-wrap justify-between')}>
                 <div className={cx('flex flex-wrap gap-x-5')}>
                     <Input
+                        label="Classification"
+                        paddingLabel
+                        boldLabel
+                        dropDown
+                        listOptions={listClassification}
+                        seletedValue={classification}
+                        setSeletedValue={setClassification}
+                    />
+                    <Input
                         label="Category"
                         paddingLabel
                         boldLabel
-                        widthInput={'300px'}
+                        widthInput={'200px'}
                         dropDown
                         listOptions={listCategory}
                         seletedValue={category}
                         setSeletedValue={setCategory}
                     />
-                    <Input label="Item" paddingLabel boldLabel widthInput={'150px'} iconRightInput={FaSearch} />
-                    <Input label="Barcode" paddingLabel boldLabel widthInput={'150px'} />
+                    <Input label="Item" paddingLabel boldLabel widthInput={'150px'} />
+                    <Input label="Barcode" paddingLabel boldLabel widthInput={'100px'} />
+                    <Input label="Ext Code" paddingLabel boldLabel widthInput={'100px'} />
                 </div>
                 <div className={cx('flex items-center gap-4')}>
                     <Button blue>Search</Button>
-                    <Button teal>Export Excel</Button>
+                    <Button green>Save</Button>
                 </div>
             </div>
             {/* table */}
@@ -77,4 +87,4 @@ function MenuSearch() {
     );
 }
 
-export default MenuSearch;
+export default ItemLinkedCodeManagement;
