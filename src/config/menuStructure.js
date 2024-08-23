@@ -109,7 +109,12 @@ const menuStructure = {
         ],
         'POS Screen Layout': [
             { name: 'Main Menu Setting', icon: BsFillGrid3X3GapFill, to: BasicSettings.MAIN_MENU_SETTING, mark: false },
-            { name: 'Table Location Manager', icon: CgArrangeBack, to: '', mark: false },
+            {
+                name: 'Table Location Manager',
+                icon: CgArrangeBack,
+                to: BasicSettings.TABLE_LOCATION_MANAGER,
+                mark: false,
+            },
             { name: 'Table Design Setting', icon: MdTableRestaurant, to: '', mark: false },
             { name: 'Menu Setup', icon: MdPhonelinkSetup, to: '', mark: false },
             { name: 'POS Favorite Function Button', icon: IoMdRadioButtonOn, to: '', mark: false },

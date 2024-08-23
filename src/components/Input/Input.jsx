@@ -15,24 +15,25 @@ const Input = forwardRef(
     (
         {
             label,
+            labelIcon,
             errolMesseage,
             icon,
             iconRightInput,
+            textarea,
+            radioInput,
+            checkboxInput,
+            dropDown,
+            rangeTime,
             borderBottom,
             paddingLabel,
             boldLabel,
             widthInput,
             type = 'text',
-            textarea,
             className,
             disabled,
             required,
-            radioInput,
-            checkboxInput,
-            dropDown,
             custom,
             ComponentCustom,
-            rangeTime,
             listOptions,
             seletedValue,
             setSeletedValue,
@@ -53,15 +54,15 @@ const Input = forwardRef(
                 {/* icon left input */}
                 {icon && <IconCustom icon={icon} className={cx('mr-2 text-sm')} />}
                 {/* label */}
-                {label && (
+                {(label || labelIcon) && (
                     <label
                         className={cx(
-                            paddingLabel ? 'pr-2' : 'w-32',
+                            paddingLabel ? 'pr-2' : 'w-24',
                             required && 'font-semibold text-red-600',
                             boldLabel && 'font-semibold',
                         )}
                     >
-                        {label}
+                        {label ? label : <IconCustom icon={labelIcon} />}
                     </label>
                 )}
                 {!radioInput && !dropDown && !rangeTime && !custom && !checkboxInput && (
@@ -71,14 +72,16 @@ const Input = forwardRef(
                             style={{ width: widthInput }}
                             ref={ref}
                             className={cx(
-                                'flex-1 p-1',
+                                'p-1',
+                                !widthInput && 'flex-1',
                                 borderBottom
                                     ? 'border-b-2 border-l-0 border-r-0 border-t-0 border-solid border-b-[#a8a8a8]'
                                     : 'rounded border-[1px] border-solid border-slate-400',
                                 disabled && 'bg-slate-100',
                                 textarea && 'h-20',
                             )}
-                            disabled={disabled}
+                            value={seletedValue}
+                            onChange={setSeletedValue}
                             {...Props}
                         />
 
@@ -135,6 +138,7 @@ const Input = forwardRef(
 
 Input.propTypes = {
     label: PropTypes.string,
+    labelIcon: PropTypes.func,
     type: PropTypes.string,
     errolMesseage: PropTypes.string,
     className: PropTypes.string,

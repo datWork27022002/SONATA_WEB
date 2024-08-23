@@ -21,6 +21,7 @@ function Button({
     leftIcon,
     rightIcon,
     className,
+    disable,
     to,
     href,
     ...passProps
@@ -46,15 +47,16 @@ function Button({
                 'flex items-center justify-center border-0 py-1 font-semibold',
                 'bg-gray-200 text-text-color hover:bg-primary-color',
                 !noBorderRadius && 'rounded',
-                blue && '!bg-blue-300 hover:!bg-blue-400',
-                teal && '!bg-teal-300 hover:!bg-teal-400',
-                green && '!bg-green-300 hover:!bg-green-400',
-                orange && '!bg-orange-300 hover:!bg-orange-400',
-                red && '!bg-red-300 hover:!bg-red-400',
-                lime && '!bg-lime-300 hover:!bg-lime-400',
-
+                blue && `!bg-blue-300 ${!disable && 'hover:!bg-blue-400'}`,
+                teal && `!bg-teal-300 ${!disable && 'hover:!bg-teal-400'}`,
+                green && `!bg-green-300 ${!disable && 'hover:!bg-green-400'}`,
+                orange && `!bg-orange-300 ${!disable && 'hover:!bg-orange-400'}`,
+                red && `!bg-red-300 ${!disable && 'hover:!bg-red-400'}`,
+                lime && `!bg-lime-300 ${!disable && 'hover:!bg-lime-400'}`,
+                disable && 'cursor-default opacity-70',
                 { [className]: className },
             )}
+            disabled={disable}
             {...Props}
         >
             {leftIcon && <IconCustom className={cx('mr-2 w-4')} icon={leftIcon} />}
@@ -78,6 +80,7 @@ Button.propTypes = {
     leftIcon: PropTypes.object,
     rightIcon: PropTypes.object,
     className: PropTypes.string,
+    disable: PropTypes.bool,
     to: PropTypes.string,
     href: PropTypes.string,
 };

@@ -4,10 +4,11 @@ import { IoMdClose } from 'react-icons/io';
 
 import styles from './Modal.module.scss';
 import IconCustom from '~/components/IconCustom';
+import { Fragment } from 'react';
 
 const cx = classNames.bind(styles);
 
-const Modal = ({ children, onClose = () => {}, visibleModal, setVisibleModal, title }) => {
+const Modal = ({ children, onClose = () => {}, visibleModal, setVisibleModal, title, CustomTitle }) => {
     const handleClose = () => {
         onClose();
         setVisibleModal(!visibleModal);
@@ -22,7 +23,7 @@ const Modal = ({ children, onClose = () => {}, visibleModal, setVisibleModal, ti
         >
             <div
                 className={cx(
-                    'max-h-[90%] min-h-36 min-w-72  rounded-lg bg-background-color',
+                    'max-h-[90%] min-h-36 min-w-72 rounded-lg bg-background-color',
                     'border-[1px] border-solid border-primary-color',
                     !visibleModal && 'translate-y-[-60px] opacity-0',
                     'duration-400 transition',
@@ -30,14 +31,19 @@ const Modal = ({ children, onClose = () => {}, visibleModal, setVisibleModal, ti
             >
                 <div
                     className={cx(
-                        'flex h-10 items-center justify-between px-2 text-xl',
+                        'flex h-10 items-center justify-between text-xl',
                         'border-b-[1px] border-solid border-b-primary-color',
                     )}
                 >
-                    <span className={cx('font-semibold text-primary-color')}> {title}</span>
-                    <span className={cx('cursor-pointer rounded p-2 hover:bg-red-400')} onClick={handleClose}>
-                        <IconCustom icon={IoMdClose} />
-                    </span>
+                    {title && (
+                        <Fragment>
+                            <span className={cx('px-2 font-semibold text-primary-color')}> {title}</span>{' '}
+                            <span className={cx('cursor-pointer rounded p-2 hover:bg-red-400')} onClick={handleClose}>
+                                <IconCustom icon={IoMdClose} />
+                            </span>
+                        </Fragment>
+                    )}
+                    {CustomTitle && <CustomTitle />}
                 </div>
                 <div className={cx('p-4')}>{children}</div>
             </div>
@@ -50,6 +56,8 @@ Modal.propTypes = {
     onClose: PropTypes.func,
     visibleModal: PropTypes.bool,
     setVisibleModal: PropTypes.func,
+    title: PropTypes.string,
+    CustomTitle: PropTypes.func,
 };
 
 export default Modal;

@@ -45,10 +45,15 @@ html *::-webkit-scrollbar-track {
 }
 
 button,
-input,
 [tabindex] {
     outline: none;
     border: none;
+}
+
+input {
+    border-radius: 4px;
+    border: solid 1px #d1d5db;
+    outline: none;
 }
 
 a {
