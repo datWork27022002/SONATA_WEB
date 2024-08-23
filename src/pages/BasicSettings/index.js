@@ -23,10 +23,11 @@ import KitchenMemo from './KitchenMemo';
 import ItemManagementByStrore from './ItemManagementByStrore';
 import ChangeOfMultilingualName from './ChangeOfMultilingualName';
 import ItemLinkedCodeManagement from './ItemLinkedCodeManagement';
+import MainMenuSetting from './MainMenuSetting';
 export { default } from './BasicSettings';
 
 export { GroupManagement, StoreInfo, StoreList, WarehouseManagement, CashDrawer, Discount, EmployeeGroup };
 export { EmployeeInfo, EmployeeList, MenuSetup, ItemRecipeManagement, ItemRecipeManager, ToppingSettings };
 export { SubMenu, MenuSearch, InventoryItemSearch, MenuBoardManagement, PosMenuBoard, CategoryManager };
 export { RecipeBuilder, RecipeSearch, KitchenMemo, ItemManagementByStrore, ChangeOfMultilingualName };
-export { ItemLinkedCodeManagement };
+export { ItemLinkedCodeManagement, MainMenuSetting };

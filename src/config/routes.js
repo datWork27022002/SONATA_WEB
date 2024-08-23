@@ -36,6 +36,7 @@ const routes = {
         ITEM_MANAGEMENT_BY_STRORE: `/${pathBasicSettings}/${itemLevel3.ITEM_MANAGEMENT_BY_STRORE.pathKey}`,
         CHANGE_OF_MULTILINGUAL_NAME: `/${pathBasicSettings}/${itemLevel3.CHANGE_OF_MULTILINGUAL_NAME.pathKey}`,
         ITEM_LINKED_CODE_MANAGEMENT: `/${pathBasicSettings}/${itemLevel3.ITEM_LINKED_CODE_MANAGEMENT.pathKey}`,
+        MAIN_MENU_SETTING: `/${pathBasicSettings}/${itemLevel3.MAIN_MENU_SETTING.pathKey}`,
     },
     ManagerFunction: {
         MANAGERFUNCTION: `/${itemLevel1.MANAGERFUNCTION.pathKey}`,

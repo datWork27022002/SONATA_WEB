@@ -22,7 +22,7 @@ const Modal = ({ children, onClose = () => {}, visibleModal, setVisibleModal, ti
         >
             <div
                 className={cx(
-                    'max-h-[90%] min-h-36 min-w-72 max-w-[60%] rounded-lg bg-background-color',
+                    'max-h-[90%] min-h-36 min-w-72  rounded-lg bg-background-color',
                     'border-[1px] border-solid border-primary-color',
                     !visibleModal && 'translate-y-[-60px] opacity-0',
                     'duration-400 transition',

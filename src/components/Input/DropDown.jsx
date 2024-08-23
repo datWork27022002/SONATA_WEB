@@ -73,7 +73,7 @@ function Dropdown({ listOptions, seletedValue, setSeletedValue, className, top }
 }
 
 Dropdown.propTypes = {
-    seletedValue: PropTypes.string,
+    seletedValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     setSeletedValue: PropTypes.func,
     listOptions: PropTypes.array,
     className: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),

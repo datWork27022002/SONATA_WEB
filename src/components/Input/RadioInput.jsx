@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 const RadioInput = ({ seletedRadio, setSeletedRadio = () => {}, listOptions = [], className }) => {
     return (
         <div
-            className={cx('flex h-8 cursor-pointer rounded', 'border-[1px] border-solid border-primary-color', {
+            className={cx('flex h-8 min-w-[168px] cursor-pointer rounded', 'border border-solid border-primary-color', {
                 [className]: className,
             })}
         >

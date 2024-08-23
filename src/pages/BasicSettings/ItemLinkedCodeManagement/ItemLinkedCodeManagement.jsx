@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
-import { FaSearch } from 'react-icons/fa';
 
 import styles from './ItemLinkedCodeManagement.module.scss';
 import TitleLayout from '~/components/TitleLayout';
