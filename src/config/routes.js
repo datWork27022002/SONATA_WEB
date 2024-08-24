@@ -41,6 +41,7 @@ const routes = {
         ITEM_LINKED_CODE_MANAGEMENT: `/${pathBasicSettings}/${itemLevel3.ITEM_LINKED_CODE_MANAGEMENT.pathKey}`,
         MAIN_MENU_SETTING: `/${pathBasicSettings}/${itemLevel3.MAIN_MENU_SETTING.pathKey}`,
         TABLE_LOCATION_MANAGER: `/${pathBasicSettings}/${itemLevel3.TABLE_LOCATION_MANAGER.pathKey}`,
+        TABLE_DESIGN_SETTING: `/${pathBasicSettings}/${itemLevel3.TABLE_DESIGN_SETTING.pathKey}`,
         MENU_SETUP2: `/${pathBasicSettings}/${itemLevel3.MENU_SETUP2.pathKey}`,
         POS_FAVORITE_FUNCTION_BUTTON: `/${pathBasicSettings}/${itemLevel3.POS_FAVORITE_FUNCTION_BUTTON.pathKey}`,
         PAYMENT_BUTTON_SETTING: `/${pathBasicSettings}/${itemLevel3.PAYMENT_BUTTON_SETTING.pathKey}`,

@@ -9,7 +9,7 @@ import { ItemRecipeManagement, ItemRecipeManager, ToppingSettings, SubMenu, Menu
 import { InventoryItemSearch, MenuBoardManagement, PosMenuBoard, CategoryManager } from '~/pages/BasicSettings';
 import { RecipeBuilder, RecipeSearch, KitchenMemo, ItemManagementByStrore } from '~/pages/BasicSettings';
 import { ChangeOfMultilingualName, ItemLinkedCodeManagement, MainMenuSetting } from '~/pages/BasicSettings';
-import { TableLocationManager } from '~/pages/BasicSettings';
+import { TableLocationManager, TableDesignSetting } from '~/pages/BasicSettings';
 import ManagerFunction from '~/pages/ManagerFunction';
 import Customer from '~/pages/Customer';
 import OperationReports from '~/pages/OperationReports';
@@ -54,6 +54,7 @@ export const publicRoute = [
     { path: pathBasicSettings.ITEM_LINKED_CODE_MANAGEMENT, component: ItemLinkedCodeManagement },
     { path: pathBasicSettings.MAIN_MENU_SETTING, component: MainMenuSetting },
     { path: pathBasicSettings.TABLE_LOCATION_MANAGER, component: TableLocationManager },
+    { path: pathBasicSettings.TABLE_DESIGN_SETTING, component: TableDesignSetting },
     { path: routes.ManagerFunction.MANAGERFUNCTION, component: ManagerFunction },
     { path: routes.Customer.CUSTOMER, component: Customer },
     { path: routes.OperationReports.OPERATIONREPORTS, component: OperationReports },

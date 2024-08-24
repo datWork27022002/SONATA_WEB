@@ -115,7 +115,12 @@ const menuStructure = {
                 to: BasicSettings.TABLE_LOCATION_MANAGER,
                 mark: false,
             },
-            { name: 'Table Design Setting', icon: MdTableRestaurant, to: '', mark: false },
+            {
+                name: 'Table Design Setting',
+                icon: MdTableRestaurant,
+                to: BasicSettings.TABLE_DESIGN_SETTING,
+                mark: false,
+            },
             { name: 'Menu Setup', icon: MdPhonelinkSetup, to: BasicSettings.MENU_SETUP2, mark: false },
             {
                 name: 'POS Favorite Function Button',

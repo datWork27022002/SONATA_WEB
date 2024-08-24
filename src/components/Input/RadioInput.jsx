@@ -2,23 +2,30 @@ import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 
 import styles from './Input.module.scss';
+import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
-const RadioInput = ({ seletedRadio, setSeletedRadio = () => {}, listOptions = [], className }) => {
+const RadioInput = ({ seletedRadio = '', setSeletedRadio = () => {}, listOptions = [], className }) => {
+    const [valueInput, setValueInput] = useState(seletedRadio || listOptions[0]);
+
+    const changeValue = (value) => {
+        setValueInput(value);
+        setSeletedRadio(value);
+    };
     return (
         <div
-            className={cx('flex h-8 min-w-[168px] cursor-pointer rounded', 'border border-solid border-primary-color', {
+            className={cx('flex h-8 min-w-[128px] cursor-pointer rounded', 'border border-solid border-primary-color', {
                 [className]: className,
             })}
         >
             {listOptions.map((value, index) => (
                 <span
                     onClick={() => {
-                        setSeletedRadio(value);
+                        changeValue(value);
                     }}
                     className={cx(
-                        seletedRadio === value && 'bg-primary-color',
+                        valueInput === value && 'bg-primary-color',
                         'flex flex-1 items-center justify-center',
                     )}
                     key={index}

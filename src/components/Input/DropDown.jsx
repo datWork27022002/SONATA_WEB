@@ -5,7 +5,8 @@ import { MdOutlineArrowDropDown } from 'react-icons/md';
 
 const cx = classNames.bind();
 
-function Dropdown({ listOptions, seletedValue, setSeletedValue, className, top }) {
+function Dropdown({ listOptions, seletedValue = '', setSeletedValue = () => {}, className, top }) {
+    const [valueInput, setValueInput] = useState(seletedValue || listOptions[0]);
     const [isOpen, setIsOpen] = useState(false);
     const ref = useRef(null);
 
@@ -14,6 +15,7 @@ function Dropdown({ listOptions, seletedValue, setSeletedValue, className, top }
     };
 
     const handleChange = (value) => {
+        setValueInput(value);
         setSeletedValue(value);
         setIsOpen(false);
     };
@@ -45,7 +47,7 @@ function Dropdown({ listOptions, seletedValue, setSeletedValue, className, top }
                     'items-center justify-between bg-white px-1 hover:border-primary-color',
                 )}
             >
-                <span>{seletedValue}</span>
+                <span>{valueInput}</span>
                 <MdOutlineArrowDropDown size={20} />
             </button>
             <div
