@@ -3,6 +3,9 @@ import nameMap from './nameMap';
 const { itemLevel1, itemLevel3 } = nameMap;
 
 const pathBasicSettings = itemLevel1.BASICSETTINGS.pathKey;
+const pathManagerFunction = itemLevel1.MANAGERFUNCTION.pathKey;
+const pathCustomer = itemLevel1.CUSTOMER.pathKey;
+const pathOperationReports = itemLevel1.OPERATIONREPORTS.pathKey;
 
 const routes = {
     LOGIN: '/login',
@@ -38,15 +41,48 @@ const routes = {
         ITEM_LINKED_CODE_MANAGEMENT: `/${pathBasicSettings}/${itemLevel3.ITEM_LINKED_CODE_MANAGEMENT.pathKey}`,
         MAIN_MENU_SETTING: `/${pathBasicSettings}/${itemLevel3.MAIN_MENU_SETTING.pathKey}`,
         TABLE_LOCATION_MANAGER: `/${pathBasicSettings}/${itemLevel3.TABLE_LOCATION_MANAGER.pathKey}`,
+        MENU_SETUP2: `/${pathBasicSettings}/${itemLevel3.MENU_SETUP2.pathKey}`,
+        POS_FAVORITE_FUNCTION_BUTTON: `/${pathBasicSettings}/${itemLevel3.POS_FAVORITE_FUNCTION_BUTTON.pathKey}`,
+        PAYMENT_BUTTON_SETTING: `/${pathBasicSettings}/${itemLevel3.PAYMENT_BUTTON_SETTING.pathKey}`,
+        KIOSK_IMAGE_SETTINGS: `/${pathBasicSettings}/${itemLevel3.KIOSK_IMAGE_SETTINGS.pathKey}`,
+        UP_ORDER_IMAGE_SETTINGS: `/${pathBasicSettings}/${itemLevel3.UP_ORDER_IMAGE_SETTINGS.pathKey}`,
+        KIOSK_FUNCTION_SETTING: `/${pathBasicSettings}/${itemLevel3.KIOSK_FUNCTION_SETTING.pathKey}`,
+        POS_USER_DEFINITION_LANGUAGE: `/${pathBasicSettings}/${itemLevel3.POS_USER_DEFINITION_LANGUAGE.pathKey}`,
     },
     ManagerFunction: {
-        MANAGERFUNCTION: `/${itemLevel1.MANAGERFUNCTION.pathKey}`,
+        MANAGERFUNCTION: `/${pathManagerFunction}`,
+        ANNOUNCEMENT: `/${pathManagerFunction}/${itemLevel3.ANNOUNCEMENT.pathKey}`,
+        PAYROLL: `/${pathManagerFunction}/${itemLevel3.PAYROLL.pathKey}`,
+        TIME_CARD: `/${pathManagerFunction}/${itemLevel3.TIME_CARD.pathKey}`,
+        LIST_OF_INFORMATION_BY_FORCE: `/${pathManagerFunction}/${itemLevel3.LIST_OF_INFORMATION_BY_FORCE.pathKey}`,
     },
     Customer: {
-        CUSTOMER: `/${itemLevel1.CUSTOMER.pathKey}`,
+        CUSTOMER: `/${pathCustomer}`,
+        CUSTOMER_GROUP: `/${pathCustomer}/${itemLevel3.CUSTOMER_GROUP.pathKey}`,
+        CUSTOMER_MANAGEMENT: `/${pathCustomer}/${itemLevel3.CUSTOMER_MANAGEMENT.pathKey}`,
+        MEMBERSHIP_LIST: `/${pathCustomer}/${itemLevel3.MEMBERSHIP_LIST.pathKey}`,
+        CUSTOMER_SALES_TOTAL: `/${pathCustomer}/${itemLevel3.CUSTOMER_SALES_TOTAL.pathKey}`,
+        CUSTOMER_DETAILED_SALES_REPORT: `/${pathCustomer}/${itemLevel3.CUSTOMER_DETAILED_SALES_REPORT.pathKey}`,
+        POINT_REPORT: `/${pathCustomer}/${itemLevel3.POINT_REPORT.pathKey}`,
     },
     OperationReports: {
         OPERATIONREPORTS: `/${itemLevel1.OPERATIONREPORTS.pathKey}`,
+        MONTHLY_COMPARISON: `/${pathOperationReports}/${itemLevel3.MONTHLY_COMPARISON.pathKey}`,
+        YEARLY_COMPARISON: `/${pathOperationReports}/${itemLevel3.YEARLY_COMPARISON.pathKey}`,
+        TOTAL_CATEGORY_SALES_BY_STORE: `/${pathOperationReports}/${itemLevel3.TOTAL_CATEGORY_SALES_BY_STORE.pathKey}`,
+        TOTAL_ITEM_SALES_BY_STORE: `/${pathOperationReports}/${itemLevel3.TOTAL_ITEM_SALES_BY_STORE.pathKey}`,
+        TOTAL_STORE_SALES_BY_CATEGORY: `/${pathOperationReports}/${itemLevel3.TOTAL_STORE_SALES_BY_CATEGORY.pathKey}`,
+        TOTAL_SALES_SUMMARY_BY_ITEM: `/${pathOperationReports}/${itemLevel3.TOTAL_SALES_SUMMARY_BY_ITEM.pathKey}`,
+        TOTAL_STORE_SALES_BY_ITEM: `/${pathOperationReports}/${itemLevel3.TOTAL_STORE_SALES_BY_ITEM.pathKey}`,
+        TOTAL_SALES_WEEK_BY_ITEM: `/${pathOperationReports}/${itemLevel3.TOTAL_SALES_WEEK_BY_ITEM.pathKey}`,
+        DAILY_SALES_BY_ITEM: `/${pathOperationReports}/${itemLevel3.DAILY_SALES_BY_ITEM.pathKey}`,
+        TOTAL_SALES_HOUR_BY_ITEM: `/${pathOperationReports}/${itemLevel3.TOTAL_SALES_HOUR_BY_ITEM.pathKey}`,
+        TOTAL_SALES_ITEM_BY_WEEK: `/${pathOperationReports}/${itemLevel3.TOTAL_SALES_ITEM_BY_WEEK.pathKey}`,
+        TOTAL_SALES_ITEM_BY_HOUR: `/${pathOperationReports}/${itemLevel3.TOTAL_SALES_ITEM_BY_HOUR.pathKey}`,
+        TOTAL_STORE_SALES_BY_SUPPLIER: `/${pathOperationReports}/${itemLevel3.TOTAL_STORE_SALES_BY_SUPPLIER.pathKey}`,
+        SALES_AMOUNT_BY_STORE: `/${pathOperationReports}/${itemLevel3.SALES_AMOUNT_BY_STORE.pathKey}`,
+        MONTHLY_SALES_AMOUNT_BY_STORE: `/${pathOperationReports}/${itemLevel3.MONTHLY_SALES_AMOUNT_BY_STORE.pathKey}`,
+        STORE_MONTHLY_SALES_AMOUNT: `/${pathOperationReports}/${itemLevel3.STORE_MONTHLY_SALES_AMOUNT.pathKey}`,
     },
     SaleReports: {
         SALEREPORTS: `/${itemLevel1.SALEREPORTS.pathKey}`,

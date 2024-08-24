@@ -17,7 +17,7 @@ const CardItem = ({ item }) => {
         <Link
             className={cx(
                 'mb-3 mr-3 h-[110px] w-[135px] cursor-pointer border-2 border-solid border-primary-color',
-                'relative flex flex-col overflow-hidden rounded hover:translate-y-[-1px] hover:opacity-80',
+                'relative flex flex-col rounded hover:translate-y-[-1px] hover:opacity-70 hover:shadow-xl',
                 'CardItem',
             )}
             to={item.to}
