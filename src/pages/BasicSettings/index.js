@@ -26,6 +26,7 @@ import ItemLinkedCodeManagement from './ItemLinkedCodeManagement';
 import MainMenuSetting from './MainMenuSetting';
 import TableLocationManager from './TableLocationManager';
 import TableDesignSetting from './TableDesignSetting';
+import POSFavoriteFunctionButton from './POSFavoriteFunctionButton';
 export { default } from './BasicSettings';
 
 export { GroupManagement, StoreInfo, StoreList, WarehouseManagement, CashDrawer, Discount, EmployeeGroup };
@@ -33,3 +34,4 @@ export { EmployeeInfo, EmployeeList, MenuSetup, ItemRecipeManagement, ItemRecipe
 export { SubMenu, MenuSearch, InventoryItemSearch, MenuBoardManagement, PosMenuBoard, CategoryManager };
 export { RecipeBuilder, RecipeSearch, KitchenMemo, ItemManagementByStrore, ChangeOfMultilingualName };
 export { ItemLinkedCodeManagement, MainMenuSetting, TableLocationManager, TableDesignSetting };
+export { POSFavoriteFunctionButton };

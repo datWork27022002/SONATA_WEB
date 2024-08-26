@@ -99,7 +99,7 @@ const Input = forwardRef(
                     </div>
                 )}
                 {(radioInput || dropDown || rangeTime || custom || checkboxInput) && (
-                    <div className={cx('flex flex-1 items-center')} style={{ width: widthInput }}>
+                    <div className={cx('flex items-center', !widthInput && 'flex-1')} style={{ width: widthInput }}>
                         {radioInput && (
                             <RadioInput
                                 seletedRadio={seletedValue}
