@@ -6,7 +6,6 @@ import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
 import TitleLayout from '~/components/TitleLayout';
 import IconCustom from '~/components/IconCustom';
 import Input from '~/components/Input';
-import Button from '~/components/Button';
 import MainSettings, { MenuCardAdd } from './components/MainSettings';
 import MainOptions from './components/MainOptions';
 import FormMain from './components/FormMain';
@@ -16,18 +15,15 @@ import { listFuntionSetting } from './components/constant';
 
 const cx = classNames.bind();
 
-const listTypeForm = ['Dine-in', 'Take Out', 'Delivery'];
-
 const listPOSID = ['POS 1', 'POS 11', 'POS 12', 'KIM TEST', 'POS 14'];
 
-function POSFavoriteFunctionButton() {
+function KioskFunctionSetting() {
     const [POSID, setPOSID] = useState(listPOSID[0]);
     const [listMenuSetting, setListMenuSettings] = useState(
         listFuntionSetting.filter((value) => value.disable === true),
     );
     const [listMenuOptions, setListMenuOptions] = useState(listFuntionSetting);
     const [activeId, setActiveId] = useState(null);
-    const [typeForm, setTypeForm] = useState(listTypeForm[0]);
 
     const handelDragStart = ({ active }) => {
         setActiveId(active.id);
@@ -69,12 +65,8 @@ function POSFavoriteFunctionButton() {
         }
     };
 
-    const changeTypeForm = (value) => {
-        setTypeForm(value);
-    };
-
     return (
-        <TitleLayout title={config.nameMap.itemLevel3.POS_FAVORITE_FUNCTION_BUTTON.Visiblename}>
+        <TitleLayout title={config.nameMap.itemLevel3.KIOSK_FUNCTION_SETTING.Visiblename}>
             <div className={cx('flex flex-col sm:items-center')}>
                 <div>
                     <Input
@@ -87,18 +79,7 @@ function POSFavoriteFunctionButton() {
                         seletedValue={POSID}
                         setSeletedValue={setPOSID}
                     />
-                    <div className={cx('flex flex-wrap')}>
-                        {listTypeForm.map((value, index) => (
-                            <Button
-                                key={index}
-                                onClick={() => changeTypeForm(value)}
-                                className={cx(value === typeForm && '!bg-primary-color !text-text-color-secondnary')}
-                                noBorderRadius
-                            >
-                                {value}
-                            </Button>
-                        ))}
-                    </div>
+
                     <div className={cx('flex gap-x-4')}>
                         <DndContext
                             collisionDetection={closestCenter}
@@ -139,4 +120,4 @@ function POSFavoriteFunctionButton() {
     );
 }
 
-export default POSFavoriteFunctionButton;
+export default KioskFunctionSetting;

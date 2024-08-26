@@ -11,6 +11,7 @@ import { RecipeBuilder, RecipeSearch, KitchenMemo, ItemManagementByStrore } from
 import { ChangeOfMultilingualName, ItemLinkedCodeManagement, MainMenuSetting } from '~/pages/BasicSettings';
 import { TableLocationManager, TableDesignSetting, POSFavoriteFunctionButton } from '~/pages/BasicSettings';
 import { PaymentButtonSetting, KioskImageSettings, UPOrderImageSettings } from '~/pages/BasicSettings';
+import { KioskFunctionSetting } from '~/pages/BasicSettings';
 import ManagerFunction from '~/pages/ManagerFunction';
 import Customer from '~/pages/Customer';
 import OperationReports from '~/pages/OperationReports';
@@ -64,6 +65,7 @@ const basicSettingsRoute = [
     { path: pathBasicSettings.PAYMENT_BUTTON_SETTING, component: PaymentButtonSetting },
     { path: pathBasicSettings.KIOSK_IMAGE_SETTINGS, component: KioskImageSettings },
     { path: pathBasicSettings.UP_ORDER_IMAGE_SETTINGS, component: UPOrderImageSettings },
+    { path: pathBasicSettings.KIOSK_FUNCTION_SETTING, component: KioskFunctionSetting },
 ];
 
 export const publicRoute = [
