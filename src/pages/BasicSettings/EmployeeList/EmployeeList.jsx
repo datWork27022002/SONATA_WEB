@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 
-import styles from './EmployeeList.module.scss';
 import TitleLayout from '~/components/TitleLayout';
 import TableCustom from '~/components/TableCustom';
 import config from '~/config';
 import Input from '~/components/Input';
 import Button from '~/components/Button';
 
-// eslint-disable-next-line no-unused-vars
-const cx = classNames.bind(styles);
+const cx = classNames.bind();
 
 const listEmployeeGroup = ['Cashier', 'Manager', 'Owner', 'Server'];
 const listStoreName = ['hyojung'];
@@ -68,10 +66,8 @@ function EmployeeList() {
                         setSeletedValue={setStoreName}
                     />
                 </div>
-                <div className={cx('flex items-center')}>
-                    <Button className={cx('mr-4')} blue>
-                        Search
-                    </Button>
+                <div className={cx('flex items-center gap-4')}>
+                    <Button blue>Search</Button>
                     <Button teal>Export Excel</Button>
                 </div>
             </div>
