@@ -10,7 +10,7 @@ import { InventoryItemSearch, MenuBoardManagement, PosMenuBoard, CategoryManager
 import { RecipeBuilder, RecipeSearch, KitchenMemo, ItemManagementByStrore } from '~/pages/BasicSettings';
 import { ChangeOfMultilingualName, ItemLinkedCodeManagement, MainMenuSetting } from '~/pages/BasicSettings';
 import { TableLocationManager, TableDesignSetting, POSFavoriteFunctionButton } from '~/pages/BasicSettings';
-import { PaymentButtonSetting, KioskImageSettings } from '~/pages/BasicSettings';
+import { PaymentButtonSetting, KioskImageSettings, UPOrderImageSettings } from '~/pages/BasicSettings';
 import ManagerFunction from '~/pages/ManagerFunction';
 import Customer from '~/pages/Customer';
 import OperationReports from '~/pages/OperationReports';
@@ -24,9 +24,12 @@ import Bookmark from '~/pages/Bookmark';
 const { routes } = config;
 const pathBasicSettings = routes.BasicSettings;
 
-export const publicRoute = [
+const commonRoute = [
     { path: routes.HOME, component: Home, layout: DefaultLayout },
     { path: routes.LOGIN, component: Login, layout: null },
+];
+
+const basicSettingsRoute = [
     { path: pathBasicSettings.BASICSETTINGS, component: BasicSettings },
     { path: pathBasicSettings.GROUP_MANAGEMENT, component: GroupManagement },
     { path: pathBasicSettings.STORE_INFO, component: StoreInfo },
@@ -60,6 +63,12 @@ export const publicRoute = [
     { path: pathBasicSettings.POS_FAVORITE_FUNCTION_BUTTON, component: POSFavoriteFunctionButton },
     { path: pathBasicSettings.PAYMENT_BUTTON_SETTING, component: PaymentButtonSetting },
     { path: pathBasicSettings.KIOSK_IMAGE_SETTINGS, component: KioskImageSettings },
+    { path: pathBasicSettings.UP_ORDER_IMAGE_SETTINGS, component: UPOrderImageSettings },
+];
+
+export const publicRoute = [
+    ...commonRoute,
+    ...basicSettingsRoute,
     { path: routes.ManagerFunction.MANAGERFUNCTION, component: ManagerFunction },
     { path: routes.Customer.CUSTOMER, component: Customer },
     { path: routes.OperationReports.OPERATIONREPORTS, component: OperationReports },

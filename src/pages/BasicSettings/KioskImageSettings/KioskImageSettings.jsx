@@ -46,7 +46,8 @@ function KioskImageSettings() {
             <div className={cx('flex flex-col items-start')}>
                 {/* table */}
                 <div className={cx('')}>
-                    <TableCustom className={cx('mb-4 h-[100px]')} columns={columns} data={data} />
+                    <span> Resolution by screen size</span>
+                    <TableCustom className={cx('mb-4')} columns={columns} data={data} />
                 </div>
                 <div className={cx('flex gap-4')}>
                     <Dropdown listOptions={listTypeImage} />

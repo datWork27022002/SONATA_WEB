@@ -29,6 +29,7 @@ import TableDesignSetting from './TableDesignSetting';
 import POSFavoriteFunctionButton from './POSFavoriteFunctionButton';
 import PaymentButtonSetting from './PaymentButtonSetting';
 import KioskImageSettings from './KioskImageSettings';
+import UPOrderImageSettings from './UPOrderImageSettings';
 export { default } from './BasicSettings';
 
 export { GroupManagement, StoreInfo, StoreList, WarehouseManagement, CashDrawer, Discount, EmployeeGroup };
@@ -36,4 +37,4 @@ export { EmployeeInfo, EmployeeList, MenuSetup, ItemRecipeManagement, ItemRecipe
 export { SubMenu, MenuSearch, InventoryItemSearch, MenuBoardManagement, PosMenuBoard, CategoryManager };
 export { RecipeBuilder, RecipeSearch, KitchenMemo, ItemManagementByStrore, ChangeOfMultilingualName };
 export { ItemLinkedCodeManagement, MainMenuSetting, TableLocationManager, TableDesignSetting };
-export { POSFavoriteFunctionButton, PaymentButtonSetting, KioskImageSettings };
+export { POSFavoriteFunctionButton, PaymentButtonSetting, KioskImageSettings, UPOrderImageSettings };
