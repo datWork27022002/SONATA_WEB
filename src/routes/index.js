@@ -10,7 +10,7 @@ import { InventoryItemSearch, MenuBoardManagement, PosMenuBoard, CategoryManager
 import { RecipeBuilder, RecipeSearch, KitchenMemo, ItemManagementByStrore } from '~/pages/BasicSettings';
 import { ChangeOfMultilingualName, ItemLinkedCodeManagement, MainMenuSetting } from '~/pages/BasicSettings';
 import { TableLocationManager, TableDesignSetting, POSFavoriteFunctionButton } from '~/pages/BasicSettings';
-import { PaymentButtonSetting } from '~/pages/BasicSettings';
+import { PaymentButtonSetting, KioskImageSettings } from '~/pages/BasicSettings';
 import ManagerFunction from '~/pages/ManagerFunction';
 import Customer from '~/pages/Customer';
 import OperationReports from '~/pages/OperationReports';
@@ -59,6 +59,7 @@ export const publicRoute = [
     { path: pathBasicSettings.MENU_SETUP2, component: MenuSetup },
     { path: pathBasicSettings.POS_FAVORITE_FUNCTION_BUTTON, component: POSFavoriteFunctionButton },
     { path: pathBasicSettings.PAYMENT_BUTTON_SETTING, component: PaymentButtonSetting },
+    { path: pathBasicSettings.KIOSK_IMAGE_SETTINGS, component: KioskImageSettings },
     { path: routes.ManagerFunction.MANAGERFUNCTION, component: ManagerFunction },
     { path: routes.Customer.CUSTOMER, component: Customer },
     { path: routes.OperationReports.OPERATIONREPORTS, component: OperationReports },
