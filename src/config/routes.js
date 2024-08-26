@@ -6,6 +6,7 @@ const pathBasicSettings = itemLevel1.BASICSETTINGS.pathKey;
 const pathManagerFunction = itemLevel1.MANAGERFUNCTION.pathKey;
 const pathCustomer = itemLevel1.CUSTOMER.pathKey;
 const pathOperationReports = itemLevel1.OPERATIONREPORTS.pathKey;
+const pathSaleReports = itemLevel1.SALEREPORTS.pathKey;
 
 const routes = {
     LOGIN: '/login',
@@ -86,7 +87,29 @@ const routes = {
         STORE_MONTHLY_SALES_AMOUNT: `/${pathOperationReports}/${itemLevel3.STORE_MONTHLY_SALES_AMOUNT.pathKey}`,
     },
     SaleReports: {
-        SALEREPORTS: `/${itemLevel1.SALEREPORTS.pathKey}`,
+        SALEREPORTS: `/${pathSaleReports}`,
+        DAILY_SALES_REPORT: `/${pathSaleReports}/${itemLevel3.DAILY_SALES_REPORT.pathKey}`,
+        DAILY_SALES_SUMMARY: `/${pathSaleReports}/${itemLevel3.DAILY_SALES_SUMMARY.pathKey}`,
+        SALES_SUMMARY: `/${pathSaleReports}/${itemLevel3.SALES_SUMMARY.pathKey}`,
+        DETAILED_SALES_LIST: `/${pathSaleReports}/${itemLevel3.DETAILED_SALES_LIST.pathKey}`,
+        SALES_BY_RECEIPT: `/${pathSaleReports}/${itemLevel3.SALES_BY_RECEIPT.pathKey}`,
+        SALES_BY_RECEIPT_DETAIL: `/${pathSaleReports}/${itemLevel3.SALES_BY_RECEIPT_DETAIL.pathKey}`,
+        CASH_RECEIPT_APPROVAL_CANCELATION_REPORT: `/${pathSaleReports}/${itemLevel3.CASH_RECEIPT_APPROVAL_CANCELATION_REPORT.pathKey}`,
+        CREDIT_CARD_APPROVAL_CANCELATION_REPORT: `/${pathSaleReports}/${itemLevel3.CREDIT_CARD_APPROVAL_CANCELATION_REPORT.pathKey}`,
+        SALES_REPORT_BY_CARD_TYPE_DETAIL: `/${pathSaleReports}/${itemLevel3.SALES_REPORT_BY_CARD_TYPE_DETAIL.pathKey}`,
+        SALES_RECORD_BY_EMPLOYEE: `/${pathSaleReports}/${itemLevel3.SALES_RECORD_BY_EMPLOYEE.pathKey}`,
+        SALES_RECORD_BY_EMPLOYEE_DATE: `/${pathSaleReports}/${itemLevel3.SALES_RECORD_BY_EMPLOYEE_DATE.pathKey}`,
+        EMPLOYEE_COMMISSION: `/${pathSaleReports}/${itemLevel3.EMPLOYEE_COMMISSION.pathKey}`,
+        TOTAL_SALES_REPORT: `/${pathSaleReports}/${itemLevel3.TOTAL_SALES_REPORT.pathKey}`,
+        SIMPLIFIED_SALES_TOTAL: `/${pathSaleReports}/${itemLevel3.SIMPLIFIED_SALES_TOTAL.pathKey}`,
+        AGGREGATE_REVENUE_ITEMS_BY_CATEGORY: `/${pathSaleReports}/${itemLevel3.AGGREGATE_REVENUE_ITEMS_BY_CATEGORY.pathKey}`,
+        HOURLY_SALES: `/${pathSaleReports}/${itemLevel3.HOURLY_SALES.pathKey}`,
+        TIME_OF_DAY_SALES_REPORT: `/${pathSaleReports}/${itemLevel3.TIME_OF_DAY_SALES_REPORT.pathKey}`,
+        SALES_REPORT_BY_PAYMENT_TYPE: `/${pathSaleReports}/${itemLevel3.SALES_REPORT_BY_PAYMENT_TYPE.pathKey}`,
+        SALES_REPORT_BY_CARD_TYPE: `/${pathSaleReports}/${itemLevel3.SALES_REPORT_BY_CARD_TYPE.pathKey}`,
+        SALES_RANKING: `/${pathSaleReports}/${itemLevel3.SALES_RANKING.pathKey}`,
+        SALES_ANALYSIS_REPORT_ITEM: `/${pathSaleReports}/${itemLevel3.SALES_ANALYSIS_REPORT_ITEM.pathKey}`,
+        EMPLOYEE_SALES_ANALYSIS: `/${pathSaleReports}/${itemLevel3.EMPLOYEE_SALES_ANALYSIS.pathKey}`,
     },
     PurchaseOrder: {
         PURCHASEORDER: `/${itemLevel1.PURCHASEORDER.pathKey}`,

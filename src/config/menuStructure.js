@@ -37,7 +37,7 @@ import { CgArrangeBack } from 'react-icons/cg';
 
 import routes from './routes';
 
-const { BasicSettings, ManagerFunction, Customer, OperationReports } = routes;
+const { BasicSettings, ManagerFunction, Customer, OperationReports, SaleReports } = routes;
 
 const menuStructure = {
     BASICSETTINGS: {
@@ -265,31 +265,86 @@ const menuStructure = {
     },
     SALEREPORTS: {
         'Sale Reports': [
-            { name: 'Daily Sales Report', icon: BsCalendar2DayFill, to: '', mark: false },
-            { name: 'Daily Sales Summary', icon: FaCalendarDay, to: '', mark: false },
-            { name: 'Sales Summary', icon: IoMdDocument, to: '', mark: false },
-            { name: 'Detailed Sales List', icon: GrDocumentText, to: '', mark: false },
-            { name: 'Sales By Receipt', icon: FaReceipt, to: '', mark: false },
-            { name: 'Sales By Receipt Detail', icon: BsReceipt, to: '', mark: false },
-            { name: 'CashReceipt Approval/Cancelation Report', icon: IoReceipt, to: '', mark: false },
-            { name: 'CreditCard Approval/Cancelation Report', icon: CiCreditCard1, to: '', mark: false },
-            { name: 'Sales Report by Card Type Detail', icon: FaIdCard, to: '', mark: false },
-            { name: 'Sales Record by Employee', icon: FaUserSecret, to: '', mark: false },
-            { name: 'Sales Record by Employee Date', icon: CiCalendarDate, to: '', mark: false },
-            { name: 'Employee Commission', icon: FaUserCheck, to: '', mark: false },
+            { name: 'Daily Sales Report', icon: BsCalendar2DayFill, to: SaleReports.DAILY_SALES_REPORT, mark: false },
+            { name: 'Daily Sales Summary', icon: FaCalendarDay, to: SaleReports.DAILY_SALES_SUMMARY, mark: false },
+            { name: 'Sales Summary', icon: IoMdDocument, to: SaleReports.SALES_SUMMARY, mark: false },
+            { name: 'Detailed Sales List', icon: GrDocumentText, to: SaleReports.DETAILED_SALES_LIST, mark: false },
+            { name: 'Sales By Receipt', icon: FaReceipt, to: SaleReports.SALES_BY_RECEIPT, mark: false },
+            { name: 'Sales By Receipt Detail', icon: BsReceipt, to: SaleReports.SALES_BY_RECEIPT_DETAIL, mark: false },
+            {
+                name: 'CashReceipt Approval/Cancelation Report',
+                icon: IoReceipt,
+                to: SaleReports.CASH_RECEIPT_APPROVAL_CANCELATION_REPORT,
+                mark: false,
+            },
+            {
+                name: 'CreditCard Approval/Cancelation Report',
+                icon: CiCreditCard1,
+                to: SaleReports.CREDIT_CARD_APPROVAL_CANCELATION_REPORT,
+                mark: false,
+            },
+            {
+                name: 'Sales Report by Card Type Detail',
+                icon: FaIdCard,
+                to: SaleReports.SALES_REPORT_BY_CARD_TYPE_DETAIL,
+                mark: false,
+            },
+            {
+                name: 'Sales Record by Employee',
+                icon: FaUserSecret,
+                to: SaleReports.SALES_RECORD_BY_EMPLOYEE,
+                mark: false,
+            },
+            {
+                name: 'Sales Record by Employee Date',
+                icon: CiCalendarDate,
+                to: SaleReports.SALES_RECORD_BY_EMPLOYEE_DATE,
+                mark: false,
+            },
+            { name: 'Employee Commission', icon: FaUserCheck, to: SaleReports.EMPLOYEE_COMMISSION, mark: false },
         ],
         'Sales Analysis': [
-            { name: 'Total Sales Report', icon: FaChartPie, to: '', mark: false },
-            { name: 'Simplified Sales Total', icon: FaChartPie, to: '', mark: false },
-            { name: 'Aggregate revenue items by category', icon: TbCategoryFilled, to: '', mark: false },
-            { name: 'Hourly Sales', icon: TbClockHour10Filled, to: '', mark: false },
-            { name: 'Time of Day Sales Report', icon: BsCalendar2DayFill, to: '', mark: false },
-            { name: 'Sales Report by Payment Type', icon: FaChartPie, to: '', mark: false },
-            { name: 'Sales Report by Card Type', icon: FaChartPie, to: '', mark: false },
-            { name: 'Sales Ranking', icon: PiRanking, to: '', mark: false },
-            { name: 'Sales Analysis Report(Item)', icon: IoAnalytics, to: '', mark: false },
-            { name: 'Total Sales Report', icon: FaChartPie, to: '', mark: false },
-            { name: 'Employee Sales Analysis', icon: FaUserCheck, to: '', mark: false },
+            { name: 'Total Sales Report', icon: FaChartPie, to: SaleReports.TOTAL_SALES_REPORT, mark: false },
+            { name: 'Simplified Sales Total', icon: FaChartPie, to: SaleReports.SIMPLIFIED_SALES_TOTAL, mark: false },
+            {
+                name: 'Aggregate revenue items by category',
+                icon: TbCategoryFilled,
+                to: SaleReports.AGGREGATE_REVENUE_ITEMS_BY_CATEGORY,
+                mark: false,
+            },
+            { name: 'Hourly Sales', icon: TbClockHour10Filled, to: SaleReports.HOURLY_SALES, mark: false },
+            {
+                name: 'Time of Day Sales Report',
+                icon: BsCalendar2DayFill,
+                to: SaleReports.TIME_OF_DAY_SALES_REPORT,
+                mark: false,
+            },
+            {
+                name: 'Sales Report by Payment Type',
+                icon: FaChartPie,
+                to: SaleReports.SALES_REPORT_BY_PAYMENT_TYPE,
+                mark: false,
+            },
+            {
+                name: 'Sales Report by Card Type',
+                icon: FaChartPie,
+                to: SaleReports.SALES_REPORT_BY_CARD_TYPE,
+                mark: false,
+            },
+            { name: 'Sales Ranking', icon: PiRanking, to: SaleReports.SALES_RANKING, mark: false },
+            {
+                name: 'Sales Analysis Report(Item)',
+                icon: IoAnalytics,
+                to: SaleReports.SALES_ANALYSIS_REPORT_ITEM,
+                mark: false,
+            },
+            { name: 'Total Sales Report', icon: FaChartPie, to: SaleReports.TOTAL_SALES_REPORT, mark: false },
+            {
+                name: 'Employee Sales Analysis',
+                icon: FaUserCheck,
+                to: SaleReports.EMPLOYEE_SALES_ANALYSIS,
+                mark: false,
+            },
         ],
         'Void / Return': [
             { name: 'Order Cancelation Report', icon: PiReceiptX, to: '', mark: false },
