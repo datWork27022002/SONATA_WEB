@@ -80,6 +80,7 @@ const Input = forwardRef(
                                 disabled && 'bg-slate-100',
                                 textarea && 'h-20',
                             )}
+                            disabled={disabled}
                             value={seletedValue}
                             onChange={setSeletedValue}
                             {...Props}

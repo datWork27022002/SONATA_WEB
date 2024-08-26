@@ -257,7 +257,7 @@ const nameMap = {
         AMOUNT: { pathKey: 'Amount', Visiblename: 'Amount', parent: 'SUPPLIER' },
         STORE_OPERATIONS: { pathKey: 'StoreOperations', Visiblename: 'Store Operations', parent: 'STORE' },
         STORE_DETAIL_SETTING: { pathKey: 'StoreDetailSetting', Visiblename: 'Store Detail Setting', parent: 'STORE' },
-        CASH_DRAWER2: { pathKey: 'CashDrawer', Visiblename: 'Cash Drawer', parent: 'STORE' },
+        CASH_DRAWER2: { pathKey: 'CashDrawer2', Visiblename: 'Cash Drawer', parent: 'STORE' },
         TAX: { pathKey: 'Tax', Visiblename: 'Tax', parent: 'STORE' },
         OPERATIONS_MANAGEMENT: {
             pathKey: 'OperationsManagement',
