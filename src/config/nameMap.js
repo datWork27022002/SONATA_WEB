@@ -422,9 +422,9 @@ const nameMap = {
         EMAIL_SERVER: { pathKey: 'EmailServer', Visiblename: 'Email Server', parent: 'NETWORKSERVER' },
         ANNOUNCEMENT: { pathKey: 'Announcement', Visiblename: 'Announcement' },
         PAYROLL: { pathKey: 'Payroll', Visiblename: 'Pay roll' },
-        TIME_CARD: { pathKey: 'Time Card', Visiblename: 'Time Card' },
+        TIME_CARD: { pathKey: 'TimeCard', Visiblename: 'Time Card' },
         LIST_OF_INFORMATION_BY_FORCE: {
-            pathKey: 'List of information by force',
+            pathKey: 'ListOfInformationByForce',
             Visiblename: 'List of information by force',
         },
         CUSTOMER_GROUP: { pathKey: 'CustomerGroup', Visiblename: 'Customer Group' },
