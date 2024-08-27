@@ -57,7 +57,7 @@ const Input = forwardRef(
                 {(label || labelIcon) && (
                     <label
                         className={cx(
-                            paddingLabel ? 'pr-2' : 'w-24',
+                            paddingLabel ? 'pr-2' : 'mr-2 w-24',
                             required && 'font-semibold text-red-600',
                             boldLabel && 'font-semibold',
                         )}
