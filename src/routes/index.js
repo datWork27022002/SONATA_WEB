@@ -13,7 +13,7 @@ import { TableLocationManager, TableDesignSetting, POSFavoriteFunctionButton } f
 import { PaymentButtonSetting, KioskImageSettings, UPOrderImageSettings } from '~/pages/BasicSettings';
 import { KioskFunctionSetting, POSUserDefinitionLanguage } from '~/pages/BasicSettings';
 import ManagerFunction, { Announcement, Payroll, TimeCard, ListOfInformationByForce } from '~/pages/ManagerFunction';
-import Customer, { CustomerGroup, CustomerManagement } from '~/pages/Customer';
+import Customer, { CustomerGroup, CustomerManagement, MembershipList } from '~/pages/Customer';
 import OperationReports from '~/pages/OperationReports';
 import SaleReports from '~/pages/SaleReports';
 import PurchaseOrder from '~/pages/PurchaseOrder';
@@ -80,6 +80,7 @@ const managerFunctionRoute = [
 const customerRoute = [
     { path: pathCustomer.CUSTOMER_GROUP, component: CustomerGroup },
     { path: pathCustomer.CUSTOMER_MANAGEMENT, component: CustomerManagement },
+    { path: pathCustomer.MEMBERSHIP_LIST, component: MembershipList },
 ];
 
 export const publicRoute = [

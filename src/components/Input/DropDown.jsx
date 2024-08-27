@@ -5,7 +5,7 @@ import { MdOutlineArrowDropDown } from 'react-icons/md';
 
 const cx = classNames.bind();
 
-function Dropdown({ listOptions, seletedValue = '', setSeletedValue = () => {}, className, top }) {
+function Dropdown({ listOptions = [], seletedValue = '', setSeletedValue = () => {}, className, top }) {
     const [valueInput, setValueInput] = useState(seletedValue || listOptions[0]);
     const [isOpen, setIsOpen] = useState(false);
     const ref = useRef(null);
