@@ -12,7 +12,7 @@ import { ChangeOfMultilingualName, ItemLinkedCodeManagement, MainMenuSetting } f
 import { TableLocationManager, TableDesignSetting, POSFavoriteFunctionButton } from '~/pages/BasicSettings';
 import { PaymentButtonSetting, KioskImageSettings, UPOrderImageSettings } from '~/pages/BasicSettings';
 import { KioskFunctionSetting, POSUserDefinitionLanguage } from '~/pages/BasicSettings';
-import ManagerFunction, { Announcement } from '~/pages/ManagerFunction';
+import ManagerFunction, { Announcement, Payroll } from '~/pages/ManagerFunction';
 import Customer from '~/pages/Customer';
 import OperationReports from '~/pages/OperationReports';
 import SaleReports from '~/pages/SaleReports';
@@ -70,7 +70,10 @@ const basicSettingsRoute = [
     { path: pathBasicSettings.POS_USER_DEFINITION_LANGUAGE, component: POSUserDefinitionLanguage },
 ];
 
-const managerFunctionRoute = [{ path: pathManagerFunction.ANNOUNCEMENT, component: Announcement }];
+const managerFunctionRoute = [
+    { path: pathManagerFunction.ANNOUNCEMENT, component: Announcement },
+    { path: pathManagerFunction.PAYROLL, component: Payroll },
+];
 
 export const publicRoute = [
     ...commonRoute,

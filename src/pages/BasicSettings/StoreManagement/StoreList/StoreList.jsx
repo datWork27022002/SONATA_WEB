@@ -2,15 +2,13 @@ import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import { FaSearch } from 'react-icons/fa';
 
-import styles from './StoreList.module.scss';
 import TitleLayout from '~/components/TitleLayout';
 import TableCustom from '~/components/TableCustom';
 import config from '~/config';
 import Input from '~/components/Input';
 import Button from '~/components/Button';
 
-// eslint-disable-next-line no-unused-vars
-const cx = classNames.bind(styles);
+const cx = classNames.bind();
 
 const listGroupName = ['All', 'HQ'];
 const listStoreType = ['All', 'Direct', 'Franchise'];
@@ -44,12 +42,11 @@ function StoreList() {
         <TitleLayout title={config.nameMap.itemLevel3.STORE_LIST.Visiblename}>
             {/* form */}
             <div className={cx('mb-2 flex flex-wrap justify-between')}>
-                <div className={cx('flex flex-wrap')}>
+                <div className={cx('flex flex-wrap gap-5')}>
                     <Input
                         label="Type"
                         paddingLabel
                         boldLabel
-                        className={cx('mr-5')}
                         dropDown
                         listOptions={listGroupName}
                         seletedValue={groupName}
@@ -59,26 +56,16 @@ function StoreList() {
                         label="Group Name"
                         paddingLabel
                         boldLabel
-                        className={cx('mr-5')}
                         dropDown
                         listOptions={listStoreType}
                         seletedValue={storeType}
                         setSeletedValue={setStoreType}
                     />
-                    <Input
-                        label="Store Name"
-                        paddingLabel
-                        boldLabel
-                        className={cx('mr-5')}
-                        widthInput={'100px'}
-                        iconRightInput={FaSearch}
-                    />
-                    <Input label="Phone Number" paddingLabel boldLabel className={cx('mr-5')} widthInput={'164px'} />
+                    <Input label="Store Name" paddingLabel boldLabel widthInput={'100px'} iconRightInput={FaSearch} />
+                    <Input label="Phone Number" paddingLabel boldLabel widthInput={'164px'} />
                 </div>
-                <div className={cx('flex items-center')}>
-                    <Button className={cx('mr-4')} blue>
-                        Search
-                    </Button>
+                <div className={cx('flex items-center gap-4')}>
+                    <Button blue>Search</Button>
                     <Button teal>Export Excel</Button>
                 </div>
             </div>
