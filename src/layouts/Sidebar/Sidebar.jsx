@@ -122,7 +122,8 @@ function Sidebar() {
                                     'flex items-center px-2 py-3',
                                     'hover:bg-background-color hover:text-primary-color',
                                     shrinkSidebar && 'justify-center',
-                                    'max-md:border-b-[1px] max-md:border-solid max-md:border-b-white',
+                                    'max-md:border-b max-md:border-solid max-md:border-b-white',
+                                    'border-solid border-fifth-color md:border',
                                 )}
                             >
                                 <IconCustom icon={item.icon} size={22} className={cx('mr-2')} />
