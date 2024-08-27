@@ -13,7 +13,7 @@ import { TableLocationManager, TableDesignSetting, POSFavoriteFunctionButton } f
 import { PaymentButtonSetting, KioskImageSettings, UPOrderImageSettings } from '~/pages/BasicSettings';
 import { KioskFunctionSetting, POSUserDefinitionLanguage } from '~/pages/BasicSettings';
 import ManagerFunction, { Announcement, Payroll, TimeCard, ListOfInformationByForce } from '~/pages/ManagerFunction';
-import Customer from '~/pages/Customer';
+import Customer, { CustomerGroup } from '~/pages/Customer';
 import OperationReports from '~/pages/OperationReports';
 import SaleReports from '~/pages/SaleReports';
 import PurchaseOrder from '~/pages/PurchaseOrder';
@@ -25,6 +25,7 @@ import Bookmark from '~/pages/Bookmark';
 const { routes } = config;
 const pathBasicSettings = routes.BasicSettings;
 const pathManagerFunction = routes.ManagerFunction;
+const pathCustomer = routes.Customer;
 
 const commonRoute = [
     { path: routes.HOME, component: Home, layout: DefaultLayout },
@@ -77,10 +78,13 @@ const managerFunctionRoute = [
     { path: pathManagerFunction.LIST_OF_INFORMATION_BY_FORCE, component: ListOfInformationByForce },
 ];
 
+const customerRoute = [{ path: pathCustomer.CUSTOMER_GROUP, component: CustomerGroup }];
+
 export const publicRoute = [
     ...commonRoute,
     ...basicSettingsRoute,
     ...managerFunctionRoute,
+    ...customerRoute,
     { path: routes.ManagerFunction.MANAGERFUNCTION, component: ManagerFunction },
     { path: routes.Customer.CUSTOMER, component: Customer },
     { path: routes.OperationReports.OPERATIONREPORTS, component: OperationReports },
