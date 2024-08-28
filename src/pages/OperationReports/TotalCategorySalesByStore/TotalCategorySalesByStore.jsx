@@ -89,7 +89,7 @@ function TotalCategorySalesByStore() {
             </div>
 
             {/* table */}
-            <div className={cx('flex justify-between max-lg:flex-col')}>
+            <div className={cx('mb-4 flex justify-between max-lg:flex-col')}>
                 <div className={cx('overflow-auto lg:w-[49%]')}>
                     <div className={cx('mb-2 flex justify-end')}>
                         <Button teal>Export Excel</Button>

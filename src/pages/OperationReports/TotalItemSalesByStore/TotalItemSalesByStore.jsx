@@ -14,7 +14,7 @@ const cx = classNames.bind();
 
 const listStoreName = ['hyojung'];
 
-function TotalStoreSalesByItem() {
+function TotalItemSalesByStore() {
     const dataTable = [];
     const columns = [
         { name: 'No.', selector: (row) => row.groupCode, sortable: true, width: '60px' },
@@ -27,9 +27,10 @@ function TotalStoreSalesByItem() {
     const dataTable2 = [];
     const columns2 = [
         { name: 'No.', selector: (row) => row.groupCode, sortable: true, width: '60px' },
-        { name: 'Store Name', selector: (row) => row.groupName, sortable: true, width: '300px' },
+        { name: 'Store Name', selector: (row) => row.groupName, sortable: true, width: '200px' },
         { name: 'Quantity', selector: (row) => row.groupName, sortable: true, width: '100px' },
-        { name: 'Amount', selector: (row) => row.groupName, sortable: true },
+        { name: 'Amount', selector: (row) => row.groupName, sortable: true, width: '150px' },
+        { name: 'Curent Stock', selector: (row) => row.groupName, sortable: true },
     ];
     const data2 = dataTable2.map((value, index) => ({ ...value, id: index + 1 }));
 
@@ -50,7 +51,7 @@ function TotalStoreSalesByItem() {
     const labelMixedChart = [''];
 
     return (
-        <TitleLayout title={config.nameMap.itemLevel3.TOTAL_STORE_SALES_BY_ITEM.Visiblename}>
+        <TitleLayout title={config.nameMap.itemLevel3.TOTAL_ITEM_SALES_BY_STORE.Visiblename}>
             {/* form */}
             <div className={cx('mb-2 flex flex-wrap items-center justify-between')}>
                 <div className={cx('flex flex-wrap gap-4')}>
@@ -107,4 +108,4 @@ function TotalStoreSalesByItem() {
     );
 }
 
-export default TotalStoreSalesByItem;
+export default TotalItemSalesByStore;
