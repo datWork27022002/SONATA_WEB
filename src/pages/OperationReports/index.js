@@ -7,8 +7,10 @@ import TotalStoreSalesByCategory from './TotalStoreSalesByCategory';
 import TotalSalesSummaryByItem from './TotalSalesSummaryByItem';
 import TotalSalesWeekByItem from './TotalSalesWeekByItem';
 import TotalSalesHourByItem from './TotalSalesHourByItem';
+import TotalSalesItemByWeek from './TotalSalesItemByWeek';
 
 export { MonthlyComparison, YearlyComparison, TotalStoreSalesByItem, TotalCategorySalesByStore, TotalItemSalesByStore };
 export { TotalStoreSalesByCategory, TotalSalesSummaryByItem, TotalSalesWeekByItem, TotalSalesHourByItem };
+export { TotalSalesItemByWeek };
 
 export { default } from './OperationReports';
