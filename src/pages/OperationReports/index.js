@@ -4,8 +4,9 @@ import TotalStoreSalesByItem from './TotalStoreSalesByItem';
 import TotalCategorySalesByStore from './TotalCategorySalesByStore';
 import TotalItemSalesByStore from './TotalItemSalesByStore';
 import TotalStoreSalesByCategory from './TotalStoreSalesByCategory';
+import TotalSalesSummaryByItem from './TotalSalesSummaryByItem';
 
 export { MonthlyComparison, YearlyComparison, TotalStoreSalesByItem, TotalCategorySalesByStore, TotalItemSalesByStore };
-export { TotalStoreSalesByCategory };
+export { TotalStoreSalesByCategory, TotalSalesSummaryByItem };
 
 export { default } from './OperationReports';
