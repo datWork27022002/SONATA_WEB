@@ -14,7 +14,7 @@ import { PaymentButtonSetting, KioskImageSettings, UPOrderImageSettings } from '
 import { KioskFunctionSetting, POSUserDefinitionLanguage } from '~/pages/BasicSettings';
 import ManagerFunction, { Announcement, Payroll, TimeCard, ListOfInformationByForce } from '~/pages/ManagerFunction';
 import Customer, { CustomerGroup, CustomerManagement, MembershipList, CustomerSalesTotal } from '~/pages/Customer';
-import { CustomerDetailedSalesReport } from '~/pages/Customer';
+import { CustomerDetailedSalesReport, PointReport } from '~/pages/Customer';
 import OperationReports from '~/pages/OperationReports';
 import SaleReports from '~/pages/SaleReports';
 import PurchaseOrder from '~/pages/PurchaseOrder';
@@ -84,6 +84,7 @@ const customerRoute = [
     { path: pathCustomer.MEMBERSHIP_LIST, component: MembershipList },
     { path: pathCustomer.CUSTOMER_SALES_TOTAL, component: CustomerSalesTotal },
     { path: pathCustomer.CUSTOMER_DETAILED_SALES_REPORT, component: CustomerDetailedSalesReport },
+    { path: pathCustomer.POINT_REPORT, component: PointReport },
 ];
 
 export const publicRoute = [
