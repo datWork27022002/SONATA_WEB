@@ -17,7 +17,7 @@ import Customer, { CustomerGroup, CustomerManagement, MembershipList, CustomerSa
 import { CustomerDetailedSalesReport, PointReport } from '~/pages/Customer';
 import OperationReports, { MonthlyComparison, YearlyComparison, TotalStoreSalesByItem } from '~/pages/OperationReports';
 import { TotalCategorySalesByStore, TotalItemSalesByStore, TotalStoreSalesByCategory } from '~/pages/OperationReports';
-import { TotalSalesSummaryByItem } from '~/pages/OperationReports';
+import { TotalSalesSummaryByItem, TotalSalesWeekByItem, TotalSalesHourByItem } from '~/pages/OperationReports';
 import SaleReports from '~/pages/SaleReports';
 import PurchaseOrder from '~/pages/PurchaseOrder';
 import Settings from '~/pages/Settings';
@@ -98,6 +98,8 @@ const operationReportsRoute = [
     { path: pathOperationReports.TOTAL_ITEM_SALES_BY_STORE, component: TotalItemSalesByStore },
     { path: pathOperationReports.TOTAL_STORE_SALES_BY_CATEGORY, component: TotalStoreSalesByCategory },
     { path: pathOperationReports.TOTAL_SALES_SUMMARY_BY_ITEM, component: TotalSalesSummaryByItem },
+    { path: pathOperationReports.TOTAL_SALES_WEEK_BY_ITEM, component: TotalSalesWeekByItem },
+    { path: pathOperationReports.TOTAL_SALES_HOUR_BY_ITEM, component: TotalSalesHourByItem },
 ];
 
 export const publicRoute = [

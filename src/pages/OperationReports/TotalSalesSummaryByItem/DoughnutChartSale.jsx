@@ -64,7 +64,7 @@ function DoughnutChartSale({ labelChart, dataChart }) {
     return (
         <div className={cx('flex items-center justify-center')}>
             <div className={cx('w-[400px] max-md:w-[300px]')}>
-                <Doughnut data={data} options={options} cir />
+                <Doughnut data={data} options={options} />
             </div>
         </div>
     );

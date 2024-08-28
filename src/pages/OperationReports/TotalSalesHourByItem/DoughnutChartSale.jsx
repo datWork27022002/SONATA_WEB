@@ -52,7 +52,7 @@ function DoughnutChartSale({ labelChart, dataChart }) {
             },
             title: {
                 display: true,
-                text: 'Category',
+                text: 'Item',
                 font: {
                     size: 20,
                     weight: 'bold',
