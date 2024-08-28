@@ -1,5 +1,6 @@
 import MonthlyComparison from './MonthlyComparison';
+import YearlyComparison from './YearlyComparison';
 
-export { MonthlyComparison };
+export { MonthlyComparison, YearlyComparison };
 
 export { default } from './OperationReports';
