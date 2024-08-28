@@ -15,7 +15,7 @@ import { KioskFunctionSetting, POSUserDefinitionLanguage } from '~/pages/BasicSe
 import ManagerFunction, { Announcement, Payroll, TimeCard, ListOfInformationByForce } from '~/pages/ManagerFunction';
 import Customer, { CustomerGroup, CustomerManagement, MembershipList, CustomerSalesTotal } from '~/pages/Customer';
 import { CustomerDetailedSalesReport, PointReport } from '~/pages/Customer';
-import OperationReports from '~/pages/OperationReports';
+import OperationReports, { MonthlyComparison } from '~/pages/OperationReports';
 import SaleReports from '~/pages/SaleReports';
 import PurchaseOrder from '~/pages/PurchaseOrder';
 import Settings from '~/pages/Settings';
@@ -27,6 +27,7 @@ const { routes } = config;
 const pathBasicSettings = routes.BasicSettings;
 const pathManagerFunction = routes.ManagerFunction;
 const pathCustomer = routes.Customer;
+const pathOperationReports = routes.OperationReports;
 
 const commonRoute = [
     { path: routes.HOME, component: Home, layout: DefaultLayout },
@@ -87,11 +88,14 @@ const customerRoute = [
     { path: pathCustomer.POINT_REPORT, component: PointReport },
 ];
 
+const operationReportsRoute = [{ path: pathOperationReports.MONTHLY_COMPARISON, component: MonthlyComparison }];
+
 export const publicRoute = [
     ...commonRoute,
     ...basicSettingsRoute,
     ...managerFunctionRoute,
     ...customerRoute,
+    ...operationReportsRoute,
     { path: pathBasicSettings.BASICSETTINGS, component: BasicSettings },
     { path: routes.ManagerFunction.MANAGERFUNCTION, component: ManagerFunction },
     { path: routes.Customer.CUSTOMER, component: Customer },
