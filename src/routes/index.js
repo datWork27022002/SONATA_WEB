@@ -16,7 +16,7 @@ import ManagerFunction, { Announcement, Payroll, TimeCard, ListOfInformationByFo
 import Customer, { CustomerGroup, CustomerManagement, MembershipList, CustomerSalesTotal } from '~/pages/Customer';
 import { CustomerDetailedSalesReport, PointReport } from '~/pages/Customer';
 import OperationReports, { MonthlyComparison, YearlyComparison, TotalStoreSalesByItem } from '~/pages/OperationReports';
-import { TotalCategorySalesByStore, TotalItemSalesByStore } from '~/pages/OperationReports';
+import { TotalCategorySalesByStore, TotalItemSalesByStore, TotalStoreSalesByCategory } from '~/pages/OperationReports';
 import SaleReports from '~/pages/SaleReports';
 import PurchaseOrder from '~/pages/PurchaseOrder';
 import Settings from '~/pages/Settings';
@@ -95,6 +95,7 @@ const operationReportsRoute = [
     { path: pathOperationReports.TOTAL_STORE_SALES_BY_ITEM, component: TotalStoreSalesByItem },
     { path: pathOperationReports.TOTAL_CATEGORY_SALES_BY_STORE, component: TotalCategorySalesByStore },
     { path: pathOperationReports.TOTAL_ITEM_SALES_BY_STORE, component: TotalItemSalesByStore },
+    { path: pathOperationReports.TOTAL_STORE_SALES_BY_CATEGORY, component: TotalStoreSalesByCategory },
 ];
 
 export const publicRoute = [
