@@ -103,7 +103,7 @@ function Sidebar() {
                     />
                     {!shrinkSidebar && (
                         <Fragment>
-                            <span className={cx('mt-2')}>Tan dat</span>
+                            <span className={cx('mt-2')}>Hyojung</span>
                             <div className={cx('cursor-pointer')} onClick={OpenModalUser}>
                                 <IconCustom icon={IoMdArrowDropdown} size={20} />
                             </div>
