@@ -22,7 +22,7 @@ import { TotalSalesItemByHour, TotalSalesItemByWeek, TotalStoreSalesBySupplier }
 import { SalesAmountByStore, MonthlySalesAmountByStore, StoreMonthlySalesAmount } from '~/pages/OperationReports';
 import { DailySalesByItem } from '~/pages/OperationReports';
 import SaleReports, { DailySalesReport, DailySalesSummary, SalesSummary, DetailedSalesList } from '~/pages/SaleReports';
-import { SalesByReceipt } from '~/pages/SaleReports';
+import { SalesByReceipt, SalesByReceiptDetail } from '~/pages/SaleReports';
 import PurchaseOrder from '~/pages/PurchaseOrder';
 import Settings from '~/pages/Settings';
 import BIZSMS from '~/pages/BIZSMS';
@@ -120,6 +120,7 @@ const saleReportsRoute = [
     { path: pathSaleReports.SALES_SUMMARY, component: SalesSummary },
     { path: pathSaleReports.DETAILED_SALES_LIST, component: DetailedSalesList },
     { path: pathSaleReports.SALES_BY_RECEIPT, component: SalesByReceipt },
+    { path: pathSaleReports.SALES_BY_RECEIPT_DETAIL, component: SalesByReceiptDetail },
 ];
 
 export const publicRoute = [

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 
-import styles from './ItemManagementByStrore.module.scss';
 import TitleLayout from '~/components/TitleLayout';
 import TableCustom from '~/components/TableCustom';
 import config from '~/config';
@@ -9,7 +8,7 @@ import Input from '~/components/Input';
 import Button from '~/components/Button';
 
 // eslint-disable-next-line no-unused-vars
-const cx = classNames.bind(styles);
+const cx = classNames.bind();
 
 const listCategory = [
     '돼지고기 Thit Heo TD ',

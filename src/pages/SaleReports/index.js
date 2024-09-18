@@ -1,8 +1,9 @@
-import DailySalesReport from './DailySalesReport';
-import DailySalesSummary from './DailySalesSummary';
-import SalesSummary from './SalesSummary';
-import DetailedSalesList from './DetailedSalesList';
-import SalesByReceipt from './SalesByReceipt';
+import DailySalesReport from './SaleReports/DailySalesReport';
+import DailySalesSummary from './SaleReports/DailySalesSummary';
+import SalesSummary from './SaleReports/SalesSummary';
+import DetailedSalesList from './SaleReports/DetailedSalesList';
+import SalesByReceipt from './SaleReports/SalesByReceipt';
+import SalesByReceiptDetail from './SaleReports/SalesByReceiptDetail';
 
 export { default } from './SaleReports';
-export { DailySalesReport, DailySalesSummary, SalesSummary, DetailedSalesList, SalesByReceipt };
+export { DailySalesReport, DailySalesSummary, SalesSummary, DetailedSalesList, SalesByReceipt, SalesByReceiptDetail };
