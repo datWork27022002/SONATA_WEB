@@ -18,7 +18,8 @@ import { CustomerDetailedSalesReport, PointReport } from '~/pages/Customer';
 import OperationReports, { MonthlyComparison, YearlyComparison, TotalStoreSalesByItem } from '~/pages/OperationReports';
 import { TotalCategorySalesByStore, TotalItemSalesByStore, TotalStoreSalesByCategory } from '~/pages/OperationReports';
 import { TotalSalesSummaryByItem, TotalSalesWeekByItem, TotalSalesHourByItem } from '~/pages/OperationReports';
-import { TotalSalesItemByWeek } from '~/pages/OperationReports';
+import { TotalSalesItemByHour, TotalSalesItemByWeek, TotalStoreSalesBySupplier } from '~/pages/OperationReports';
+import { SalesAmountByStore, MonthlySalesAmountByStore, StoreMonthlySalesAmount } from '~/pages/OperationReports';
 import SaleReports from '~/pages/SaleReports';
 import PurchaseOrder from '~/pages/PurchaseOrder';
 import Settings from '~/pages/Settings';
@@ -102,6 +103,11 @@ const operationReportsRoute = [
     { path: pathOperationReports.TOTAL_SALES_WEEK_BY_ITEM, component: TotalSalesWeekByItem },
     { path: pathOperationReports.TOTAL_SALES_HOUR_BY_ITEM, component: TotalSalesHourByItem },
     { path: pathOperationReports.TOTAL_SALES_ITEM_BY_WEEK, component: TotalSalesItemByWeek },
+    { path: pathOperationReports.TOTAL_SALES_ITEM_BY_HOUR, component: TotalSalesItemByHour },
+    { path: pathOperationReports.TOTAL_STORE_SALES_BY_SUPPLIER, component: TotalStoreSalesBySupplier },
+    { path: pathOperationReports.SALES_AMOUNT_BY_STORE, component: SalesAmountByStore },
+    { path: pathOperationReports.MONTHLY_SALES_AMOUNT_BY_STORE, component: MonthlySalesAmountByStore },
+    { path: pathOperationReports.STORE_MONTHLY_SALES_AMOUNT, component: StoreMonthlySalesAmount },
 ];
 
 export const publicRoute = [

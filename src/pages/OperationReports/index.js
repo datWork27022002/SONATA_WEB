@@ -8,9 +8,15 @@ import TotalSalesSummaryByItem from './TotalSalesSummaryByItem';
 import TotalSalesWeekByItem from './TotalSalesWeekByItem';
 import TotalSalesHourByItem from './TotalSalesHourByItem';
 import TotalSalesItemByWeek from './TotalSalesItemByWeek';
+import TotalSalesItemByHour from './TotalSalesItemByHour';
+import TotalStoreSalesBySupplier from './TotalStoreSalesBySupplier';
+import SalesAmountByStore from './SalesAmountByStore';
+import MonthlySalesAmountByStore from './MonthlySalesAmountByStore';
+import StoreMonthlySalesAmount from './StoreMonthlySalesAmount';
 
 export { MonthlyComparison, YearlyComparison, TotalStoreSalesByItem, TotalCategorySalesByStore, TotalItemSalesByStore };
 export { TotalStoreSalesByCategory, TotalSalesSummaryByItem, TotalSalesWeekByItem, TotalSalesHourByItem };
-export { TotalSalesItemByWeek };
+export { TotalSalesItemByWeek, TotalSalesItemByHour, TotalStoreSalesBySupplier, SalesAmountByStore };
+export { MonthlySalesAmountByStore, StoreMonthlySalesAmount };
 
 export { default } from './OperationReports';
