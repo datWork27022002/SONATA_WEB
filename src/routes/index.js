@@ -25,6 +25,8 @@ import SaleReports, { DailySalesReport, DailySalesSummary, SalesSummary, Detaile
 import { SalesByReceipt, SalesByReceiptDetail, CashReceiptApprovalCancelationReport } from '~/pages/SaleReports';
 import { CreditCardApprovalCancelationReport, SalesReportByCardTypeDetail } from '~/pages/SaleReports';
 import { SalesRecordByEmployee, SalesRecordByEmployeeDate, EmployeeCommission } from '~/pages/SaleReports';
+import { TotalSalesReport, SimplifiedSalesTotal, AggregateRevenueItemsByCategory } from '~/pages/SaleReports';
+import { HourlySales, TimeOfDaySalesReport } from '~/pages/SaleReports';
 import PurchaseOrder from '~/pages/PurchaseOrder';
 import Settings from '~/pages/Settings';
 import BIZSMS from '~/pages/BIZSMS';
@@ -129,6 +131,11 @@ const saleReportsRoute = [
     { path: pathSaleReports.SALES_RECORD_BY_EMPLOYEE, component: SalesRecordByEmployee },
     { path: pathSaleReports.SALES_RECORD_BY_EMPLOYEE_DATE, component: SalesRecordByEmployeeDate },
     { path: pathSaleReports.EMPLOYEE_COMMISSION, component: EmployeeCommission },
+    { path: pathSaleReports.TOTAL_SALES_REPORT, component: TotalSalesReport },
+    { path: pathSaleReports.SIMPLIFIED_SALES_TOTAL, component: SimplifiedSalesTotal },
+    { path: pathSaleReports.AGGREGATE_REVENUE_ITEMS_BY_CATEGORY, component: AggregateRevenueItemsByCategory },
+    { path: pathSaleReports.HOURLY_SALES, component: HourlySales },
+    { path: pathSaleReports.TIME_OF_DAY_SALES_REPORT, component: TimeOfDaySalesReport },
 ];
 
 export const publicRoute = [

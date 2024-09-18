@@ -86,7 +86,6 @@ function DetailedSalesList() {
                     data={data}
                     selectedRow={selectedRow}
                     setSelectedRow={setSelectedRow}
-                    showHideList
                 />
             </div>
         </TitleLayout>

@@ -10,8 +10,14 @@ import SalesReportByCardTypeDetail from './SaleReports/SalesReportByCardTypeDeta
 import SalesRecordByEmployee from './SaleReports/SalesRecordByEmployee';
 import SalesRecordByEmployeeDate from './SaleReports/SalesRecordByEmployeeDate';
 import EmployeeCommission from './SaleReports/EmployeeCommission';
+import TotalSalesReport from './SaleAnalysis/TotalSalesReport';
+import SimplifiedSalesTotal from './SaleAnalysis/SimplifiedSalesTotal';
+import AggregateRevenueItemsByCategory from './SaleAnalysis/AggregateRevenueItemsByCategory';
+import HourlySales from './SaleAnalysis/HourlySales';
+import TimeOfDaySalesReport from './SaleAnalysis/TimeOfDaySalesReport';
 
 export { default } from './SaleReports';
 export { DailySalesReport, DailySalesSummary, SalesSummary, DetailedSalesList, SalesByReceipt, SalesByReceiptDetail };
 export { CashReceiptApprovalCancelationReport, CreditCardApprovalCancelationReport, SalesReportByCardTypeDetail };
-export { SalesRecordByEmployee, SalesRecordByEmployeeDate, EmployeeCommission };
+export { SalesRecordByEmployee, SalesRecordByEmployeeDate, EmployeeCommission, TotalSalesReport, SimplifiedSalesTotal };
+export { AggregateRevenueItemsByCategory, HourlySales, TimeOfDaySalesReport };
