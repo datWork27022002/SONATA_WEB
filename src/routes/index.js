@@ -21,7 +21,8 @@ import { TotalSalesSummaryByItem, TotalSalesWeekByItem, TotalSalesHourByItem } f
 import { TotalSalesItemByHour, TotalSalesItemByWeek, TotalStoreSalesBySupplier } from '~/pages/OperationReports';
 import { SalesAmountByStore, MonthlySalesAmountByStore, StoreMonthlySalesAmount } from '~/pages/OperationReports';
 import { DailySalesByItem } from '~/pages/OperationReports';
-import SaleReports from '~/pages/SaleReports';
+import SaleReports, { DailySalesReport, DailySalesSummary, SalesSummary, DetailedSalesList } from '~/pages/SaleReports';
+import { SalesByReceipt } from '~/pages/SaleReports';
 import PurchaseOrder from '~/pages/PurchaseOrder';
 import Settings from '~/pages/Settings';
 import BIZSMS from '~/pages/BIZSMS';
@@ -33,6 +34,7 @@ const pathBasicSettings = routes.BasicSettings;
 const pathManagerFunction = routes.ManagerFunction;
 const pathCustomer = routes.Customer;
 const pathOperationReports = routes.OperationReports;
+const pathSaleReports = routes.SaleReports;
 
 const commonRoute = [
     { path: routes.HOME, component: Home, layout: DefaultLayout },
@@ -112,12 +114,21 @@ const operationReportsRoute = [
     { path: pathOperationReports.DAILY_SALES_BY_ITEM, component: DailySalesByItem },
 ];
 
+const saleReportsRoute = [
+    { path: pathSaleReports.DAILY_SALES_REPORT, component: DailySalesReport },
+    { path: pathSaleReports.DAILY_SALES_SUMMARY, component: DailySalesSummary },
+    { path: pathSaleReports.SALES_SUMMARY, component: SalesSummary },
+    { path: pathSaleReports.DETAILED_SALES_LIST, component: DetailedSalesList },
+    { path: pathSaleReports.SALES_BY_RECEIPT, component: SalesByReceipt },
+];
+
 export const publicRoute = [
     ...commonRoute,
     ...basicSettingsRoute,
     ...managerFunctionRoute,
     ...customerRoute,
     ...operationReportsRoute,
+    ...saleReportsRoute,
     { path: pathBasicSettings.BASICSETTINGS, component: BasicSettings },
     { path: routes.ManagerFunction.MANAGERFUNCTION, component: ManagerFunction },
     { path: routes.Customer.CUSTOMER, component: Customer },
