@@ -20,6 +20,7 @@ import { TotalCategorySalesByStore, TotalItemSalesByStore, TotalStoreSalesByCate
 import { TotalSalesSummaryByItem, TotalSalesWeekByItem, TotalSalesHourByItem } from '~/pages/OperationReports';
 import { TotalSalesItemByHour, TotalSalesItemByWeek, TotalStoreSalesBySupplier } from '~/pages/OperationReports';
 import { SalesAmountByStore, MonthlySalesAmountByStore, StoreMonthlySalesAmount } from '~/pages/OperationReports';
+import { DailySalesByItem } from '~/pages/OperationReports';
 import SaleReports from '~/pages/SaleReports';
 import PurchaseOrder from '~/pages/PurchaseOrder';
 import Settings from '~/pages/Settings';
@@ -108,6 +109,7 @@ const operationReportsRoute = [
     { path: pathOperationReports.SALES_AMOUNT_BY_STORE, component: SalesAmountByStore },
     { path: pathOperationReports.MONTHLY_SALES_AMOUNT_BY_STORE, component: MonthlySalesAmountByStore },
     { path: pathOperationReports.STORE_MONTHLY_SALES_AMOUNT, component: StoreMonthlySalesAmount },
+    { path: pathOperationReports.DAILY_SALES_BY_ITEM, component: DailySalesByItem },
 ];
 
 export const publicRoute = [
