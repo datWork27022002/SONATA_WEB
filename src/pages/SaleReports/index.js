@@ -26,6 +26,11 @@ import VoidSummary from './VoidReturn/VoidSummary';
 import VoidDetail from './VoidReturn/VoidDetail';
 import SalesDiscountReport from './DiscountStatus/SalesDiscountReport';
 import SalesDiscountSummary from './DiscountStatus/SalesDiscountSummary';
+import NoTaxSaleReport from './Tax/NoTaxSaleReport';
+import TaxDetail from './Tax/TaxDetail';
+import TaxSummary from './Tax/TaxSummary';
+import SalesCashInOut from './EodReport/SalesCashInOut';
+import CashInOut from './EodReport/CashInOut';
 
 export { default } from './SaleReports';
 export { DailySalesReport, DailySalesSummary, SalesSummary, DetailedSalesList, SalesByReceipt, SalesByReceiptDetail };
@@ -33,4 +38,5 @@ export { CashReceiptApprovalCancelationReport, CreditCardApprovalCancelationRepo
 export { SalesRecordByEmployee, SalesRecordByEmployeeDate, EmployeeCommission, TotalSalesReport, SimplifiedSalesTotal };
 export { AggregateRevenueItemsByCategory, HourlySales, TimeOfDaySalesReport, SalesReportByPaymentType };
 export { SalesReportByCardType, SalesRanking, SalesAnalysisReportItem, TotalSalesReportDetail, EmployeeSalesAnalysis };
-export { OrderCancelationReport, VoidSummary, VoidDetail, SalesDiscountReport, SalesDiscountSummary };
+export { OrderCancelationReport, VoidSummary, VoidDetail, SalesDiscountReport, SalesDiscountSummary, NoTaxSaleReport };
+export { TaxDetail, TaxSummary, SalesCashInOut, CashInOut };

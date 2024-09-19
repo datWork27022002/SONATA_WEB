@@ -30,6 +30,7 @@ import { HourlySales, TimeOfDaySalesReport, SalesReportByPaymentType } from '~/p
 import { SalesReportByCardType, SalesRanking, SalesAnalysisReportItem } from '~/pages/SaleReports';
 import { TotalSalesReportDetail, EmployeeSalesAnalysis, OrderCancelationReport } from '~/pages/SaleReports';
 import { VoidSummary, VoidDetail, SalesDiscountReport, SalesDiscountSummary } from '~/pages/SaleReports';
+import { NoTaxSaleReport, TaxDetail, TaxSummary, SalesCashInOut, CashInOut } from '~/pages/SaleReports';
 import PurchaseOrder from '~/pages/PurchaseOrder';
 import Settings from '~/pages/Settings';
 import BIZSMS from '~/pages/BIZSMS';
@@ -150,6 +151,11 @@ const saleReportsRoute = [
     { path: pathSaleReports.VOID_DETAIL, component: VoidDetail },
     { path: pathSaleReports.SALES_DISCOUNT_REPORT, component: SalesDiscountReport },
     { path: pathSaleReports.SALES_DISCOUNT_SUMMARY, component: SalesDiscountSummary },
+    { path: pathSaleReports.NO_TAX_SALE_REPORT, component: NoTaxSaleReport },
+    { path: pathSaleReports.TAX_DETAIL, component: TaxDetail },
+    { path: pathSaleReports.TAX_SUMMARY, component: TaxSummary },
+    { path: pathSaleReports.SALES_CASH_IN_OUT, component: SalesCashInOut },
+    { path: pathSaleReports.CASH_IN_OUT, component: CashInOut },
 ];
 
 export const publicRoute = [
