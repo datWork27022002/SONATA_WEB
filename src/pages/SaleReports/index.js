@@ -21,6 +21,11 @@ import SalesRanking from './SaleAnalysis/SalesRanking';
 import SalesAnalysisReportItem from './SaleAnalysis/SalesAnalysisReportItem';
 import TotalSalesReportDetail from './SaleAnalysis/TotalSalesReportDetail';
 import EmployeeSalesAnalysis from './SaleAnalysis/EmployeeSalesAnalysis';
+import OrderCancelationReport from './VoidReturn/OrderCancelationReport';
+import VoidSummary from './VoidReturn/VoidSummary';
+import VoidDetail from './VoidReturn/VoidDetail';
+import SalesDiscountReport from './DiscountStatus/SalesDiscountReport';
+import SalesDiscountSummary from './DiscountStatus/SalesDiscountSummary';
 
 export { default } from './SaleReports';
 export { DailySalesReport, DailySalesSummary, SalesSummary, DetailedSalesList, SalesByReceipt, SalesByReceiptDetail };
@@ -28,3 +33,4 @@ export { CashReceiptApprovalCancelationReport, CreditCardApprovalCancelationRepo
 export { SalesRecordByEmployee, SalesRecordByEmployeeDate, EmployeeCommission, TotalSalesReport, SimplifiedSalesTotal };
 export { AggregateRevenueItemsByCategory, HourlySales, TimeOfDaySalesReport, SalesReportByPaymentType };
 export { SalesReportByCardType, SalesRanking, SalesAnalysisReportItem, TotalSalesReportDetail, EmployeeSalesAnalysis };
+export { OrderCancelationReport, VoidSummary, VoidDetail, SalesDiscountReport, SalesDiscountSummary };

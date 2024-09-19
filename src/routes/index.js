@@ -28,7 +28,8 @@ import { SalesRecordByEmployee, SalesRecordByEmployeeDate, EmployeeCommission } 
 import { TotalSalesReport, SimplifiedSalesTotal, AggregateRevenueItemsByCategory } from '~/pages/SaleReports';
 import { HourlySales, TimeOfDaySalesReport, SalesReportByPaymentType } from '~/pages/SaleReports';
 import { SalesReportByCardType, SalesRanking, SalesAnalysisReportItem } from '~/pages/SaleReports';
-import { TotalSalesReportDetail, EmployeeSalesAnalysis } from '~/pages/SaleReports';
+import { TotalSalesReportDetail, EmployeeSalesAnalysis, OrderCancelationReport } from '~/pages/SaleReports';
+import { VoidSummary, VoidDetail, SalesDiscountReport, SalesDiscountSummary } from '~/pages/SaleReports';
 import PurchaseOrder from '~/pages/PurchaseOrder';
 import Settings from '~/pages/Settings';
 import BIZSMS from '~/pages/BIZSMS';
@@ -144,6 +145,11 @@ const saleReportsRoute = [
     { path: pathSaleReports.SALES_ANALYSIS_REPORT_ITEM, component: SalesAnalysisReportItem },
     { path: pathSaleReports.TOTAL_SALES_REPORT_DETAIL, component: TotalSalesReportDetail },
     { path: pathSaleReports.EMPLOYEE_SALES_ANALYSIS, component: EmployeeSalesAnalysis },
+    { path: pathSaleReports.ORDER_CANCELATION_REPORT, component: OrderCancelationReport },
+    { path: pathSaleReports.VOID_SUMMARY, component: VoidSummary },
+    { path: pathSaleReports.VOID_DETAIL, component: VoidDetail },
+    { path: pathSaleReports.SALES_DISCOUNT_REPORT, component: SalesDiscountReport },
+    { path: pathSaleReports.SALES_DISCOUNT_SUMMARY, component: SalesDiscountSummary },
 ];
 
 export const publicRoute = [
