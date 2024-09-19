@@ -69,7 +69,8 @@ function Sidebar() {
                     'z-10 flex flex-col items-center',
                     'transition duration-300',
                     'max-sm:fixed max-sm:top-10 max-sm:w-screen',
-                    'max-lg:mix-w[150px]',
+                    'max-lg:min-w[200px]',
+                    shrinkSidebar ? 'min-w-[70px]' : 'min-w-[170px]',
                     !visibleSidebar && 'max-sm:translate-x-[-125%]',
                 )}
             >
@@ -119,7 +120,7 @@ function Sidebar() {
                                 onClick={hideSideBar}
                                 to={item.to}
                                 className={cx(
-                                    'flex items-center px-2 py-3',
+                                    'flex items-center py-3 pl-2',
                                     'hover:bg-background-color hover:text-primary-color',
                                     shrinkSidebar && 'justify-center',
                                     'max-md:border-b max-md:border-solid max-md:border-b-white',

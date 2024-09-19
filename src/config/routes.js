@@ -111,6 +111,7 @@ const routes = {
         SALES_REPORT_BY_PAYMENT_TYPE: `/${pathSaleReports}/${itemLevel3.SALES_REPORT_BY_PAYMENT_TYPE.pathKey}`,
         SALES_REPORT_BY_CARD_TYPE: `/${pathSaleReports}/${itemLevel3.SALES_REPORT_BY_CARD_TYPE.pathKey}`,
         SALES_RANKING: `/${pathSaleReports}/${itemLevel3.SALES_RANKING.pathKey}`,
+        TOTAL_SALES_REPORT_DETAIL: `/${pathSaleReports}/${itemLevel3.TOTAL_SALES_REPORT_DETAIL.pathKey}`,
         SALES_ANALYSIS_REPORT_ITEM: `/${pathSaleReports}/${itemLevel3.SALES_ANALYSIS_REPORT_ITEM.pathKey}`,
         EMPLOYEE_SALES_ANALYSIS: `/${pathSaleReports}/${itemLevel3.EMPLOYEE_SALES_ANALYSIS.pathKey}`,
         ORDER_CANCELATION_REPORT: `/${pathSaleReports}/${itemLevel3.ORDER_CANCELATION_REPORT.pathKey}`,

@@ -180,6 +180,11 @@ const nameMap = {
             parent: 'SALEREPORTS',
         },
         TOTAL_SALES_REPORT: { pathKey: 'TotalSalesReport', Visiblename: 'Total Sales Report', parent: 'SALESANALYSIS' },
+        TOTAL_SALES_REPORT_DETAIL: {
+            pathKey: 'TotalSalesReportDetailss',
+            Visiblename: 'Total Sales Report Detail',
+            parent: 'SALESANALYSIS',
+        },
         SIMPLIFIED_SALES_TOTAL: {
             pathKey: 'SimplifiedSalesTotal',
             Visiblename: 'Simplified Sales Total',

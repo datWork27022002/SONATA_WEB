@@ -26,7 +26,9 @@ import { SalesByReceipt, SalesByReceiptDetail, CashReceiptApprovalCancelationRep
 import { CreditCardApprovalCancelationReport, SalesReportByCardTypeDetail } from '~/pages/SaleReports';
 import { SalesRecordByEmployee, SalesRecordByEmployeeDate, EmployeeCommission } from '~/pages/SaleReports';
 import { TotalSalesReport, SimplifiedSalesTotal, AggregateRevenueItemsByCategory } from '~/pages/SaleReports';
-import { HourlySales, TimeOfDaySalesReport } from '~/pages/SaleReports';
+import { HourlySales, TimeOfDaySalesReport, SalesReportByPaymentType } from '~/pages/SaleReports';
+import { SalesReportByCardType, SalesRanking, SalesAnalysisReportItem } from '~/pages/SaleReports';
+import { TotalSalesReportDetail, EmployeeSalesAnalysis } from '~/pages/SaleReports';
 import PurchaseOrder from '~/pages/PurchaseOrder';
 import Settings from '~/pages/Settings';
 import BIZSMS from '~/pages/BIZSMS';
@@ -136,6 +138,12 @@ const saleReportsRoute = [
     { path: pathSaleReports.AGGREGATE_REVENUE_ITEMS_BY_CATEGORY, component: AggregateRevenueItemsByCategory },
     { path: pathSaleReports.HOURLY_SALES, component: HourlySales },
     { path: pathSaleReports.TIME_OF_DAY_SALES_REPORT, component: TimeOfDaySalesReport },
+    { path: pathSaleReports.SALES_REPORT_BY_PAYMENT_TYPE, component: SalesReportByPaymentType },
+    { path: pathSaleReports.SALES_REPORT_BY_CARD_TYPE, component: SalesReportByCardType },
+    { path: pathSaleReports.SALES_RANKING, component: SalesRanking },
+    { path: pathSaleReports.SALES_ANALYSIS_REPORT_ITEM, component: SalesAnalysisReportItem },
+    { path: pathSaleReports.TOTAL_SALES_REPORT_DETAIL, component: TotalSalesReportDetail },
+    { path: pathSaleReports.EMPLOYEE_SALES_ANALYSIS, component: EmployeeSalesAnalysis },
 ];
 
 export const publicRoute = [

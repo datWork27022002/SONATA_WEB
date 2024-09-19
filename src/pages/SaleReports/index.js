@@ -15,9 +15,16 @@ import SimplifiedSalesTotal from './SaleAnalysis/SimplifiedSalesTotal';
 import AggregateRevenueItemsByCategory from './SaleAnalysis/AggregateRevenueItemsByCategory';
 import HourlySales from './SaleAnalysis/HourlySales';
 import TimeOfDaySalesReport from './SaleAnalysis/TimeOfDaySalesReport';
+import SalesReportByPaymentType from './SaleAnalysis/SalesReportByPaymentType';
+import SalesReportByCardType from './SaleAnalysis/SalesReportByCardType';
+import SalesRanking from './SaleAnalysis/SalesRanking';
+import SalesAnalysisReportItem from './SaleAnalysis/SalesAnalysisReportItem';
+import TotalSalesReportDetail from './SaleAnalysis/TotalSalesReportDetail';
+import EmployeeSalesAnalysis from './SaleAnalysis/EmployeeSalesAnalysis';
 
 export { default } from './SaleReports';
 export { DailySalesReport, DailySalesSummary, SalesSummary, DetailedSalesList, SalesByReceipt, SalesByReceiptDetail };
 export { CashReceiptApprovalCancelationReport, CreditCardApprovalCancelationReport, SalesReportByCardTypeDetail };
 export { SalesRecordByEmployee, SalesRecordByEmployeeDate, EmployeeCommission, TotalSalesReport, SimplifiedSalesTotal };
-export { AggregateRevenueItemsByCategory, HourlySales, TimeOfDaySalesReport };
+export { AggregateRevenueItemsByCategory, HourlySales, TimeOfDaySalesReport, SalesReportByPaymentType };
+export { SalesReportByCardType, SalesRanking, SalesAnalysisReportItem, TotalSalesReportDetail, EmployeeSalesAnalysis };

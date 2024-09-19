@@ -339,7 +339,12 @@ const menuStructure = {
                 to: SaleReports.SALES_ANALYSIS_REPORT_ITEM,
                 mark: false,
             },
-            { name: 'Total Sales Report', icon: FaChartPie, to: SaleReports.TOTAL_SALES_REPORT, mark: false },
+            {
+                name: 'Total Sales Report Detail',
+                icon: FaChartPie,
+                to: SaleReports.TOTAL_SALES_REPORT_DETAIL,
+                mark: false,
+            },
             {
                 name: 'Employee Sales Analysis',
                 icon: FaUserCheck,
