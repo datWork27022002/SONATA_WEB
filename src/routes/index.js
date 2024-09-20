@@ -33,7 +33,7 @@ import { VoidSummary, VoidDetail, SalesDiscountReport, SalesDiscountSummary } fr
 import { NoTaxSaleReport, TaxDetail, TaxSummary, SalesCashInOut, CashInOut } from '~/pages/SaleReports';
 import PurchaseOrder, { InventoryLookUp, InventoryAdjustments, InventoryTransfer } from '~/pages/PurchaseOrder';
 import { IVManagementTable, CustomerPurchase, CustomerSaleB, SupplierLedger } from '~/pages/PurchaseOrder';
-import { CustomerLedger, PayableReport, ReceivableReport } from '~/pages/PurchaseOrder';
+import { CustomerLedger, PayableReport, ReceivableReport, Amount, SupplierSetting } from '~/pages/PurchaseOrder';
 import Settings from '~/pages/Settings';
 import BIZSMS from '~/pages/BIZSMS';
 import WebLogin from '~/pages/WebLogin';
@@ -172,6 +172,8 @@ const purchaseOrdersRoute = [
     { path: pathPurchaseOrder.CUSTOMER_LEDGER, component: CustomerLedger },
     { path: pathPurchaseOrder.PAYABLE_REPORT, component: PayableReport },
     { path: pathPurchaseOrder.RECEIVABLE_REPORT, component: ReceivableReport },
+    { path: pathPurchaseOrder.SUPPLIER_SETTING, component: SupplierSetting },
+    { path: pathPurchaseOrder.AMOUNT, component: Amount },
 ];
 
 export const publicRoute = [
