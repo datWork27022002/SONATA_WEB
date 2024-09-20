@@ -32,7 +32,8 @@ import { TotalSalesReportDetail, EmployeeSalesAnalysis, OrderCancelationReport }
 import { VoidSummary, VoidDetail, SalesDiscountReport, SalesDiscountSummary } from '~/pages/SaleReports';
 import { NoTaxSaleReport, TaxDetail, TaxSummary, SalesCashInOut, CashInOut } from '~/pages/SaleReports';
 import PurchaseOrder, { InventoryLookUp, InventoryAdjustments, InventoryTransfer } from '~/pages/PurchaseOrder';
-import { IVManagementTable } from '~/pages/PurchaseOrder';
+import { IVManagementTable, CustomerPurchase, CustomerSaleB, SupplierLedger } from '~/pages/PurchaseOrder';
+import { CustomerLedger, PayableReport, ReceivableReport } from '~/pages/PurchaseOrder';
 import Settings from '~/pages/Settings';
 import BIZSMS from '~/pages/BIZSMS';
 import WebLogin from '~/pages/WebLogin';
@@ -165,6 +166,12 @@ const purchaseOrdersRoute = [
     { path: pathPurchaseOrder.INVENTORY_ADJUSTMENTS, component: InventoryAdjustments },
     { path: pathPurchaseOrder.INVENTORY_TRANSFER, component: InventoryTransfer },
     { path: pathPurchaseOrder.IV_MANAGEMENT_TABLE, component: IVManagementTable },
+    { path: pathPurchaseOrder.CUSTOMER_PURCHASE, component: CustomerPurchase },
+    { path: pathPurchaseOrder.CUSTOMER_SALE_B, component: CustomerSaleB },
+    { path: pathPurchaseOrder.SUPPLIER_LEDGER, component: SupplierLedger },
+    { path: pathPurchaseOrder.CUSTOMER_LEDGER, component: CustomerLedger },
+    { path: pathPurchaseOrder.PAYABLE_REPORT, component: PayableReport },
+    { path: pathPurchaseOrder.RECEIVABLE_REPORT, component: ReceivableReport },
 ];
 
 export const publicRoute = [
