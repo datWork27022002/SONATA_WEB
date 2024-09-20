@@ -31,7 +31,8 @@ import { SalesReportByCardType, SalesRanking, SalesAnalysisReportItem } from '~/
 import { TotalSalesReportDetail, EmployeeSalesAnalysis, OrderCancelationReport } from '~/pages/SaleReports';
 import { VoidSummary, VoidDetail, SalesDiscountReport, SalesDiscountSummary } from '~/pages/SaleReports';
 import { NoTaxSaleReport, TaxDetail, TaxSummary, SalesCashInOut, CashInOut } from '~/pages/SaleReports';
-import PurchaseOrder from '~/pages/PurchaseOrder';
+import PurchaseOrder, { InventoryLookUp, InventoryAdjustments, InventoryTransfer } from '~/pages/PurchaseOrder';
+import { IVManagementTable } from '~/pages/PurchaseOrder';
 import Settings from '~/pages/Settings';
 import BIZSMS from '~/pages/BIZSMS';
 import WebLogin from '~/pages/WebLogin';
@@ -43,6 +44,7 @@ const pathManagerFunction = routes.ManagerFunction;
 const pathCustomer = routes.Customer;
 const pathOperationReports = routes.OperationReports;
 const pathSaleReports = routes.SaleReports;
+const pathPurchaseOrder = routes.PurchaseOrder;
 
 const commonRoute = [
     { path: routes.HOME, component: Home, layout: DefaultLayout },
@@ -158,6 +160,13 @@ const saleReportsRoute = [
     { path: pathSaleReports.CASH_IN_OUT, component: CashInOut },
 ];
 
+const purchaseOrdersRoute = [
+    { path: pathPurchaseOrder.INVENTORY_LOOK_UP, component: InventoryLookUp },
+    { path: pathPurchaseOrder.INVENTORY_ADJUSTMENTS, component: InventoryAdjustments },
+    { path: pathPurchaseOrder.INVENTORY_TRANSFER, component: InventoryTransfer },
+    { path: pathPurchaseOrder.IV_MANAGEMENT_TABLE, component: IVManagementTable },
+];
+
 export const publicRoute = [
     ...commonRoute,
     ...basicSettingsRoute,
@@ -165,6 +174,7 @@ export const publicRoute = [
     ...customerRoute,
     ...operationReportsRoute,
     ...saleReportsRoute,
+    ...purchaseOrdersRoute,
     { path: pathBasicSettings.BASICSETTINGS, component: BasicSettings },
     { path: routes.ManagerFunction.MANAGERFUNCTION, component: ManagerFunction },
     { path: routes.Customer.CUSTOMER, component: Customer },

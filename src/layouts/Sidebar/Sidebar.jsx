@@ -65,7 +65,7 @@ function Sidebar() {
         <Fragment>
             <div
                 className={cx(
-                    'fixed min-w-[70px] bg-fifth-color text-text-color-secondnary sm:h-screen',
+                    'fixed bg-fifth-color text-text-color-secondnary sm:h-screen',
                     'z-10 flex flex-col items-center',
                     'transition duration-300',
                     'max-sm:fixed max-sm:top-10 max-sm:w-screen',
