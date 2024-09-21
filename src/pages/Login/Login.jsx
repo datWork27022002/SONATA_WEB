@@ -15,11 +15,9 @@ function Login() {
     // eslint-disable-next-line no-unused-vars
     const { t, i18n } = useTranslation('translation', { keyPrefix: 'login' });
     const {
-        register,
         handleSubmit,
         // setError,
         // clearErrors,
-        formState: { errors },
     } = useForm();
     const navigate = useNavigate();
 
@@ -68,8 +66,8 @@ function Login() {
                             borderBottom
                             className={cx('mb-2 w-[90%]')}
                             name={'StoreID'}
-                            {...register('StoreID')}
-                            errolMesseage={errors.username?.message}
+                            // {...register('StoreID')}
+                            // errolMesseage={errors.username?.message}
                         />
                         <Input
                             placeholder={t('UserID')}
@@ -77,8 +75,8 @@ function Login() {
                             borderBottom
                             className={cx('mb-2 w-[90%]')}
                             name={'UserID'}
-                            {...register('UserID')}
-                            errolMesseage={errors.UserID?.message}
+                            // {...register('UserID')}
+                            // errolMesseage={errors.UserID?.message}
                         />
                         <Input
                             placeholder={t('Password')}
@@ -87,8 +85,8 @@ function Login() {
                             className={cx('mb-2 w-[90%]')}
                             name={'Password'}
                             type="password"
-                            {...register('Password')}
-                            errolMesseage={errors.Password?.message}
+                            // {...register('Password')}
+                            // errolMesseage={errors.Password?.message}
                         />
                         <div className={cx('flex space-x-2 text-[13px]')}>
                             <input type="checkbox" name="saveInfo" value={true} />

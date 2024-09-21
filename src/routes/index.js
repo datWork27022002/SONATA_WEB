@@ -34,7 +34,7 @@ import { NoTaxSaleReport, TaxDetail, TaxSummary, SalesCashInOut, CashInOut } fro
 import PurchaseOrder, { InventoryLookUp, InventoryAdjustments, InventoryTransfer } from '~/pages/PurchaseOrder';
 import { IVManagementTable, CustomerPurchase, CustomerSaleB, SupplierLedger } from '~/pages/PurchaseOrder';
 import { CustomerLedger, PayableReport, ReceivableReport, Amount, SupplierSetting } from '~/pages/PurchaseOrder';
-import Settings from '~/pages/Settings';
+import Settings, { StoreOperations, StoreDetailSettings, CashDrawer2, TAX } from '~/pages/Settings';
 import BIZSMS from '~/pages/BIZSMS';
 import WebLogin from '~/pages/WebLogin';
 import Bookmark from '~/pages/Bookmark';
@@ -46,6 +46,7 @@ const pathCustomer = routes.Customer;
 const pathOperationReports = routes.OperationReports;
 const pathSaleReports = routes.SaleReports;
 const pathPurchaseOrder = routes.PurchaseOrder;
+const pathSettings = routes.Settings;
 
 const commonRoute = [
     { path: routes.HOME, component: Home, layout: DefaultLayout },
@@ -176,6 +177,17 @@ const purchaseOrdersRoute = [
     { path: pathPurchaseOrder.AMOUNT, component: Amount },
 ];
 
+const settingsRoute = [
+    { path: pathSettings.STORE_OPERATIONS, component: StoreOperations },
+    { path: pathSettings.STORE_DETAIL_SETTING, component: StoreDetailSettings },
+    { path: pathSettings.CASH_DRAWER2, component: CashDrawer2 },
+    { path: pathSettings.TAX, component: TAX },
+    { path: pathSettings.OPERATIONS_MANAGEMENT, component: StoreOperations },
+    { path: pathSettings.ORDER_POS_CANCEL_FUNCTION_OPTION, component: StoreOperations },
+    { path: pathSettings.PRINTER_LANGUAGE_SETTING, component: StoreOperations },
+    { path: pathSettings.AUTO_CLOSE_POPUP_OPTION, component: StoreOperations },
+];
+
 export const publicRoute = [
     ...commonRoute,
     ...basicSettingsRoute,
@@ -184,6 +196,7 @@ export const publicRoute = [
     ...operationReportsRoute,
     ...saleReportsRoute,
     ...purchaseOrdersRoute,
+    ...settingsRoute,
     { path: pathBasicSettings.BASICSETTINGS, component: BasicSettings },
     { path: routes.ManagerFunction.MANAGERFUNCTION, component: ManagerFunction },
     { path: routes.Customer.CUSTOMER, component: Customer },

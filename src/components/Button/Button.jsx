@@ -25,6 +25,7 @@ function Button({
     disable,
     to,
     href,
+    type = 'button',
     ...passProps
 }) {
     let Comp = 'button';
@@ -39,6 +40,8 @@ function Button({
     } else if (href) {
         Props.href = href;
         Comp = 'a';
+    } else {
+        Props.type = type;
     }
 
     return (
@@ -86,6 +89,7 @@ Button.propTypes = {
     disable: PropTypes.bool,
     to: PropTypes.string,
     href: PropTypes.string,
+    type: PropTypes.string,
 };
 
 export default Button;
