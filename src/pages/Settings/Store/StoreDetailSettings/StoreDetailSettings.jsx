@@ -15,7 +15,7 @@ const listApplyPointType = ['Apply to Total Amount', 'Apply to before Tax'];
 function StoreDetailSettings() {
     const headerFormStyles = cx('rounded bg-blue-500 py-1 text-center text-[14px] font-semibold text-white');
     const wrapperFormStyles = cx(
-        'w-[400px] rounded border border-solid border-primary-color p-2 bg-[#f3f5f7]',
+        'sm:w-[400px] rounded border border-solid border-primary-color p-2 bg-[#f3f5f7]',
         'max-sm:w-full ',
     );
     return (

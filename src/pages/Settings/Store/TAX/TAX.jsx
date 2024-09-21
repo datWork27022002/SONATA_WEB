@@ -25,7 +25,7 @@ function TAX() {
             <form className={cx('inline-block')}>
                 {/* form */}
                 <div className={cx('flex flex-wrap md:ml-8 md:gap-16')}>
-                    <div className={cx('w-[500px]')}>
+                    <div className={cx('sm:w-[500px]')}>
                         <div>
                             <div className={cx('flex')}>
                                 {listTypeForm.map((value, index) => (
@@ -44,7 +44,7 @@ function TAX() {
                             <FormTaxExcluded typeForm={typeForm} />
                         </div>
                     </div>
-                    <div className={cx('w-[400px]')}>
+                    <div className={cx('sm:w-[400px]')}>
                         <Input
                             label="No Dine-in Tax"
                             labelClassName={cx('w-[150px]')}

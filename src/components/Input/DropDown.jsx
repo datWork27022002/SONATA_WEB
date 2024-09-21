@@ -46,6 +46,7 @@ function Dropdown({ listOptions = [], seletedValue = '', setSeletedValue = () =>
                     'flex w-full flex-1 rounded border border-solid border-slate-400 p-1',
                     'items-center justify-between bg-white px-1 hover:border-primary-color',
                 )}
+                type="button"
             >
                 <span>{valueInput}</span>
                 <MdOutlineArrowDropDown size={20} />
@@ -53,8 +54,9 @@ function Dropdown({ listOptions = [], seletedValue = '', setSeletedValue = () =>
             <div
                 className={cx(
                     isOpen ? 'scale-y-100' : 'scale-y-0',
-                    'absolute left-0 w-full overflow-hidden rounded transition-all duration-300',
+                    'absolute left-0 w-full rounded transition-all duration-300',
                     'z-20 border border-solid border-primary-color bg-white shadow-lg',
+                    'max-h-[200px] overflow-auto',
                     top ? 'bottom-8 origin-bottom' : 'origin-top-left',
                 )}
             >

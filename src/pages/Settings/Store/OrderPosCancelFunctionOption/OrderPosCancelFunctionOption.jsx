@@ -9,32 +9,19 @@ import Button from '~/components/Button';
 const cx = classNames;
 
 const listYesOrNo = ['YES', 'NO'];
-const listCashDrawerOpenOption = ['PW and reason', 'Reason', 'Forced Open'];
 
-function CashDrawer2() {
+function OrderPosCancelFunctionOption() {
     return (
-        <TitleLayout title={config.nameMap.itemLevel3.CASH_DRAWER2.Visiblename}>
+        <TitleLayout title={config.nameMap.itemLevel3.ORDER_POS_CANCEL_FUNCTION_OPTION.Visiblename}>
             <form className={cx('inline-block')}>
                 {/* form */}
                 <div className={cx('flex flex-wrap md:ml-8 md:gap-16')}>
                     <div className={cx('sm:w-[500px]')}>
                         <Input
-                            label="Auto-open for Card Processing"
+                            label="Use Order POS Cancel Function"
                             labelClassName={cx('w-[200px]')}
                             radioInput
                             listOptions={listYesOrNo}
-                        />
-                        <Input
-                            label="Auto-open for Check Processing"
-                            labelClassName={cx('w-[200px]')}
-                            radioInput
-                            listOptions={listYesOrNo}
-                        />
-                        <Input
-                            label="Cash drawer open option"
-                            labelClassName={cx('w-[200px]')}
-                            radioInput
-                            listOptions={listCashDrawerOpenOption}
                         />
                     </div>
                 </div>
@@ -46,4 +33,4 @@ function CashDrawer2() {
     );
 }
 
-export default CashDrawer2;
+export default OrderPosCancelFunctionOption;

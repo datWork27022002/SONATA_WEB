@@ -35,6 +35,10 @@ import PurchaseOrder, { InventoryLookUp, InventoryAdjustments, InventoryTransfer
 import { IVManagementTable, CustomerPurchase, CustomerSaleB, SupplierLedger } from '~/pages/PurchaseOrder';
 import { CustomerLedger, PayableReport, ReceivableReport, Amount, SupplierSetting } from '~/pages/PurchaseOrder';
 import Settings, { StoreOperations, StoreDetailSettings, CashDrawer2, TAX } from '~/pages/Settings';
+import { OperationsManagement, OrderPosCancelFunctionOption, PrinterLanguageSetting } from '~/pages/Settings';
+import { AutoClosePopupOption } from '~/pages/Settings';
+import {} from '~/pages/Settings';
+import {} from '~/pages/Settings';
 import BIZSMS from '~/pages/BIZSMS';
 import WebLogin from '~/pages/WebLogin';
 import Bookmark from '~/pages/Bookmark';
@@ -182,10 +186,10 @@ const settingsRoute = [
     { path: pathSettings.STORE_DETAIL_SETTING, component: StoreDetailSettings },
     { path: pathSettings.CASH_DRAWER2, component: CashDrawer2 },
     { path: pathSettings.TAX, component: TAX },
-    { path: pathSettings.OPERATIONS_MANAGEMENT, component: StoreOperations },
-    { path: pathSettings.ORDER_POS_CANCEL_FUNCTION_OPTION, component: StoreOperations },
-    { path: pathSettings.PRINTER_LANGUAGE_SETTING, component: StoreOperations },
-    { path: pathSettings.AUTO_CLOSE_POPUP_OPTION, component: StoreOperations },
+    { path: pathSettings.OPERATIONS_MANAGEMENT, component: OperationsManagement },
+    { path: pathSettings.ORDER_POS_CANCEL_FUNCTION_OPTION, component: OrderPosCancelFunctionOption },
+    { path: pathSettings.PRINTER_LANGUAGE_SETTING, component: PrinterLanguageSetting },
+    { path: pathSettings.AUTO_CLOSE_POPUP_OPTION, component: AutoClosePopupOption },
 ];
 
 export const publicRoute = [

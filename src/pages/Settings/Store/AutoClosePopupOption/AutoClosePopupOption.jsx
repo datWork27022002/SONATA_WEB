@@ -9,32 +9,38 @@ import Button from '~/components/Button';
 const cx = classNames;
 
 const listYesOrNo = ['YES', 'NO'];
-const listCashDrawerOpenOption = ['PW and reason', 'Reason', 'Forced Open'];
+const listTime = ['1s', '2s', '3s', '4s', '5s', '6s', '7s', '8s', '9s', '10s'];
 
-function CashDrawer2() {
+function AutoClosePopupOption() {
     return (
-        <TitleLayout title={config.nameMap.itemLevel3.CASH_DRAWER2.Visiblename}>
+        <TitleLayout title={config.nameMap.itemLevel3.AUTO_CLOSE_POPUP_OPTION.Visiblename}>
             <form className={cx('inline-block')}>
                 {/* form */}
                 <div className={cx('flex flex-wrap md:ml-8 md:gap-16')}>
-                    <div className={cx('sm:w-[500px]')}>
+                    <div className={cx('sm:w-[400px]')}>
                         <Input
-                            label="Auto-open for Card Processing"
+                            label="Automatic Shutdown time"
+                            labelClassName={cx('w-[200px]')}
+                            dropDown
+                            listOptions={listTime}
+                        />
+                        <Input
+                            label="Order Shutdown Options"
                             labelClassName={cx('w-[200px]')}
                             radioInput
                             listOptions={listYesOrNo}
                         />
                         <Input
-                            label="Auto-open for Check Processing"
+                            label="Payment Shutdown Options"
                             labelClassName={cx('w-[200px]')}
                             radioInput
                             listOptions={listYesOrNo}
                         />
                         <Input
-                            label="Cash drawer open option"
+                            label="Point Shutdown Options"
                             labelClassName={cx('w-[200px]')}
                             radioInput
-                            listOptions={listCashDrawerOpenOption}
+                            listOptions={listYesOrNo}
                         />
                     </div>
                 </div>
@@ -46,4 +52,4 @@ function CashDrawer2() {
     );
 }
 
-export default CashDrawer2;
+export default AutoClosePopupOption;
