@@ -34,9 +34,11 @@ import { NoTaxSaleReport, TaxDetail, TaxSummary, SalesCashInOut, CashInOut } fro
 import PurchaseOrder, { InventoryLookUp, InventoryAdjustments, InventoryTransfer } from '~/pages/PurchaseOrder';
 import { IVManagementTable, CustomerPurchase, CustomerSaleB, SupplierLedger } from '~/pages/PurchaseOrder';
 import { CustomerLedger, PayableReport, ReceivableReport, Amount, SupplierSetting } from '~/pages/PurchaseOrder';
-import Settings, { StoreOperations, StoreDetailSettings, CashDrawer2, TAX } from '~/pages/Settings';
+import Settings, { StoreOperations, StoreDetailSettings, CashDrawer2, TAX, GuestPager } from '~/pages/Settings';
 import { OperationsManagement, OrderPosCancelFunctionOption, PrinterLanguageSetting } from '~/pages/Settings';
-import { AutoClosePopupOption } from '~/pages/Settings';
+import { AutoClosePopupOption, PosInformation, PrinterSetting, LabelPrintSetting } from '~/pages/Settings';
+import { PosDisplaySetting, CidDevice, PrintOptionByPos, WindowsKioksOption } from '~/pages/Settings';
+import { MsrSetting, MsrPortSetting, EcrSetting } from '~/pages/Settings';
 import {} from '~/pages/Settings';
 import {} from '~/pages/Settings';
 import BIZSMS from '~/pages/BIZSMS';
@@ -190,6 +192,17 @@ const settingsRoute = [
     { path: pathSettings.ORDER_POS_CANCEL_FUNCTION_OPTION, component: OrderPosCancelFunctionOption },
     { path: pathSettings.PRINTER_LANGUAGE_SETTING, component: PrinterLanguageSetting },
     { path: pathSettings.AUTO_CLOSE_POPUP_OPTION, component: AutoClosePopupOption },
+    { path: pathSettings.POS_INFORMATION, component: PosInformation },
+    { path: pathSettings.PRINTER_SETTING, component: PrinterSetting },
+    { path: pathSettings.LABEL_PRINT_SETTING, component: LabelPrintSetting },
+    { path: pathSettings.GUEST_PAGER, component: GuestPager },
+    { path: pathSettings.POS_DISPLAY_SETTING, component: PosDisplaySetting },
+    { path: pathSettings.CID_DEVICE, component: CidDevice },
+    { path: pathSettings.PRINT_OPTION_BY_POS, component: PrintOptionByPos },
+    { path: pathSettings.WINDOWS_KIOSK_OPTIONS, component: WindowsKioksOption },
+    { path: pathSettings.MSR_SETTING, component: MsrSetting },
+    { path: pathSettings.MSR_PORT_SETTING, component: MsrPortSetting },
+    { path: pathSettings.ECR_SETTING, component: EcrSetting },
 ];
 
 export const publicRoute = [

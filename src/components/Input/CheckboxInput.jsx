@@ -1,26 +1,28 @@
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
 import styles from './Input.module.scss';
 
 const cx = classNames.bind(styles);
 
 const CheckboxInput = ({ seletedValue, setSeletedValue = () => {}, listOptions = [], className }) => {
+    const [valueInput, setValueInput] = useState(seletedValue || []);
     const changeValue = (value) => {
-        const newValue = [...seletedValue];
+        const newValue = [...valueInput];
         if (newValue.includes(value)) {
             const index = newValue.indexOf(value);
             newValue.splice(index, 1);
         } else {
             newValue.push(value);
         }
-
+        setValueInput(newValue);
         setSeletedValue(newValue);
     };
 
     return (
         <div
-            className={cx('flex h-8 cursor-pointer gap-2', {
+            className={cx('flex cursor-pointer flex-wrap gap-2', {
                 [className]: className,
             })}
         >
@@ -28,8 +30,8 @@ const CheckboxInput = ({ seletedValue, setSeletedValue = () => {}, listOptions =
                 <span
                     onClick={() => changeValue(value)}
                     className={cx(
-                        seletedValue.includes(value) === true && 'bg-primary-color',
-                        'flex flex-1 items-center justify-center',
+                        valueInput.includes(value) === true && 'bg-primary-color',
+                        'flex flex-none items-center justify-center px-2 py-1',
                         'rounded border border-solid border-primary-color',
                     )}
                     key={index}
