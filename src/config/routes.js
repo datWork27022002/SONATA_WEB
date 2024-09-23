@@ -161,7 +161,7 @@ const routes = {
         MSR_SETTING: `/${pathSettings}/${itemLevel3.MSR_SETTING.pathKey}`,
         MSR_PORT_SETTING: `/${pathSettings}/${itemLevel3.MSR_PORT_SETTING.pathKey}`,
         ECR_SETTING: `/${pathSettings}/${itemLevel3.ECR_SETTING.pathKey}`,
-        STOREINFO_TAX_RECEIPT: `/${pathSettings}/${itemLevel3.STOREINFO_TAX_RECEIPT.pathKey}`,
+        STORE_INFO_TAX_RECEIPT: `/${pathSettings}/${itemLevel3.STORE_INFO_TAX_RECEIPT.pathKey}`,
         SETTING_QR_CODE: `/${pathSettings}/${itemLevel3.SETTING_QR_CODE.pathKey}`,
         SHOW_ADDITIONAL_DATA_IN_EOD_PRINTOUT: `/${pathSettings}/${itemLevel3.SHOW_ADDITIONAL_DATA_IN_EOD_PRINTOUT.pathKey}`,
         ONE_TOUCH_OPTION: `/${pathSettings}/${itemLevel3.ONE_TOUCH_OPTION.pathKey}`,

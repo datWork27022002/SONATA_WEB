@@ -451,7 +451,7 @@ const menuStructure = {
             { name: 'ECR Setting', icon: MdOutlinePermDataSetting, to: Settings.ECR_SETTING, mark: false },
         ],
         'Option setting': [
-            { name: 'StoreInfo(TAX Receipt)', icon: FaReceipt, to: Settings.STOREINFO_TAX_RECEIPT, mark: false },
+            { name: 'StoreInfo(TAX Receipt)', icon: FaReceipt, to: Settings.STORE_INFO_TAX_RECEIPT, mark: false },
             { name: 'Setting QR code', icon: FaQrcode, to: Settings.SETTING_QR_CODE, mark: false },
             {
                 name: 'Show additional data in EOD printout',

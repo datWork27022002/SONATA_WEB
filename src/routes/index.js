@@ -38,8 +38,11 @@ import Settings, { StoreOperations, StoreDetailSettings, CashDrawer2, TAX, Guest
 import { OperationsManagement, OrderPosCancelFunctionOption, PrinterLanguageSetting } from '~/pages/Settings';
 import { AutoClosePopupOption, PosInformation, PrinterSetting, LabelPrintSetting } from '~/pages/Settings';
 import { PosDisplaySetting, CidDevice, PrintOptionByPos, WindowsKioksOption } from '~/pages/Settings';
-import { MsrSetting, MsrPortSetting, EcrSetting } from '~/pages/Settings';
-import {} from '~/pages/Settings';
+import { MsrSetting, MsrPortSetting, EcrSetting, StoreInfoTaxReceipt, SettingQRCode } from '~/pages/Settings';
+import { ShowAdditionalDataInEodPrintout, OneTouchOption, BarcodeUnregisterdItemOption } from '~/pages/Settings';
+import { CallerIdentificationReceiveAction, CashDrawerOpenOption, ClearTableSetting } from '~/pages/Settings';
+import { EnterNumberOfCustomerSetting, SelectEmployeeSetting, DiscountOrderOption } from '~/pages/Settings';
+import { ShowItemBarcodeOption } from '~/pages/Settings';
 import {} from '~/pages/Settings';
 import BIZSMS from '~/pages/BIZSMS';
 import WebLogin from '~/pages/WebLogin';
@@ -203,6 +206,18 @@ const settingsRoute = [
     { path: pathSettings.MSR_SETTING, component: MsrSetting },
     { path: pathSettings.MSR_PORT_SETTING, component: MsrPortSetting },
     { path: pathSettings.ECR_SETTING, component: EcrSetting },
+    { path: pathSettings.STORE_INFO_TAX_RECEIPT, component: StoreInfoTaxReceipt },
+    { path: pathSettings.SETTING_QR_CODE, component: SettingQRCode },
+    { path: pathSettings.SHOW_ADDITIONAL_DATA_IN_EOD_PRINTOUT, component: ShowAdditionalDataInEodPrintout },
+    { path: pathSettings.ONE_TOUCH_OPTION, component: OneTouchOption },
+    { path: pathSettings.BARCODE_UNREGISTERED_ITEM_OPTION, component: BarcodeUnregisterdItemOption },
+    { path: pathSettings.CALLER_IDENTIFICATION_RECEIVE_ACTION, component: CallerIdentificationReceiveAction },
+    { path: pathSettings.CASH_DRAWER_OPEN_OPTION, component: CashDrawerOpenOption },
+    { path: pathSettings.CLEAR_TABLE_SETTING, component: ClearTableSetting },
+    { path: pathSettings.ENTER_NUMBER_OF_CUSTOMER_SETTING, component: EnterNumberOfCustomerSetting },
+    { path: pathSettings.SELECT_EMPLOYEE_SETTING, component: SelectEmployeeSetting },
+    { path: pathSettings.DISCOUNT_ORDER_OPTION, component: DiscountOrderOption },
+    { path: pathSettings.SHOW_ITEM_BARCODE_OPTION, component: ShowItemBarcodeOption },
 ];
 
 export const publicRoute = [

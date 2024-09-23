@@ -295,7 +295,7 @@ const nameMap = {
         MSR_SETTING: { pathKey: 'MSRSetting', Visiblename: 'MSR Setting', parent: 'POS' },
         MSR_PORT_SETTING: { pathKey: 'MSRPortSetting', Visiblename: 'MSR Port Setting', parent: 'POS' },
         ECR_SETTING: { pathKey: 'ECRSetting', Visiblename: 'ECR Setting', parent: 'POS' },
-        STOREINFO_TAX_RECEIPT: {
+        STORE_INFO_TAX_RECEIPT: {
             pathKey: 'StoreInfoTaxReceipt',
             Visiblename: 'StoreInfo(TAX Receipt)',
             parent: 'OPTIONSETTING',
