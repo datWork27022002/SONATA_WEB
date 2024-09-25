@@ -42,7 +42,11 @@ import { MsrSetting, MsrPortSetting, EcrSetting, StoreInfoTaxReceipt, SettingQRC
 import { ShowAdditionalDataInEodPrintout, OneTouchOption, BarcodeUnregisterdItemOption } from '~/pages/Settings';
 import { CallerIdentificationReceiveAction, CashDrawerOpenOption, ClearTableSetting } from '~/pages/Settings';
 import { EnterNumberOfCustomerSetting, SelectEmployeeSetting, DiscountOrderOption } from '~/pages/Settings';
-import { ShowItemBarcodeOption } from '~/pages/Settings';
+import { ShowItemBarcodeOption, RebateIssue, WeightBarcodeOption, TenderMethod } from '~/pages/Settings';
+import { CashDrawerOpenTiming, PrepaymentFunctionButtonSetting, PrepaidOrderRetentionOptions } from '~/pages/Settings';
+import { DeliverySettings, DeliveryOrder, ChangeWeightControl, DiscountOption } from '~/pages/Settings';
+import { PaymentOptionsImmediately, NoticePopupOption, SetAllCancellationType } from '~/pages/Settings';
+import { CurrencyChangeOption, EnableKeepUnitChange } from '~/pages/Settings';
 import {} from '~/pages/Settings';
 import BIZSMS from '~/pages/BIZSMS';
 import WebLogin from '~/pages/WebLogin';
@@ -218,6 +222,21 @@ const settingsRoute = [
     { path: pathSettings.SELECT_EMPLOYEE_SETTING, component: SelectEmployeeSetting },
     { path: pathSettings.DISCOUNT_ORDER_OPTION, component: DiscountOrderOption },
     { path: pathSettings.SHOW_ITEM_BARCODE_OPTION, component: ShowItemBarcodeOption },
+    { path: pathSettings.REBATE_ISSUE, component: RebateIssue },
+    { path: pathSettings.WEIGHT_BARCODE_OPTION, component: WeightBarcodeOption },
+    { path: pathSettings.TENDER_METHOD_WHEN_MAKING_REFUND_RECEIPT, component: TenderMethod },
+    { path: pathSettings.CASH_DRAWER_OPEN_TIMING, component: CashDrawerOpenTiming },
+    { path: pathSettings.PREPAYMENT_FUNCTION_BUTTON_SETTING, component: PrepaymentFunctionButtonSetting },
+    { path: pathSettings.PREPAID_ORDER_RETENTION_OPTIONS, component: PrepaidOrderRetentionOptions },
+    { path: pathSettings.DELIVERY_SETTINGS, component: DeliverySettings },
+    { path: pathSettings.DELIVERY_ORDER, component: DeliveryOrder },
+    { path: pathSettings.CHANGE_WEIGHT_CONTROL, component: ChangeWeightControl },
+    { path: pathSettings.DISCOUNT_OPTION, component: DiscountOption },
+    { path: pathSettings.PAYMENT_OPTIONS_IMMEDIATELY, component: PaymentOptionsImmediately },
+    { path: pathSettings.NOTICE_POPUP_OPTION, component: NoticePopupOption },
+    { path: pathSettings.SET_ALL_CANCELLATION_TYPE, component: SetAllCancellationType },
+    { path: pathSettings.CURRENCY_CHANGE_OPTION, component: CurrencyChangeOption },
+    { path: pathSettings.ENABLE_KEEP_UNIT_CHANGE, component: EnableKeepUnitChange },
 ];
 
 export const publicRoute = [

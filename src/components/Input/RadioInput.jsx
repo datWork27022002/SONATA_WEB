@@ -15,7 +15,7 @@ const RadioInput = ({ seletedRadio = '', setSeletedRadio = () => {}, listOptions
     };
     return (
         <div
-            className={cx('flex h-8 min-w-[128px] cursor-pointer rounded', 'border border-solid border-primary-color', {
+            className={cx('flex min-w-[128px] cursor-pointer rounded', 'border border-solid border-primary-color', {
                 [className]: className,
             })}
         >
@@ -26,7 +26,7 @@ const RadioInput = ({ seletedRadio = '', setSeletedRadio = () => {}, listOptions
                     }}
                     className={cx(
                         valueInput === value && 'bg-primary-color',
-                        'flex flex-1 items-center justify-center',
+                        'flex flex-1 items-center justify-center py-1 text-center',
                     )}
                     key={index}
                 >

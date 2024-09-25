@@ -496,7 +496,7 @@ const menuStructure = {
                 to: Settings.TENDER_METHOD_WHEN_MAKING_REFUND_RECEIPT,
                 mark: false,
             },
-            { name: 'Cash drawer open timing', icon: IoTimerSharp, to: Settings.CASH_DRAWER_OPEN_OPTION, mark: false },
+            { name: 'Cash drawer open timing', icon: IoTimerSharp, to: Settings.CASH_DRAWER_OPEN_TIMING, mark: false },
             {
                 name: 'Prepayment function button Setting',
                 icon: GrUserSettings,

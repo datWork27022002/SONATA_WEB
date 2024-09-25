@@ -176,7 +176,7 @@ const routes = {
         REBATE_ISSUE: `/${pathSettings}/${itemLevel3.REBATE_ISSUE.pathKey}`,
         WEIGHT_BARCODE_OPTION: `/${pathSettings}/${itemLevel3.WEIGHT_BARCODE_OPTION.pathKey}`,
         TENDER_METHOD_WHEN_MAKING_REFUND_RECEIPT: `/${pathSettings}/${itemLevel3.TENDER_METHOD_WHEN_MAKING_REFUND_RECEIPT.pathKey}`,
-        AMCASH_DRAWER_OPEN_TIMINGOUNT: `/${pathSettings}/${itemLevel3.CASH_DRAWER_OPEN_TIMING.pathKey}`,
+        CASH_DRAWER_OPEN_TIMING: `/${pathSettings}/${itemLevel3.CASH_DRAWER_OPEN_TIMING.pathKey}`,
         PREPAYMENT_FUNCTION_BUTTON_SETTING: `/${pathSettings}/${itemLevel3.PREPAYMENT_FUNCTION_BUTTON_SETTING.pathKey}`,
         PREPAID_ORDER_RETENTION_OPTIONS: `/${pathSettings}/${itemLevel3.PREPAID_ORDER_RETENTION_OPTIONS.pathKey}`,
         DELIVERY_SETTINGS: `/${pathSettings}/${itemLevel3.DELIVERY_SETTINGS.pathKey}`,
