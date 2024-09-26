@@ -47,9 +47,8 @@ import { CashDrawerOpenTiming, PrepaymentFunctionButtonSetting, PrepaidOrderRete
 import { DeliverySettings, DeliveryOrder, ChangeWeightControl, DiscountOption } from '~/pages/Settings';
 import { PaymentOptionsImmediately, NoticePopupOption, SetAllCancellationType } from '~/pages/Settings';
 import { CurrencyChangeOption, EnableKeepUnitChange, Receipt, CustomerOrderPrint } from '~/pages/Settings';
-import { KitchenOrderPrint, WaitingListTag } from '~/pages/Settings';
-import {} from '~/pages/Settings';
-import {} from '~/pages/Settings';
+import { KitchenOrderPrint, WaitingListTag, UseSecurityFunctionByTasks, SecurityGroup } from '~/pages/Settings';
+import { EmailServer } from '~/pages/Settings';
 import BIZSMS from '~/pages/BIZSMS';
 import WebLogin from '~/pages/WebLogin';
 import Bookmark from '~/pages/Bookmark';
@@ -243,6 +242,9 @@ const settingsRoute = [
     { path: pathSettings.CUSTOMER_ORDER_PRINT, component: CustomerOrderPrint },
     { path: pathSettings.KITCHEN_ORDER_PRINT, component: KitchenOrderPrint },
     { path: pathSettings.WAITING_LIST_TAG, component: WaitingListTag },
+    { path: pathSettings.USE_SECURITY_FUNCTION_BY_TASKS, component: UseSecurityFunctionByTasks },
+    { path: pathSettings.SECURITY_GROUP, component: SecurityGroup },
+    { path: pathSettings.EMAIL_SERVER, component: EmailServer },
 ];
 
 export const publicRoute = [

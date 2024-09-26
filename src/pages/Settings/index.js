@@ -48,6 +48,9 @@ import Receipt from './PrintOptions/Receipt';
 import CustomerOrderPrint from './PrintOptions/CustomerOrderPrint';
 import KitchenOrderPrint from './PrintOptions/KitchenOrderPrint';
 import WaitingListTag from './PrintOptions/WaitingListTag';
+import UseSecurityFunctionByTasks from './Security/UseSecurityFunctionByTasks';
+import SecurityGroup from './Security/SecurityGroup';
+import EmailServer from './NetworkServer/EmailServer';
 
 export { default } from './Settings';
 export { StoreOperations, StoreDetailSettings, CashDrawer2, TAX, OperationsManagement, OrderPosCancelFunctionOption };
@@ -60,3 +63,4 @@ export { WeightBarcodeOption, TenderMethod, CashDrawerOpenTiming, PrepaymentFunc
 export { PrepaidOrderRetentionOptions, DeliverySettings, DeliveryOrder, ChangeWeightControl, DiscountOption };
 export { PaymentOptionsImmediately, NoticePopupOption, SetAllCancellationType, CurrencyChangeOption };
 export { EnableKeepUnitChange, Receipt, CustomerOrderPrint, KitchenOrderPrint, WaitingListTag };
+export { UseSecurityFunctionByTasks, SecurityGroup, EmailServer };
