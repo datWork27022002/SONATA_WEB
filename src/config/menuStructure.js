@@ -37,8 +37,17 @@ import { CgArrangeBack } from 'react-icons/cg';
 
 import routes from './routes';
 
-const { BasicSettings, ManagerFunction, Customer, OperationReports, SaleReports, PurchaseOrder, Settings, BIZSMS } =
-    routes;
+const {
+    BasicSettings,
+    ManagerFunction,
+    Customer,
+    OperationReports,
+    SaleReports,
+    PurchaseOrder,
+    Settings,
+    BIZSMS,
+    WebLogin,
+} = routes;
 
 const menuStructure = {
     BASICSETTINGS: {
@@ -586,10 +595,15 @@ const menuStructure = {
     },
     WEBLOGIN: {
         noFilter: [
-            { name: 'Web Login', icon: MdScreenLockLandscape, to: '', mark: false },
-            { name: 'Use Security Function by Tasks', icon: GrDocumentLocked, to: '', mark: false },
-            { name: 'Employee Security', icon: FaUserLock, to: '', mark: false },
-            { name: 'Security Level', icon: FaLevelUpAlt, to: '', mark: false },
+            { name: 'Web Login', icon: MdScreenLockLandscape, to: WebLogin.WEB_LOGIN_FUNTION, mark: false },
+            {
+                name: 'Use Security Function by Tasks',
+                icon: GrDocumentLocked,
+                to: WebLogin.USE_SECURITY_FUNCTION_BY_TASKS2,
+                mark: false,
+            },
+            { name: 'Employee Security', icon: FaUserLock, to: WebLogin.EMPLOYEE_SECURITY, mark: false },
+            { name: 'Security Level', icon: FaLevelUpAlt, to: WebLogin.SECURITY_LEVEL, mark: false },
         ],
     },
 };

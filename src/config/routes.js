@@ -10,11 +10,18 @@ const pathSaleReports = itemLevel1.SALEREPORTS.pathKey;
 const pathPurchaseOrder = itemLevel1.PURCHASEORDER.pathKey;
 const pathSettings = itemLevel1.SETTINGS.pathKey;
 const pathBIZSMS = itemLevel1.BIZSMS.pathKey;
+const pathWebLogin = itemLevel1.WEBLOGIN.pathKey;
 
 const routes = {
     LOGIN: '/login',
     HOME: '/',
-    WEBLOGIN: '/WebLogin',
+    WebLogin: {
+        WEB_LOGIN: `${pathWebLogin}`,
+        WEB_LOGIN_FUNTION: `/${pathWebLogin}/${itemLevel3.WEB_LOGIN.pathKey}`,
+        USE_SECURITY_FUNCTION_BY_TASKS2: `/${pathWebLogin}/${itemLevel3.USE_SECURITY_FUNCTION_BY_TASKS2.pathKey}`,
+        EMPLOYEE_SECURITY: `/${pathWebLogin}/${itemLevel3.EMPLOYEE_SECURITY.pathKey}`,
+        SECURITY_LEVEL: `/${pathWebLogin}/${itemLevel3.SECURITY_LEVEL.pathKey}`,
+    },
     BOOKMARK: '/Bookmark',
     BasicSettings: {
         BASICSETTINGS: `/${pathBasicSettings}`,

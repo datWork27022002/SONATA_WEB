@@ -51,6 +51,7 @@ import { KitchenOrderPrint, WaitingListTag, UseSecurityFunctionByTasks, Security
 import { EmailServer } from '~/pages/Settings';
 import BIZSMS from '~/pages/BIZSMS';
 import WebLogin from '~/pages/WebLogin';
+import { WebLoginFunction, UseSecurityFunctionByTasks2, EmployeeSecurity, SecurityLevel } from '~/pages/WebLogin';
 import Bookmark from '~/pages/Bookmark';
 
 const { routes } = config;
@@ -61,6 +62,7 @@ const pathOperationReports = routes.OperationReports;
 const pathSaleReports = routes.SaleReports;
 const pathPurchaseOrder = routes.PurchaseOrder;
 const pathSettings = routes.Settings;
+const pathWebLogin = routes.WebLogin;
 
 const commonRoute = [
     { path: routes.HOME, component: Home, layout: DefaultLayout },
@@ -247,6 +249,13 @@ const settingsRoute = [
     { path: pathSettings.EMAIL_SERVER, component: EmailServer },
 ];
 
+const webLoginRoute = [
+    { path: pathWebLogin.WEB_LOGIN_FUNTION, component: WebLoginFunction },
+    { path: pathWebLogin.USE_SECURITY_FUNCTION_BY_TASKS2, component: UseSecurityFunctionByTasks2 },
+    { path: pathWebLogin.EMPLOYEE_SECURITY, component: EmployeeSecurity },
+    { path: pathWebLogin.SECURITY_LEVEL, component: SecurityLevel },
+];
+
 export const publicRoute = [
     ...commonRoute,
     ...basicSettingsRoute,
@@ -256,6 +265,7 @@ export const publicRoute = [
     ...saleReportsRoute,
     ...purchaseOrdersRoute,
     ...settingsRoute,
+    ...webLoginRoute,
     { path: pathBasicSettings.BASICSETTINGS, component: BasicSettings },
     { path: routes.ManagerFunction.MANAGERFUNCTION, component: ManagerFunction },
     { path: routes.Customer.CUSTOMER, component: Customer },
@@ -264,7 +274,7 @@ export const publicRoute = [
     { path: routes.PurchaseOrder.PURCHASEORDER, component: PurchaseOrder },
     { path: routes.Settings.SETTINGS, component: Settings },
     { path: routes.BIZSMS.BIZSMS, component: BIZSMS },
-    { path: routes.WEBLOGIN, component: WebLogin },
+    { path: routes.WebLogin.WEB_LOGIN, component: WebLogin },
     { path: routes.BOOKMARK, component: Bookmark },
 ];
 export const privateRoute = [];
