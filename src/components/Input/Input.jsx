@@ -76,7 +76,7 @@ const Input = ({
                                 ? 'border-b-2 border-l-0 border-r-0 border-t-0 border-solid border-b-[#a8a8a8]'
                                 : 'rounded border-[1px] border-solid border-slate-400',
                             disabled && 'bg-slate-100',
-                            textarea && 'h-20',
+                            textarea && 'h-16',
                         )}
                         disabled={disabled}
                         value={seletedValue}

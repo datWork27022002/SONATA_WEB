@@ -44,6 +44,10 @@ import NoticePopupOption from './OptionSetting/NoticePopupOption';
 import SetAllCancellationType from './OptionSetting/SetAllCancellationType';
 import CurrencyChangeOption from './OptionSetting/CurrencyChangeOption';
 import EnableKeepUnitChange from './OptionSetting/EnableKeepUnitChange';
+import Receipt from './PrintOptions/Receipt';
+import CustomerOrderPrint from './PrintOptions/CustomerOrderPrint';
+import KitchenOrderPrint from './PrintOptions/KitchenOrderPrint';
+import WaitingListTag from './PrintOptions/WaitingListTag';
 
 export { default } from './Settings';
 export { StoreOperations, StoreDetailSettings, CashDrawer2, TAX, OperationsManagement, OrderPosCancelFunctionOption };
@@ -55,4 +59,4 @@ export { EnterNumberOfCustomerSetting, SelectEmployeeSetting, DiscountOrderOptio
 export { WeightBarcodeOption, TenderMethod, CashDrawerOpenTiming, PrepaymentFunctionButtonSetting };
 export { PrepaidOrderRetentionOptions, DeliverySettings, DeliveryOrder, ChangeWeightControl, DiscountOption };
 export { PaymentOptionsImmediately, NoticePopupOption, SetAllCancellationType, CurrencyChangeOption };
-export { EnableKeepUnitChange };
+export { EnableKeepUnitChange, Receipt, CustomerOrderPrint, KitchenOrderPrint, WaitingListTag };

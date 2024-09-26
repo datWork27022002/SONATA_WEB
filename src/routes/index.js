@@ -46,7 +46,9 @@ import { ShowItemBarcodeOption, RebateIssue, WeightBarcodeOption, TenderMethod }
 import { CashDrawerOpenTiming, PrepaymentFunctionButtonSetting, PrepaidOrderRetentionOptions } from '~/pages/Settings';
 import { DeliverySettings, DeliveryOrder, ChangeWeightControl, DiscountOption } from '~/pages/Settings';
 import { PaymentOptionsImmediately, NoticePopupOption, SetAllCancellationType } from '~/pages/Settings';
-import { CurrencyChangeOption, EnableKeepUnitChange } from '~/pages/Settings';
+import { CurrencyChangeOption, EnableKeepUnitChange, Receipt, CustomerOrderPrint } from '~/pages/Settings';
+import { KitchenOrderPrint, WaitingListTag } from '~/pages/Settings';
+import {} from '~/pages/Settings';
 import {} from '~/pages/Settings';
 import BIZSMS from '~/pages/BIZSMS';
 import WebLogin from '~/pages/WebLogin';
@@ -237,6 +239,10 @@ const settingsRoute = [
     { path: pathSettings.SET_ALL_CANCELLATION_TYPE, component: SetAllCancellationType },
     { path: pathSettings.CURRENCY_CHANGE_OPTION, component: CurrencyChangeOption },
     { path: pathSettings.ENABLE_KEEP_UNIT_CHANGE, component: EnableKeepUnitChange },
+    { path: pathSettings.RECEIPT, component: Receipt },
+    { path: pathSettings.CUSTOMER_ORDER_PRINT, component: CustomerOrderPrint },
+    { path: pathSettings.KITCHEN_ORDER_PRINT, component: KitchenOrderPrint },
+    { path: pathSettings.WAITING_LIST_TAG, component: WaitingListTag },
 ];
 
 export const publicRoute = [
