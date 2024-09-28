@@ -64,11 +64,6 @@ const pathPurchaseOrder = routes.PurchaseOrder;
 const pathSettings = routes.Settings;
 const pathWebLogin = routes.WebLogin;
 
-const commonRoute = [
-    { path: routes.HOME, component: Home, layout: DefaultLayout },
-    { path: routes.LOGIN, component: Login, layout: null },
-];
-
 const basicSettingsRoute = [
     { path: pathBasicSettings.GROUP_MANAGEMENT, component: GroupManagement },
     { path: pathBasicSettings.STORE_INFO, component: StoreInfo },
@@ -256,8 +251,9 @@ const webLoginRoute = [
     { path: pathWebLogin.SECURITY_LEVEL, component: SecurityLevel },
 ];
 
-export const publicRoute = [
-    ...commonRoute,
+export const publicRoutes = [{ path: routes.LOGIN, component: Login, layout: null }];
+
+export const privateRoutes = [
     ...basicSettingsRoute,
     ...managerFunctionRoute,
     ...customerRoute,
@@ -276,5 +272,5 @@ export const publicRoute = [
     { path: routes.BIZSMS.BIZSMS, component: BIZSMS },
     { path: routes.WebLogin.WEB_LOGIN, component: WebLogin },
     { path: routes.BOOKMARK, component: Bookmark },
+    { path: routes.HOME, component: Home, layout: DefaultLayout },
 ];
-export const privateRoute = [];

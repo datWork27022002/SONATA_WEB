@@ -1,7 +1,5 @@
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
-// eslint-disable-next-line no-unused-vars
-import { forwardRef } from 'react';
 
 import styles from './Input.module.scss';
 import IconCustom from '../IconCustom';
@@ -36,7 +34,7 @@ const Input = ({
     ComponentCustom,
     listOptions,
     seletedValue,
-    setSeletedValue,
+    setSeletedValue = () => {},
     ...passProps
 }) => {
     const Props = { ...passProps };
@@ -45,7 +43,7 @@ const Input = ({
 
     return (
         <div
-            className={cx('flex items-center py-2 text-[13px]', {
+            className={cx('mt-2 flex items-center text-[13px]', errolMesseage && 'mb-[20px]', {
                 [className]: className,
             })}
         >
@@ -64,72 +62,77 @@ const Input = ({
                     {label ? label : <IconCustom icon={labelIcon} />}
                 </label>
             )}
-            {!radioInput && !dropDown && !rangeTime && !custom && !checkboxInput && (
-                <div className={cx('flex flex-1 items-center')}>
-                    <Comp
-                        type={type}
-                        style={{ width: widthInput }}
-                        className={cx(
-                            'p-1',
-                            !widthInput && 'flex-1',
-                            borderBottom
-                                ? 'border-b-2 border-l-0 border-r-0 border-t-0 border-solid border-b-[#a8a8a8]'
-                                : 'rounded border-[1px] border-solid border-slate-400',
-                            disabled && 'bg-slate-100',
-                            textarea && 'h-16',
-                        )}
-                        disabled={disabled}
-                        value={seletedValue}
-                        onChange={setSeletedValue}
-                        {...Props}
-                    />
-
-                    {iconRightInput && (
-                        <div
+            <div className={cx('relative', !widthInput && 'flex-1')}>
+                {!radioInput && !dropDown && !rangeTime && !custom && !checkboxInput && (
+                    <div className={cx('flex flex-1 items-center')}>
+                        <Comp
+                            type={type}
+                            style={{ width: widthInput }}
                             className={cx(
-                                'z-10 ml-[-3px] h-[29px] w-[29px] rounded-r bg-gray-300',
-                                'flex items-center justify-center',
-                                'cursor-pointer hover:bg-primary-color',
+                                'p-1',
+                                !widthInput && 'flex-1',
+                                borderBottom
+                                    ? 'border-b-2 border-l-0 border-r-0 border-t-0 border-solid border-b-[#a8a8a8]'
+                                    : 'rounded border-[1px] border-solid border-slate-400',
+                                disabled && 'bg-slate-100',
+                                textarea && 'h-16',
                             )}
-                        >
-                            <IconCustom icon={iconRightInput} />
-                        </div>
-                    )}
-                </div>
-            )}
-            {(radioInput || dropDown || rangeTime || custom || checkboxInput) && (
-                <div className={cx('flex items-center', !widthInput && 'flex-1')} style={{ width: widthInput }}>
-                    {radioInput && (
-                        <RadioInput
-                            seletedRadio={seletedValue}
-                            setSeletedRadio={setSeletedValue}
-                            listOptions={listOptions}
-                            className={cx('flex-1')}
+                            disabled={disabled}
+                            value={seletedValue}
+                            onChange={(e) => setSeletedValue(e.target.value)}
+                            {...Props}
                         />
-                    )}
-                    {checkboxInput && (
-                        <CheckboxInput
-                            seletedValue={seletedValue}
-                            setSeletedValue={setSeletedValue}
-                            listOptions={listOptions}
-                            className={cx('flex-1')}
-                        />
-                    )}
-                    {dropDown && (
-                        <Dropdown
-                            listOptions={listOptions}
-                            seletedValue={seletedValue}
-                            setSeletedValue={setSeletedValue}
-                            className={cx('flex-1')}
-                        />
-                    )}
-                    {rangeTime && <RangeTime seletedValue={seletedValue} setSeletedValue={setSeletedValue} />}
 
-                    {custom && <ComponentCustom />}
-                </div>
-            )}
+                        {iconRightInput && (
+                            <div
+                                className={cx(
+                                    'z-10 ml-[-3px] h-[29px] w-[29px] rounded-r bg-gray-300',
+                                    'flex items-center justify-center',
+                                    'cursor-pointer hover:bg-primary-color',
+                                )}
+                            >
+                                <IconCustom icon={iconRightInput} />
+                            </div>
+                        )}
+                    </div>
+                )}
+                {(radioInput || dropDown || rangeTime || custom || checkboxInput) && (
+                    <div className={cx('flex items-center', !widthInput && 'flex-1')} style={{ width: widthInput }}>
+                        {radioInput && (
+                            <RadioInput
+                                seletedRadio={seletedValue}
+                                setSeletedRadio={setSeletedValue}
+                                listOptions={listOptions}
+                                className={cx('flex-1')}
+                            />
+                        )}
+                        {checkboxInput && (
+                            <CheckboxInput
+                                seletedValue={seletedValue}
+                                setSeletedValue={setSeletedValue}
+                                listOptions={listOptions}
+                                className={cx('flex-1')}
+                            />
+                        )}
+                        {dropDown && (
+                            <Dropdown
+                                listOptions={listOptions}
+                                seletedValue={seletedValue}
+                                setSeletedValue={setSeletedValue}
+                                className={cx('flex-1')}
+                            />
+                        )}
+                        {rangeTime && <RangeTime seletedValue={seletedValue} setSeletedValue={setSeletedValue} />}
 
-            {errolMesseage && <span className={cx('text-sm text-red-600')}>{errolMesseage}</span>}
+                        {custom && <ComponentCustom />}
+                    </div>
+                )}
+                {errolMesseage ? (
+                    <div className={cx('absolute bottom-[-20px] text-[12px] text-red-600')}>{errolMesseage}</div>
+                ) : (
+                    <div className={cx('h-6px]')}></div>
+                )}
+            </div>
         </div>
     );
 };
