@@ -5,5 +5,31 @@
         "StoreID": "Store ID",
         "UserID": "User ID",
         "Password": "Password"
+    },
+    "Header": {
+        "notice": "notice",
+        "search": "Search...",
+        "more": "More",
+        "select_store": "Select store",
+        "web_login": "Web login"
+    },
+    "Home": {
+        "Today": "Today",
+        "This_week": "This week",
+        "This_month": "This Month",
+        "Cash": "Cash",
+        "Credit_card": "Credit card",
+        "Gift_ard": "Gift card",
+        "Point": "Point",
+        "Others": "Others",
+        "Total": "Total",
+        "Discount": "Discount",
+        "Tip": "Tip",
+        "Tax": "Tax",
+        "Revenue": "Revenue",
+        "Date": "Date",
+        "Sales": "Sales",
+        "Quantity": "Quantity",
+        "Mothly_sales": "Mothly sales"
     }
 }

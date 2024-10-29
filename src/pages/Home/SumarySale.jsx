@@ -11,7 +11,7 @@ const cx = classNames.bind(styles);
 
 function SummarySale() {
     // eslint-disable-next-line no-unused-vars
-    const { t } = useTranslation('translation', { keyPrefix: 'login' });
+    const { t } = useTranslation('translation', { keyPrefix: 'Home' });
 
     const today = new Date();
 
@@ -26,7 +26,7 @@ function SummarySale() {
             )}
         >
             <div className={cx('rounded bg-secondnary-color px-2 py-[0.5px] text-text-color-secondnary')}>{title}</div>
-            <div className={cx('text-text-color-third flex min-h-12 flex-1 items-center justify-between text-xl')}>
+            <div className={cx('flex min-h-12 flex-1 items-center justify-between text-xl text-text-color-third')}>
                 <div className={cx('ml-2 flex')}>
                     <IconCustom icon={TbCurrencyDogecoin} />
                     <div className={cx('ml-1')}>{revenue}</div>
@@ -48,12 +48,12 @@ function SummarySale() {
                 <span className={cx('text-4xl text-[#436600]')}>{day}</span>
             </div>
             {/* Today */}
-            <CardSummarySale title={'Today'} revenue={'0,00'} quantity={2} />
+            <CardSummarySale title={t('Today')} revenue={'0,00'} quantity={2} />
 
             {/* This week */}
-            <CardSummarySale title={'This week'} revenue={'0,00'} quantity={0} />
+            <CardSummarySale title={t('This_week')} revenue={'0,00'} quantity={0} />
             {/* This Month */}
-            <CardSummarySale title={'This Month'} revenue={'0,00'} quantity={2} noBorder />
+            <CardSummarySale title={t('This_month')} revenue={'0,00'} quantity={2} noBorder />
         </div>
     );
 }

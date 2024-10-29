@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
+import { useTranslation } from 'react-i18next';
 import { FaRightToBracket, FaUserGear, FaHouse } from 'react-icons/fa6';
 import { MdZoomOutMap, MdMenu } from 'react-icons/md';
 
@@ -20,6 +21,7 @@ function Header() {
     const navigate = useNavigate();
     // eslint-disable-next-line no-unused-vars
     const [cookies, setCookie, removeCookie] = useCookies(['token']); // Lấy cookie
+    const { t } = useTranslation('translation', { keyPrefix: 'Header' });
 
     const handleShinkSidebar = () => {
         dispatch(updateShrinkSidebar());
@@ -53,7 +55,7 @@ function Header() {
                 {/* web login */}
                 <Link className={cx('item-card', 'card-left', 'max-sm:!hidden')} to={config.routes.WebLogin.WEB_LOGIN}>
                     <IconCustom icon={FaUserGear} />
-                    <div className={cx('ml-1', 'max-md:hidden')}> Web login</div>
+                    <div className={cx('ml-1', 'max-md:hidden')}>{t('web_login')}</div>
                 </Link>
             </div>
 

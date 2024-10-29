@@ -9,19 +9,19 @@ const cx = classNames.bind(styles);
 
 function DaySaleDetail() {
     // eslint-disable-next-line no-unused-vars
-    const { t } = useTranslation('translation', { keyPrefix: 'login' });
+    const { t } = useTranslation('translation', { keyPrefix: 'Home' });
 
     return (
-        <div className={cx('border-third-color mt-3 flex flex-col rounded border-2 border-solid', 'daySaleDetail')}>
+        <div className={cx('mt-3 flex flex-col rounded border-2 border-solid border-third-color', 'daySaleDetail')}>
             <div className={cx('bg-third-color py-1 pl-2 text-sm text-text-color-secondnary')}>01/08/2024</div>
             <div className={cx('flex justify-between px-3 text-sm font-thin text-[#6a6a6a]', 'max-lg:flex-col')}>
                 <ul className={cx('flex-1 lg:pr-4')}>
-                    {payment.map((value, index) => (
+                    {payment().map((value, index) => (
                         <li
                             key={index}
                             className={cx(
                                 'my-1 flex items-center justify-between py-1',
-                                'border-b-text-color-third border-b-[1px] border-solid',
+                                'border-b-[1px] border-solid border-b-text-color-third',
                             )}
                         >
                             <div className={cx('flex flex-1')}>
@@ -34,12 +34,12 @@ function DaySaleDetail() {
                     ))}
                 </ul>
                 <ul className={cx('flex-1 lg:pl-4')}>
-                    {sumamry.map((value, index) => (
+                    {sumamry().map((value, index) => (
                         <li
                             key={index}
                             className={cx(
                                 'my-1 flex items-center justify-between py-1',
-                                'border-b-text-color-third border-b-[1px] border-solid',
+                                'border-b-[1px] border-solid border-b-text-color-third',
                             )}
                         >
                             <div className={cx('flex flex-1')}>

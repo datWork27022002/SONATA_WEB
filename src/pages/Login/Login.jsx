@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
@@ -11,6 +12,7 @@ import Loading from '~/components/Loading';
 import config from '~/config';
 import validateData from '~/utils/validateData';
 import { handleLogin } from './LoginLogic';
+import { updateInforUser } from '~/redux/dataStoreSlice';
 
 const { language, routes, inputName, formValidate } = config;
 const { STORE_ID, USER_ID, PASSWORD } = inputName.login.formLogin;
@@ -26,6 +28,7 @@ function Login() {
     const [loading, setLoading] = useState(false);
 
     const { t, i18n } = useTranslation('translation', { keyPrefix: 'login' });
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     // eslint-disable-next-line no-unused-vars
     const [cookies, setCookies] = useCookies(['token']);
@@ -55,6 +58,9 @@ function Login() {
         if (!user) {
             return;
         }
+        user.isCEO = false;
+
+        dispatch(updateInforUser(user));
         setCookies('token', JSON.stringify(user), { path: '/', expires: new Date(Date.now() + 24 * 60 * 60 * 1000) });
         toast.success('login success');
         navigate(routes.HOME);

@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 function TableMonthlyGross() {
     // eslint-disable-next-line no-unused-vars
-    const { t } = useTranslation('translation', { keyPrefix: 'login' });
+    const { t } = useTranslation('translation', { keyPrefix: 'Home' });
 
     const data = [
         { date: '2024-07-29', gross: '$1,200', totalTicket: 100 },
@@ -30,18 +30,20 @@ function TableMonthlyGross() {
     return (
         <div
             className={cx(
-                'border-text-color-third mt-3 flex flex-1 flex-col rounded border-2 border-solid md:ml-4',
+                'mt-3 flex flex-1 flex-col rounded border-2 border-solid border-text-color-third md:ml-4',
                 'tableMonthlyGross',
             )}
         >
-            <div className={cx('bg-[#19bd9a] py-1 pl-2 text-sm text-text-color-secondnary')}>Mothly Gross</div>
+            <div className={cx('bg-[#19bd9a] py-1 pl-2 text-sm text-text-color-secondnary')}>{t('Mothly_sales')}</div>
             <div className={cx('h-[480px] w-full overflow-y-auto')}>
                 <table className={cx('w-full')}>
-                    <thead className={cx('bg-text-color-third sticky top-0 text-text-color-secondnary')}>
-                        <tr>
-                            <th className={cx('border-[1px] border-solid border-white p-2')}>Date</th>
-                            <th className={cx('border-[1px] border-solid border-white p-2')}>Gross</th>
-                            <th className={cx('border-[1px] border-solid border-white p-2')}>Total Ticket</th>
+                    <thead className={cx('sticky top-0 w-full bg-text-color-third text-text-color-secondnary')}>
+                        <tr className={cx('')}>
+                            <th className={cx('w-[40%] border-[1px] border-solid border-white p-2')}>{t('Date')}</th>
+                            <th className={cx('w-[40%] border-[1px] border-solid border-white p-2')}>{t('Sales')}</th>
+                            <th className={cx('w-[20%] border-[1px] border-solid border-white p-2')}>
+                                {t('Quantity')}
+                            </th>
                         </tr>
                     </thead>
                     <tbody>

@@ -5,5 +5,31 @@
         "StoreID": "매장 ID",
         "UserID": "사용자 ID",
         "Password": "비밀번호"
+    },
+    "Header": {
+        "notice": "공지",
+        "more": "더",
+        "select_store": "상점 선택",
+        "search": "찾다...",
+        "web_login": "웹 로그인"
+    },
+    "Home": {
+        "Today": "오늘",
+        "This_week": "이번 주",
+        "This_month": "이번 달",
+        "Cash": "현금",
+        "Credit_card": "신용카드",
+        "Gift_card": "선물 카드",
+        "Point": "포인트",
+        "Others": "기타",
+        "Total": "총계",
+        "Discount": "할인",
+        "Tip": "팁",
+        "Tax": "세금",
+        "Revenue": "수익",
+        "Date": "날짜",
+        "Sales": "판매",
+        "Quantity": "수량",
+        "Mothly_sales": "이번달 수익"
     }
 }

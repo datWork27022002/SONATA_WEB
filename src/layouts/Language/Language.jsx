@@ -13,7 +13,7 @@ function Language() {
     const { t, i18n } = useTranslation('translation', { keyPrefix: 'login' });
     const { shrinkSidebar } = useSelector((state) => state.theme);
 
-    const [selected, setSelected] = useState(-1);
+    const [selected, setSelected] = useState(0);
 
     const { language } = config;
 
@@ -25,15 +25,16 @@ function Language() {
     return (
         <div>
             {!shrinkSidebar && (
-                <ul className={cx('fixed bottom-2 left-1 z-10 flex max-md:hidden')}>
+                <ul className={cx('fixed bottom-2 z-10 flex w-[170px] justify-between px-2 max-md:hidden')}>
                     {Object.values(language).map((value, index) => (
                         <li
                             key={index}
                             className={cx(
-                                'rounded border-[1px] border-solid border-primary-color text-white',
-                                'mr-[0.5px] px-[2px] text-[10px]',
-                                'cursor-pointer hover:bg-primary-color',
-                                selected === index && 'bg-primary-color',
+                                'rounded-lg border-[1px] border-solid border-primary-color uppercase text-primary-color',
+                                'mr-[0.5px] px-2 py-1 text-[12px] font-bold',
+                                'cursor-pointer hover:bg-primary-color hover:text-white',
+                                'transition-all duration-300 ease-in-out',
+                                selected === index && 'bg-primary-color text-white',
                             )}
                             onClick={() => handleChangeLauage(index, value)}
                         >

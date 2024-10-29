@@ -5,5 +5,31 @@
         "StoreID": "ID cửa hàng",
         "UserID": "ID người dùng",
         "Password": "Mật khẩu"
+    },
+    "Header": {
+        "notice": "thông báo",
+        "more": "Xem thêm",
+        "select_store": "Chọn cửa hàng",
+        "search": "Tìm kiếm...",
+        "web_login": "Đăng nhập web"
+    },
+    "Home": {
+        "Today": "Hôm nay",
+        "This_week": "Tuần này",
+        "This_month": "Tháng này",
+        "Cash": "Tiền mặt",
+        "Credit_card": "Thẻ tín dụng",
+        "Gift_card": "Thẻ quà tặng",
+        "Point": "Điểm",
+        "Others": "Khác",
+        "Total": "Tổng",
+        "Discount": "Giảm giá",
+        "Tip": "Tiền tip",
+        "Tax": "Thuế",
+        "Revenue": "Doanh thu",
+        "Date": "Ngày",
+        "Sales": "Doanh số",
+        "Quantity": "Số lượng",
+        "Mothly_sales": "Doanh thu tháng này"
     }
 }
