@@ -1,6 +1,8 @@
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import React, { Fragment, useState } from 'react';
+import { useForm, FormProvider } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 import styles from '../Sidebar.module.scss';
 import Modal from '~/components/Modal';
@@ -8,12 +10,15 @@ import Input from '~/components/Input';
 import Button from '~/components/Button';
 import ChangePosPassword from './ChangePosPassword';
 import ChangeCloudPassword from './ChangeCloudPassword';
+import { SignInSchema } from '~/config/schema';
 
 const cx = classNames.bind(styles);
 
 function ModalInformationUser({ avatar, modalUser, setModalUser }) {
     const [modalChangePosPassword, setModalChangePosPassword] = useState(false);
     const [modalChangeCloudPassword, setModalChangeCloudPassword] = useState(false);
+
+    const methods = useForm({ resolver: zodResolver(SignInSchema) });
 
     const OpenModalChangePosPassword = () => {
         setModalChangePosPassword(true);

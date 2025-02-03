@@ -10,7 +10,7 @@ import { BiSolidFoodMenu } from 'react-icons/bi';
 
 import styles from './Sidebar.module.scss';
 import IconCustom from '~/components/IconCustom';
-import ModalInformationUser from './ModalInformationUser';
+//import ModalInformationUser from './ModalInformationUser';
 import config from '~/config';
 import { updateVisibleSidebar } from '~/redux/themeSlice';
 
@@ -32,7 +32,7 @@ const menus = [
 
 function Sidebar() {
     const [avatar, setAvatar] = useState(null);
-    const [modalUser, setModalUser] = useState(false);
+    // const [modalUser, setModalUser] = useState(false);
 
     const dispatch = useDispatch();
     const { shrinkSidebar, visibleSidebar } = useSelector((state) => state.theme);
@@ -58,7 +58,7 @@ function Sidebar() {
     };
 
     const OpenModalUser = () => {
-        setModalUser(true);
+        // setModalUser(true);
     };
 
     return (
@@ -135,7 +135,7 @@ function Sidebar() {
                 </ul>
             </div>
 
-            <ModalInformationUser avatar={avatar} modalUser={modalUser} setModalUser={setModalUser} />
+            {/* <ModalInformationUser avatar={avatar} modalUser={modalUser} setModalUser={setModalUser} /> */}
         </Fragment>
     );
 }

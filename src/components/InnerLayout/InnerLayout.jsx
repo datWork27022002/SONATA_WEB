@@ -45,7 +45,7 @@ const InnerLayout = ({ title, menuStructure }) => {
                 <ul
                     className={cx(
                         'mt-4 flex text-text-color-fourth',
-                        'max-w-[950px] flex-wrap border-b-[1px] border-solid border-b-[#ddd]',
+                        'flex-wrap border-b-[1px] border-solid border-b-[#ddd]',
                     )}
                 >
                     {menuCategories.map((value, index) => (
@@ -53,7 +53,7 @@ const InnerLayout = ({ title, menuStructure }) => {
                     ))}
                 </ul>
             )}
-            <ul className={cx('mt-6 flex max-w-[950px] flex-wrap text-primary-color', 'max-md:justify-center')}>
+            <ul className={cx('mt-6 flex flex-wrap text-primary-color', 'max-md:justify-center')}>
                 {listItem.map((value, index) => (
                     <CardItem key={index} item={value} />
                 ))}

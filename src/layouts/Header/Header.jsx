@@ -19,8 +19,8 @@ const cx = classNames.bind(styles);
 function Header() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    // eslint-disable-next-line no-unused-vars
-    const [cookies, setCookie, removeCookie] = useCookies(['token']); // Lấy cookie
+
+    const [, , removeCookie] = useCookies(['token']); // Lấy cookie
     const { t } = useTranslation('translation', { keyPrefix: 'Header' });
 
     const handleShinkSidebar = () => {

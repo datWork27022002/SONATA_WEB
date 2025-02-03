@@ -18,6 +18,7 @@ const validateData = async (schema, formData, setErrors) => {
             return acc;
         }, {});
         setErrors(formattedErrors);
+        console.log('hello', formattedErrors);
         return false;
     }
 };

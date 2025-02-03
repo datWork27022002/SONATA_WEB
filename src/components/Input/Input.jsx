@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
+import { useFormContext } from 'react-hook-form';
 
 import styles from './Input.module.scss';
 import IconCustom from '../IconCustom';
@@ -7,43 +8,58 @@ import RadioInput from './RadioInput';
 import Dropdown from './DropDown';
 import RangeTime from './RangeTime';
 import CheckboxInput from './CheckboxInput';
+import { formatNumberWithDots } from '~/utils/common';
 
 const cx = classNames.bind(styles);
 
 const Input = ({
-    label,
     labelIcon,
-    errolMesseage,
     icon,
     iconRightInput,
-    textarea,
     radioInput,
     checkboxInput,
     dropDown,
     rangeTime,
-    borderBottom,
     paddingLabel,
     boldLabel,
     widthInput,
-    type = 'text',
-    className,
     labelClassName,
-    disabled,
-    required,
     custom,
     ComponentCustom,
-    listOptions,
-    seletedValue,
-    setSeletedValue = () => {},
+    name,
+    placeholder = '',
+    typeCustom,
+    required,
+    label,
+    disabled = false,
+    className,
+    inputClassName,
+    listOptions = [],
+    type = '',
+    top = false,
     ...passProps
 }) => {
     const Props = { ...passProps };
 
-    const Comp = textarea ? 'textarea' : 'input';
+    const {
+        register,
+        formState: { errors },
+        watch,
+        setValue,
+    } = useFormContext();
+
+    const error = errors[name]?.message;
+
+    const handleValidate = () => {
+        if (typeCustom === 'number') {
+            const newValue = formatNumberWithDots(watch(name));
+            setValue(name, newValue);
+        }
+    };
 
     return (
         <div
-            className={cx('mt-2 flex items-center text-[13px]', errolMesseage && 'mb-[20px]', {
+            className={cx('mt-2 flex items-center text-[13px]', error && 'mb-[20px]', {
                 [className]: className,
             })}
         >
@@ -65,21 +81,26 @@ const Input = ({
             <div className={cx('relative', !widthInput && 'flex-1')}>
                 {!radioInput && !dropDown && !rangeTime && !custom && !checkboxInput && (
                     <div className={cx('flex flex-1 items-center')}>
-                        <Comp
+                        <input
+                            autoComplete={name}
+                            id={name}
                             type={type}
+                            {...register(name, { onChange: handleValidate })}
+                            placeholder={placeholder}
                             style={{ width: widthInput }}
+                            required={required}
+                            disabled={disabled}
                             className={cx(
                                 'p-1',
                                 !widthInput && 'flex-1',
-                                borderBottom
-                                    ? 'border-b-2 border-l-0 border-r-0 border-t-0 border-solid border-b-[#a8a8a8]'
-                                    : 'rounded border-[1px] border-solid border-slate-400',
+                                // borderBottom
+                                //     ? 'border-b-2 border-l-0 border-r-0 border-t-0 border-solid border-b-[#a8a8a8]'
+                                //     : 'rounded border-[1px] border-solid border-slate-400',
+                                'rounded border-[1px] border-solid border-slate-400',
                                 disabled && 'bg-slate-100',
-                                textarea && 'h-16',
+                                error && '!border-red-500',
+                                { [inputClassName]: inputClassName },
                             )}
-                            disabled={disabled}
-                            value={seletedValue}
-                            onChange={(e) => setSeletedValue(e.target.value)}
                             {...Props}
                         />
 
@@ -98,37 +119,16 @@ const Input = ({
                 )}
                 {(radioInput || dropDown || rangeTime || custom || checkboxInput) && (
                     <div className={cx('flex items-center', !widthInput && 'flex-1')} style={{ width: widthInput }}>
-                        {radioInput && (
-                            <RadioInput
-                                seletedRadio={seletedValue}
-                                setSeletedRadio={setSeletedValue}
-                                listOptions={listOptions}
-                                className={cx('flex-1')}
-                            />
-                        )}
-                        {checkboxInput && (
-                            <CheckboxInput
-                                seletedValue={seletedValue}
-                                setSeletedValue={setSeletedValue}
-                                listOptions={listOptions}
-                                className={cx('flex-1')}
-                            />
-                        )}
-                        {dropDown && (
-                            <Dropdown
-                                listOptions={listOptions}
-                                seletedValue={seletedValue}
-                                setSeletedValue={setSeletedValue}
-                                className={cx('flex-1')}
-                            />
-                        )}
-                        {rangeTime && <RangeTime seletedValue={seletedValue} setSeletedValue={setSeletedValue} />}
+                        {radioInput && <RadioInput listOptions={listOptions} className={cx('flex-1')} />}
+                        {checkboxInput && <CheckboxInput listOptions={listOptions} className={cx('flex-1')} />}
+                        {dropDown && <Dropdown listOptions={listOptions} className={cx('flex-1')} />}
+                        {rangeTime && <RangeTime />}
 
                         {custom && <ComponentCustom />}
                     </div>
                 )}
-                {errolMesseage ? (
-                    <div className={cx('absolute bottom-[-20px] text-[12px] text-red-600')}>{errolMesseage}</div>
+                {error ? (
+                    <div className={cx('absolute bottom-[-20px] text-[12px] text-red-600')}>{error}</div>
                 ) : (
                     <div className={cx('h-6px]')}></div>
                 )}
@@ -147,17 +147,18 @@ Input.propTypes = {
     disabled: PropTypes.bool,
     icon: PropTypes.func,
     iconRightInput: PropTypes.func,
-    borderBottom: PropTypes.bool,
     required: PropTypes.bool,
     radioInput: PropTypes.bool,
     checkboxInput: PropTypes.bool,
     dropDown: PropTypes.bool,
     rangeTime: PropTypes.bool,
     listOptions: PropTypes.array,
-    setSeletedValue: PropTypes.func,
-    textarea: PropTypes.bool,
     custom: PropTypes.bool,
     ComponentCustom: PropTypes.func,
+    name: PropTypes.string,
+    placeholder: PropTypes.string,
+    typeCustom: PropTypes.string,
+    inputClassName: PropTypes.string,
 };
 
 export default Input;

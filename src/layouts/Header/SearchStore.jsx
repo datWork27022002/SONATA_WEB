@@ -8,7 +8,7 @@ import Tippy from '@tippyjs/react/headless';
 
 import styles from './Header.module.scss';
 import IconCustom from '~/components/IconCustom';
-import { handleLogicGetStores, removeDiacritics } from '~/utils/handleLogic';
+import { removeDiacritics } from '~/utils/handleLogic';
 import { updateStores } from '~/redux/dataStoreSlice';
 
 const cx = classNames.bind(styles);
@@ -70,8 +70,8 @@ function SearchStore() {
     );
 
     const handeGetStores = async () => {
-        const res = await handleLogicGetStores();
-
+        //const res = await handleLogicGetStores();
+        const res = null;
         if (!res) return;
         dispatch(updateStores(res));
 

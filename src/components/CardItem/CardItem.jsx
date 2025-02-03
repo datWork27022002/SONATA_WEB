@@ -13,11 +13,16 @@ const CardItem = ({ item }) => {
     const handleClickMark = (e, item) => {
         e.stopPropagation(); // Ngăn không cho sự kiện nổi lên thẻ bên ngoài
     };
+
+    const Comp = item.active ? Link : 'div';
     return (
-        <Link
+        <Comp
             className={cx(
-                'mb-3 mr-3 h-[110px] w-[135px] cursor-pointer border-2 border-solid border-primary-color',
-                'relative flex flex-col rounded hover:translate-y-[-1px] hover:opacity-70 hover:shadow-xl',
+                'relative mb-3 mr-3 h-[110px] w-[135px] cursor-pointer border-2 border-solid border-primary-color',
+                'relative flex flex-col rounded',
+                item.active && 'hover:translate-y-[-1px] hover:opacity-70 hover:shadow-xl',
+                !item.active && '!cursor-not-allowed',
+                'transition-all duration-300 ease-in-out',
                 'CardItem',
             )}
             to={item.to}
@@ -39,7 +44,8 @@ const CardItem = ({ item }) => {
             >
                 {item.name}
             </div>
-        </Link>
+            <div className={cx('absolute h-full w-full bg-red-500 opacity-40', item.active && 'hidden')}></div>
+        </Comp>
     );
 };
 

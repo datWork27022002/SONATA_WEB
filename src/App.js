@@ -47,9 +47,13 @@ function App() {
                                 key={index}
                                 path={route.path}
                                 element={
-                                    <Layout>
-                                        <Page />
-                                    </Layout>
+                                    token ? (
+                                        <Layout>
+                                            <Page />
+                                        </Layout>
+                                    ) : (
+                                        <Navigate to={config.routes.LOGIN} replace /> // Chuyển hướng đến trang đăng nhập
+                                    )
                                 }
                             />
                         );
