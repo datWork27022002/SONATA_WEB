@@ -5,13 +5,25 @@ const httpRequest = axios.create({
 });
 
 export const get = async (path, options = {}) => {
-    const response = await httpRequest.get(path, options);
-    return response.data;
+    const response = await httpRequest
+        .get(path, options)
+        .then((res) => res.data)
+        .catch((err) => {
+            console.log('err', err?.response?.data);
+            return null;
+        });
+    return response;
 };
 
-export const post = async (path, data = {}) => {
-    const response = await httpRequest.post(path, data);
-    return response.data;
+export const post = async (path, data = {}, options = {}) => {
+    const response = await httpRequest
+        .post(path, data, options)
+        .then((res) => res.data)
+        .catch((err) => {
+            console.log('err', err?.response?.data);
+            return null;
+        });
+    return response;
 };
 
 export default httpRequest;

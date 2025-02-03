@@ -47,16 +47,19 @@ function App() {
                                 key={index}
                                 path={route.path}
                                 element={
-                                    token ? (
-                                        <Layout>
-                                            <Page />
-                                        </Layout>
-                                    ) : (
-                                        <Navigate to={config.routes.LOGIN} replace /> // Chuyển hướng đến trang đăng nhập
-                                    )
+                                    <Layout>
+                                        <Page />
+                                    </Layout>
                                 }
                             />
                         );
+                        // token ? (
+                        //     <Layout>
+                        //         <Page />
+                        //     </Layout>
+                        // ) : (
+                        //     <Navigate to={config.routes.LOGIN} replace /> // Chuyển hướng đến trang đăng nhập
+                        // )
                     })}
                 </Routes>
             </div>
