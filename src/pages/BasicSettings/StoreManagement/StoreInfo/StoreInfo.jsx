@@ -33,7 +33,7 @@ function StoreInfo() {
     const columnsDetail = [
         {
             name: 'Store Name',
-            selector: (row) => row.storeName,
+            selector: (row) => row?.name,
             sortable: true,
         },
         {

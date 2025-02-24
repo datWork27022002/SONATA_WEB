@@ -23,7 +23,7 @@ function SupplierSetting() {
 
     const dataTableDetail = [];
     const columnsDetail = [
-        { name: 'Vendor Name', selector: (row) => row.storeName, sortable: true },
+        { name: 'Vendor Name', selector: (row) => row?.name, sortable: true },
         { name: 'Phone Number', selector: (row) => row.type, sortable: true },
     ];
     const dataDetail = dataTableDetail.map((value, index) => ({ ...value, id: index + 1 }));

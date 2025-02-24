@@ -1,31 +1,54 @@
 import classNames from 'classnames/bind';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { startOfMonth } from 'date-fns';
+import { useSelector } from 'react-redux';
 
+import Loading from '~/components/Loading';
+import { getRevenueService } from '~/services/SaleBillService';
+import useCallApiPrivate from '~/hooks/useCallApiPrivate';
+import { formatNumberWithDots } from '~/utils/common';
 import styles from './Home.module.scss';
 
 const cx = classNames.bind(styles);
 
-function TableMonthlyGross() {
-    // eslint-disable-next-line no-unused-vars
+function TableMonthlyGross({ currentDayRevenue, setCurrentDayRevenue }) {
+    const [revenues, setRevenues] = useState([]);
+    const [loading, setLoading] = useState(false);
+
     const { t } = useTranslation('translation', { keyPrefix: 'Home' });
 
-    const data = [
-        { date: '2024-07-29', gross: '$1,200', totalTicket: 100 },
-        { date: '2024-07-28', gross: '$1,500', totalTicket: 120 },
-        { date: '2024-07-27', gross: '$900', totalTicket: 80 },
-        { date: '2024-07-29', gross: '$1,200', totalTicket: 100 },
-        { date: '2024-07-28', gross: '$1,500', totalTicket: 120 },
-        { date: '2024-07-27', gross: '$900', totalTicket: 80 },
-        { date: '2024-07-29', gross: '$1,200', totalTicket: 100 },
-        { date: '2024-07-28', gross: '$1,500', totalTicket: 120 },
-        { date: '2024-07-27', gross: '$900', totalTicket: 80 },
-        { date: '2024-07-29', gross: '$1,200', totalTicket: 100 },
-        { date: '2024-07-28', gross: '$1,500', totalTicket: 120 },
-        { date: '2024-07-27', gross: '$900', totalTicket: 80 },
-        { date: '2024-07-29', gross: '$1,200', totalTicket: 100 },
-        { date: '2024-07-28', gross: '$1,500', totalTicket: 120 },
-        { date: '2024-07-27', gross: '$900', totalTicket: 80 },
-    ];
+    const { selectedStore } = useSelector((state) => state.dataStore);
+
+    const callApi = useCallApiPrivate();
+
+    const handleGetRevenue = async () => {
+        const today = new Date();
+        const firstDayOfMonth = startOfMonth(today).toLocaleDateString();
+        const formattedToday = today.toLocaleDateString();
+        const params = {
+            cycle: 'Date',
+            startDate: firstDayOfMonth,
+            endDate: formattedToday,
+        };
+
+        setLoading(true);
+        const res = await callApi(getRevenueService, params);
+        setLoading(false);
+        if (!res) return;
+        res?.data.forEach((value) => {
+            value.date = value.saleDate.split('T')[0];
+            value.amount = value.totalAmount;
+            value.customerQuantity = value.totalCustomer;
+        });
+        setCurrentDayRevenue(res?.data[0]);
+        setRevenues(res?.data);
+    };
+
+    useEffect(() => {
+        handleGetRevenue();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [selectedStore]);
 
     return (
         <div
@@ -47,18 +70,26 @@ function TableMonthlyGross() {
                         </tr>
                     </thead>
                     <tbody>
-                        {data.map((row, index) => (
-                            <tr key={index}>
+                        {revenues.map((row, index) => (
+                            <tr
+                                key={index}
+                                onClick={() => setCurrentDayRevenue(row)}
+                                className={cx(currentDayRevenue.date === row.date && 'bg-blue-500')}
+                            >
                                 <td className={cx('border-[1px] border-solid border-gray-300 p-2')}>{row.date}</td>
-                                <td className={cx('border-[1px] border-solid border-gray-300 p-2')}>{row.gross}</td>
                                 <td className={cx('border-[1px] border-solid border-gray-300 p-2')}>
-                                    {row.totalTicket}
+                                    {formatNumberWithDots(row.amount) + 'đ'}
+                                </td>
+                                <td className={cx('border-[1px] border-solid border-gray-300 p-2')}>
+                                    {row.customerQuantity}
                                 </td>
                             </tr>
                         ))}
                     </tbody>
                 </table>
             </div>
+
+            {loading && <Loading />}
         </div>
     );
 }

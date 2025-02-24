@@ -25,7 +25,7 @@ function Language() {
     return (
         <div>
             {!shrinkSidebar && (
-                <ul className={cx('fixed bottom-2 z-10 flex w-[170px] justify-between px-2 max-md:hidden')}>
+                <ul className={cx('w-sidebar fixed bottom-2 z-10 flex justify-between px-2 max-md:hidden')}>
                     {Object.values(language).map((value, index) => (
                         <li
                             key={index}

@@ -67,10 +67,10 @@ function Sidebar() {
                 className={cx(
                     'fixed bg-fifth-color text-text-color-secondnary sm:h-screen',
                     'z-10 flex flex-col items-center',
-                    'transition duration-300',
+                    'transition-all duration-300 ease-in-out',
                     'max-sm:fixed max-sm:top-10 max-sm:w-screen',
                     'max-lg:min-w[200px]',
-                    shrinkSidebar ? 'min-w-[70px]' : 'min-w-[170px]',
+                    shrinkSidebar ? 'w-sidebar-shrink' : 'w-sidebar',
                     !visibleSidebar && 'max-sm:translate-x-[-125%]',
                 )}
             >
@@ -84,7 +84,7 @@ function Sidebar() {
                 </Link>
 
                 {/* infor User */}
-                <div className={cx('flex flex-col items-center pt-9', 'max-sm:hidden')}>
+                {/* <div className={cx('flex flex-col items-center pt-9', 'max-sm:hidden')}>
                     <input
                         type="file"
                         accept="image/*"
@@ -110,25 +110,26 @@ function Sidebar() {
                             </div>
                         </Fragment>
                     )}
-                </div>
+                </div> */}
 
                 {/* menu */}
-                <ul className={cx('w-full')}>
+                <ul className={cx('mt-10 w-full px-2')}>
                     {menus.map((item, index) => (
                         <li key={index}>
                             <Link
                                 onClick={hideSideBar}
                                 to={item.to}
                                 className={cx(
-                                    'flex items-center py-3 pl-2',
-                                    'hover:bg-background-color hover:text-primary-color',
+                                    'flex items-center gap-4 rounded-lg py-3 pl-2 text-[14px] font-medium',
+                                    'hover:bg-neutral-500',
                                     shrinkSidebar && 'justify-center',
                                     'max-md:border-b max-md:border-solid max-md:border-b-white',
                                     'border-solid border-fifth-color md:border',
+                                    'transition-all duration-300 ease-in-out',
                                 )}
                             >
-                                <IconCustom icon={item.icon} size={22} className={cx('mr-2')} />
-                                {!shrinkSidebar && item.name}
+                                <IconCustom icon={item.icon} size={22} className={cx('flex-none')} />
+                                <span className={cx(shrinkSidebar && 'hidden')}>{item.name}</span>
                             </Link>
                         </li>
                     ))}

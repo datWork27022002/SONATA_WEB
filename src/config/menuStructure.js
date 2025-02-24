@@ -60,7 +60,7 @@ const menuStructure = {
                 active: false,
             },
             { name: 'Store Info', icon: FaStore, to: BasicSettings.STORE_INFO, mark: false, active: false },
-            { name: 'Store List', icon: TbHomeSearch, to: BasicSettings.STORE_LIST, mark: false, active: false },
+            { name: 'Store List', icon: TbHomeSearch, to: BasicSettings.STORE_LIST, mark: false, active: true },
             {
                 name: 'Warehouse Management',
                 icon: FaWarehouse,
@@ -106,7 +106,7 @@ const menuStructure = {
                 active: false,
             },
             { name: 'Sub Menu', icon: GiHamburger, to: BasicSettings.SUB_MENU, mark: false, active: false },
-            { name: 'Menu Search', icon: RiMenuSearchFill, to: BasicSettings.MENU_SEARCH, mark: true },
+            { name: 'Menu Search', icon: RiMenuSearchFill, to: BasicSettings.MENU_SEARCH, mark: true, active: true },
             {
                 name: 'Inventory Item Search',
                 icon: MdOutlineContentPasteSearch,

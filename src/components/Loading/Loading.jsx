@@ -19,7 +19,7 @@ function Loading() {
     return (
         <div
             className={cx(
-                'fixed right-0 top-0 z-20 flex h-full w-full items-center justify-center bg-black opacity-70',
+                'fixed left-0 top-0 z-20 flex h-screen w-screen items-center justify-center bg-black opacity-40',
             )}
         >
             <div className="loader">

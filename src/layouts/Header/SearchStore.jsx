@@ -9,13 +9,15 @@ import Tippy from '@tippyjs/react/headless';
 import styles from './Header.module.scss';
 import IconCustom from '~/components/IconCustom';
 import { removeDiacritics } from '~/utils/handleLogic';
-import { updateStores } from '~/redux/dataStoreSlice';
+import { getListStore } from '~/services/StoreService';
+import { updateStores, updateSelectedStore } from '~/redux/dataStoreSlice';
+import useCallApiPrivate from '~/hooks/useCallApiPrivate';
 
 const cx = classNames.bind(styles);
 
 function SearchStore() {
     const [stores, setStores] = useState([]);
-    const [store, setStore] = useState(stores[0] || '');
+    const [store, setStore] = useState({});
     const [visibleStore, setVisibleStore] = useState(false);
 
     const [value, setValue] = useState('');
@@ -24,16 +26,21 @@ function SearchStore() {
     const dispatch = useDispatch();
     const { t } = useTranslation('translation', { keyPrefix: 'Header' });
 
+    const callApi = useCallApiPrivate();
+
     const handleChange = (e) => {
         setValue(e.target.value);
         const newListStore = stores.filter((item) =>
-            removeDiacritics(item.storeName).includes(removeDiacritics(e.target.value)),
+            removeDiacritics(item?.name).includes(removeDiacritics(e.target.value)),
         );
         setListVisibleStore(newListStore);
     };
 
     const handleClickStore = (item) => {
+        setValue('');
+        setListVisibleStore(stores);
         setStore(item);
+        dispatch(updateSelectedStore(item));
         openPopupChooseStore();
     };
 
@@ -60,9 +67,9 @@ function SearchStore() {
                     <li
                         key={index}
                         className={cx('cursor-pointer p-2 hover:bg-primary-color')}
-                        onClick={() => handleClickStore(item.storeName)}
+                        onClick={() => handleClickStore(item)}
                     >
-                        {item.storeName}
+                        {item.name}
                     </li>
                 ))}
             </ul>
@@ -70,14 +77,14 @@ function SearchStore() {
     );
 
     const handeGetStores = async () => {
-        //const res = await handleLogicGetStores();
-        const res = null;
+        const res = (await callApi(getListStore, {}))?.data;
         if (!res) return;
+        res.unshift({ StoreCode: '0', name: 'All' });
         dispatch(updateStores(res));
-
+        dispatch(updateSelectedStore(res[0]));
         setStores(res);
         setListVisibleStore(res);
-        setStore(res[0].storeName);
+        setStore(res[0]);
     };
 
     useEffect(() => {
@@ -97,7 +104,7 @@ function SearchStore() {
                 <div onClick={openPopupChooseStore} className={cx('item-card', 'card-left')}>
                     <IconCustom icon={FaStore} />
                     <span className={cx('max-md:hidden')}>{t('select_store') + '('}</span>
-                    <span className={cx('ml-1')}> {`${store}`}</span>
+                    <span className={cx('ml-1')}> {`${store?.name}`}</span>
                     <span className={cx('max-md:hidden')}>{')'}</span>
                     <IconCustom icon={IoIosArrowDown} />
                 </div>

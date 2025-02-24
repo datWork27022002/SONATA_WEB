@@ -15,7 +15,13 @@ function DefaultLayout({ children }) {
     return (
         <div className={cx('relative')}>
             <Sidebar />
-            <div className={cx('relative', shrinkSidebar ? 'sm:ml-[70px]' : 'sm:ml-[170px]')}>
+            <div
+                className={cx(
+                    'relative',
+                    'transition-all duration-300 ease-in-out',
+                    shrinkSidebar ? 'sm:ml-sidebar-shrink' : 'sm:ml-sidebar',
+                )}
+            >
                 <Header />
                 <div className={cx('max-lg:mb-4')}>{children}</div>
             </div>

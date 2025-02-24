@@ -23,6 +23,18 @@ module.exports = {
                 'default-layout-header-height': '--default-layout-header-height',
                 'height-chatAI': '--height-chatAI',
             },
+            width: {
+                sidebar: 'var(--width-sidebar)',
+                'sidebar-shrink': 'var(--width-sidebar-shrink)',
+            },
+            padding: {
+                sidebar: 'var(--width-sidebar)',
+                'sidebar-shrink': 'var(--width-sidebar-shrink)',
+            },
+            margin: {
+                sidebar: 'var(--width-sidebar)',
+                'sidebar-shrink': 'var(--width-sidebar-shrink)',
+            },
         },
     },
     plugins: [],

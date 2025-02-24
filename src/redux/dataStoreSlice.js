@@ -3,18 +3,18 @@ const dataStoreSlice = createSlice({
     name: 'dataStore',
     initialState: {
         stores: [],
+        selectedStore: {},
         POSs: [{ posName: 'All' }],
         inforUser: {},
     },
     reducers: {
         updateStores: (state, action) => {
-            const stores = action.payload.filter((value) => value.storeCode === state.inforUser.storeID);
+            const stores = action.payload.filter((value) => value.StoreCode === state.inforUser.storeID);
 
-            if (state.inforUser.isCEO === true) {
-                state.stores = [{ storeCode: 'All', storeName: 'All' }, ...action.payload];
-            } else {
-                state.stores = stores;
-            }
+            state.stores = stores;
+        },
+        updateSelectedStore: (state, action) => {
+            state.selectedStore = action.payload;
         },
         updatePOSs: (state, action) => {
             state.POSs = [{ posName: 'All' }, ...action.payload];
@@ -25,6 +25,6 @@ const dataStoreSlice = createSlice({
     },
 });
 
-export const { updateStores, updatePOSs, updateInforUser } = dataStoreSlice.actions;
+export const { updateStores, updatePOSs, updateInforUser, updateSelectedStore } = dataStoreSlice.actions;
 
 export default dataStoreSlice.reducer;
