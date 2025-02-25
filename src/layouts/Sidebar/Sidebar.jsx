@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import React, { useState, useRef, Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import { FaBookBookmark, FaScrewdriverWrench, FaUser, FaChartBar, FaCommentSms } from 'react-icons/fa6';
@@ -18,21 +19,22 @@ const cx = classNames.bind(styles);
 
 const { routes } = config;
 
-const menus = [
-    { to: routes.BOOKMARK, name: 'Bookmark', icon: FaBookBookmark },
-    { to: routes.BasicSettings.BASICSETTINGS, name: 'Basic Settings', icon: FaScrewdriverWrench },
-    { to: routes.ManagerFunction.MANAGERFUNCTION, name: 'Manager Function', icon: PiProjectorScreenChartFill },
-    { to: routes.Customer.CUSTOMER, name: 'Customer', icon: FaUser },
-    { to: routes.OperationReports.OPERATIONREPORTS, name: 'Operation Reports', icon: TbReport },
-    { to: routes.SaleReports.SALEREPORTS, name: 'Sale Reports', icon: FaChartBar },
-    { to: routes.PurchaseOrder.PURCHASEORDER, name: 'Purchase Order', icon: BiSolidFoodMenu },
-    { to: routes.Settings.SETTINGS, name: 'Settings', icon: TbSettings },
-    { to: routes.BIZSMS.BIZSMS, name: 'BIZ SMS', icon: FaCommentSms },
-];
-
 function Sidebar() {
     const [avatar, setAvatar] = useState(null);
-    // const [modalUser, setModalUser] = useState(false);
+
+    const { t } = useTranslation('translation', { keyPrefix: 'SideBar' });
+
+    const menus = [
+        { to: routes.BOOKMARK, name: t('Bookmark'), icon: FaBookBookmark },
+        { to: routes.BasicSettings.BASICSETTINGS, name: t('Basic_Settings'), icon: FaScrewdriverWrench },
+        { to: routes.ManagerFunction.MANAGERFUNCTION, name: t('Manager_Function'), icon: PiProjectorScreenChartFill },
+        { to: routes.Customer.CUSTOMER, name: t('Customer'), icon: FaUser },
+        { to: routes.OperationReports.OPERATIONREPORTS, name: t('Operation_Reports'), icon: TbReport },
+        { to: routes.SaleReports.SALEREPORTS, name: t('Sale_Reports'), icon: FaChartBar },
+        { to: routes.PurchaseOrder.PURCHASEORDER, name: t('Purchase_Order'), icon: BiSolidFoodMenu },
+        { to: routes.Settings.SETTINGS, name: t('Settings'), icon: TbSettings },
+        { to: routes.BIZSMS.BIZSMS, name: t('BIZ_SMS'), icon: FaCommentSms },
+    ];
 
     const dispatch = useDispatch();
     const { shrinkSidebar, visibleSidebar } = useSelector((state) => state.theme);

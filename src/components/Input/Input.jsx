@@ -58,81 +58,74 @@ const Input = ({
     };
 
     return (
-        <div
-            className={cx('mt-2 flex items-center text-[13px]', error && 'mb-[20px]', {
-                [className]: className,
-            })}
-        >
-            {/* icon left input */}
-            {icon && <IconCustom icon={icon} className={cx('mr-2 text-sm')} />}
-            {/* label */}
-            {(label || labelIcon) && (
-                <label
-                    className={cx(
-                        paddingLabel ? 'pr-2' : 'mr-2 w-24',
-                        required && 'font-semibold text-red-600',
-                        boldLabel && 'font-semibold',
-                        { [labelClassName]: labelClassName },
-                    )}
-                >
-                    {label ? label : <IconCustom icon={labelIcon} />}
-                </label>
-            )}
-            <div className={cx('relative', !widthInput && 'flex-1')}>
-                {!radioInput && !dropDown && !rangeTime && !custom && !checkboxInput && (
-                    <div className={cx('flex flex-1 items-center')}>
-                        <input
-                            autoComplete={name}
-                            id={name}
-                            type={type}
-                            {...register(name, { onChange: handleValidate })}
-                            placeholder={placeholder}
-                            style={{ width: widthInput }}
-                            required={required}
-                            disabled={disabled}
-                            className={cx(
-                                'p-1',
-                                !widthInput && 'flex-1',
-                                // borderBottom
-                                //     ? 'border-b-2 border-l-0 border-r-0 border-t-0 border-solid border-b-[#a8a8a8]'
-                                //     : 'rounded border-[1px] border-solid border-slate-400',
-                                'rounded border-[1px] border-solid border-slate-400',
-                                disabled && 'bg-slate-100',
-                                error && '!border-red-500',
-                                { [inputClassName]: inputClassName },
-                            )}
-                            {...Props}
-                        />
-
-                        {iconRightInput && (
-                            <div
-                                className={cx(
-                                    'z-10 ml-[-3px] h-[29px] w-[29px] rounded-r bg-gray-300',
-                                    'flex items-center justify-center',
-                                    'cursor-pointer hover:bg-primary-color',
-                                )}
-                            >
-                                <IconCustom icon={iconRightInput} />
-                            </div>
+        <div>
+            <div className={cx('flex items-center', { [className]: className })}>
+                {/* label */}
+                {(label || labelIcon) && (
+                    <label
+                        className={cx(
+                            paddingLabel ? 'pr-2' : 'mr-2 w-24',
+                            required && 'font-semibold text-red-600',
+                            boldLabel && 'font-semibold',
+                            { [labelClassName]: labelClassName },
                         )}
-                    </div>
+                    >
+                        {label ? label : <IconCustom icon={labelIcon} />}
+                    </label>
                 )}
-                {(radioInput || dropDown || rangeTime || custom || checkboxInput) && (
-                    <div className={cx('flex items-center', !widthInput && 'flex-1')} style={{ width: widthInput }}>
-                        {radioInput && <RadioInput listOptions={listOptions} className={cx('flex-1')} />}
-                        {checkboxInput && <CheckboxInput listOptions={listOptions} className={cx('flex-1')} />}
-                        {dropDown && <Dropdown listOptions={listOptions} className={cx('flex-1')} />}
-                        {rangeTime && <RangeTime />}
+                <div className={cx('relative', !widthInput && 'flex-1')}>
+                    {!radioInput && !dropDown && !rangeTime && !custom && !checkboxInput && (
+                        <div className={cx('')}>
+                            <input
+                                autoComplete={name}
+                                id={name}
+                                type={type}
+                                {...register(name, { onChange: handleValidate })}
+                                placeholder={placeholder}
+                                style={{ width: widthInput }}
+                                required={required}
+                                disabled={disabled}
+                                className={cx(
+                                    'w-full p-1',
+                                    'rounded border-[1px] border-solid border-slate-400',
+                                    disabled && 'bg-slate-100',
+                                    error && '!border-red-500',
+                                    { [inputClassName]: inputClassName },
+                                )}
+                                {...Props}
+                            />
 
-                        {custom && <ComponentCustom />}
-                    </div>
-                )}
-                {error ? (
-                    <div className={cx('absolute bottom-[-20px] text-[12px] text-red-600')}>{error}</div>
-                ) : (
-                    <div className={cx('h-6px]')}></div>
-                )}
+                            {iconRightInput && (
+                                <div
+                                    className={cx(
+                                        'z-10 ml-[-3px] h-[30px] w-[30px] rounded-r bg-gray-300',
+                                        'flex items-center justify-center',
+                                        'cursor-pointer hover:bg-primary-color',
+                                    )}
+                                >
+                                    <IconCustom icon={iconRightInput} />
+                                </div>
+                            )}
+                        </div>
+                    )}
+                    {(radioInput || dropDown || rangeTime || custom || checkboxInput) && (
+                        <div className={cx('flex items-center')} style={{ width: widthInput }}>
+                            {radioInput && <RadioInput listOptions={listOptions} />}
+                            {checkboxInput && <CheckboxInput listOptions={listOptions} />}
+                            {dropDown && (
+                                <Dropdown
+                                    listOptions={listOptions}
+                                    name={name}
+                                    className={cx(!widthInput && 'flex-1')}
+                                />
+                            )}
+                            {rangeTime && <RangeTime />}
+                            {custom && <ComponentCustom />}
+                        </div>
+                    )}
+                </div>
             </div>
+            {error && <div className={cx('pl-[104px] text-[12px] text-red-600')}>{error}</div>}
         </div>
     );
 };

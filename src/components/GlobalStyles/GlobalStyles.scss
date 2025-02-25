@@ -89,6 +89,84 @@ body {
     }
 }
 
+/* tùy chỉnh table */
+
+.ant-table-cell {
+    font-size: 14px !important; /* Thay đổi kích thước chữ tại đây */
+    padding: 12px 8px !important;
+}
+
+/*điều chỉnh thanh cuộn của table */
+.ant-table-container .ant-table-body,
+.ant-table-container .ant-table-content {
+    scrollbar-width: thin;
+    scrollbar-color: #eaeaea transparent;
+    scrollbar-gutter: stable;
+}
+
+/*bỏ ngăn cách giữa các cell ở header */
+.ant-table-cell::before {
+    display: none;
+}
+
+tbody.ant-table-tbody > tr:nth-child(odd) {
+    background-color: var(--primary-50); /* Màu nền cho hàng lẻ */
+}
+
+th.ant-table-cell {
+    background-color: var(--primary) !important;
+}
+
+th.ant-table-cell.ant-table-cell-scrollbar {
+    box-shadow: 0 1px 0 1px var(--primary) !important;
+}
+
+.ant-spin-dot-item {
+    background-color: var(--primary-500) !important; /* Thay đổi màu sắc của loading */
+}
+
+button.ant-switch.ant-switch-checked {
+    background-color: var(--primary) !important;
+}
+
+/* tùy chỉnh pagination */
+button.ant-pagination-item-link {
+    border: solid 1px var(--primary) !important;
+    border-radius: 6px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+button.ant-pagination-item-link:hover {
+    background-color: var(--primary) !important;
+}
+
+.ant-pagination-item,
+.ant-select-selector {
+    border: solid 1px var(--primary) !important;
+}
+
+.ant-pagination-item.ant-pagination-item-active {
+    background-color: var(--primary);
+}
+
+.ant-pagination-item-active a {
+    color: white !important;
+}
+
+.ant-pagination-item:hover {
+    background-color: var(--primary) !important;
+}
+
+.ant-pagination-item:hover a {
+    color: white !important;
+}
+
+.ant-select-item-option-selected {
+    background-color: var(--primary) !important;
+}
+
 // Tailwind
 @tailwind base;
 @tailwind components;

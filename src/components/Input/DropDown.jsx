@@ -1,29 +1,44 @@
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import React, { useEffect, useState, useRef } from 'react';
+import { useFormContext } from 'react-hook-form';
 import { MdOutlineArrowDropDown } from 'react-icons/md';
 
 const cx = classNames.bind();
 
-function Dropdown({ listOptions = [], seletedValue = '', setSeletedValue = () => {}, className, top }) {
-    const [valueInput, setValueInput] = useState(seletedValue || listOptions[0]);
+function Dropdown({ listOptions = [], className, top, name }) {
+    const [valueInput, setValueInput] = useState('');
     const [isOpen, setIsOpen] = useState(false);
     const ref = useRef(null);
+
+    const { watch, setValue, register, trigger } = useFormContext();
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
 
-    const handleChange = (value) => {
-        setValueInput(value);
-        setSeletedValue(value);
+    const handleChange = async (item) => {
+        const code = listOptions.filter((value) => value?.name === item.name)[0]?.code;
+        setValue(name, String(code));
+        setValueInput(item.name);
         setIsOpen(false);
+        await trigger(name);
     };
 
     const handleClickOutside = (event) => {
         if (ref.current && !ref.current.contains(event.target)) {
             setIsOpen(false); // Đóng component khi click ra ngoài
         }
+    };
+
+    const handleChangeWhenWatchNameChange = () => {
+        // console.log(name, watch(name));
+        const filter = listOptions.filter((value) => String(value?.code) === String(watch(name)));
+        let valueVisible = '';
+        if (filter.length === 1) {
+            valueVisible = filter[0]?.name;
+        }
+        if (watch(name)) setValueInput(valueVisible);
     };
 
     useEffect(() => {
@@ -33,6 +48,19 @@ function Dropdown({ listOptions = [], seletedValue = '', setSeletedValue = () =>
         };
     }, []);
 
+    useEffect(() => {
+        setValue(name, '');
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    useEffect(() => {
+        if (watch(name) !== '') {
+            //console.log(name, watch(name), listOptions);
+            handleChangeWhenWatchNameChange();
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [listOptions]);
+
     return (
         <div
             className={cx('relative min-w-32', {
@@ -40,6 +68,7 @@ function Dropdown({ listOptions = [], seletedValue = '', setSeletedValue = () =>
             })}
             ref={ref}
         >
+            <input {...register(name)} className={cx('hidden')} />
             <button
                 onClick={toggleDropdown}
                 className={cx(
@@ -67,7 +96,7 @@ function Dropdown({ listOptions = [], seletedValue = '', setSeletedValue = () =>
                             key={index}
                             onClick={() => handleChange(value)}
                         >
-                            {value}
+                            {value.name}
                         </li>
                     ))}
                 </ul>

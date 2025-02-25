@@ -7,7 +7,7 @@ import IconCustom from '../IconCustom';
 
 const cx = classNames.bind(styles);
 
-function Button({
+const Button = ({
     children,
     primary,
     blue,
@@ -27,7 +27,7 @@ function Button({
     href,
     type = 'button',
     ...passProps
-}) {
+}) => {
     let Comp = 'button';
 
     let Props = {
@@ -50,6 +50,7 @@ function Button({
                 'min-h-[30px] min-w-[80px] px-2 text-[13px] text-text-color',
                 'flex items-center justify-center border-0 py-1 font-semibold',
                 'bg-gray-200 text-text-color hover:bg-primary-color',
+                'transition-all duration-300 ease-in-out',
                 border && '!border border-solid border-primary-color',
                 !noBorderRadius && 'rounded',
                 blue && `!bg-blue-300 ${!disable && 'hover:!bg-blue-400'}`,
@@ -69,7 +70,7 @@ function Button({
             {rightIcon && <IconCustom className={cx('ml-2 w-4')} icon={rightIcon} />}
         </Comp>
     );
-}
+};
 
 Button.propTypes = {
     children: PropTypes.node.isRequired,
