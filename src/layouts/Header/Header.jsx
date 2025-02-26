@@ -1,6 +1,8 @@
 import classNames from 'classnames/bind';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
+import { useTranslation } from 'react-i18next';
 import { FaRightToBracket, FaUserGear, FaHouse } from 'react-icons/fa6';
 import { MdZoomOutMap, MdMenu } from 'react-icons/md';
 
@@ -16,6 +18,10 @@ const cx = classNames.bind(styles);
 
 function Header() {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const [, , removeCookie] = useCookies(['token']); // Lấy cookie
+    const { t } = useTranslation('translation', { keyPrefix: 'Header' });
 
     const handleShinkSidebar = () => {
         dispatch(updateShrinkSidebar());
@@ -24,8 +30,13 @@ function Header() {
     const handleVisibelSidebar = () => {
         dispatch(updateVisibleSidebar());
     };
+
+    const handleLogout = () => {
+        removeCookie('token', { path: '/' });
+        navigate(config.routes.LOGIN);
+    };
     return (
-        <div className={cx('!z-20 flex h-10 w-full justify-between bg-primary-color text-xs', 'max-md:fixed')}>
+        <div className={cx('sticky top-0 !z-20 flex h-10 justify-between bg-primary-color text-xs')}>
             <div className={cx('flex')}>
                 {/* Home */}
                 <Link className={cx('item-card', 'card-left', '!hidden', 'max-sm:!flex')} to={config.routes.HOME}>
@@ -42,9 +53,9 @@ function Header() {
                 <SearchStore />
 
                 {/* web login */}
-                <Link className={cx('item-card', 'card-left', 'max-sm:!hidden')} to={config.routes.WEBLOGIN}>
+                <Link className={cx('item-card', 'card-left', 'max-sm:!hidden')} to={config.routes.WebLogin.WEB_LOGIN}>
                     <IconCustom icon={FaUserGear} />
-                    <div className={cx('ml-1', 'max-md:hidden')}> Web login</div>
+                    <div className={cx('ml-1', 'max-md:hidden')}>{t('web_login')}</div>
                 </Link>
             </div>
 
@@ -58,9 +69,9 @@ function Header() {
                 </div>
 
                 {/* log out */}
-                <Link to={config.routes.LOGIN} className={cx('item-card', 'card-right')}>
+                <div className={cx('item-card', 'card-right')} onClick={handleLogout}>
                     <IconCustom icon={FaRightToBracket} />
-                </Link>
+                </div>
             </div>
         </div>
     );

@@ -16,7 +16,7 @@ const ItemFilter = ({ content, index, isSelected }) => {
     return (
         <li
             className={cx(
-                'cursor-pointer bg-[#e5e5e5] px-3 py-2 font-[13px] hover:bg-primary-color',
+                'cursor-pointer overflow-hidden rounded bg-[#e5e5e5] px-3 py-2 font-[13px] hover:bg-primary-color',
                 'border-[1px] border-solid border-white',
                 'hover:border-b-2 hover:border-solid hover:border-b-[#333]',
                 isSelected === index && 'border-b-2 border-solid border-b-[#333] !bg-primary-color',

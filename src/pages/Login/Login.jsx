@@ -1,38 +1,71 @@
-import classNames from 'classnames/bind';
+import cx from 'classnames';
 import { useTranslation } from 'react-i18next';
-import { FaStore, FaKey, FaUser, FaRightToBracket } from 'react-icons/fa6';
+import { useState } from 'react';
+import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
+import { useForm, FormProvider } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import toast from 'react-hot-toast';
+import { FaKey, FaUser, FaRightToBracket } from 'react-icons/fa6';
 
-import styles from './Login.module.scss';
 import Input from '~/components/Input';
+import Loading from '~/components/Loading';
 import config from '~/config';
+import { logInService } from '~/services/AuthService';
+import { SignInSchema } from '~/config/schema';
 
-// eslint-disable-next-line no-unused-vars
-const cx = classNames.bind(styles);
+const { language, routes } = config;
+
+const cookiesTime = 30 * 24 * 60 * 60 * 1000;
 
 function Login() {
-    // eslint-disable-next-line no-unused-vars
+    const [loading, setLoading] = useState(false);
+
+    const methods = useForm({ resolver: zodResolver(SignInSchema) });
+
     const { t, i18n } = useTranslation('translation', { keyPrefix: 'login' });
-    const {
-        register,
-        handleSubmit,
-        // setError,
-        // clearErrors,
-        formState: { errors },
-    } = useForm();
     const navigate = useNavigate();
 
-    const { language, routes } = config;
+    const { handleSubmit } = methods;
 
-    const onSubmit = (formData, e) => {
-        e.preventDefault();
-        navigate(routes.HOME);
-        console.log(formData);
-    };
+    const [, setCookies] = useCookies(['token', 'DatabaseName', 'DatabaseCSTRName', 'userInfo']);
 
     const handleChangeLauage = (e) => {
         i18n.changeLanguage(language[e.target.value]);
+    };
+
+    const onSubmit = async (formData) => {
+        setLoading(true);
+
+        const bodyRequest = {
+            username: formData.username,
+            password: formData.password,
+        };
+
+        const user = await logInService(bodyRequest);
+        console.log('user', user);
+        if (!user) {
+            toast.error('Incorrect infor login');
+        }
+
+        setLoading(false);
+        if (!user) {
+            return;
+        }
+        user.isCEO = false;
+        setCookies('token', user.token, { path: '/', expires: new Date(Date.now() + cookiesTime) });
+        setCookies('userInfo', JSON.stringify(user), { path: '/', expires: new Date(Date.now() + cookiesTime) });
+        setCookies('DatabaseName', user.database_main_name, { path: '/', expires: new Date(Date.now() + cookiesTime) });
+        setCookies('DatabaseCSTRName', user.database_cstr_name, {
+            path: '/',
+            expires: new Date(Date.now() + cookiesTime),
+        });
+        toast.success('login success');
+        navigate(routes.HOME);
+    };
+
+    const onError = (errors) => {
+        console.log('Có lỗi:', errors);
     };
 
     return (
@@ -60,50 +93,55 @@ function Login() {
                             </option>
                         ))}
                     </select>
-                    <form className={cx('flex flex-col items-center px-10 py-20')} onSubmit={handleSubmit(onSubmit)}>
-                        <label className={cx('mb-10 text-3xl text-[#797979]')}>{t('login')}</label>
-                        <Input
-                            placeholder={t('StoreID')}
-                            label={FaStore}
-                            className={cx('w-[90%]')}
-                            name={'StoreID'}
-                            {...register('StoreID')}
-                            errolMesseage={errors.username?.message}
-                        />
-                        <Input
-                            placeholder={t('UserID')}
-                            label={FaUser}
-                            className={cx('w-[90%]')}
-                            name={'UserID'}
-                            {...register('UserID')}
-                            errolMesseage={errors.UserID?.message}
-                        />
-                        <Input
-                            placeholder={t('Password')}
-                            label={FaKey}
-                            className={cx('w-[90%]')}
-                            name={'Password'}
-                            type="password"
-                            {...register('Password')}
-                            errolMesseage={errors.Password?.message}
-                        />
-                        <div className={cx('flex space-x-2 text-[13px]')}>
-                            <input type="checkbox" name="saveInfo" value={true} />
-                            <label htmlFor="saveInfo"> {t('SaveUserInfo')}</label>
-                        </div>
-
-                        <button
-                            className={cx(
-                                'mt-6 w-[90%] rounded-full bg-[#403e43] p-4 font-semibold text-white',
-                                'flex items-center justify-center',
-                            )}
+                    <FormProvider {...methods}>
+                        <form
+                            className={cx('flex flex-col items-center px-10 py-20')}
+                            onSubmit={handleSubmit(onSubmit, onError)}
                         >
-                            <FaRightToBracket />
-                            {t('login')}
-                        </button>
-                    </form>
+                            <label className={cx('mb-10 text-3xl text-[#797979]')}>{t('login')}</label>
+                            {/* <Input
+                            placeholder={t('StoreID')}
+                            icon={FaStore}
+                           
+                            className={cx('mb-3 w-[90%]')}
+                            seletedValue={formData[STORE_ID]}
+                            setSeletedValue={(value) => handleChangeValue(STORE_ID, value)}
+                            errolMesseage={errors[STORE_ID]}
+                        /> */}
+                            <Input
+                                name={'username'}
+                                placeholder={t('UserID')}
+                                icon={FaUser}
+                                className={cx('mb-3 w-[90%]')}
+                            />
+                            <Input
+                                name={'password'}
+                                placeholder={t('Password')}
+                                icon={FaKey}
+                                className={cx('mb-3 w-[90%]')}
+                                type="password"
+                            />
+                            <div className={cx('flex space-x-2 text-[13px]')}>
+                                <input type="checkbox" name="saveInfo" value={true} />
+                                <label htmlFor="saveInfo"> {t('SaveUserInfo')}</label>
+                            </div>
+
+                            <button
+                                className={cx(
+                                    'mt-6 w-[90%] rounded-full bg-[#403e43] p-4 font-semibold text-white',
+                                    'hover:opacity-80 active:opacity-70',
+                                    'flex items-center justify-center',
+                                )}
+                                onClick={handleSubmit}
+                            >
+                                <FaRightToBracket />
+                                {t('login')}
+                            </button>
+                        </form>
+                    </FormProvider>
                 </div>
             </div>
+            {loading && <Loading />}
         </div>
     );
 }
