@@ -10,7 +10,7 @@ export const get = async (path, options = {}) => {
         .get(path, options)
         .then((res) => res.data)
         .catch((err) => {
-            console.log('err', err?.response?.data);
+            console.log('err', err?.response);
             return null;
         });
     return response;
@@ -21,7 +21,29 @@ export const post = async (path, data = {}, options = {}) => {
         .post(path, data, options)
         .then((res) => res.data)
         .catch((err) => {
+            console.log('err', err?.response);
+            return null;
+        });
+    return response;
+};
+
+export const put = async (path, data = {}, options = {}) => {
+    const response = await httpRequest
+        .put(path, data, options)
+        .then((res) => res.data)
+        .catch((err) => {
             console.log('err', err?.response?.data);
+            return null;
+        });
+    return response;
+};
+
+export const deleteHttp = async (path, options = {}) => {
+    const response = await httpRequest
+        .delete(path, options)
+        .then((res) => res.data)
+        .catch((err) => {
+            console.log('err', err?.response);
             return null;
         });
     return response;

@@ -89,7 +89,13 @@
         "Add_Store": "Thêm cửa hàng",
         "Edit_Store": "Chỉnh Sửa Cửa Hàng",
         "Delete_Store": "Xóa Cửa Hàng",
-        "Are_you_sure_you_want_to_delete_the_store": "Bạn có chắc chắn muốn xóa cửa hàng "
+        "Are_you_sure_you_want_to_delete_the_store": "Bạn có chắc chắn muốn xóa cửa hàng ",
+        "add_store_success": "Thêm cửa hàng thành công",
+        "add_store_failed": "Thêm cửa hàng thất bại",
+        "update_store_success": "Cập nhật cửa hàng thành công",
+        "update_store_failed": "Cập nhật cửa hàng thất bại",
+        "delete_store_success": "Xóa cửa hàng thành công",
+        "delete_store_failed": "Xóa cửa hàng thất bại"
     },
     "Operation": {
         "edit": "Chỉnh sửa",

@@ -89,7 +89,13 @@
         "Add_Store": "Add Store",
         "Edit_Store": "Edit Store",
         "Delete_Store": "Delete Store",
-        "Are_you_sure_you_want_to_delete_the_store": "Are you sure you want to delete the store?"
+        "Are_you_sure_you_want_to_delete_the_store": "Are you sure you want to delete the store?",
+        "add_store_success": "add store success",
+        "add_store_failed": "add store failed",
+        "update_store_success": "update store success",
+        "update_store_failed": "update store failed",
+        "delete_store_success": "delete store success",
+        "delete_store_failed": "delete store failed"
     },
     "Operation": {
         "edit": "Edit",

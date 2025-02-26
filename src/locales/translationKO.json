@@ -89,7 +89,13 @@
         "Add_Store": "매장 추가",
         "Edit_Store": "매장 수정",
         "Delete_Store": "매장 삭제",
-        "Are_you_sure_you_want_to_delete_the_store": "매장을 삭제하시겠습니까"
+        "Are_you_sure_you_want_to_delete_the_store": "매장을 삭제하시겠습니까",
+        "add_store_success": "매장 추가 성공",
+        "add_store_failed": "매장 추가 실패",
+        "update_store_success": "매장 업데이트 성공",
+        "update_store_failed": "매장 업데이트 실패",
+        "delete_store_success": "매장 삭제 성공",
+        "delete_store_failed": "매장 삭제 실패"
     },
     "Operation": {
         "edit": "편집",

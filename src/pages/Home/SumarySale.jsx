@@ -12,7 +12,7 @@ import Loading from '~/components/Loading';
 import { monthNames } from './constant';
 import { getRevenueService } from '~/services/SaleBillService';
 import useCallApiPrivate from '~/hooks/useCallApiPrivate';
-import { formatNumberWithDots } from '~/utils/common';
+import { formatNumberWithDots } from '~/utils/helpers';
 
 const cx = classNames.bind(styles);
 

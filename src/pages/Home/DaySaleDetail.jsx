@@ -12,7 +12,7 @@ import { GiMoneyStack } from 'react-icons/gi';
 
 import styles from './Home.module.scss';
 import IconCustom from '~/components/IconCustom';
-import { formatNumberWithDots } from '~/utils/common';
+import { formatNumberWithDots } from '~/utils/helpers';
 
 const cx = classNames.bind(styles);
 

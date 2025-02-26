@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import Loading from '~/components/Loading';
 import { getRevenueService } from '~/services/SaleBillService';
 import useCallApiPrivate from '~/hooks/useCallApiPrivate';
-import { formatNumberWithDots } from '~/utils/common';
+import { formatNumberWithDots } from '~/utils/helpers';
 import styles from './Home.module.scss';
 
 const cx = classNames.bind(styles);

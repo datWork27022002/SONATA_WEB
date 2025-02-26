@@ -63,10 +63,7 @@ const Modal = ({
                         {t('cancel')}
                     </Button>
                     <Button
-                        onClick={() => {
-                            onConfirm();
-                            onClose(); // Đóng modal sau khi xác nhận
-                        }}
+                        onClick={onConfirm}
                         type="button"
                         green
                         className={cx({ [btnConfirmClassName]: btnConfirmClassName })}

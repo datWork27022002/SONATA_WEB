@@ -8,7 +8,6 @@ import RadioInput from './RadioInput';
 import Dropdown from './DropDown';
 import RangeTime from './RangeTime';
 import CheckboxInput from './CheckboxInput';
-import { formatNumberWithDots } from '~/utils/common';
 
 const cx = classNames.bind(styles);
 
@@ -37,24 +36,17 @@ const Input = ({
     listOptions = [],
     type = '',
     top = false,
-    ...passProps
 }) => {
-    const Props = { ...passProps };
-
     const {
         register,
         formState: { errors },
-        watch,
-        setValue,
+        trigger,
     } = useFormContext();
 
     const error = errors[name]?.message;
 
     const handleValidate = () => {
-        if (typeCustom === 'number') {
-            const newValue = formatNumberWithDots(watch(name));
-            setValue(name, newValue);
-        }
+        trigger(name);
     };
 
     return (
@@ -80,10 +72,9 @@ const Input = ({
                                 autoComplete={name}
                                 id={name}
                                 type={type}
-                                {...register(name, { onChange: handleValidate })}
+                                {...register(name, { onBlur: handleValidate })}
                                 placeholder={placeholder}
                                 style={{ width: widthInput }}
-                                required={required}
                                 disabled={disabled}
                                 className={cx(
                                     'w-full p-1',
@@ -92,7 +83,6 @@ const Input = ({
                                     error && '!border-red-500',
                                     { [inputClassName]: inputClassName },
                                 )}
-                                {...Props}
                             />
 
                             {iconRightInput && (
