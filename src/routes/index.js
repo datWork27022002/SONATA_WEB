@@ -1,33 +1,276 @@
 import config from '~/config';
-import { BreadcrumbLayout } from '~/layouts';
+import { DefaultLayout } from '~/layouts';
 
 import Home from '~/pages/Home';
 import Login from '~/pages/Login';
-import BasicSettings from '~/pages/BasicSettings';
-import ManagerFunction from '~/pages/ManagerFunction';
-import Customer from '~/pages/Customer';
-import OperationReports from '~/pages/OperationReports';
-import SaleReports from '~/pages/SaleReports';
-import PurchaseOrder from '~/pages/PurchaseOrder';
-import Settings from '~/pages/Settings';
+import BasicSettings, { GroupManagement, StoreInfo, StoreList, WarehouseManagement } from '~/pages/BasicSettings';
+import { CashDrawer, Discount, EmployeeGroup, EmployeeInfo, EmployeeList, MenuSetup } from '~/pages/BasicSettings';
+import { ItemRecipeManagement, ItemRecipeManager, ToppingSettings, SubMenu, MenuSearch } from '~/pages/BasicSettings';
+import { InventoryItemSearch, MenuBoardManagement, PosMenuBoard, CategoryManager } from '~/pages/BasicSettings';
+import { RecipeBuilder, RecipeSearch, KitchenMemo, ItemManagementByStrore } from '~/pages/BasicSettings';
+import { ChangeOfMultilingualName, ItemLinkedCodeManagement, MainMenuSetting } from '~/pages/BasicSettings';
+import { TableLocationManager, TableDesignSetting, POSFavoriteFunctionButton } from '~/pages/BasicSettings';
+import { PaymentButtonSetting, KioskImageSettings, UPOrderImageSettings } from '~/pages/BasicSettings';
+import { KioskFunctionSetting, POSUserDefinitionLanguage } from '~/pages/BasicSettings';
+import ManagerFunction, { Announcement, Payroll, TimeCard, ListOfInformationByForce } from '~/pages/ManagerFunction';
+import Customer, { CustomerGroup, CustomerManagement, MembershipList, CustomerSalesTotal } from '~/pages/Customer';
+import { CustomerDetailedSalesReport, PointReport } from '~/pages/Customer';
+import OperationReports, { MonthlyComparison, YearlyComparison, TotalStoreSalesByItem } from '~/pages/OperationReports';
+import { TotalCategorySalesByStore, TotalItemSalesByStore, TotalStoreSalesByCategory } from '~/pages/OperationReports';
+import { TotalSalesSummaryByItem, TotalSalesWeekByItem, TotalSalesHourByItem } from '~/pages/OperationReports';
+import { TotalSalesItemByHour, TotalSalesItemByWeek, TotalStoreSalesBySupplier } from '~/pages/OperationReports';
+import { SalesAmountByStore, MonthlySalesAmountByStore, StoreMonthlySalesAmount } from '~/pages/OperationReports';
+import { DailySalesByItem } from '~/pages/OperationReports';
+import SaleReports, { DailySalesReport, DailySalesSummary, SalesSummary, DetailedSalesList } from '~/pages/SaleReports';
+import { SalesByReceipt, SalesByReceiptDetail, CashReceiptApprovalCancelationReport } from '~/pages/SaleReports';
+import { CreditCardApprovalCancelationReport, SalesReportByCardTypeDetail } from '~/pages/SaleReports';
+import { SalesRecordByEmployee, SalesRecordByEmployeeDate, EmployeeCommission } from '~/pages/SaleReports';
+import { TotalSalesReport, SimplifiedSalesTotal, AggregateRevenueItemsByCategory } from '~/pages/SaleReports';
+import { HourlySales, TimeOfDaySalesReport, SalesReportByPaymentType } from '~/pages/SaleReports';
+import { SalesReportByCardType, SalesRanking, SalesAnalysisReportItem } from '~/pages/SaleReports';
+import { TotalSalesReportDetail, EmployeeSalesAnalysis, OrderCancelationReport } from '~/pages/SaleReports';
+import { VoidSummary, VoidDetail, SalesDiscountReport, SalesDiscountSummary } from '~/pages/SaleReports';
+import { NoTaxSaleReport, TaxDetail, TaxSummary, SalesCashInOut, CashInOut } from '~/pages/SaleReports';
+import PurchaseOrder, { InventoryLookUp, InventoryAdjustments, InventoryTransfer } from '~/pages/PurchaseOrder';
+import { IVManagementTable, CustomerPurchase, CustomerSaleB, SupplierLedger } from '~/pages/PurchaseOrder';
+import { CustomerLedger, PayableReport, ReceivableReport, Amount, SupplierSetting } from '~/pages/PurchaseOrder';
+import Settings, { StoreOperations, StoreDetailSettings, CashDrawer2, TAX, GuestPager } from '~/pages/Settings';
+import { OperationsManagement, OrderPosCancelFunctionOption, PrinterLanguageSetting } from '~/pages/Settings';
+import { AutoClosePopupOption, PosInformation, PrinterSetting, LabelPrintSetting } from '~/pages/Settings';
+import { PosDisplaySetting, CidDevice, PrintOptionByPos, WindowsKioksOption } from '~/pages/Settings';
+import { MsrSetting, MsrPortSetting, EcrSetting, StoreInfoTaxReceipt, SettingQRCode } from '~/pages/Settings';
+import { ShowAdditionalDataInEodPrintout, OneTouchOption, BarcodeUnregisterdItemOption } from '~/pages/Settings';
+import { CallerIdentificationReceiveAction, CashDrawerOpenOption, ClearTableSetting } from '~/pages/Settings';
+import { EnterNumberOfCustomerSetting, SelectEmployeeSetting, DiscountOrderOption } from '~/pages/Settings';
+import { ShowItemBarcodeOption, RebateIssue, WeightBarcodeOption, TenderMethod } from '~/pages/Settings';
+import { CashDrawerOpenTiming, PrepaymentFunctionButtonSetting, PrepaidOrderRetentionOptions } from '~/pages/Settings';
+import { DeliverySettings, DeliveryOrder, ChangeWeightControl, DiscountOption } from '~/pages/Settings';
+import { PaymentOptionsImmediately, NoticePopupOption, SetAllCancellationType } from '~/pages/Settings';
+import { CurrencyChangeOption, EnableKeepUnitChange, Receipt, CustomerOrderPrint } from '~/pages/Settings';
+import { KitchenOrderPrint, WaitingListTag, UseSecurityFunctionByTasks, SecurityGroup } from '~/pages/Settings';
+import { EmailServer } from '~/pages/Settings';
 import BIZSMS from '~/pages/BIZSMS';
 import WebLogin from '~/pages/WebLogin';
+import { WebLoginFunction, UseSecurityFunctionByTasks2, EmployeeSecurity, SecurityLevel } from '~/pages/WebLogin';
 import Bookmark from '~/pages/Bookmark';
 
 const { routes } = config;
+const pathBasicSettings = routes.BasicSettings;
+const pathManagerFunction = routes.ManagerFunction;
+const pathCustomer = routes.Customer;
+const pathOperationReports = routes.OperationReports;
+const pathSaleReports = routes.SaleReports;
+const pathPurchaseOrder = routes.PurchaseOrder;
+const pathSettings = routes.Settings;
+const pathWebLogin = routes.WebLogin;
 
-export const publicRoute = [
-    { path: routes.HOME, component: Home },
-    { path: routes.LOGIN, component: Login, layout: null },
-    { path: routes.BasicSettings.BASICSETTINGS, component: BasicSettings, layout: BreadcrumbLayout },
-    { path: routes.ManagerFunction.MANAGERFUNCTION, component: ManagerFunction, layout: BreadcrumbLayout },
-    { path: routes.Customer.CUSTOMER, component: Customer, layout: BreadcrumbLayout },
-    { path: routes.OperationReports.OPERATIONREPORTS, component: OperationReports, layout: BreadcrumbLayout },
-    { path: routes.SaleReports.SALEREPORTS, component: SaleReports, layout: BreadcrumbLayout },
-    { path: routes.PurchaseOrder.PURCHASEORDER, component: PurchaseOrder, layout: BreadcrumbLayout },
-    { path: routes.Settings.SETTINGS, component: Settings, layout: BreadcrumbLayout },
-    { path: routes.BIZSMS.BIZSMS, component: BIZSMS, layout: BreadcrumbLayout },
-    { path: routes.WEBLOGIN, component: WebLogin, layout: BreadcrumbLayout },
-    { path: routes.BOOKMARK, component: Bookmark, layout: BreadcrumbLayout },
+const basicSettingsRoute = [
+    { path: pathBasicSettings.GROUP_MANAGEMENT, component: GroupManagement },
+    { path: pathBasicSettings.STORE_INFO, component: StoreInfo },
+    { path: pathBasicSettings.STORE_LIST, component: StoreList },
+    { path: pathBasicSettings.WAREHOUSE_MANAGEMENT, component: WarehouseManagement },
+    { path: pathBasicSettings.CASH_DRAWER, component: CashDrawer },
+    { path: pathBasicSettings.DISCOUNT, component: Discount },
+    { path: pathBasicSettings.EMPLOYEE_GROUP, component: EmployeeGroup },
+    { path: pathBasicSettings.EMPLOYEE_INFO, component: EmployeeInfo },
+    { path: pathBasicSettings.EMPLOYEE_LIST, component: EmployeeList },
+    { path: pathBasicSettings.MENU_SETUP, component: MenuSetup },
+    { path: pathBasicSettings.ITEM_RECEIPT_MANAGEMENT, component: ItemRecipeManagement },
+    { path: pathBasicSettings.ITEM_RECEIPT_MANAGER, component: ItemRecipeManager },
+    { path: pathBasicSettings.TOPPING_SETTINGS, component: ToppingSettings },
+    { path: pathBasicSettings.SUB_MENU, component: SubMenu },
+    { path: pathBasicSettings.MENU_SEARCH, component: MenuSearch },
+    { path: pathBasicSettings.INVENTORY_ITEM_SEARCH, component: InventoryItemSearch },
+    { path: pathBasicSettings.MENU_BOARD_MANAGEMENT, component: MenuBoardManagement },
+    { path: pathBasicSettings.POS_MENU_BOARD, component: PosMenuBoard },
+    { path: pathBasicSettings.CATEGORY_MANAGER, component: CategoryManager },
+    { path: pathBasicSettings.RECIPE_BUILDER, component: RecipeBuilder },
+    { path: pathBasicSettings.RECIPE_SEARCH, component: RecipeSearch },
+    { path: pathBasicSettings.KITCHEN_MEMO, component: KitchenMemo },
+    { path: pathBasicSettings.ITEM_MANAGEMENT_BY_STRORE, component: ItemManagementByStrore },
+    { path: pathBasicSettings.CHANGE_OF_MULTILINGUAL_NAME, component: ChangeOfMultilingualName },
+    { path: pathBasicSettings.ITEM_LINKED_CODE_MANAGEMENT, component: ItemLinkedCodeManagement },
+    { path: pathBasicSettings.MAIN_MENU_SETTING, component: MainMenuSetting },
+    { path: pathBasicSettings.TABLE_LOCATION_MANAGER, component: TableLocationManager },
+    { path: pathBasicSettings.TABLE_DESIGN_SETTING, component: TableDesignSetting },
+    { path: pathBasicSettings.MENU_SETUP2, component: MenuSetup },
+    { path: pathBasicSettings.POS_FAVORITE_FUNCTION_BUTTON, component: POSFavoriteFunctionButton },
+    { path: pathBasicSettings.PAYMENT_BUTTON_SETTING, component: PaymentButtonSetting },
+    { path: pathBasicSettings.KIOSK_IMAGE_SETTINGS, component: KioskImageSettings },
+    { path: pathBasicSettings.UP_ORDER_IMAGE_SETTINGS, component: UPOrderImageSettings },
+    { path: pathBasicSettings.KIOSK_FUNCTION_SETTING, component: KioskFunctionSetting },
+    { path: pathBasicSettings.POS_USER_DEFINITION_LANGUAGE, component: POSUserDefinitionLanguage },
 ];
-export const privateRoute = [];
+
+const managerFunctionRoute = [
+    { path: pathManagerFunction.ANNOUNCEMENT, component: Announcement },
+    { path: pathManagerFunction.PAYROLL, component: Payroll },
+    { path: pathManagerFunction.TIME_CARD, component: TimeCard },
+    { path: pathManagerFunction.LIST_OF_INFORMATION_BY_FORCE, component: ListOfInformationByForce },
+];
+
+const customerRoute = [
+    { path: pathCustomer.CUSTOMER_GROUP, component: CustomerGroup },
+    { path: pathCustomer.CUSTOMER_MANAGEMENT, component: CustomerManagement },
+    { path: pathCustomer.MEMBERSHIP_LIST, component: MembershipList },
+    { path: pathCustomer.CUSTOMER_SALES_TOTAL, component: CustomerSalesTotal },
+    { path: pathCustomer.CUSTOMER_DETAILED_SALES_REPORT, component: CustomerDetailedSalesReport },
+    { path: pathCustomer.POINT_REPORT, component: PointReport },
+];
+
+const operationReportsRoute = [
+    { path: pathOperationReports.MONTHLY_COMPARISON, component: MonthlyComparison },
+    { path: pathOperationReports.YEARLY_COMPARISON, component: YearlyComparison },
+    { path: pathOperationReports.TOTAL_STORE_SALES_BY_ITEM, component: TotalStoreSalesByItem },
+    { path: pathOperationReports.TOTAL_CATEGORY_SALES_BY_STORE, component: TotalCategorySalesByStore },
+    { path: pathOperationReports.TOTAL_ITEM_SALES_BY_STORE, component: TotalItemSalesByStore },
+    { path: pathOperationReports.TOTAL_STORE_SALES_BY_CATEGORY, component: TotalStoreSalesByCategory },
+    { path: pathOperationReports.TOTAL_SALES_SUMMARY_BY_ITEM, component: TotalSalesSummaryByItem },
+    { path: pathOperationReports.TOTAL_SALES_WEEK_BY_ITEM, component: TotalSalesWeekByItem },
+    { path: pathOperationReports.TOTAL_SALES_HOUR_BY_ITEM, component: TotalSalesHourByItem },
+    { path: pathOperationReports.TOTAL_SALES_ITEM_BY_WEEK, component: TotalSalesItemByWeek },
+    { path: pathOperationReports.TOTAL_SALES_ITEM_BY_HOUR, component: TotalSalesItemByHour },
+    { path: pathOperationReports.TOTAL_STORE_SALES_BY_SUPPLIER, component: TotalStoreSalesBySupplier },
+    { path: pathOperationReports.SALES_AMOUNT_BY_STORE, component: SalesAmountByStore },
+    { path: pathOperationReports.MONTHLY_SALES_AMOUNT_BY_STORE, component: MonthlySalesAmountByStore },
+    { path: pathOperationReports.STORE_MONTHLY_SALES_AMOUNT, component: StoreMonthlySalesAmount },
+    { path: pathOperationReports.DAILY_SALES_BY_ITEM, component: DailySalesByItem },
+];
+
+const saleReportsRoute = [
+    { path: pathSaleReports.DAILY_SALES_REPORT, component: DailySalesReport },
+    { path: pathSaleReports.DAILY_SALES_SUMMARY, component: DailySalesSummary },
+    { path: pathSaleReports.SALES_SUMMARY, component: SalesSummary },
+    { path: pathSaleReports.DETAILED_SALES_LIST, component: DetailedSalesList },
+    { path: pathSaleReports.SALES_BY_RECEIPT, component: SalesByReceipt },
+    { path: pathSaleReports.SALES_BY_RECEIPT_DETAIL, component: SalesByReceiptDetail },
+    { path: pathSaleReports.CASH_RECEIPT_APPROVAL_CANCELATION_REPORT, component: CashReceiptApprovalCancelationReport },
+    { path: pathSaleReports.CREDIT_CARD_APPROVAL_CANCELATION_REPORT, component: CreditCardApprovalCancelationReport },
+    { path: pathSaleReports.SALES_REPORT_BY_CARD_TYPE_DETAIL, component: SalesReportByCardTypeDetail },
+    { path: pathSaleReports.SALES_RECORD_BY_EMPLOYEE, component: SalesRecordByEmployee },
+    { path: pathSaleReports.SALES_RECORD_BY_EMPLOYEE_DATE, component: SalesRecordByEmployeeDate },
+    { path: pathSaleReports.EMPLOYEE_COMMISSION, component: EmployeeCommission },
+    { path: pathSaleReports.TOTAL_SALES_REPORT, component: TotalSalesReport },
+    { path: pathSaleReports.SIMPLIFIED_SALES_TOTAL, component: SimplifiedSalesTotal },
+    { path: pathSaleReports.AGGREGATE_REVENUE_ITEMS_BY_CATEGORY, component: AggregateRevenueItemsByCategory },
+    { path: pathSaleReports.HOURLY_SALES, component: HourlySales },
+    { path: pathSaleReports.TIME_OF_DAY_SALES_REPORT, component: TimeOfDaySalesReport },
+    { path: pathSaleReports.SALES_REPORT_BY_PAYMENT_TYPE, component: SalesReportByPaymentType },
+    { path: pathSaleReports.SALES_REPORT_BY_CARD_TYPE, component: SalesReportByCardType },
+    { path: pathSaleReports.SALES_RANKING, component: SalesRanking },
+    { path: pathSaleReports.SALES_ANALYSIS_REPORT_ITEM, component: SalesAnalysisReportItem },
+    { path: pathSaleReports.TOTAL_SALES_REPORT_DETAIL, component: TotalSalesReportDetail },
+    { path: pathSaleReports.EMPLOYEE_SALES_ANALYSIS, component: EmployeeSalesAnalysis },
+    { path: pathSaleReports.ORDER_CANCELATION_REPORT, component: OrderCancelationReport },
+    { path: pathSaleReports.VOID_SUMMARY, component: VoidSummary },
+    { path: pathSaleReports.VOID_DETAIL, component: VoidDetail },
+    { path: pathSaleReports.SALES_DISCOUNT_REPORT, component: SalesDiscountReport },
+    { path: pathSaleReports.SALES_DISCOUNT_SUMMARY, component: SalesDiscountSummary },
+    { path: pathSaleReports.NO_TAX_SALE_REPORT, component: NoTaxSaleReport },
+    { path: pathSaleReports.TAX_DETAIL, component: TaxDetail },
+    { path: pathSaleReports.TAX_SUMMARY, component: TaxSummary },
+    { path: pathSaleReports.SALES_CASH_IN_OUT, component: SalesCashInOut },
+    { path: pathSaleReports.CASH_IN_OUT, component: CashInOut },
+];
+
+const purchaseOrdersRoute = [
+    { path: pathPurchaseOrder.INVENTORY_LOOK_UP, component: InventoryLookUp },
+    { path: pathPurchaseOrder.INVENTORY_ADJUSTMENTS, component: InventoryAdjustments },
+    { path: pathPurchaseOrder.INVENTORY_TRANSFER, component: InventoryTransfer },
+    { path: pathPurchaseOrder.IV_MANAGEMENT_TABLE, component: IVManagementTable },
+    { path: pathPurchaseOrder.CUSTOMER_PURCHASE, component: CustomerPurchase },
+    { path: pathPurchaseOrder.CUSTOMER_SALE_B, component: CustomerSaleB },
+    { path: pathPurchaseOrder.SUPPLIER_LEDGER, component: SupplierLedger },
+    { path: pathPurchaseOrder.CUSTOMER_LEDGER, component: CustomerLedger },
+    { path: pathPurchaseOrder.PAYABLE_REPORT, component: PayableReport },
+    { path: pathPurchaseOrder.RECEIVABLE_REPORT, component: ReceivableReport },
+    { path: pathPurchaseOrder.SUPPLIER_SETTING, component: SupplierSetting },
+    { path: pathPurchaseOrder.AMOUNT, component: Amount },
+];
+
+const settingsRoute = [
+    { path: pathSettings.STORE_OPERATIONS, component: StoreOperations },
+    { path: pathSettings.STORE_DETAIL_SETTING, component: StoreDetailSettings },
+    { path: pathSettings.CASH_DRAWER2, component: CashDrawer2 },
+    { path: pathSettings.TAX, component: TAX },
+    { path: pathSettings.OPERATIONS_MANAGEMENT, component: OperationsManagement },
+    { path: pathSettings.ORDER_POS_CANCEL_FUNCTION_OPTION, component: OrderPosCancelFunctionOption },
+    { path: pathSettings.PRINTER_LANGUAGE_SETTING, component: PrinterLanguageSetting },
+    { path: pathSettings.AUTO_CLOSE_POPUP_OPTION, component: AutoClosePopupOption },
+    { path: pathSettings.POS_INFORMATION, component: PosInformation },
+    { path: pathSettings.PRINTER_SETTING, component: PrinterSetting },
+    { path: pathSettings.LABEL_PRINT_SETTING, component: LabelPrintSetting },
+    { path: pathSettings.GUEST_PAGER, component: GuestPager },
+    { path: pathSettings.POS_DISPLAY_SETTING, component: PosDisplaySetting },
+    { path: pathSettings.CID_DEVICE, component: CidDevice },
+    { path: pathSettings.PRINT_OPTION_BY_POS, component: PrintOptionByPos },
+    { path: pathSettings.WINDOWS_KIOSK_OPTIONS, component: WindowsKioksOption },
+    { path: pathSettings.MSR_SETTING, component: MsrSetting },
+    { path: pathSettings.MSR_PORT_SETTING, component: MsrPortSetting },
+    { path: pathSettings.ECR_SETTING, component: EcrSetting },
+    { path: pathSettings.STORE_INFO_TAX_RECEIPT, component: StoreInfoTaxReceipt },
+    { path: pathSettings.SETTING_QR_CODE, component: SettingQRCode },
+    { path: pathSettings.SHOW_ADDITIONAL_DATA_IN_EOD_PRINTOUT, component: ShowAdditionalDataInEodPrintout },
+    { path: pathSettings.ONE_TOUCH_OPTION, component: OneTouchOption },
+    { path: pathSettings.BARCODE_UNREGISTERED_ITEM_OPTION, component: BarcodeUnregisterdItemOption },
+    { path: pathSettings.CALLER_IDENTIFICATION_RECEIVE_ACTION, component: CallerIdentificationReceiveAction },
+    { path: pathSettings.CASH_DRAWER_OPEN_OPTION, component: CashDrawerOpenOption },
+    { path: pathSettings.CLEAR_TABLE_SETTING, component: ClearTableSetting },
+    { path: pathSettings.ENTER_NUMBER_OF_CUSTOMER_SETTING, component: EnterNumberOfCustomerSetting },
+    { path: pathSettings.SELECT_EMPLOYEE_SETTING, component: SelectEmployeeSetting },
+    { path: pathSettings.DISCOUNT_ORDER_OPTION, component: DiscountOrderOption },
+    { path: pathSettings.SHOW_ITEM_BARCODE_OPTION, component: ShowItemBarcodeOption },
+    { path: pathSettings.REBATE_ISSUE, component: RebateIssue },
+    { path: pathSettings.WEIGHT_BARCODE_OPTION, component: WeightBarcodeOption },
+    { path: pathSettings.TENDER_METHOD_WHEN_MAKING_REFUND_RECEIPT, component: TenderMethod },
+    { path: pathSettings.CASH_DRAWER_OPEN_TIMING, component: CashDrawerOpenTiming },
+    { path: pathSettings.PREPAYMENT_FUNCTION_BUTTON_SETTING, component: PrepaymentFunctionButtonSetting },
+    { path: pathSettings.PREPAID_ORDER_RETENTION_OPTIONS, component: PrepaidOrderRetentionOptions },
+    { path: pathSettings.DELIVERY_SETTINGS, component: DeliverySettings },
+    { path: pathSettings.DELIVERY_ORDER, component: DeliveryOrder },
+    { path: pathSettings.CHANGE_WEIGHT_CONTROL, component: ChangeWeightControl },
+    { path: pathSettings.DISCOUNT_OPTION, component: DiscountOption },
+    { path: pathSettings.PAYMENT_OPTIONS_IMMEDIATELY, component: PaymentOptionsImmediately },
+    { path: pathSettings.NOTICE_POPUP_OPTION, component: NoticePopupOption },
+    { path: pathSettings.SET_ALL_CANCELLATION_TYPE, component: SetAllCancellationType },
+    { path: pathSettings.CURRENCY_CHANGE_OPTION, component: CurrencyChangeOption },
+    { path: pathSettings.ENABLE_KEEP_UNIT_CHANGE, component: EnableKeepUnitChange },
+    { path: pathSettings.RECEIPT, component: Receipt },
+    { path: pathSettings.CUSTOMER_ORDER_PRINT, component: CustomerOrderPrint },
+    { path: pathSettings.KITCHEN_ORDER_PRINT, component: KitchenOrderPrint },
+    { path: pathSettings.WAITING_LIST_TAG, component: WaitingListTag },
+    { path: pathSettings.USE_SECURITY_FUNCTION_BY_TASKS, component: UseSecurityFunctionByTasks },
+    { path: pathSettings.SECURITY_GROUP, component: SecurityGroup },
+    { path: pathSettings.EMAIL_SERVER, component: EmailServer },
+];
+
+const webLoginRoute = [
+    { path: pathWebLogin.WEB_LOGIN_FUNTION, component: WebLoginFunction },
+    { path: pathWebLogin.USE_SECURITY_FUNCTION_BY_TASKS2, component: UseSecurityFunctionByTasks2 },
+    { path: pathWebLogin.EMPLOYEE_SECURITY, component: EmployeeSecurity },
+    { path: pathWebLogin.SECURITY_LEVEL, component: SecurityLevel },
+];
+
+export const publicRoutes = [{ path: routes.LOGIN, component: Login, layout: null }];
+
+export const privateRoutes = [
+    ...basicSettingsRoute,
+    ...managerFunctionRoute,
+    ...customerRoute,
+    ...operationReportsRoute,
+    ...saleReportsRoute,
+    ...purchaseOrdersRoute,
+    ...settingsRoute,
+    ...webLoginRoute,
+    { path: pathBasicSettings.BASICSETTINGS, component: BasicSettings },
+    { path: routes.ManagerFunction.MANAGERFUNCTION, component: ManagerFunction },
+    { path: routes.Customer.CUSTOMER, component: Customer },
+    { path: routes.OperationReports.OPERATIONREPORTS, component: OperationReports },
+    { path: routes.SaleReports.SALEREPORTS, component: SaleReports },
+    { path: routes.PurchaseOrder.PURCHASEORDER, component: PurchaseOrder },
+    { path: routes.Settings.SETTINGS, component: Settings },
+    { path: routes.BIZSMS.BIZSMS, component: BIZSMS },
+    { path: routes.WebLogin.WEB_LOGIN, component: WebLogin },
+    { path: routes.BOOKMARK, component: Bookmark },
+    { path: routes.HOME, component: Home, layout: DefaultLayout },
+];

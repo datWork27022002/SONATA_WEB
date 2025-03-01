@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { FaBullhorn } from 'react-icons/fa6';
 import Tippy from '@tippyjs/react/headless';
 
@@ -11,6 +12,8 @@ const cx = classNames.bind(styles);
 function Notification() {
     const [visibleNotification, setVisibleNotification] = useState(false);
 
+    const { t } = useTranslation('translation', { keyPrefix: 'Header' });
+
     const openPopupNotification = () => {
         setVisibleNotification(!visibleNotification);
     };
@@ -18,14 +21,14 @@ function Notification() {
     const RenderNotification = () => (
         <div
             className={cx(
-                'min-w-[300px] bg-background-color text-text-color p-2  rounded overflow-hidden min-h-20',
-                'border-primary-color border-solid border-[1px]  ',
+                'min-h-20 min-w-[300px] overflow-hidden rounded bg-background-color p-2 text-text-color',
+                'border-[1px] border-solid border-primary-color',
             )}
         >
             <div className={cx('border-b-2 border-gray-400')}></div>
-            <div className={cx(' flex justify-end')}>
-                <button className={cx('bg-primary-color rounded py-1 px-2 mt-2 text-text-color-secondnary')}>
-                    More
+            <div className={cx('flex justify-end')}>
+                <button className={cx('mt-2 rounded bg-primary-color px-2 py-1 text-text-color-secondnary')}>
+                    {t('more')}
                 </button>
             </div>
         </div>
@@ -42,7 +45,7 @@ function Notification() {
             >
                 <div className={cx('item-card', 'card-left')} onClick={openPopupNotification}>
                     <IconCustom icon={FaBullhorn} />
-                    <span className={cx('ml-1', 'max-md:hidden')}> Notice</span>
+                    <span className={cx('ml-1', 'max-md:hidden')}> {t('notice')}</span>
                 </div>
             </Tippy>
         </div>
