@@ -1,78 +1,180 @@
-import React, { useState } from 'react';
-import classNames from 'classnames/bind';
-import { FaSearch } from 'react-icons/fa';
+import React, { useEffect, useMemo, useState } from 'react';
+import cx from 'classnames';
+import { useForm, FormProvider } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
+import { Table } from 'antd';
 
-import styles from './MenuSearch.module.scss';
-import TitleLayout from '~/components/TitleLayout';
-import TableCustom from '~/components/TableCustom';
+import { TitleLayout, Input, Button, OperationCell, Loading, TablePagination } from '~/components';
+import ModalUpdateProduct from './ModalUpdateProduct';
+import ModalDeleteProduct from './ModalDeleteProduct';
 import config from '~/config';
-import Input from '~/components/Input';
-import Button from '~/components/Button';
-
-// eslint-disable-next-line no-unused-vars
-const cx = classNames.bind(styles);
-
-const listCategory = [
-    '돼지고기 Thit Heo TD ',
-    '돼지고기 세트 Thit Heo SET TD ',
-    '사이드메뉴 ',
-    '소고기 세트 Thit Bo SET TD ',
-    '점심특선메뉴 Thuc don dac biet bua trua TD  ',
-    'them topping  ',
-    'MEMBERSHIP  ',
-    '음료 Do uong TD  ',
-];
+import { getListProductService } from '~/services/ProductService';
+import useCallApiPrivate from '~/hooks/useCallApiPrivate';
+import { notifyError } from '~/utils/notification';
+import { exportToExcel } from '~/utils/helpers';
 
 function MenuSearch() {
-    const [selectedRow, setSelectedRow] = useState(null);
-    const [category, setCategory] = useState(listCategory[0]);
+    const [dataModel, setDataModel] = useState({
+        data: [],
+        pageIndex: 1,
+        pageSize: 15,
+        totalRecord: 0,
+    });
+    const [selectedColumn, setSelectedColumn] = useState();
+    const [isModalEdit, setIsModalEdit] = useState(false);
+    const [isModalDelete, setIsModalDelete] = useState(false);
+    const [loading, setLoading] = useState(false);
 
-    const dataTable = [];
+    const methods = useForm();
+
+    const callApi = useCallApiPrivate();
+
+    const { t } = useTranslation('translation', { keyPrefix: 'Product' });
+
+    const { watch } = methods;
 
     const columns = [
-        { name: 'No.', selector: (row) => row.groupCode, sortable: true, width: '60px' },
-        { name: 'Store Code', selector: (row) => row.groupName, sortable: true, width: '100px' },
-        { name: 'Category', selector: (row) => row.groupName, sortable: true },
-        { name: 'Item', selector: (row) => row.groupName, sortable: true },
-        { name: 'Price', selector: (row) => row.groupName, sortable: true, width: '120px' },
-        { name: 'Cost', selector: (row) => row.groupName, sortable: true, width: '120px' },
-        { name: 'Barcode', selector: (row) => row.groupName, sortable: true, width: '120px' },
+        { title: t('barcode'), dataIndex: 'barcode', width: '100px', ellipsis: true },
+        { title: t('product_name'), dataIndex: 'productName', width: '200px' },
+        { title: t('short_name'), dataIndex: 'shortName', width: '200px' },
+        { title: t('product_type'), dataIndex: 'productType', width: '100px', ellipsis: true },
+        { title: t('specification'), dataIndex: 'specification', width: '200px' },
+        { title: t('unit'), dataIndex: 'unit', width: '100px' },
+        { title: t('purchase_amount'), dataIndex: 'purchaseAmount', width: '120px', ellipsis: true },
+        { title: t('selling_amount'), dataIndex: 'sellingAmount', width: '120px', ellipsis: true },
+        { title: t('profit_margin'), dataIndex: 'profitMargin', width: '120px' },
+        { title: t('business_name'), dataIndex: 'storeName', width: '200px', ellipsis: true },
+        { title: t('tax_name'), dataIndex: 'taxName', width: '100px', ellipsis: true },
+        { title: t('tax_type'), dataIndex: 'taxType', width: '100px', ellipsis: true },
+        { title: t('in_box_quantity'), dataIndex: 'inBoxQuantity', width: '100px', ellipsis: true },
+        { title: t('out_box_quantity'), dataIndex: 'outBoxQuantity', width: '100px', ellipsis: true },
+        { title: t('caton_box_quantity'), dataIndex: 'catonBoxQuantity', width: '100px', ellipsis: true },
+        { title: t('purchase_price'), dataIndex: 'purchasePrice', width: '120px' },
+        { title: t('purchase_tax'), dataIndex: 'purchaseTax', width: '120px' },
+        { title: t('selling_tax'), dataIndex: 'sellingPrice', width: '120px', ellipsis: true },
+        { title: t('consumer_price'), dataIndex: 'sellingTax', width: '120px', ellipsis: true },
+        { title: t('transaction_end_date'), dataIndex: 'transactionEndDate', width: '150px', ellipsis: true },
+        {
+            title: t('Operation'),
+            dataIndex: 'storeCode',
+            width: '100px',
+            render: (value, record) => (
+                <OperationCell isDelete isEdit handleDelete={handleDelete} handleEdit={handleEdit} data={record} />
+            ),
+            fixed: 'right',
+        },
     ];
-    const data = dataTable.map((value, index) => ({ ...value, id: index + 1 }));
+
+    const scrollHeight = useMemo(() => window.innerHeight - 180 - 64 - 50, []);
+    const handleChangeNavigation = (curentPage) => {
+        handleGetListProduct(curentPage, dataModel.pageSize);
+    };
+
+    const handleEdit = (data) => {
+        setSelectedColumn(data);
+        setIsModalEdit(true);
+    };
+    const handleDelete = (data) => {
+        setSelectedColumn(data);
+        setIsModalDelete(true);
+    };
+    const handleClickBtnAddStore = () => {
+        setSelectedColumn(undefined);
+        setIsModalEdit(true);
+    };
+    const handleExportExcel = async () => {
+        setLoading(true);
+        const bodyRequest = {
+            Barcode: watch('barcode'),
+            ProductName: watch('productName'),
+            pageIndex: 1,
+            pageSize: 9999,
+        };
+        const res = await callApi(getListProductService, bodyRequest);
+        if (!res) notifyError('get data failed');
+        const exportData = res?.data ?? [];
+        exportToExcel(exportData, columns, 'List Store');
+        setLoading(false);
+    };
+
+    const handleGetListProduct = async (pageIndex, pageSize) => {
+        const bodyRequest = {
+            Barcode: watch('barcode'),
+            ProductName: watch('productName'),
+            pageIndex: pageIndex || dataModel.pageIndex,
+            pageSize: pageSize || dataModel.pageSize,
+        };
+
+        setLoading(true);
+        const res = await callApi(getListProductService, bodyRequest);
+        setLoading(false);
+        if (res) {
+            res.data = res.data?.map((value, index) => ({
+                ...value,
+                key: index,
+                transactionStartDate: value?.transactionStartDate?.split('T')[0],
+                transactionEndDate: value?.transactionEndDate?.split('T')[0],
+                discountStartDate: value?.discountStartDate?.split('T')[0],
+                discountEndDate: value?.discountEndDate?.split('T')[0],
+            }));
+            setDataModel(res);
+        } else {
+            notifyError('get data failed');
+        }
+    };
+
+    useEffect(() => {
+        handleGetListProduct();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
         <TitleLayout title={config.nameMap.itemLevel3.MENU_SEARCH.Visiblename}>
             {/* form */}
-            <div className={cx('mb-2 flex flex-wrap justify-between')}>
-                <div className={cx('flex flex-wrap gap-x-5')}>
-                    <Input
-                        label="Category"
-                        paddingLabel
-                        boldLabel
-                        widthInput={'300px'}
-                        dropDown
-                        listOptions={listCategory}
-                        seletedValue={category}
-                        setSeletedValue={setCategory}
-                    />
-                    <Input label="Item" paddingLabel boldLabel widthInput={'150px'} iconRightInput={FaSearch} />
-                    <Input label="Barcode" paddingLabel boldLabel widthInput={'150px'} />
-                </div>
-                <div className={cx('flex items-center gap-4')}>
-                    <Button blue>Search</Button>
-                    <Button teal>Export Excel</Button>
-                </div>
+            <div className={cx('mb-2 flex flex-wrap justify-between gap-y-2')}>
+                <FormProvider {...methods}>
+                    <div className={cx('flex flex-wrap gap-5')}>
+                        <Input name={'barcode'} label={t('barcode')} paddingLabel boldLabel />
+                        <Input name={'productName'} label={t('product_name')} paddingLabel boldLabel />
+                    </div>
+                    <div className={cx('flex items-end gap-4')}>
+                        <Button blue onClick={() => handleGetListProduct(1)}>
+                            {t('Search')}
+                        </Button>
+                        <Button teal onClick={handleExportExcel}>
+                            {t('Export_Excel')}
+                        </Button>
+                        <Button green onClick={handleClickBtnAddStore}>
+                            {t('Add_Product')}
+                        </Button>
+                    </div>
+                </FormProvider>
             </div>
-            {/* table */}
-            <div className={cx('overflow-auto')}>
-                <TableCustom
-                    className={cx('h-[480px]')}
-                    columns={columns}
-                    data={data}
-                    selectedRow={selectedRow}
-                    setSelectedRow={setSelectedRow}
+            <Table
+                dataSource={dataModel?.data}
+                columns={columns}
+                pagination={false}
+                style={{ height: `${scrollHeight + 50}px` }}
+                scroll={{ y: `${scrollHeight}px`, x: 'max-content' }}
+            />
+
+            <TablePagination dataModel={dataModel} handleChangeNavigation={handleChangeNavigation} />
+
+            {isModalEdit && (
+                <ModalUpdateProduct
+                    isOpen={isModalEdit}
+                    setIsOpen={setIsModalEdit}
+                    data={selectedColumn}
+                    handleGetListProduct={handleGetListProduct}
                 />
-            </div>
+            )}
+            <ModalDeleteProduct
+                isOpen={isModalDelete}
+                setIsOpen={setIsModalDelete}
+                data={selectedColumn}
+                handleGetListProduct={handleGetListProduct}
+            />
+            {loading && <Loading />}
         </TitleLayout>
     );
 }

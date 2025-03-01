@@ -8,16 +8,17 @@ import RadioInput from './RadioInput';
 import Dropdown from './DropDown';
 import RangeTime from './RangeTime';
 import CheckboxInput from './CheckboxInput';
+import { formatNumberWithDots, formatDecimal } from '~/utils/helpers';
 
 const cx = classNames.bind(styles);
 
 const Input = ({
     labelIcon,
-    icon,
     iconRightInput,
     radioInput,
     checkboxInput,
     dropDown,
+    textarea,
     rangeTime,
     paddingLabel,
     boldLabel,
@@ -41,12 +42,24 @@ const Input = ({
         register,
         formState: { errors },
         trigger,
+        watch,
+        setValue,
     } = useFormContext();
 
     const error = errors[name]?.message;
 
     const handleValidate = () => {
         trigger(name);
+    };
+
+    const handeConvertTypeCustom = () => {
+        if (typeCustom === 'number') {
+            const newValue = formatNumberWithDots(watch(name));
+            setValue(name, newValue);
+        } else if (typeCustom === 'decimal') {
+            const newValue = formatDecimal(watch(name));
+            setValue(name, newValue);
+        }
     };
 
     return (
@@ -66,13 +79,13 @@ const Input = ({
                     </label>
                 )}
                 <div className={cx('relative', !widthInput && 'flex-1')}>
-                    {!radioInput && !dropDown && !rangeTime && !custom && !checkboxInput && (
+                    {!radioInput && !dropDown && !rangeTime && !custom && !checkboxInput && !textarea && (
                         <div className={cx('')}>
                             <input
                                 autoComplete={name}
                                 id={name}
                                 type={type}
-                                {...register(name, { onBlur: handleValidate })}
+                                {...register(name, { onBlur: handleValidate, onChange: handeConvertTypeCustom })}
                                 placeholder={placeholder}
                                 style={{ width: widthInput }}
                                 disabled={disabled}
@@ -97,6 +110,23 @@ const Input = ({
                                 </div>
                             )}
                         </div>
+                    )}
+                    {textarea && (
+                        <textarea
+                            id={name}
+                            {...register(name, { onBlur: handleValidate })}
+                            placeholder={placeholder}
+                            style={{ width: widthInput }}
+                            disabled={disabled}
+                            rows={4}
+                            className={cx(
+                                'w-full p-1',
+                                'rounded border-[1px] border-solid border-slate-400',
+                                disabled && 'bg-slate-100',
+                                error && '!border-red-500',
+                                { [inputClassName]: inputClassName },
+                            )}
+                        ></textarea>
                     )}
                     {(radioInput || dropDown || rangeTime || custom || checkboxInput) && (
                         <div className={cx('flex items-center')} style={{ width: widthInput }}>

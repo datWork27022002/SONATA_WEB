@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames/bind';
 import { useForm, FormProvider } from 'react-hook-form';
@@ -8,9 +8,10 @@ import { useTranslation } from 'react-i18next';
 import { Modal, Input, Loading } from '~/components';
 import { AddStoreSchema } from '~/crema/schema';
 import { listStoreType } from '~/crema/constant/listOptionInput';
-import { addStoreService, editStoreService } from '~/services/StoreService';
+import { addStoreService, editStoreService, getNewStoreCodeService } from '~/services/StoreService';
 import useCallApiPrivate from '~/hooks/useCallApiPrivate';
 import { notifyError, notifySuccess } from '~/utils/notification';
+import { convertToNumbers } from '~/utils/helpers';
 
 const ModalUpdateStore = ({ isOpen, setIsOpen, data = undefined, handleGetListStore }) => {
     const [loading, setLoading] = useState(false);
@@ -24,6 +25,8 @@ const ModalUpdateStore = ({ isOpen, setIsOpen, data = undefined, handleGetListSt
 
     const callApi = useCallApiPrivate();
 
+    const listStoreTypeOption = useMemo(() => listStoreType(), []);
+
     const handleApply = async (formData) => {
         const bodyRequet = {
             storeCode: formData?.Store_Code,
@@ -36,10 +39,10 @@ const ModalUpdateStore = ({ isOpen, setIsOpen, data = undefined, handleGetListSt
             faxNumber: formData?.Fax_Number,
             email: formData?.Email,
             homepage: formData?.Homepage,
-            totalArea: formData?.Total_Area,
-            storeArea: formData?.Store_Area,
-            parkingSpaces: formData?.Parking_Space,
-            employeeCount: formData?.Employee_Count,
+            totalArea: convertToNumbers(formData?.Total_Area),
+            storeArea: convertToNumbers(formData?.Store_Area),
+            parkingSpaces: convertToNumbers(formData?.Parking_Space),
+            employeeCount: convertToNumbers(formData?.Employee_Count),
             bankName: formData?.Bank_Name,
             accountNumber: formData?.Account_Number,
             accountHolder: formData?.Account_Holder,
@@ -53,8 +56,8 @@ const ModalUpdateStore = ({ isOpen, setIsOpen, data = undefined, handleGetListSt
             detailedAddress: formData?.Detailed_Address,
             businessType: formData?.Business_Type,
             businessCategory: formData?.Business_Category,
-            displayOrder: formData?.Display_Order,
-            transactionLevel: formData?.Transaction_Level,
+            displayOrder: convertToNumbers(formData?.Display_Order),
+            transactionLevel: convertToNumbers(formData?.Transaction_Level),
             brandId: formData?.Brand_ID,
             brandName: formData?.Brand_Name,
             viettelId: formData?.Viettel_ID,
@@ -95,6 +98,18 @@ const ModalUpdateStore = ({ isOpen, setIsOpen, data = undefined, handleGetListSt
         console.log('err formData', err);
     };
 
+    const handleLoadNewForm = async () => {
+        const now = new Date().toISOString().split('T')[0];
+        setValue('Transaction_Start_Date', now);
+        setValue('Transaction_End_Date', now);
+        const res = await callApi(getNewStoreCodeService, {});
+        if (!res) {
+            notifyError(t('get_new_store_code_fail'));
+            return;
+        }
+        setValue('Store_Code', res?.storeCode);
+    };
+
     useEffect(() => {
         if (isOpen) clearErrors();
         if (data) {
@@ -133,6 +148,8 @@ const ModalUpdateStore = ({ isOpen, setIsOpen, data = undefined, handleGetListSt
             setValue('Viettel_Password', data?.viettelPassword);
             setValue('Template_Code', data?.templateCode);
             setValue('Invoice_Series', data?.invoiceSeries);
+        } else {
+            handleLoadNewForm();
         }
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -155,7 +172,7 @@ const ModalUpdateStore = ({ isOpen, setIsOpen, data = undefined, handleGetListSt
                             name={'Transaction_Type'}
                             label={t('Transaction_Type')}
                             dropDown
-                            listOptions={listStoreType()}
+                            listOptions={listStoreTypeOption}
                         />
                         <Input name={'Store_Name'} label={t('Store_Name')} />
                         <Input name={'Representative'} label={t('Representative')} />

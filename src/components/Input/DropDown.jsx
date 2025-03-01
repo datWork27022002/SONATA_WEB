@@ -20,7 +20,7 @@ function Dropdown({ listOptions = [], className, top, name }) {
     const handleChange = async (item) => {
         const code = listOptions.filter((value) => value?.name === item.name)[0]?.code;
         setValue(name, String(code));
-        setValueInput(item.name);
+        // setValueInput(item.name);
         setIsOpen(false);
         await trigger(name);
     };
@@ -32,7 +32,7 @@ function Dropdown({ listOptions = [], className, top, name }) {
     };
 
     const handleChangeWhenWatchNameChange = () => {
-        // console.log(name, watch(name));
+        //console.log(name, watch(name));
         const filter = listOptions.filter((value) => String(value?.code) === String(watch(name)));
         let valueVisible = '';
         if (filter.length === 1) {
@@ -49,17 +49,16 @@ function Dropdown({ listOptions = [], className, top, name }) {
     }, []);
 
     useEffect(() => {
-        setValue(name, '');
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
-    useEffect(() => {
-        if (watch(name) !== '') {
-            //console.log(name, watch(name), listOptions);
-            handleChangeWhenWatchNameChange();
+        if (listOptions?.length > 0) {
+            setValue(name, listOptions[0]?.code);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [listOptions]);
+
+    useEffect(() => {
+        handleChangeWhenWatchNameChange();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [watch(name)]);
 
     return (
         <div

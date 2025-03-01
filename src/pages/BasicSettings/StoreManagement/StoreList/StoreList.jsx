@@ -34,6 +34,8 @@ function StoreList() {
 
     const { watch } = methods;
 
+    const listStoreTypeOption = useMemo(() => listStoreType(), []);
+
     const columns = [
         { title: t('Store_Code'), dataIndex: 'storeCode', width: '100px', ellipsis: true },
         { title: t('Store_Type'), dataIndex: 'storeType', width: '120px' },
@@ -159,7 +161,7 @@ function StoreList() {
                             paddingLabel
                             boldLabel
                             dropDown
-                            listOptions={listStoreType()}
+                            listOptions={listStoreTypeOption}
                         />
                         <Input name={'Store_Name'} label={t('Store_Name')} paddingLabel boldLabel />
                         <Input

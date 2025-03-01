@@ -42,3 +42,14 @@ export const deleteStore = async (params, userInfo) => {
     });
     return res;
 };
+
+export const getNewStoreCodeService = async (params, userInfo) => {
+    const res = await get(`${api.store.GET_NEW_STORE_CODE}`, {
+        headers: {
+            Authorization: `Bearer ${userInfo.token}`,
+            Database: userInfo?.database_main_name,
+        },
+        params: params,
+    });
+    return res;
+};
